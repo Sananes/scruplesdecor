@@ -1,0 +1,29 @@
+// Global Classes
+.primary-font {
+	font-family: @body-font;
+}
+
+.heading-font {
+	font-family: @heading-font;
+}
+
+.to-uppercase {
+	text-transform: uppercase;
+}
+
+.main-font-size {
+	font-size: @main-font-size;
+}
+
+
+// Main Font size
+.main-font-size-to-pct(@font-size) when (@font-size = @main-font-size)
+{
+	//font-size: @font-size; 
+	&:extend(.main-font-size);
+}
+
+.main-font-size-to-pct(@font-size) when (@font-size > @main-font-size), (@font-size < @main-font-size)
+{
+	font-size: percentage(round(@font-size/@main-font-size, 2));
+}

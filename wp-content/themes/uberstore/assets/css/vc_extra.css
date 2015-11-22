@@ -1,0 +1,103 @@
+.vc_logo {
+	display: none !important;
+}
+.thb_vc_ico_banner.vc-element-icon,
+.thb_vc_sc_banner.wpb_content_element > .wpb_element_wrapper {
+	background-image: url("../../vc_templates/banner/icon.png") !important;
+	background-size: 32px 32px;
+}
+.thb_vc_ico_button.vc-element-icon,
+.thb_vc_sc_button.wpb_content_element > .wpb_element_wrapper {
+	background-image: url("../../vc_templates/button/icon.png") !important;
+	background-size: 32px 32px;
+}
+.thb_vc_ico_image.vc-element-icon,
+.thb_vc_sc_image.wpb_content_element > .wpb_element_wrapper {
+	background-image: url("../../vc_templates/image/icon.png") !important;
+	background-size: 32px 32px;
+}
+.thb_vc_ico_product.vc-element-icon,
+.thb_vc_sc_product.wpb_content_element > .wpb_element_wrapper {
+	background-image: url("../../vc_templates/product/icon.png") !important;
+	background-size: 32px 32px;
+}
+.thb_vc_ico_product_list.vc-element-icon,
+.thb_vc_sc_product_list.wpb_content_element > .wpb_element_wrapper {
+	background-image: url("../../vc_templates/product_list/icon.png") !important;
+	background-size: 32px 32px;
+}
+.thb_vc_ico_post.vc-element-icon,
+.thb_vc_sc_post.wpb_content_element > .wpb_element_wrapper {
+	background-image: url("../../vc_templates/post/icon.png") !important;
+	background-size: 32px 32px;
+}
+.thb_vc_ico_portfolio.vc-element-icon,
+.thb_vc_sc_portfolio.wpb_content_element > .wpb_element_wrapper {
+	background-image: url("../../vc_templates/portfolio/icon.png") !important;
+	background-size: 32px 32px;
+}
+.thb_vc_ico_iconlist.vc-element-icon,
+.thb_vc_sc_iconlist.wpb_content_element > .wpb_element_wrapper {
+	background-image: url("../../vc_templates/iconlist/icon.png") !important;
+	background-size: 32px 32px;
+}
+.thb_vc_ico_iconbox.vc-element-icon,
+.thb_vc_sc_iconbox.wpb_content_element > .wpb_element_wrapper {
+	background-image: url("../../vc_templates/iconbox/icon.png") !important;
+	background-size: 32px 32px;
+}
+.thb_vc_ico_lookbook.vc-element-icon,
+.thb_vc_sc_lookbook.wpb_content_element > .wpb_element_wrapper {
+	background-image: url("../../vc_templates/lookbook/icon.png") !important;
+	background-size: 32px 32px;
+}
+.thb_vc_ico_counter.vc-element-icon,
+.thb_vc_sc_counter.wpb_content_element > .wpb_element_wrapper {
+	background-image: url("../../vc_templates/counter/icon.png") !important;
+	background-size: 32px 32px;
+}
+.thb_vc_ico_notification.vc-element-icon,
+.thb_vc_sc_notification.wpb_content_element > .wpb_element_wrapper {
+	background-image: url("../../vc_templates/notification/icon.png") !important;
+	background-size: 32px 32px;
+}
+.thb_vc_ico_gap.vc-element-icon,
+.thb_vc_sc_gap.wpb_content_element > .wpb_element_wrapper {
+	background-image: url("../../vc_templates/gap/icon.png") !important;
+	background-size: 32px 32px;
+}
+.thb_vc_ico_progressbar.vc-element-icon,
+.thb_vc_sc_progressbar.wpb_content_element > .wpb_element_wrapper {
+	background-image: url("../../vc_templates/progress_bar/icon.png") !important;
+	background-size: 32px 32px;
+}
+.thb_vc_ico_testimonials.vc-element-icon,
+.thb_vc_sc_testimonials.wpb_content_element > .wpb_element_wrapper {
+	background-image: url("../../vc_templates/testimonials/icon.png") !important;
+	background-size: 32px 32px;
+}
+.thb_vc_ico_teammember.vc-element-icon,
+.thb_vc_sc_teammember.wpb_content_element > .wpb_element_wrapper {
+	background-image: url("../../vc_templates/team_member/icon.png") !important;
+	background-size: 32px 32px;
+}
+.thb_vc_ico_clients.vc-element-icon,
+.thb_vc_sc_clients.wpb_content_element > .wpb_element_wrapper {
+	background-image: url("../../vc_templates/clients/icon.png") !important;
+	background-size: 32px 32px;
+}
+.thb_vc_ico_styled.vc-element-icon,
+.thb_vc_sc_styled.wpb_content_element > .wpb_element_wrapper {
+	background-image: url("../../vc_templates/styled_header/icon.png") !important;
+	background-size: 32px 32px;
+}
+.thb_vc_ico_productgrid.vc-element-icon,
+.thb_vc_sc_productgrid.wpb_content_element > .wpb_element_wrapper {
+	background-image: url("../../vc_templates/product_grid/icon.png") !important;
+	background-size: 32px 32px;
+}
+.thb_vc_ico_product_categories.vc-element-icon,
+.thb_vc_sc_product_categories.wpb_content_element > .wpb_element_wrapper {
+	background-image: url("../../vc_templates/product_cat/icon.png") !important;
+	background-size: 32px 32px;
+}

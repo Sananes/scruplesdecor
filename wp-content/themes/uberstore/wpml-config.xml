@@ -1,0 +1,9 @@
+<wpml-config>
+    <custom-types>
+        <custom-type translate="1">portfolio</custom-type>
+        <custom-type translate="1">revslider</custom-type>
+    </custom-types>
+    <taxonomies>
+        <taxonomy translate="1">project-category</taxonomy>
+    </taxonomies>
+</wpml-config>

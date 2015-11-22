@@ -1,0 +1,66 @@
+.swc-archive-hide-product-titles ul.products h3 {
+  display: none; }
+
+.swc-shop-alignment-left ul.products li.product {
+  text-align: left; }
+  .swc-shop-alignment-left ul.products li.product .star-rating,
+  .swc-shop-alignment-left ul.products li.product img {
+    margin-left: 0; }
+
+.swc-shop-alignment-right ul.products li.product {
+  text-align: right; }
+  .swc-shop-alignment-right ul.products li.product .star-rating,
+  .swc-shop-alignment-right ul.products li.product img {
+    margin-right: 0; }
+
+@media screen and (min-width: 768px) {
+  .woocommerce-active.swc-header-no-search .site-header .secondary-navigation,
+  .swc-header-no-search .site-header .secondary-navigation {
+    float: right;
+    margin-right: 0; }
+
+  .swc-header-no-cart .site-header .main-navigation,
+  .swc-header-no-cart.woocommerce-active .site-header .main-navigation {
+    width: 100%;
+    margin-right: 0;
+    margin-left: 0; }
+
+  .single-product.swc-product-gallery-hidden div.product .summary,
+  .single-product.swc-product-gallery-hidden.storefront-full-width-content div.product .summary {
+    width: 100%;
+    float: none;
+    margin-left: 0;
+    margin-right: 0; }
+
+  .single-product.swc-product-gallery-stacked div.product .images,
+  .single-product.swc-product-gallery-stacked div.product .summary,
+  .single-product.swc-product-gallery-stacked.storefront-full-width-content div.product .images,
+  .single-product.swc-product-gallery-stacked.storefront-full-width-content div.product .summary {
+    width: 100%;
+    float: none;
+    margin-left: 0;
+    margin-right: 0; }
+
+  .single-product.swc-product-gallery-stacked div.product .images .thumbnails a.zoom {
+    display: block;
+    float: left;
+    margin-left: 0;
+    margin-right: -100%;
+    width: 29.72973%;
+    clear: none;
+    float: left;
+    margin-left: 0;
+    margin-right: 4%;
+    margin-right: 5.40541%; }
+
+  .single-product.swc-product-gallery-stacked.storefront-full-width-content div.product .images .thumbnails a.zoom {
+    display: block;
+    float: left;
+    margin-left: 0;
+    margin-right: -100%;
+    width: 13.33333%;
+    clear: none;
+    float: left;
+    margin-left: 0;
+    margin-right: 4%;
+    margin-right: 4.0%; } }

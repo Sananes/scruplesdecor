@@ -1,0 +1,819 @@
+# Copyright (C) 2015 WooThemes
+# This file is distributed under the GNU General Public License v2 or later.
+# Translators:
+# adam g <adam.ny@mail.ee>, 2015
+# adam g <adam.ny@mail.ee>, 2015
+# Viljo Marrandi <viltsik@gmail.com>, 2015
+msgid ""
+msgstr ""
+"Project-Id-Version: Storefront\n"
+"Report-Msgid-Bugs-To: https://github.com/woothemes/storefront/issues\n"
+"POT-Creation-Date: 2015-09-10 10:48:10+00:00\n"
+"PO-Revision-Date: 2015-09-10 10:48+0000\n"
+"Last-Translator: James Koster <jay@woothemes.com>\n"
+"Language-Team: Estonian (Estonia) (http://www.transifex.com/woothemes/storefront-1/language/et_EE/)\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Language: et_EE\n"
+"Plural-Forms: nplurals=2; plural=(n != 1);\n"
+"X-Generator: grunt-wp-i18n 0.5.3\n"
+
+#: 404.php:19
+msgid "Oops! That page can&rsquo;t be found."
+msgstr "Vabandust. Lehte can&rsquo;t ei leitud."
+
+#: 404.php:22
+msgid ""
+"Nothing was found at this location. Try searching, or check out the links "
+"below."
+msgstr "Asukohast ei leitud midagi. Proovi otsida, või kasuta allolevaid linke."
+
+#: 404.php:45 inc/structure/template-tags.php:26
+msgid "Product Categories"
+msgstr "Toote kategooriad"
+
+#: 404.php:54
+msgid "Popular Products"
+msgstr "Populaarsed tooted"
+
+#: comments.php:33 comments.php:51
+msgid "Comment navigation"
+msgstr "Kommentaaride navigatsioon"
+
+#: comments.php:34 comments.php:52
+msgid "&larr; Older Comments"
+msgstr "Vanemad kommentaarid"
+
+#: comments.php:35 comments.php:53
+msgid "Newer Comments &rarr;"
+msgstr "Uuemad kommentaarid &rarr;"
+
+#: comments.php:60
+msgid "Comments are closed."
+msgstr "Kommenteerimine pole võimalik."
+
+#: content-none.php:13
+msgid "Nothing Found"
+msgstr "Midagi ei leitud"
+
+#: content-none.php:19
+msgid "Ready to publish your first post? <a href=\"%1$s\">Get started here</a>."
+msgstr "Valmis kirjutama oma esimest postitust? <a href=\"%1$s\"> Alusta siit </a>."
+
+#: content-none.php:23
+msgid ""
+"Sorry, but nothing matched your search terms. Please try again with some "
+"different keywords."
+msgstr "Vabandust aga sinu otsingule vastet ei leitud. Palun proovi uuesti erinevate otsissõnadega."
+
+#: content-none.php:28
+msgid ""
+"It seems we can&rsquo;t find what you&rsquo;re looking for. Perhaps "
+"searching can help."
+msgstr "Paistab, et me ei suuda leida otsitavat. Võib-olla aitab otsing."
+
+#: inc/admin/welcome-screen/sections/add-ons.php:7
+msgid "Enhance your site"
+msgstr "Parenda oma saiti"
+
+#: inc/admin/welcome-screen/sections/add-ons.php:10
+msgid ""
+"Below you will find a selection of Storefront extensions that could help "
+"improve your online store."
+msgstr "Allpool leiad valiku Storefront-i laiendusi mida saad kasutada oma online poe täiustamiseks."
+
+#: inc/admin/welcome-screen/sections/add-ons.php:16
+msgid ""
+"Refine your shop archives and product pages with the Storefront WooCommerce "
+"Customiser"
+msgstr "Täpsusta oma poe arhiive ja toote lehti Storefront WooCommerce Customiser-iga"
+
+#: inc/admin/welcome-screen/sections/add-ons.php:18
+msgid ""
+"The Storefront WooCommerce Customiser extension gives you further control "
+"over the look and feel of your shop. Change the product archive and single "
+"layouts, toggle various shop components and more."
+msgstr "Storefront WooCommerce Customiser-i laiendus annab sulle veelgi kontrolli oma poe välimuse ja olemuse üle. \nMuuda oma toote arhiive ja üksikeseme kujundust, vaheta erinevaid poe komponente ja muud."
+
+#: inc/admin/welcome-screen/sections/add-ons.php:21
+#: inc/admin/welcome-screen/sections/add-ons.php:34
+#: inc/admin/welcome-screen/sections/add-ons.php:47
+#: inc/admin/welcome-screen/sections/add-ons.php:60
+#: inc/admin/welcome-screen/sections/add-ons.php:73
+#: inc/admin/welcome-screen/sections/getting-started.php:23
+#: inc/admin/welcome-screen/sections/getting-started.php:50
+#: inc/admin/welcome-screen/sections/getting-started.php:63
+msgid "Activated"
+msgstr "Aktiveeritud"
+
+#: inc/admin/welcome-screen/sections/add-ons.php:23
+msgid "Buy %sStorefront WooCommerce Customiser%s now"
+msgstr "Osta %sStorefront WooCommerce Customiser%s nüüd"
+
+#: inc/admin/welcome-screen/sections/add-ons.php:29
+msgid "Highlight a product of your choosing with the Storefront Product Hero"
+msgstr "Tõsta oma valitud toode esile Storefront Product Hero-ga"
+
+#: inc/admin/welcome-screen/sections/add-ons.php:31
+msgid ""
+"The Storefront Product Hero extension adds a parallax hero component to your"
+" homepage highlighting a specific product at your store. Use the shortcode "
+"to add attractive hero components to posts, pages or widgets."
+msgstr "The Storefront Product Hero laiendus lisab parallax hero komponendi sinu kodulehele, tuues esile kindlaid tooteid sinu poes. Kasuta shortcode, et lisada hero komponente oma postitustele, lehtedele või widgetitesse.  "
+
+#: inc/admin/welcome-screen/sections/add-ons.php:36
+msgid "Buy %sStorefront Product Hero%s now"
+msgstr "Osta %sStorefront Product Hero%s nüüd"
+
+#: inc/admin/welcome-screen/sections/add-ons.php:42
+msgid "Further customise your store with the Storefront Designer"
+msgstr "Kasuta Storefront Designer -it, et oma poodi veelgi omanäolisemaks teha"
+
+#: inc/admin/welcome-screen/sections/add-ons.php:44
+msgid ""
+"Storefront Designer adds a bunch of additional appearance settings allowing "
+"you to further tweak and perfect your Storefront design by changing the "
+"header layout, button styles, typographical schemes/scales and more."
+msgstr "Storefront Designer pakub lisaks veel erinevaid välisilme seadistusi. Lisaks Storefront Designer lubab kohandada ja täiustada sinu Storefront -i disaini, muuta päise kujundust, nupu stiile, trükistiile- ja mõõte ning muud.    "
+
+#: inc/admin/welcome-screen/sections/add-ons.php:49
+msgid "Buy %sStorefront Designer%s now"
+msgstr "Osta %sStorefront Designer% nüüd"
+
+#: inc/admin/welcome-screen/sections/add-ons.php:55
+msgid ""
+"Optimize the checkout page at your store with the Storefront Checkout "
+"Customiser"
+msgstr "Optimeeri oma tellimuste lehte Storefront Checkout Customiser -iga"
+
+#: inc/admin/welcome-screen/sections/add-ons.php:57
+msgid ""
+"The checkout is arguably the most crucial page at your store to get right. "
+"The Storefront Checkout Customiser allows you to tweak the checkout by "
+"choosing a different layout and removing distractions to find out what works"
+" best at your store. Try different combinations of settings to A/B test and "
+"improve conversions."
+msgstr "Tähtsaim leht sinu poes täppi panna on kassa. The Storefront Checkout Customiser lubab sul kohendada kassat, muutes paigutusi ja eemaldades takistused, et leida mis sulle paremini sobib. Proovi erinevaid seadistuse kombinatsioone A/B test ja paranda otsetuletust."
+
+#: inc/admin/welcome-screen/sections/add-ons.php:62
+#: inc/admin/welcome-screen/sections/add-ons.php:75
+msgid "Buy %sStorefront Reviews%s now"
+msgstr "Osta %sStorefront Reviews% nüüd"
+
+#: inc/admin/welcome-screen/sections/add-ons.php:68
+msgid ""
+"Highlight favourable reviews throughout your store with Storefront Reviews"
+msgstr "Tõsta soosiv tagasiside oma poes esile Storefront Reviews -iga"
+
+#: inc/admin/welcome-screen/sections/add-ons.php:70
+msgid ""
+"Reading a positive review can be what converts a visitor into a customer. "
+"The Storefront Reviews extension allows you to highlight positive reviews "
+"across your site to showcase your most popular products."
+msgstr "Positiivse arvustuse lugemisest võib külastaja kliendiks saada. The Storefront Reviews laiendus võimaldab sul positiivsed arvustused oma saidilt koondada populaarseteks toodeteks. "
+
+#: inc/admin/welcome-screen/sections/child-themes.php:11
+msgid "Get a whole new look"
+msgstr "Saa täiesti uus välimus"
+
+#: inc/admin/welcome-screen/sections/child-themes.php:14
+msgid ""
+"Below you will find a selection of Storefront child themes that will "
+"instantly transform the look and feel of your Storefront shop."
+msgstr "Allpool leiad valiku Storefront -i laps teemasid mida saad kasutada, et koheselt muuta oma online poe välimust ja olemust."
+
+#: inc/admin/welcome-screen/sections/child-themes.php:19
+msgid "Proshop Child Theme"
+msgstr "Proshop laps teema"
+
+#: inc/admin/welcome-screen/sections/child-themes.php:20
+msgid "Proshop"
+msgstr "Proshop"
+
+#: inc/admin/welcome-screen/sections/child-themes.php:21
+msgid ""
+"Unlock the true potential of your sports clothing and equipment store with "
+"ProShop! It's metropolitan design provides an active aesthetic giving your "
+"store oodles of character."
+msgstr "Vabasta oma spordi riiete ja varustuse poe tõeline potensiaal ProShop -iga! Selle suurlinnlik disain annab sinu poele tohutult isikupära. "
+
+#: inc/admin/welcome-screen/sections/child-themes.php:24
+#: inc/admin/welcome-screen/sections/child-themes.php:35
+msgid "Buy %s now"
+msgstr "Osta %s nüüd"
+
+#: inc/admin/welcome-screen/sections/child-themes.php:30
+msgid "Galleria Child Theme"
+msgstr "Galleria laps teema"
+
+#: inc/admin/welcome-screen/sections/child-themes.php:31
+msgid "Galleria"
+msgstr "Galleria"
+
+#: inc/admin/welcome-screen/sections/child-themes.php:32
+msgid ""
+"Galleria is a Storefront child theme perfect for fashion and design stores. "
+"Stylish and minimalist, it gives sites a high class look and keeps products "
+"centerstage."
+msgstr "Galleria on Storefront -i laps teemamoe ja disaini poodidele. Stiilne ja minimalistlik, see annab sinu poele kõrgklassi välimuse ja jätab tooted esmatähtsaks."
+
+#: inc/admin/welcome-screen/sections/child-themes.php:41
+msgid "Boutique Child Theme"
+msgstr "Boutique laps teema"
+
+#: inc/admin/welcome-screen/sections/child-themes.php:42
+#: inc/admin/welcome-screen/sections/child-themes.php:55
+msgid "Free!"
+msgstr "Tasuta!"
+
+#: inc/admin/welcome-screen/sections/child-themes.php:43
+msgid "Boutique"
+msgstr "Boutique"
+
+#: inc/admin/welcome-screen/sections/child-themes.php:44
+msgid ""
+"Boutique is a simple, traditionally designed Storefront child theme, ideal "
+"for small stores or boutiques. Add your logo, create a unique color scheme "
+"and start selling!"
+msgstr "Boutique on lihtne, traditsiooniliselt disainitud Storefront -i laps teema, ideaalne väikestele poodidele ja butiikidele. Lisa oma logo, loo unikaalne värviskeem ja hakka müüma!"
+
+#: inc/admin/welcome-screen/sections/child-themes.php:47
+#: inc/admin/welcome-screen/sections/child-themes.php:60
+msgid "Install %s now"
+msgstr "Installi %s nüüd"
+
+#: inc/admin/welcome-screen/sections/child-themes.php:49
+msgid "Read more %sabout Boutique%s &rarr;"
+msgstr "Loe veel %sabout Boutique%s &rarr;"
+
+#: inc/admin/welcome-screen/sections/child-themes.php:54
+msgid "Deli Child Theme"
+msgstr "Deli laps teema"
+
+#: inc/admin/welcome-screen/sections/child-themes.php:56
+msgid "Deli"
+msgstr "Deli"
+
+#: inc/admin/welcome-screen/sections/child-themes.php:57
+msgid ""
+"Deli features a texturised, earthy design, perfect for stores selling "
+"natural, organic or hand made goods."
+msgstr "Deli omab tekstuurliku, maalähedast disaini, ideaalselt poodidele mis müüvad orgaanilisi või käsitööna valminud kaupu."
+
+#: inc/admin/welcome-screen/sections/child-themes.php:62
+msgid "Read more %sabout Deli%s &rarr;"
+msgstr "Loe veel %sabout Deli%s &rarr;"
+
+#: inc/admin/welcome-screen/sections/getting-started.php:14
+msgid "Using Storefront"
+msgstr "Storefront -i kasutamine"
+
+#: inc/admin/welcome-screen/sections/getting-started.php:15
+msgid ""
+"We've purposely kept Storefront lean & mean so configuration is a breeze. "
+"Here are some optional theme-setup tasks:"
+msgstr "Me jätsime Storefronti meelega kiireks ja mugavaks, et seadistamine oleks lihtne. Siin on mõned vabalt valitavad teema ülesseadmis ülesanded:"
+
+#: inc/admin/welcome-screen/sections/getting-started.php:19
+#: inc/admin/welcome-screen/sections/getting-started.php:25
+msgid "Install WooCommerce"
+msgstr "Installeeri WooCommerce"
+
+#: inc/admin/welcome-screen/sections/getting-started.php:20
+msgid ""
+"Although Storefront works fine as a standard WordPress theme, it really "
+"shines when used for an online store. Install WooCommerce and start selling "
+"now."
+msgstr "Kuigi Storefront töötab suurepäraselt standartse WordPressi teemana, siis tõeliselt särab ta e-poena. Installi WooCommerce ja hakka müüma."
+
+#: inc/admin/welcome-screen/sections/getting-started.php:30
+msgid "Configure menu locations"
+msgstr "Muuda menüü asukohti"
+
+#: inc/admin/welcome-screen/sections/getting-started.php:31
+msgid ""
+"Storefront includes three menu locations for primary, secondary and handheld"
+" navigation. "
+msgstr "Storefront sisaldab kolme menüü asukohta. Peamist, alam ja nutiseadme menüüd.   "
+
+#: inc/admin/welcome-screen/sections/getting-started.php:32
+msgid ""
+"The primary navigation is perfect for your key pages like the shop and "
+"product categories. "
+msgstr "Peamine menüü on ideaalne tähtsatele lehtedele, nagu pood ja toote kategooriad."
+
+#: inc/admin/welcome-screen/sections/getting-started.php:33
+msgid ""
+"The secondary navigation is better suited to lower traffic pages such as "
+"terms and conditions."
+msgstr "Teisejärguline menüü on parem madalama tähtsusega lehtedele, nagu näiteks tingimused."
+
+#: inc/admin/welcome-screen/sections/getting-started.php:34
+msgid ""
+"The handheld navigation gives you complete control over what menu items to "
+"serve to handheld devices."
+msgstr "Nutiseadme menüü annab sulle kontrolli mis on esindatud nutiseadme menüüs. "
+
+#: inc/admin/welcome-screen/sections/getting-started.php:36
+msgid "Configure menus"
+msgstr "Konfigureeri menüüd"
+
+#: inc/admin/welcome-screen/sections/getting-started.php:40
+msgid "Create a color scheme"
+msgstr "Loo värviskeem"
+
+#: inc/admin/welcome-screen/sections/getting-started.php:41
+msgid ""
+"Using the WordPress Customizer you can tweak Storefront's appearance to "
+"match your brand."
+msgstr "Kasutades WordPress Customizer -it saad sa sättida oma Storefronti välimuse vastavusse sinu brändiga. "
+
+#: inc/admin/welcome-screen/sections/getting-started.php:42
+msgid "Open the Customizer"
+msgstr "Ava Customizer"
+
+#: inc/admin/welcome-screen/sections/getting-started.php:46
+msgid "Add your logo"
+msgstr "Lisa oma logo"
+
+#: inc/admin/welcome-screen/sections/getting-started.php:47
+msgid ""
+"Install and activate %sJetpack%s to enable a custom logo option in the "
+"Customizer."
+msgstr "Installi ja aktiveeri %sJetpack%s, et lubada eri logo võimalus Customizer -is.  "
+
+#: inc/admin/welcome-screen/sections/getting-started.php:52
+msgid "Install Jetpack"
+msgstr "Installeeri Jetpack"
+
+#: inc/admin/welcome-screen/sections/getting-started.php:57
+msgid "Configure homepage template"
+msgstr "Seadista kodulehe sablooni"
+
+#: inc/admin/welcome-screen/sections/getting-started.php:58
+msgid ""
+"Storefront includes a homepage template that displays a selection of "
+"products from your store."
+msgstr "Storefront sisaldab kodulehe sablooni, mis esitleb valikut sinu toodetest."
+
+#: inc/admin/welcome-screen/sections/getting-started.php:59
+msgid ""
+"To set this up you will need to create a new page and assign the "
+"\"Homepage\" template to it. You can then set that as a static homepage in "
+"the %sReading%s settings."
+msgstr "Selle üles panekuks pead looma uue lehe ja määrama sellele \"Kodulehe\" sablooni. Seejärel saad selle panna staatiliseks koduleheks %sReading%s seadetest."
+
+#: inc/admin/welcome-screen/sections/getting-started.php:60
+msgid ""
+"Once set up you can toggle and re-order the homepage components using the "
+"%sHomepage Control%s plugin."
+msgstr "Kui sa oled kodulehe koostisosad üles seadnud, saad neid sisse-vaälja lülitada ja ümber organiseerida kasutades %sHomepage Control%s plugin."
+
+#: inc/admin/welcome-screen/sections/getting-started.php:65
+msgid "Install Homepage Control"
+msgstr "Instaleeri Homepage Control"
+
+#: inc/admin/welcome-screen/sections/getting-started.php:70
+msgid "View documentation"
+msgstr "Vaata dokumentatsiooni"
+
+#: inc/admin/welcome-screen/sections/getting-started.php:71
+msgid ""
+"You can read detailed information on Storefronts features and how to develop"
+" on top of it in the documentation."
+msgstr "Sa võid lugeda informatsiooni Storefronti omadustest ja kuidas seda edasi arendada dokumentatsioonist."
+
+#: inc/admin/welcome-screen/sections/getting-started.php:72
+msgid "View documentation &rarr;"
+msgstr "Vaata dokumentatsiooni &rarr;"
+
+#: inc/admin/welcome-screen/sections/getting-started.php:76
+msgid "Install free plugins"
+msgstr "Installeeri tasuta pluginaid"
+
+#: inc/admin/welcome-screen/sections/getting-started.php:77
+msgid ""
+"There are a number of free plugins available for Storefront on the "
+"wordpress.org plugin repository."
+msgstr "Wordpress.org plugini varamus on hulga tasuta pluginne Storefront -ile.  "
+
+#: inc/admin/welcome-screen/sections/getting-started.php:80
+msgid "Storefront Product Sharing"
+msgstr "Storefront Product Sharing"
+
+#: inc/admin/welcome-screen/sections/getting-started.php:83
+msgid "Storefront Product Pagination"
+msgstr "Storefront Product Pagination"
+
+#: inc/admin/welcome-screen/sections/getting-started.php:86
+msgid "Storefront Footer Bar"
+msgstr "Storefront Footer Bar"
+
+#: inc/admin/welcome-screen/sections/intro.php:14
+msgid ""
+"Awesome! You've decided to use Storefront to enrich your WooCommerce store "
+"design."
+msgstr "Suurepärane! Sa oled otsustanud kasutada Storefront, et rikastada oma WooCommerce poe disaini."
+
+#: inc/admin/welcome-screen/sections/intro.php:15
+msgid ""
+"Whether you're a store owner, WordPress developer, or both - we hope you "
+"enjoy Storefront's deep integration with WooCommerce core (including several"
+" popular WooCommerce extensions), plus the flexible design and extensible "
+"codebase that this theme provides."
+msgstr "Pole vahet kas oled poeomanik või WordPress arendaja, või mõlemat me loodame, et sa naudid Storefronti lõimumumist WooCommerce tuumaga (kaasa arvatud mitmed WooCommerce laiendused), plus paindliku disaini ja laialdast koodibaasi mida see teema pakub."
+
+#: inc/admin/welcome-screen/sections/who.php:10
+msgid ""
+"Looking for more Storefront goodies? Take a look at the extensions available"
+" at woothemes.com. %sGo shopping &rarr;%s"
+msgstr "Otsid Storefronti nänni? Vaata võimalikke laiendusi woothemes.com. %sGo shopping &rarr;%s"
+
+#: inc/admin/welcome-screen/sections/who.php:14
+msgid "The Woo Team"
+msgstr "Woo Meeskond"
+
+#: inc/admin/welcome-screen/sections/who.php:15
+msgid "Who are WooThemes?"
+msgstr "Kes on WooThemes?"
+
+#: inc/admin/welcome-screen/sections/who.php:16
+msgid ""
+"WooCommerce creators WooThemes is an international team of WordPress "
+"superstars building products for a passionate community of hundreds of "
+"thousands of users."
+msgstr "WooThemes, WooCommerce loojad on rahvusvaheline WordPress meeskond, kes loovad oma tooteid sadadele tuhandetele kirglikele kasutajatele. "
+
+#: inc/admin/welcome-screen/sections/who.php:17
+msgid "Visit WooThemes"
+msgstr "Külasta WooThemes'it"
+
+#: inc/admin/welcome-screen/sections/who.php:23
+msgid "WooCommerce logo"
+msgstr "WooCommerce logo"
+
+#: inc/admin/welcome-screen/sections/who.php:24
+msgid "What is WooCommerce?"
+msgstr "Mis on WooCommerce"
+
+#: inc/admin/welcome-screen/sections/who.php:25
+msgid ""
+"WooCommerce is the most popular WordPress eCommerce plugin. Packed full of "
+"intuitive features and surrounded by a thriving community - it's the perfect"
+" solution for building an online store with WordPress."
+msgstr "WooCommerce on populaarseim e-poe plugin WordPress-ile. Täidetud intuitiivsete lahendustega ja ümbritsetud jõudsalt kasvava kogukonnaga - see on ideaalne lahendus e-poe loomiseks WordPressi."
+
+#: inc/admin/welcome-screen/sections/who.php:26
+msgid "Download & Install WooCommerce"
+msgstr "Lae alla ja installeeri WooCommerce"
+
+#: inc/admin/welcome-screen/sections/who.php:27
+msgid "View WooCommerce Documentation"
+msgstr "Vaata WooCommerce dokumentatsiooni"
+
+#: inc/admin/welcome-screen/sections/who.php:33
+msgid "Can I contribute to Storefront?"
+msgstr "Kas ma saan panustada Storefronti?"
+
+#: inc/admin/welcome-screen/sections/who.php:34
+msgid "Can I Contribute?"
+msgstr "Kas ma saan panustada?"
+
+#: inc/admin/welcome-screen/sections/who.php:35
+msgid ""
+"Found a bug? Want to contribute a patch or create a new feature? GitHub is "
+"the place to go! Or would you like to translate Storefront in to your "
+"language? Get involved at Transifex."
+msgstr "Leidsid vea? Tahad kaasa aidata paigale või luua uus detail? GitHub on koht kuhu minna! Soovid tõlkida Storefront uute keelde? Ühine Transifex-iga."
+
+#: inc/admin/welcome-screen/sections/who.php:36
+msgid "Storefront at GitHub"
+msgstr "Storefront GitHub'is"
+
+#: inc/admin/welcome-screen/sections/who.php:36
+msgid "Storefront at Transifex"
+msgstr "Storefront Transifex'is"
+
+#: inc/admin/welcome-screen/sections/who.php:40
+msgid "Can't find a feature?"
+msgstr "Ei leia tunnusjoont?"
+
+#: inc/admin/welcome-screen/sections/who.php:41
+msgid ""
+"Please suggest and vote on ideas / feature requests at the %sStorefront "
+"Ideasboard%s. The most popular ideas will see prioritised development."
+msgstr "Palun soovita ja hääleta idee soovituste poolt %sStorefront Ideasboard%s. Kõige populaarsemate ideede arendust eelistatakse."
+
+#: inc/admin/welcome-screen/sections/who.php:43
+msgid "Are you enjoying Storefront?"
+msgstr "Kas sulle meeldib Storefront?"
+
+#: inc/admin/welcome-screen/sections/who.php:44
+msgid ""
+"Why not leave a review on %sWordPress.org%s? We'd really appreciate it! :-)"
+msgstr "Miks mitte jätta tagasisidet %sWordPress.org%s? Me hindaksime seda kõrgelt! :-)"
+
+#: inc/admin/welcome-screen/welcome-screen.php:46
+msgid ""
+"Thanks for choosing Storefront! You can read hints and tips on how get the "
+"most out of your new theme on the %swelcome screen%s."
+msgstr "Tänan, et valisid Storefront! Sa leiad näpunäiteid kuidas oma teemast parimat saada %swelcome screen%s."
+
+#: inc/admin/welcome-screen/welcome-screen.php:47
+msgid "Get started with Storefront"
+msgstr "Alusta Storefront -iga"
+
+#: inc/customizer/controls/more.php:16
+msgid ""
+"There's a range of Storefront extensions available to put additional power "
+"in your hands. Check out the %sStorefront%s page in your dashboard for more "
+"information."
+msgstr "Vaata oma töölaual %sStorefront%s lehekülge, seal on suur hulk Storefront laiendusi. "
+
+#: inc/customizer/controls/more.php:20
+msgid "Enjoying Storefront?"
+msgstr "Kas sulle meeldib Storefront?"
+
+#: inc/customizer/controls/more.php:23
+msgid ""
+"Why not leave us a review on %sWordPress.org%s?  We'd really appreciate it!"
+msgstr "Miks mitte jätta tagasisidet %sWordPress.org%s? Me hindaksime seda kõrgelt!"
+
+#: inc/customizer/controls.php:24
+msgid "Background"
+msgstr "Taust"
+
+#: inc/customizer/controls.php:28 inc/functions/setup.php:114
+msgid "Header"
+msgstr "Päis"
+
+#: inc/customizer/controls.php:45
+msgid "Typography"
+msgstr "Tüpograafia"
+
+#: inc/customizer/controls.php:59 inc/customizer/controls.php:211
+msgid "Heading color"
+msgstr "Päise värv"
+
+#: inc/customizer/controls.php:75 inc/customizer/controls.php:154
+#: inc/customizer/controls.php:227 inc/customizer/controls.php:283
+msgid "Text color"
+msgstr "Teksti värv"
+
+#: inc/customizer/controls.php:90
+msgid "Link / accent color"
+msgstr "Lingi/aktsendi värv"
+
+#: inc/customizer/controls.php:103
+msgid "Logo"
+msgstr "Logo"
+
+#: inc/customizer/controls.php:110
+msgid "Looking to add a logo? Install the %sJetpack%s plugin! %sRead more%s."
+msgstr "Soovid lisada logot? Installi %sJetpack%s pluginn!\n%sLoe veel%s."
+
+#: inc/customizer/controls.php:124
+msgid "Header background image"
+msgstr "Päise taustapilt"
+
+#: inc/customizer/controls.php:138 inc/customizer/controls.php:195
+#: inc/customizer/controls.php:268
+msgid "Background color"
+msgstr "Tausta värv"
+
+#: inc/customizer/controls.php:170 inc/customizer/controls.php:243
+msgid "Link color"
+msgstr "Lingi värv"
+
+#: inc/customizer/controls.php:180
+msgid "Footer"
+msgstr "Alaviide"
+
+#: inc/customizer/controls.php:182
+msgid "Customise the look & feel of your web site footer."
+msgstr "Muganda oma lehekülje jaluse välimust."
+
+#: inc/customizer/controls.php:254
+msgid "Buttons"
+msgstr "Nupud"
+
+#: inc/customizer/controls.php:256
+msgid "Customise the look & feel of your web site buttons."
+msgstr "Kohanda oma lehekülje nuppude välimust ja olemust."
+
+#: inc/customizer/controls.php:298
+msgid "Alternate button background color"
+msgstr "Alternatiivne nupu tausta värv"
+
+#: inc/customizer/controls.php:313
+msgid "Alternate button text color"
+msgstr "Alternatiivne nupu teksti värv"
+
+#: inc/customizer/controls.php:323
+msgid "Layout"
+msgstr "Paigutus"
+
+#: inc/customizer/controls.php:335
+msgid "General Layout"
+msgstr "Üldpaigutus"
+
+#: inc/customizer/controls.php:348
+msgid "More"
+msgstr "Veel"
+
+#: inc/customizer/controls.php:358
+msgid "Looking for more options?"
+msgstr "Otsid rohkem võimalusi?"
+
+#: inc/functions/setup.php:60
+msgid "Primary Menu"
+msgstr "Peamenüü"
+
+#: inc/functions/setup.php:61
+msgid "Secondary Menu"
+msgstr "Alam menüü"
+
+#: inc/functions/setup.php:62
+msgid "Handheld Menu"
+msgstr "Nutiseadme menüü"
+
+#: inc/functions/setup.php:104
+msgid "Sidebar"
+msgstr "Küljepaneel"
+
+#: inc/functions/setup.php:127
+msgid "Footer %d"
+msgstr "Alaviide %d "
+
+#: inc/functions/setup.php:129
+msgid "Widgetized Footer Region %d."
+msgstr "Jaluse regioon widgetitele %d."
+
+#: inc/structure/comments.php:40
+msgid "<cite class=\"fn\">%s</cite>"
+msgstr "<cite class=\"fn\">%s</cite>"
+
+#: inc/structure/comments.php:43
+msgid "Your comment is awaiting moderation."
+msgstr "Sinu kommentaar ootab moderaatorit."
+
+#: inc/structure/comments.php:59
+msgid "Edit"
+msgstr "Muuda"
+
+#: inc/structure/footer.php:60
+msgid "%1$s designed by %2$s."
+msgstr "%1$s disaininud %2$s."
+
+#: inc/structure/header.php:54
+msgid "Primary Navigation"
+msgstr "Peamine navigatsioon"
+
+#: inc/structure/header.php:55
+msgid "Navigation"
+msgstr "Navigatsioon"
+
+#: inc/structure/header.php:84
+msgid "Secondary Navigation"
+msgstr "Teisejärguline menüü"
+
+#: inc/structure/header.php:106
+msgid "Skip to navigation"
+msgstr "Navigatsioonivaatesse"
+
+#: inc/structure/header.php:107
+msgid "Skip to content"
+msgstr "Otse sisuni"
+
+#: inc/structure/page.php:36 inc/structure/post.php:51
+msgid "Pages:"
+msgstr "Leheküljed:"
+
+#: inc/structure/post.php:45
+msgid "Continue reading %s"
+msgstr "Jätka lugemist %s"
+
+#. translators: used between list items, there is a space after the comma
+#: inc/structure/post.php:72 inc/structure/post.php:85
+msgid ", "
+msgstr ", "
+
+#: inc/structure/post.php:77
+msgid "Categories: "
+msgstr "Kategooriad:"
+
+#: inc/structure/post.php:90
+msgid "Tags: "
+msgstr "Sildid:"
+
+#: inc/structure/post.php:99
+msgid "Leave a comment"
+msgstr "Kommenteeri"
+
+#: inc/structure/post.php:99
+msgid "1 Comment"
+msgstr "1 kommentaar"
+
+#: inc/structure/post.php:99
+msgid "% Comments"
+msgstr "% kommentaari"
+
+#: inc/structure/template-tags.php:65
+msgid "Recent Products"
+msgstr "Hiljuti lisatud"
+
+#: inc/structure/template-tags.php:103 inc/woocommerce/template-tags.php:144
+msgid "Featured Products"
+msgstr "Esiletõstetud tooted"
+
+#: inc/structure/template-tags.php:142
+msgid "Top Rated Products"
+msgstr "Parim kaup"
+
+#: inc/structure/template-tags.php:179
+msgid "On Sale"
+msgstr "Allahinnatud"
+
+#: inc/woocommerce/template-tags.php:18
+msgid "View your shopping cart"
+msgstr "Vaata oma ostukorvi"
+
+#: inc/woocommerce/template-tags.php:19
+msgid "%d item"
+msgid_plural "%d items"
+msgstr[0] "%d asi."
+msgstr[1] "%d asju."
+
+#: inc/woocommerce/template-tags.php:152
+msgid "On Sale Now"
+msgstr ""
+
+#: inc/woocommerce/template-tags.php:160
+msgid "New In Store"
+msgstr ""
+
+#: search.php:16
+msgid "Search Results for: %s"
+msgstr "Otsingu tulemused: %s"
+
+#. Theme Name of the plugin/theme
+msgid "Storefront"
+msgstr "Storefront"
+
+#. Theme URI of the plugin/theme
+msgid "http://www.woothemes.com/storefront"
+msgstr "http://www.woothemes.com/storefront"
+
+#. Description of the plugin/theme
+msgid ""
+"Storefront is the perfect theme for your next WooCommerce project. Designed "
+"and developed by WooThemes, it features a deep integration with our market "
+"leading WooCommerce plugin, several layout & color options to personalise "
+"your shop, multiple widget regions, a responsive design and much more. "
+"Developers will love it's lean and extensible codebase making it a joy to "
+"customise and extend. Looking for a WooCommerce theme? Look no further!"
+msgstr "Storefront on ideaalne teema sinu järgmise WooCommerce projekti jaoks. Disainitud ja arendatud WooThemes poolt, see sisaldab suurepärast lõimumist turuliidri WooCommerce pluginiga, erinevaid paigutusi ja värvi lahendusi personaliseerimaks sinu poodi, mitmeid vidina piirkondi, kuuletuvat disaini ja palju muud. Arendajad armastavad selle mugavat ja suurt koodibaasi seda on lust kohaldada ja laiendada. Otsid WooCommerce teemat? Sinu otsing on lõppenud!"
+
+#. Author of the plugin/theme
+msgid "WooThemes"
+msgstr "WooThemes"
+
+#. Author URI of the plugin/theme
+msgid "http://www.woothemes.com"
+msgstr "http://www.woothemes.com"
+
+#. Template Name of the plugin/theme
+msgid "Full width"
+msgstr "Täislaius"
+
+#. Template Name of the plugin/theme
+msgid "Homepage"
+msgstr "Koduleht"
+
+#: comments.php:26
+msgctxt "comments title"
+msgid "One thought on &ldquo;%2$s&rdquo;"
+msgid_plural "%1$s thoughts on &ldquo;%2$s&rdquo;"
+msgstr[0] "%1$s arvamused &ldquo;%2$s&rdquo;"
+msgstr[1] "%1$s arvamused &ldquo;%2$s&rdquo;"
+
+#: inc/structure/post.php:115
+msgctxt "Next post"
+msgid "Next"
+msgstr "Järgmine"
+
+#: inc/structure/post.php:116
+msgctxt "Previous post"
+msgid "Previous"
+msgstr "Eelmine"
+
+#: inc/structure/post.php:154
+msgctxt "post date"
+msgid "Posted on %s"
+msgstr "Postitatud %s"
+
+#: inc/structure/post.php:159
+msgctxt "post author"
+msgid "by %s"
+msgstr "kelle poolt %s"

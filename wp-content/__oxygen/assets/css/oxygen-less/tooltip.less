@@ -1,0 +1,17 @@
+//
+// Tooltips
+// --------------------------------------------------
+
+
+// Base class
+.tooltip {
+  z-index: 100000; 
+  &:extend(.to-uppercase);
+  .main-font-size-to-pct(@main-font-size);
+}
+
+// Wrapper for the tooltip content
+.tooltip-inner {
+  min-width: 130px;
+  padding: 10px;
+}

@@ -1,0 +1,1 @@
+<?php die(); ?>{"headers":{"Vary":"Vary: Cookie","Content-Type":"Content-Type: text\/html; charset=UTF-8","X-Pingback":"X-Pingback: http:\/\/www.scruplesdecor.com\/build\/xmlrpc.php","Last-Modified":"Last-Modified: Mon, 28 Sep 2015 10:59:30 GMT"},"uri":"scrupleskids.com\/?author=1","blog_id":1,"post":0,"key":"scrupleskids.com80\/?author=1"}

@@ -1,0 +1,200 @@
+/* Hide visibility from admin */
+.post-type-was .misc-pub-visibility#visibility {
+	display: none;
+}
+
+/* Meta box styling */
+.was-option label {
+	display: inline-block;
+	width: 150px;
+}
+.was-option input {
+	line-height: 19px;
+}
+.was-option .was-currency {
+	padding: 3px 10px;
+	font-size: 14px;
+	font-weight: 400;
+	line-height: 19px;
+	height: 19px;
+	color: #555;
+	text-align: center;
+	background-color: #EEE;
+	border: 1px solid #DDD;
+	border-right: none;
+	border-radius: 4px 0px 0px 4px;
+	margin: 1px 0px 1px 1px;
+}
+.was-option .was-currency + input {
+	margin-left: -4px;
+	line-height: 19px;
+	width: 161px;
+}
+.was_settings_meta_box .was-description {
+	float: none;
+	line-height: 19px;
+}
+
+.was_conditions_meta_box > p:first-child + div > .or-match {
+	display: none;
+}
+/*
+ * Condition group
+ */
+.condition-group {
+	margin-bottom: 30px;
+	background-color: #f5f5f5;
+	padding: 15px 20px 20px;
+	border: 1px solid #ddd;
+	-webkit-box-shadow: 0 1px 1px rgba( 0, 0, 0, .04);
+	box-shadow: 0 1px 1px rgba( 0, 0, 0, .04);
+}
+.was-condition-wrap {
+	margin: 10px 0px 5px;
+}
+.was-condition-wrap .was-condition {
+	width: 30%;
+}
+.was-condition-wrap .was-operator {
+	width: 12%;
+	min-width: 140px;
+}
+.was-condition-wrap .was-value {
+	width: 30%;
+}
+.was-condition-wrap input {
+	vertical-align: top;
+}
+
+#was_conditions .or-text + .or-text {
+	display: none !important;
+}
+
+/******************************
+ * Description
+ ******************************/
+
+.was-desc,
+.was_desc {
+	display: none;
+	position: absolute;
+	background: rgba( 0, 0, 0, .8 );
+	min-width: 25px;
+	max-width: 200px;
+	border-radius: 6px;
+	padding: 5px 10px;
+	color: white;
+	margin-top: 10px;
+	right: 40px;
+	text-align: center;
+}
+.was-desc:after,
+.was_desc:after {
+	border-top: 0px solid transparent;
+	border-right: 10px solid transparent;
+	border-left: 10px solid transparent;
+	border-bottom: 10px solid rgba( 0, 0, 0, .8 );
+	content: ' ';
+	position: absolute;
+	top: -10px;
+	right: 10px;
+	z-index: 999;
+}
+/* Description on the right side of element */
+.was-tip-right .was-desc {
+	right: initial;
+	margin-top: -5px;
+	margin-left: 15px;
+}
+.was-tip-right .was-desc:after {
+	border-top: 8px solid rgba(0, 0, 0, 0);
+	border-right: 10px solid rgba(0, 0, 0, 0.8);
+	border-left: 0px solid rgba(0, 0, 0, 0);
+	border-bottom: 8px solid rgba(0, 0, 0, 0);
+	top: 7px;
+	left: -10px;
+	right: initial;
+}
+.was-tip:hover ~ .was-desc {
+	display: inline-block !important;
+}
+/* end desc. right side */
+.was_tip:hover ~ .was_desc {
+	display: block !important;
+}
+.was-description {
+	width: 40px;
+	float: right;
+	line-height: 20px;
+}
+
+
+/*
+ * Loading icon
+ */
+
+/* Load icon condition row */
+.was-condition-wrap ~ .loading-icon {
+	display: block;
+}
+.loading-icon {
+	width: 30%;
+	clear: both;
+	display: inline-block;
+	text-align: center;
+	line-height: 110%;
+	margin: 0 1px;
+}
+
+.condition-delete {
+	display: none;
+	opacity: 0;
+	transition: opacity .3s ease-in-out;
+}
+.was-condition-wrap:hover .condition-delete {
+	display: inline-block;
+	opacity: 1;
+}
+
+
+/* WooCommerce Add icon */
+.add.button:before {
+	font-family: WooCommerce;
+	speak: none;
+	font-weight: 400;
+	font-variant: normal;
+	text-transform: none;
+	line-height: 1;
+	-webkit-font-smoothing: antialiased;
+	margin-right: 7px;
+	content: "\e007";
+}
+
+/************************
+ * Table / overview
+ ***********************/
+
+.was-table .sort {
+	padding: 0 4px;
+	cursor: move;
+	text-align: center;
+	vertical-align: middle;
+}
+.was-table .sort:before {
+	content: "\e032";
+	font-family: WooCommerce;
+	text-align: center;
+	line-height: 1;
+	color: #999;
+	display: block;
+	width: 100%;
+	float: left;
+	height: 100%;
+}
+
+#advanced_shipping_shipping_methods tr .row-actions {
+	visibility: hidden;
+}
+#advanced_shipping_shipping_methods tr:hover > td > .row-actions {
+	visibility: visible !important;
+}

@@ -1,0 +1,16 @@
+@charset "utf-8";
+/* CSS Document */
+
+.wcpis-has-gallery {
+    position: relative;
+}
+.wcpis-has-gallery .onsale {
+    z-index: 999999;
+}
+
+.wcpis-has-gallery .secondary-image {
+position: absolute;
+    top:0;
+    left:0;
+    opacity:0;
+}

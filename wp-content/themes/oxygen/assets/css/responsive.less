@@ -1,0 +1,154 @@
+@import "lesshat.less";
+@import "global-classes.less";
+@import "bs-less/variables.less";
+@import "bs-less/mixins.less";
+@import "oxygen-less/variables.less";
+
+@base-mp: @base-margin + @base-padding;
+
+.transall(@ms: 350ms, @props: all)
+{
+	.transition(@props @ms ease-in-out);
+}
+
+.clear()
+{
+	clear: both;
+}
+
+// Responsive Files
+@import "responsive/lg.less";
+@import "responsive/md.less";
+@import "responsive/sm.less";
+@import "responsive/xs.less";
+
+
+// Mega menu
+/*.oxygen-top-menu .top-menu-type-2 {
+	
+	#megaMenu.megaMenuContainer .megaMenu {
+		
+		.wpmega-link-title {
+			&:extend(.to-uppercase);
+			&:extend(.heading-font);
+			.transall;
+		}
+		
+		// First Level
+		.ss-nav-menu-item-depth-0 {
+			padding: 0;
+			margin: 0;
+			margin-right: @base-margin;
+			
+			> a {
+				position: relative;
+				padding: 15px @base-padding;
+				.main-font-size-to-pct(@main-font-size + 2);
+				.transall;
+							
+				&:before {
+					@dist: @base-padding;
+					
+					content: '';
+					display: block;
+					position: absolute;
+					left: @dist;
+					right: @dist;
+					bottom: 10px;
+					bottom: 6px;
+					height: 1px;
+					background: #aeaeae;
+					visibility: hidden;
+					.opacity(0);
+					.transall(180ms);
+				}
+				
+				&:after {
+					display: none;
+				}
+			}
+			
+			&.mega-with-sub {
+				
+				> a {
+				
+					&:before {
+						right: 27px;
+					}
+					
+					.wpmega-link-title {
+					
+						&:after {
+							display: inline-block;
+							font-family: 'fontello';
+							content: '\e873';
+							display: inline-block;
+							.main-font-size-to-pct(@main-font-size - .5);
+							margin-left: @base-padding;
+							color: @default-text-color;
+						}
+					}
+				}
+				
+				.wpmega-nonlink {
+					
+					> img {
+						margin: @base-padding;
+						
+						&.right-fill {
+							margin-top: -@base-padding;
+							margin-bottom: -@base-padding;
+							margin-right: -1px;
+						}
+					}
+				}
+			}
+			
+			// Li hover				
+			&:hover {
+				
+				> a {
+				
+					.wpmega-link-title {
+						color: @dark-text-color;
+					}
+					
+					&:before {
+						visibility: visible;
+						bottom: 10px;
+						.opacity(1);
+					}
+				}
+			}
+			
+			> .sub-menu {
+				margin-top: -1px;
+			}
+		}
+		
+		
+		// Sub Menu
+		.sub-menu {
+			background: @block-background;
+			.border-radius(0);
+			margin: 0;
+			padding: 0;
+			
+			> li.menu-item {
+				margin: 0;
+				padding: 0;
+				
+				> a {
+					padding: 5px @base-padding;
+					margin: 0;
+					.main-font-size-to-pct(@main-font-size - .01);
+					.transall;
+				}
+			}
+		}
+		
+		.ss-nav-menu-nolink > .sub-menu {
+			padding: @base-padding 0;
+		}
+	}
+}*/

@@ -1,0 +1,26 @@
+#of_container #of-nav li a,
+#of_container #of-nav ul li a:link,
+#of-nav ul li a:visited {
+	background: none;
+	padding-left: 10px !important;
+}
+
+#testimonial_featured_image {
+	width: 80px;
+}
+
+.testimonial_featured_image {
+	text-align: center;
+}
+
+.testimonial_featured_image img {
+	display: inline-block;
+	border-radius: 50%;
+	width: 48px !important;
+	height: auto !important;
+}
+
+.testimonial_featured_image small {
+	position: relative;
+	top: 10px;
+}

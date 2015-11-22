@@ -1,0 +1,51 @@
+// ! ########## Bigger Screen [1] ##########
+@media screen and (min-width: @screen-sm-max) and (max-width: @screen-md-max)
+{
+}
+
+
+// ! ########## Lower Width [3] ##########
+@media screen and (max-width: @screen-sm-max)
+{
+	.header-cart {
+		padding-left: 15px;
+		padding-right: 15px;
+		
+		.cart-items {
+			left: 10px;
+		}
+	}
+	
+	.cart-totals-title {
+		margin-top: @base-margin;
+	}
+}
+
+
+// ! ########## Smaller Screen [2] ##########
+@media screen and (min-width: @screen-sm) and (max-width: @screen-sm-max)
+{
+	.oxygen-top-menu > .wrapper > .main-menu-top > .main .main-menu-env .nav > li {
+		margin-right: @base-padding + 5;
+	}
+	
+	.oxygen-top-menu > .wrapper > .main-menu-top > .main .main-menu-env .nav > li > a {
+		padding-left: @base-padding/2;
+		padding-right: @base-padding/2;
+	}
+	
+	.oxygen-top-menu > .wrapper > .top-menu > .main .tl-header .sec-nav .sec-nav-menu > li {
+		padding-left: 3px;
+		padding-right: 3px;
+		
+	}
+	
+	.laborator-woocommerce .product-single .shop-single-left-sidebar .product-info-env,
+	.laborator-woocommerce .product-single .shop-single-left-sidebar .sidebar-env {
+		float: none;
+	}
+	
+	.laborator-woocommerce .sidebar-env {
+		margin-top: @base-padding;
+	}
+}

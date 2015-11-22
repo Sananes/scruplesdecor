@@ -1,0 +1,136 @@
+.wpb-content-layouts i.icon-lab-socialnetworks, 
+.wpb_content_element.wpb_laborator_socialnetworks > .wpb_element_wrapper {
+	background-image: url(images/icons-v2/social.png);
+}
+
+
+.wpb-content-layouts i.icon-lab-supercaption,
+.wpb_content_element.wpb_laborator_supercaption > .wpb_element_wrapper {
+	background-image: url(images/icons-v2/supercaption.png);
+}
+
+
+.wpb-content-layouts i.icon-lab-featurestabs,
+.wpb_content_element.wpb_laborator_featurestabs > .wpb_element_wrapper {
+	background-image: url(images/icons-v2/featured_tabs.png);
+}
+
+
+.wpb-content-layouts i.icon-lab-teammembers,
+.wpb_content_element.wpb_laborator_teammembers > .wpb_element_wrapper {
+	background-image: url(images/icons-v2/team_members.png);
+}
+
+
+.wpb-content-layouts i.icon-lab-clientscarousel,
+.wpb_content_element.wpb_laborator_clientscarousel > .wpb_element_wrapper {
+	background-image: url(images/icons-v2/client_carousel.png);
+}
+
+
+.wpb-content-layouts i.icon-lab-latestblogposts,
+.wpb_content_element.wpb_laborator_latestblogposts > .wpb_element_wrapper {
+	background-image: url(images/icons-v2/latest_blog.png);
+}
+
+
+.wpb-content-layouts i.icon-lab-latestportfolioitems,
+.wpb_content_element.wpb_laborator_latestportfolioitems > .wpb_element_wrapper {
+	background-image: url(images/icons-v2/latest_portfolio.png);
+}
+
+
+.wpb-content-layouts i.icon-lab-pricingtable,
+.wpb_content_element.wpb_laborator_pricingtable > .wpb_element_wrapper {
+	background-image: url(images/icons-v2/pricing_table.png);
+}
+
+
+.wpb-content-layouts i.icon-lab-testimonials2,
+.wpb_content_element.wpb_laborator_testimonials2 > .wpb_element_wrapper {
+	background-image: url(images/icons-v2/testimonial_reviews.png);
+}
+
+
+.wpb-content-layouts i.icon-lab-metroelement,
+.wpb_content_element.wpb_laborator_metroelement > .wpb_element_wrapper {
+	background-image: url(images/icons-v2/metro.png);
+}
+
+
+.wpb-content-layouts i.icon-lab-icontab,
+.wpb_content_element.wpb_laborator_icontab > .wpb_element_wrapper {
+	background-image: url(images/icons-v2/icon_tab.png);
+}
+
+
+.wpb-content-layouts i.icon-lab-wooproducts,
+.wpb_content_element.wpb_laborator_wooproducts > .wpb_element_wrapper {
+	background-image: url(images/icons-v2/woocommerce.png);
+}
+
+
+#fontello_font_list {
+	background: #FAFAFA;
+	border: 5px solid #F0F0F0;
+	margin-top: 10px;
+	max-height: 300px;
+	overflow: scroll;
+}
+
+#fontello_font_list .icon-entry {
+	display: block;
+	font-size: 26px;
+	font-size: 25.4687px;
+	line-height: 36px;
+	float: left;
+	padding: 5px;
+	border: 1px solid #F0F0F0;
+	border-left: 0;
+	border-top: 0;
+	transition: all 500ms ease-out;
+	cursor: pointer;
+}
+
+#fontello_font_list .icon-entry:hover, #fontello_font_list .icon-entry.current {
+	background-color: #44a8e1;
+	color: #FFF;
+}
+
+.fontello_icon_wpb_param_type_field {
+	position: relative;
+}
+
+.fontello_icon_wpb_param_type_field input {
+	padding-left: 65px !important;
+}
+
+.fontello_icon_wpb_param_type_field label {
+	width: 50px;
+	display: block;
+	position: absolute;
+	top: 0;
+	background: #000;
+	bottom: 0;
+	left: 0;
+	font-size: 25px;
+	line-height: 35px;
+	text-align: center;
+	color: #333;
+	background: transparent;
+	border-right: 1px solid #dfdfdf;
+	width: 50px;
+}
+
+
+.vc_element-icon.icon-lab-banner2,
+.vc_element-icon.icon-lab-banner,
+.vc_element-icon.icon-lab-featuretab,
+.vc_element-icon.icon-lab-products,
+.vc_element-icon.icon-lab-products-carousel,
+.vc_element-icon.icon-lab-lookbook-carousel,
+.vc_element-icon.icon-lab-blog-posts,
+.vc_element-icon.icon-lab-testimonials {
+	background-image: url(images/laborator.png) !important;
+	background-position: 0 0 !important;
+}

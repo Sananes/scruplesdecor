@@ -1,0 +1,33 @@
+.page-numbers {	.pagination;}ul {	&.pagination, &.page-numbers {		padding: 0px;		margin: 20px 0;		list-style: none;		display: block;		text-align: center;				&.page-numbers {			margin: 0;						li {								a, span {					margin: 0;				}								.dots, .dots:hover {					background: white;					color: @dark-text-color;				}								.current, .current:hover {					background: @active-text-color;					color: @block-background;				}			}		}				li {			padding: 0px;			margin: 0px 6px 0px 0px;			display: inline-block;			border: none;			line-height: 0px;						a, span {
+				font-size: 16px;
+				color: black;
+				background: white;
+				&:extend(.to-uppercase);
+				.transition(~"color 0.2s");
+				border: none;
+				
+				&.prev {
+					
+					span {
+						padding-right: 15px;
+						font-size: 16px;
+					}
+				}
+				
+				&.next {
+				
+					span {
+						padding-left: 15px;
+						font-size: 16px;
+					}
+				}
+				
+				span {
+					font-size: 16px;
+				}
+				
+				&:hover {
+					color: @active-text-color;
+					background: darken(white,2%);
+				}
+			}						&.dots span {				background: white;				color: @dark-text-color;			}						&.active {								a {					background: @active-text-color;					color: @block-background;				}								&:hover a {					background-color: @active-text-color;				}			}		}						&.pagination-left {			text-align: left;		}				&.pagination-right {			text-align: right;		}	}		}

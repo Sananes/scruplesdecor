@@ -1,0 +1,8 @@
+*** Galleria Changelog ***
+
+2015.08.12 - version 1.0.1
+ * Fix - Pagination active link background color.
+ * Fix - Site logo now aligns centrally.
+
+2015.06.03 - version 1.0.0
+ * Initial release.

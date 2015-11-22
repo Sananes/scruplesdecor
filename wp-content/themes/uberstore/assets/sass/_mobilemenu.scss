@@ -1,0 +1,160 @@
+@import "compass/css3";
+@import 'compass/css3/filter';
+@import "compass/css3/user-interface";
+
+$break-small: 767px;
+$break-medium: 940px;
+$break-large: 1290px;
+$transition: cubic-bezier(0.75, 0, 0.175, 1);
+$color1: #222; // black
+
+.cf {
+	&:before,
+	&:after {
+	    content: " ";
+	    display: table;
+	}
+	&:after {
+	    clear: both;
+	}
+}
+/* Sidr */
+#sidr-main {
+	display: none;
+	position: fixed;
+	top: 0;
+	height: 100%;
+	z-index: 999999;
+	padding: 20px;
+	left: -300px;
+	width: 300px;
+	background: #ebebeb;
+	overflow-x: hidden;
+	overflow-y: auto;
+	
+	#sidr-close {
+		display: block;
+		float: right;
+		background: transparent url("../img/popup-close.png") center center no-repeat;
+		background-size: 15px 15px;
+		width: 15px;
+		height: 15px;
+		margin-bottom: 20px;
+		
+		-webkit-tap-highlight-color: rgba(0,0,0,0);
+	}
+}
+
+/* Mobile Menu */
+.mobile-menu {
+	list-style: none;
+	margin: 0;
+	padding: 0;
+	
+	li {
+		margin-bottom: 2px;
+		span {
+			float: right;
+			margin-right: 0;
+			font-weight: 400;
+			font-size: 12px;
+			line-height: 20px;
+			
+		}
+		a {
+			display: block;
+			padding: 12px 20px;
+			font-size: 12px;
+			font-weight: 900;
+			text-transform: uppercase;
+			background: #e2e2e2;
+			color: $color1;
+			@include single-transition(all, 0.1s, ease-in-out);
+			&.active {
+				color: #fff;
+				background: $color1;
+				span {
+					color: #fff;
+				}
+			}
+			
+		}
+	}
+	
+	.sub-menu {
+		display: none;
+		list-style: none;
+		margin: 0;
+		padding: 0;
+		background: $color1;
+		border-top: 1px solid #303030;
+		li {
+			margin-bottom: 1px;
+			a {
+				margin: 0 20px;
+				padding-left: 10px;
+				font-size: 11px;
+				font-weight: 400;
+				color: #b8b8b8;
+				background: none;
+				position: relative;
+				border-bottom: 1px solid #303030;
+				span {
+					float: none;
+					margin-right: 5px;
+					font-size: 14px;
+					
+					&.toggle {
+						float: right;
+						margin-right: 0;
+						font-size: 12px;
+						position: absolute;
+						top: 14px;
+						right: 0;
+					}
+				}
+			}
+			&:last-child a {
+				border-bottom: 0
+			}
+		}
+	}
+}
+/* Mobile Menu Toggle */
+#mobile-toggle {
+	display: block;
+	width: 38px;
+	height: 34px;
+	float: right;
+	border: 1px solid #333;
+	background:  #202020;
+	text-align: center;
+	line-height: 34px;
+	i {
+		color: #fff;
+		display: block;
+		cursor: pointer;
+		font-size: 16px;
+		line-height: 34px;
+		text-align: center;
+	}
+	&:hover {
+		background: #333;
+	}
+}
+#mobile-cart {
+	display: block;
+	width: 38px;
+	height: 34px;
+	float: right;
+	margin-left: 5px;
+	border: 1px solid #333;
+	background: #202020 url('../img/mobile-cart.png') center center no-repeat;
+	text-align: center;
+	line-height: 34px;
+	background-size: 14px 16px;
+	
+	&:hover {
+		background-color: #333;
+	}
+}

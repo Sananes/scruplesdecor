@@ -1,0 +1,377 @@
+.lab_wpb_lookbook_carousel {
+	
+	.products-loading {
+		display: none;
+		position: relative;
+		text-align: center;
+		padding: @base-margin;
+		border: 1px solid darken(@background-color, 5%);
+		padding-bottom: @base-margin + 20;
+	}
+	
+	&.products-hidden {
+		padding: 0 @base-margin;
+		
+		.products-loading {
+			display: block;
+				
+			.loader {
+			
+				span {
+					@bg: #777;
+					
+					margin-top: 5px;
+					
+					&:nth-child(2) {
+						background: @bg;
+					}
+					
+					&:nth-child(3){
+						background: fade(@bg, 80%);
+						z-index:100;
+					}
+					
+					&:nth-child(4){
+						background: fade(@bg, 60%);
+						.animation(~"kanan 1.2s infinite linear");
+					}
+				}	
+			}
+		}
+		
+		.lookbook-carousel {
+			display: none;
+		}
+	}
+	
+	&.normal-width {
+		margin-left: -15px;
+		margin-right: -15px;
+		
+		.lookbook-header {
+			margin-left: 15px;
+			margin-right: 15px;
+		}
+	}
+	
+	.lookbook-header {
+		margin-bottom: @base-margin + 5;
+		.clearfix;
+		
+		h2 {
+			&:extend(.to-uppercase);
+			float: left;
+			margin-top: 25px;
+		}
+		
+		.pager {
+			float: right;
+		
+			.owl-buttons {
+				.clearfix;
+				
+				.owl-prev,
+				.owl-next {
+					.size(42px);
+					display: block;
+					text-indent: -9999px;
+					float: left;
+					margin-left: @base-margin/2;
+					background: #FFF url(../images/lookbook-nav.png) no-repeat right center;
+					cursor: pointer;
+					.opacity(1);
+					.transall;
+					
+					&:hover {
+					}
+					
+					&.owl-prev {
+						background-image: url(../images/lookbook-nav.png);
+						background-position: left center;
+					}
+				}
+			}
+		}
+	}
+		
+		
+	.lookbook-carousel {
+		display: block;
+		position: relative;
+		
+		.product-item {
+			@padd: 15px;
+			@trans_duration: 200ms;
+			
+			padding: 0px @padd;
+			position: relative;
+			text-align: center;
+			
+			img {
+				position: relative;
+				.img-responsive;
+				display: inline-block;
+				z-index: 5;
+			}
+			
+			.is-hidden(@delay: 0ms) {
+				.opacity(0);
+				position: relative;
+				top: -30px;
+				.transition-delay(@delay);
+			}
+			
+			.is-visible(@delay: 0ms){
+				.opacity(1);
+				top: 0px;
+				.transition-delay(@delay);
+			}
+			
+			&.is-loading {
+				
+				.lookbook-hover-info .loading-disabled {
+					visibility: visible;
+					.opacity(1);
+				}
+				
+				.price-and-add-to-cart .add-to-cart-btn{
+					
+					.opacity(.4) !important;
+				}
+			}
+			
+			.lookbook-hover-info {
+				position: absolute;
+				display: block;
+				left: @padd; right: @padd;
+				top: 0; bottom: 0;
+				z-index: 10;
+				text-align: left;
+				.transall(200ms);
+				
+				.loading-disabled {
+					position: absolute;
+					left: 0;
+					right: 0;
+					top: 50%;
+					margin-top: -30px;
+					visibility: hidden;
+					.opacity(0);
+					.transall;
+					
+					strong {
+						color: #FFF;
+					}
+				}
+				
+				.lookbook-inner-content {
+					padding: @base-margin;
+					position: absolute;
+					bottom: 0;
+					left: 0;
+					right: 0;
+					color: #FFF;
+					
+					
+					a {
+						color: #FFF;
+					}
+					
+					.posted_in {
+						display: block;
+						.main-font-size-to-pct(@main-font-size);
+						&:extend(.to-uppercase);
+						.transall(@trans_duration);
+						.is-hidden(0ms);
+						
+						a {
+							.opacity(.7);
+							.transition(~"opacity 300ms ease-in-out");
+							
+							&:hover {
+								.opacity(1);
+							}
+						}
+					}
+					
+					.title {
+						.main-font-size-to-pct(@main-font-size + 18);
+						&:extend(.to-uppercase);
+						display: block;
+						&:extend(.heading-font);
+						margin-left: -@base-margin;
+						margin-right: -@base-margin;
+						padding: @base-padding/2 @base-margin;
+						//.transition(~"background 400ms, color 450ms");
+						.transall(@trans_duration);
+						.is-hidden(75ms);
+						
+						&:hover {
+							.opacity(.6);
+						}
+					}
+					
+					.divider {
+						display: block;
+						height: 3px;
+						background: #FFF;
+						margin: @base-margin - 5 0;
+						.transall(@trans_duration);
+						.is-hidden(150ms);
+					}
+					
+					.price-and-add-to-cart {
+						.clearfix;
+						.transall(@trans_duration);
+						.is-hidden(225ms);
+						
+						.price {
+							float: left;
+							display: block;
+							
+							> .amount {
+								.main-font-size-to-pct(@main-font-size + 7);
+								&:extend(.heading-font);
+							}
+							
+							ins {
+								text-decoration: none;
+								.main-font-size-to-pct(@main-font-size + 7);
+								&:extend(.heading-font);
+							}
+							
+							del {
+								float: right;
+								.main-font-size-to-pct(@main-font-size + 2);
+								.opacity(.5);
+								margin-left: @base-padding/2;
+								margin-top: 4px;
+							}
+						}
+						
+						.add-to-cart-btn {
+							float: right;
+							display: block;
+							&:extend(.to-uppercase);
+							.main-font-size-to-pct(@main-font-size + 3);
+							margin-top: 2px;
+							
+							i {
+								position: relative;
+								top: 1px;
+								display: inline-block;
+								margin-left: 4px;
+								.transall;
+							}
+															
+							&:hover i {
+								.transform(~"rotateY(-180deg)");
+								.perspective(1000px);
+							}
+						}
+					}
+				}
+			}
+			
+			&:hover {
+				
+				.lookbook-hover-info {
+					background: fade(@active-text-color, 75%);
+					
+					.lookbook-inner-content {
+						
+						.posted_in {
+							.is-visible(225ms);
+						}
+						
+						.title {
+							.is-visible(150ms);
+						}
+						
+						.divider {
+							.is-visible(75ms);
+						}
+						
+						.price-and-add-to-cart {
+							.is-visible(0ms);
+						}
+					}
+				}
+			}
+			
+			&.cols-6, &.cols-5 {
+				
+				.lookbook-hover-info .lookbook-inner-content .title {
+					.main-font-size-to-pct(@main-font-size + 5);
+				}
+				
+				.lookbook-hover-info .lookbook-inner-content .price {
+					.main-font-size-to-pct(@main-font-size + 2);
+					
+					.amount {
+						.main-font-size-to-pct(@main-font-size + 2);
+					}
+					
+					del {
+						margin-top: 7px;
+						.main-font-size-to-pct(@main-font-size);
+						
+						.amount {
+							.main-font-size-to-pct(@main-font-size);
+						}
+					}
+				}
+				
+				.lookbook-hover-info .lookbook-inner-content .divider {
+					margin: 8px 0;
+				}
+				
+				.lookbook-hover-info .lookbook-inner-content .add-to-cart-btn {
+					color: transparent;
+					font-size: 0px;
+					
+					i {
+						color: #FFF;
+						.main-font-size-to-pct(@main-font-size + 2);
+					}
+				}
+			}
+		}
+		
+		
+		.owl-controls {
+				
+			.owl-pagination {
+				padding: 0;
+				margin: 0;
+				margin-top: @base-margin + 5;
+				
+				.owl-page {
+					padding: 0;
+					margin: 0 6px;
+					
+					span {
+						background-color: fade(#000, 20%);
+						display: inline-block;
+						padding: 0;
+						margin: 0;
+						.transall;
+						.size(10px);
+						.border-radius(5px);
+					}
+					
+					&:hover span {
+						background-color: fade(#000, 25%);
+					}
+					
+					&.active {
+						
+						span {
+							background-color: @active-text-color;
+						}
+					}
+				}
+			}
+		}
+	}
+}

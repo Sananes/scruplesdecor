@@ -1,0 +1,54 @@
+@import "compass/css3";
+@import 'compass/css3/filter';
+@import "compass/css3/user-interface";
+
+.animation {
+	@include opacity(0);
+	@include translate3d(0,0,0);
+	@include perspective(1000);
+}
+.fade-in.animate {
+	@include animation(fade-in 0.7s 1 cubic-bezier(0.75, 0, 0.175, 1));
+}
+.right-to-left.animate {
+	@include animation(right-to-left 0.7s 1 cubic-bezier(0.75, 0, 0.175, 1));
+}
+.left-to-right.animate {
+	@include animation(left-to-right 0.7s 1 cubic-bezier(0.75, 0, 0.175, 1));
+}
+.bottom-to-top.animate {
+	@include animation(bottom-to-top 0.7s 1 cubic-bezier(0.75, 0, 0.175, 1));
+}
+.top-to-bottom.animate {
+	@include animation(top-to-bottom 0.7s 1 cubic-bezier(0.75, 0, 0.175, 1));
+}
+.scale.animate {
+	@include animation(scale 0.7s 1 cubic-bezier(0.75, 0, 0.175, 1));
+}
+.animate {
+	@include opacity(1);
+}
+@include keyframes(fade-in) {
+    0%   {@include opacity(0);}
+    100% {@include opacity(1);}
+}
+@include keyframes(right-to-left) {
+    0%   {@include opacity(0); @include translateX(50px);}
+    100% {@include opacity(1); @include translateX(0px);}
+}
+@include keyframes(left-to-right) {
+    0%   {@include opacity(0); @include translateX(-50px);}
+    100% {@include opacity(1); @include translateX(0px);}
+}
+@include keyframes(bottom-to-top) {
+    0%   {@include opacity(0); @include translateY(50px);}
+    100% {@include opacity(1); @include translateY(0px);}
+}
+@include keyframes(top-to-bottom) {
+    0%   {@include opacity(0); @include translateY(-50px);}
+    100% {@include opacity(1); @include translateY(0px);}
+}
+@include keyframes(scale) {
+    0%   {@include opacity(0); @include scale(0);}
+    100% {@include opacity(1); @include scale(1);}
+}

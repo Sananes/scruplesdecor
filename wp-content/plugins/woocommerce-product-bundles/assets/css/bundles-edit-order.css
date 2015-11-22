@@ -1,0 +1,15 @@
+#woocommerce-order-items tr.bundled_item * {
+	font-size: 12px;
+}
+
+#woocommerce-order-items tr.bundled_item td.name {
+	padding-left: 30px;
+}
+
+table.wp-list-table .column-order_items table.order_items tr.bundled_item * {
+	font-size: 12px;
+}
+
+table.wp-list-table .column-order_items table.order_items tr.bundled_item td.name {
+	padding-left: 15px;
+}

@@ -1,0 +1,118 @@
+.bundled_product_summary {
+	padding-left: 115px;
+	padding-bottom: 20px;
+}
+
+.bundled_product_summary.thumbnail_hidden {
+	padding-left: 15px;
+}
+
+.bundled_product_summary .bundled_product_optional_checkbox span {
+	font-weight: inherit;
+}
+
+.bundled_product_summary .bundled_product_optional_checkbox {
+	margin-bottom: 0px;
+	padding-bottom: 10px;
+	display: inline-block;
+}
+
+.bundled_product_summary .bundled_item_wrap {
+	min-height: 2px;
+}
+
+.bundled_product_summary .bundled_product_images {
+	float: left;
+	margin-left: -100px;
+}
+
+.bundled_product_summary .bundled_product_images img {
+	width: 80px;
+	height: auto;
+}
+
+.bundled_product_summary .bundled_product_images a {
+	margin-right: 20px;
+	margin-top:	4px;
+	display: block;
+}
+
+.bundled_product_summary .details {
+	float: left;
+}
+
+.bundled_product_summary p.stock, .bundled_product_summary .price {
+	margin-bottom: 20px;
+}
+
+.bundled_product_summary .quantity_hidden {
+	display: none !important;
+}
+
+.woocommerce div.product .bundle_data div.quantity, .woocommerce-page div.product .bundle_data div.quantity, .woocommerce #content div.product .bundle_data div.quantity, .woocommerce-page #content div.product .bundle_data div.quantity {
+	float: left;
+	margin: 0 4px 0 0;
+}
+
+.bundle_form {
+	margin-bottom: 2em;
+}
+
+.bundle_data .bundle_button button.disabled {
+	opacity: 0.5;
+}
+
+.bundled_product_summary .variations .reset_variations:before, .bundled_item_wrap:after, .bundled_product_summary:after, .bundle_data:after {
+	display: block;
+	height: 0;
+	content: ".";
+	visibility: hidden;
+	clear: both;
+}
+
+.bundled_product_summary .bundled_item_button input {
+	margin-bottom: 1em;
+}
+
+.float_qty_input .details {
+	padding-right: 100px;
+	position: relative;
+}
+
+.float_qty_input .bundled_item_button {
+	position: absolute;
+	right: 5px;
+	top: 0px;
+}
+
+/* extensions & core css compatibility */
+
+.component .bundled_product_summary .bundled_product_images img {
+	width: 50px;
+}
+
+.component .bundled_product_summary {
+	padding-left: 70px;
+}
+
+.component .bundled_product_summary.thumbnail_hidden {
+	padding-left: 0px;
+}
+
+.component .bundled_product_summary .bundled_product_images {
+	margin-left: -70px;
+}
+
+.bundle_form .product-addon {
+	margin: 0;
+	padding: 10px 0;
+}
+
+.single-product div.product .bundled_product_summary .variations_button {
+	padding-top: 0px;
+	border-top: none;
+}
+
+.woocommerce div.product .bundled_product .cart .variations, .woocommerce div.product .bundled_product .cart .variations tr, .woocommerce div.product .bundled_product .cart .variations td {
+	border: 0;
+}

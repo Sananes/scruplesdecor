@@ -1,0 +1,65 @@
+== Changelog ==
+
+= 1.0.7 - 16/08/2015 =
+
+- [Improvement] - 'hide other shipping when free is available' option now shows ALL free shipping rates.
+
+
+= 1.0.6 - 27/07/2015 =
+
+- [Fix] - Not being able to change post status - introduced in 1.0.5
+
+
+= 1.0.5 - 18/07/2015 =
+
+- [Improvement] - Load improvement on shipping method pages
+- [Improvement] - Only load style + javascript on required pages
+- [Improvement] - Add escaping
+- [Improvement] - Allow either comma or dot for subtotal, weight conditions
+- [Improvement] - Allow comma separated city value
+- [Improvement] - Soft deprecated WAS() function, use WooCommerce_Advanced_Shipping() instead
+- [Add] - Shipping cost decimal validation
+- [Fix] - Add jQuery UI Sortable dependency
+
+
+= 1.0.4 - 12/03/2015 =
+
+- [Add] - Shipping method sorting :-)
+- [Fix] - typo in filter name 'was_condition_value_field_type_'
+- [Fix] - Always showed '(kg)' instead of actual weight unit (text only, actual calculations are ok)
+- [Improvement] - Shipping title field width was shorter than other in WC 2.3+ (visual improvement)
+
+
+= 1.0.3 - 23/01/2015 =
+
+* Language - Add Portugese translation
+* Improvement - Overview table background color
+* Improvement - Use shipping class of variation to calculate shipping cost
+* Fix - Notice on overview table when no shipping cost are filled in
+* Add - Filter for the matching values 'was_match_condition_values'
+
+
+= 1.0.2 - 13/12/2014 =
+
+* Fix - Weight mismatches in rare cases
+* Fix - Row actions for shipping methods visibility
+* Improvement - Use WC() singleton instead of $woocommerce global
+* Improvement - Different loading stucture of files and classes for more control
+
+
+= 1.0.1 - 11/10/2014 =
+
+* Add - 'Contains shipping class' condition
+* Fix - Error on WC check
+* Fix - Load textdomains
+* Fix - Tax calculation
+* Improvement - Remove globals, use WAS() function now
+* Improvement - Even better code comments/quality
+* Improvement - Add filter 'was_shipping_rate'
+* Improvement - Add filter 'was_calculate_shipping_costs'
+* Improvement - Remove duplicate 'or' when removing condition group
+
+
+= 1.0.0 - 23/08/2014 =
+
+* First version

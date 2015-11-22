@@ -1,0 +1,436 @@
+msgid ""
+msgstr ""
+"Project-Id-Version: WooCommerce Advanced Shipping\n"
+"POT-Creation-Date: 2015-01-18 13:46+0100\n"
+"PO-Revision-Date: 2015-01-18 21:33+0100\n"
+"Last-Translator: Luis Martins <luis.martins@multiweb.pt>\n"
+"Language-Team: Luís Martins <kimipt@gmail.com>\n"
+"Language: pt_PT\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"X-Generator: Poedit 1.7.1\n"
+"X-Poedit-KeywordsList: _;gettext;gettext_noop;__;_e\n"
+"X-Poedit-Basepath: .\n"
+"Plural-Forms: nplurals=2; plural=(n != 1);\n"
+"X-Poedit-SearchPath-0: ..\n"
+
+#: ../includes/admin/settings/conditions/condition-conditions.php:18
+msgid "Cart"
+msgstr "Carrinho"
+
+#: ../includes/admin/settings/conditions/condition-conditions.php:19
+msgid "Subtotal"
+msgstr "Subtotal"
+
+#: ../includes/admin/settings/conditions/condition-conditions.php:20
+msgid "Subtotal ex. taxes"
+msgstr "Subtotal excluindo taxas"
+
+#: ../includes/admin/settings/conditions/condition-conditions.php:21
+msgid "Tax"
+msgstr "Imposto"
+
+#: ../includes/admin/settings/conditions/condition-conditions.php:22
+msgid "Quantity"
+msgstr "Quantidade"
+
+#: ../includes/admin/settings/conditions/condition-conditions.php:23
+msgid "Contains product"
+msgstr "Contém produtos"
+
+#: ../includes/admin/settings/conditions/condition-conditions.php:24
+msgid "Coupon"
+msgstr "Cupão"
+
+#: ../includes/admin/settings/conditions/condition-conditions.php:25
+msgid "Weight"
+msgstr "Peso"
+
+#: ../includes/admin/settings/conditions/condition-conditions.php:26
+msgid "Contains shipping class"
+msgstr "Contém classe de envio"
+
+#: ../includes/admin/settings/conditions/condition-conditions.php:28
+msgid "User Details"
+msgstr "Detalhes do Utilizador"
+
+#: ../includes/admin/settings/conditions/condition-conditions.php:29
+msgid "Zipcode"
+msgstr "Código Postal"
+
+#: ../includes/admin/settings/conditions/condition-conditions.php:30
+msgid "City"
+msgstr "Cidade"
+
+#: ../includes/admin/settings/conditions/condition-conditions.php:31
+msgid "State"
+msgstr "Distrito"
+
+#: ../includes/admin/settings/conditions/condition-conditions.php:32
+msgid "Country"
+msgstr "País"
+
+#: ../includes/admin/settings/conditions/condition-conditions.php:33
+msgid "User role"
+msgstr "Função do Utilizador"
+
+#: ../includes/admin/settings/conditions/condition-conditions.php:35
+msgid "Product"
+msgstr "Produto"
+
+#: ../includes/admin/settings/conditions/condition-conditions.php:36
+msgid "Width"
+msgstr "Comprimento"
+
+#: ../includes/admin/settings/conditions/condition-conditions.php:37
+msgid "Height"
+msgstr "Altura"
+
+#: ../includes/admin/settings/conditions/condition-conditions.php:38
+msgid "Length"
+msgstr "Profundidade"
+
+#: ../includes/admin/settings/conditions/condition-conditions.php:39
+msgid "Stock"
+msgstr "Stock"
+
+#: ../includes/admin/settings/conditions/condition-conditions.php:40
+msgid "Stock status"
+msgstr "Estado de Stock"
+
+#: ../includes/admin/settings/conditions/condition-conditions.php:41
+msgid "Category"
+msgstr "Categoria"
+
+#: ../includes/admin/settings/conditions/condition-descriptions.php:16
+msgid "States must be installed in WC"
+msgstr "Estados precisam de ser instalados no WooCommerce"
+
+#: ../includes/admin/settings/conditions/condition-descriptions.php:17
+msgid "Weight calculated on all the cart contents"
+msgstr "Peso calculado para todo o conteúdo do carrinho"
+
+#: ../includes/admin/settings/conditions/condition-descriptions.php:18
+msgid "Compared to lengthiest product in cart"
+msgstr "Comparado com o produto mais comprido no carrinho"
+
+#: ../includes/admin/settings/conditions/condition-descriptions.php:19
+msgid "Compared to widest product in cart"
+msgstr "Comparado com o produto mais largo no carrinho"
+
+#: ../includes/admin/settings/conditions/condition-descriptions.php:20
+msgid "Compared to highest product in cart"
+msgstr "Comparado com o produto mais alto no carrinho"
+
+#: ../includes/admin/settings/conditions/condition-descriptions.php:21
+msgid "All products in cart must match stock status"
+msgstr "Todos os produtos no carrinho devem coincidir com no estado de Stock"
+
+#: ../includes/admin/settings/conditions/condition-descriptions.php:22
+msgid "All products in cart must match category"
+msgstr "Todos os produtos no carrinho devem coincidir na categoria"
+
+#: ../includes/admin/settings/conditions/condition-descriptions.php:23
+msgid "Cart must contain one of this product, other products are allowed"
+msgstr ""
+"O carrinho deve conter pelo menos uma unidade deste produto, outros produtos "
+"permitidos"
+
+#: ../includes/admin/settings/conditions/condition-descriptions.php:24
+msgid "Cart must contain at least one product with the selected shipping class"
+msgstr ""
+"Carrinho deve conter pelo menos um produto com a classe de expedição "
+"seleccionada"
+
+#: ../includes/admin/settings/conditions/condition-operators.php:18
+msgid "Equal to"
+msgstr "Igual a"
+
+#: ../includes/admin/settings/conditions/condition-operators.php:19
+msgid "Not equal to"
+msgstr "Diferente de"
+
+#: ../includes/admin/settings/conditions/condition-operators.php:20
+msgid "Greater or equal to"
+msgstr "Igual ou superior a"
+
+#: ../includes/admin/settings/conditions/condition-operators.php:21
+msgid "Less or equal to "
+msgstr "Igual ou inferior a"
+
+#: ../includes/admin/settings/conditions/condition-values.php:74
+msgid "No shipping class"
+msgstr "Sem classe de envio"
+
+#: ../includes/admin/settings/conditions/condition-values.php:167
+msgid "In stock"
+msgstr "Em Stock"
+
+#: ../includes/admin/settings/conditions/condition-values.php:168
+msgid "Out of stock"
+msgstr "Fora de Stock"
+
+#: ../includes/admin/settings/conditions/condition-values.php:229
+msgid "There are no options available"
+msgstr "Não existem opções disponíveis"
+
+#: ../includes/admin/settings/meta-box-conditions.php:22
+msgid "Match all of the following rules to allow this shipping method:"
+msgstr ""
+"Coincidir todas as seguintes regras para permitir este método de envio:"
+
+#: ../includes/admin/settings/meta-box-conditions.php:30
+#: ../includes/class-was-ajax.php:64
+msgid "Or match all of the following rules to allow this shipping method:"
+msgstr ""
+"Ou faça coincidir todas as seguintes regras para permitir este método de "
+"envio:"
+
+#: ../includes/admin/settings/meta-box-conditions.php:40
+#: ../includes/class-was-ajax.php:70
+msgid "Or"
+msgstr "Ou"
+
+#: ../includes/admin/settings/meta-box-conditions.php:54
+msgid "Add 'Or' group"
+msgstr "Adicionar grupo 'Ou'"
+
+#: ../includes/admin/settings/meta-box-settings.php:23
+#: ../includes/admin/views/conditions-table.php:27
+msgid "Shipping title"
+msgstr "Título do tipo de Expedição"
+
+#: ../includes/admin/settings/meta-box-settings.php:25
+msgid "e.g. Shipping"
+msgstr "ex. CTT Correio Azul"
+
+#: ../includes/admin/settings/meta-box-settings.php:32
+#: ../includes/admin/settings/meta-box-settings.php:35
+msgid "Shipping cost"
+msgstr "Custo de Envio"
+
+#: ../includes/admin/settings/meta-box-settings.php:42
+msgid "Handling fee"
+msgstr "Taxas de manuseamento"
+
+#: ../includes/admin/settings/meta-box-settings.php:45
+#: ../includes/admin/settings/meta-box-settings.php:60
+msgid "Fixed or percentage"
+msgstr "Fixo ou percentual"
+
+#: ../includes/admin/settings/meta-box-settings.php:49
+msgid ""
+"A fixed amount (e.g. 5) or percentage (e.g. 5%) which will always be charged."
+msgstr "Um valor fixo (ex. 5€) ou percentual (ex. 5%) que será sempre cobrado."
+
+#: ../includes/admin/settings/meta-box-settings.php:57
+msgid "Cost per item"
+msgstr "Custo por artigo"
+
+#: ../includes/admin/settings/meta-box-settings.php:64
+msgid ""
+"Add a fee for each item that is in the cart. <br/>Quantity is also calculated"
+msgstr ""
+"Adicionar taxa por cada artigo no carrinho. <br/> Quantidade também é "
+"calculada"
+
+#: ../includes/admin/settings/meta-box-settings.php:72
+msgid "Cost per weight (kg)"
+msgstr "Custo por peso (Kg)"
+
+#: ../includes/admin/settings/meta-box-settings.php:75
+msgid "0"
+msgstr "0"
+
+#: ../includes/admin/settings/meta-box-settings.php:79
+msgid "Add a fee multiplied by the amount of kg"
+msgstr "Adicionar taxa multiplicada pelo total de Kg"
+
+#: ../includes/admin/settings/meta-box-settings.php:87
+msgid "Tax status"
+msgstr "Estado de Imposto"
+
+#: ../includes/admin/settings/meta-box-settings.php:89
+msgid "Taxable"
+msgstr "Taxável"
+
+#: ../includes/admin/settings/meta-box-settings.php:90
+msgid "Not taxable"
+msgstr "Não Taxável"
+
+#: ../includes/admin/views/conditions-table.php:18
+msgid "Method conditions"
+msgstr "Condições do Método"
+
+#: ../includes/admin/views/conditions-table.php:26
+msgid "Title"
+msgstr "Título"
+
+#: ../includes/admin/views/conditions-table.php:28
+msgid "Shipping price"
+msgstr "Custo de envio"
+
+#: ../includes/admin/views/conditions-table.php:29
+msgid "Condition groups"
+msgstr "Grupos de Condições"
+
+#: ../includes/admin/views/conditions-table.php:42
+#: ../includes/admin/views/conditions-table.php:48
+msgid "Edit Method"
+msgstr "Editar Método"
+
+#: ../includes/admin/views/conditions-table.php:43
+msgid "Untitled"
+msgstr "Sem título"
+
+#: ../includes/admin/views/conditions-table.php:49
+msgid "Edit"
+msgstr "Editar"
+
+#: ../includes/admin/views/conditions-table.php:54
+msgid "Delete Method"
+msgstr "Apagar Método"
+
+#: ../includes/admin/views/conditions-table.php:55
+msgid "Delete"
+msgstr "Apagar"
+
+#: ../includes/admin/views/conditions-table.php:60
+#: ../includes/class-was-method.php:316
+msgid "Shipping"
+msgstr "Expedição"
+
+#: ../includes/admin/views/conditions-table.php:71
+msgid "There are no Advanced Shipping conditions. Yet..."
+msgstr "Não existem método de Expedição Avançada ainda."
+
+#: ../includes/admin/views/conditions-table.php:81
+msgid "Add Advanced Shipping Method"
+msgstr "Adicionar método de Expedição Avançada"
+
+#: ../includes/class-was-method.php:19
+msgid "Shipping <small>(may change at user configuration)</small>"
+msgstr ""
+"Expedição Avançada <small>(poderá ser alterado mediante configuração do "
+"utilizador)</small>"
+
+#: ../includes/class-was-method.php:20
+msgid "Advanced Shipping"
+msgstr "Expedição Avançada"
+
+#: ../includes/class-was-method.php:21
+msgid "Configure WooCommerce Advanced Shipping"
+msgstr "Configure o WooCommerce Expedição Avançada"
+
+#: ../includes/class-was-method.php:146
+msgid "Enable/Disable"
+msgstr "Activar/Desactivar"
+
+#: ../includes/class-was-method.php:148
+msgid "Enable Advanced Shipping"
+msgstr "Activar Expedição Avançada"
+
+#: ../includes/class-was-method.php:152
+msgid "Hide other shipping"
+msgstr "Ocultar outros métodos de expedição"
+
+#: ../includes/class-was-method.php:154
+msgid "Hide other shipping methods when free shipping is available"
+msgstr ""
+"Ocultar outros métodos de expedição quando envio gratuito está disponível"
+
+#: ../includes/class-was-post-type.php:52
+msgid "Advanced Shipping methods"
+msgstr "Métodos de Expedição Avançada"
+
+#: ../includes/class-was-post-type.php:53
+msgid "Advanced Shipping method"
+msgstr "Método de Expedição Avançada"
+
+#: ../includes/class-was-post-type.php:54
+msgid "Add New"
+msgstr "Adicionar Novo"
+
+#: ../includes/class-was-post-type.php:55
+msgid "Add New Advanced Shipping method"
+msgstr "Adicionar novo método de Expedição Avançada"
+
+#: ../includes/class-was-post-type.php:56
+msgid "Edit Advanced Shipping method"
+msgstr "Editar método de Expedição Avançada"
+
+#: ../includes/class-was-post-type.php:57
+msgid "New Advanced Shipping method"
+msgstr "Novo método de Expedição Avançada"
+
+#: ../includes/class-was-post-type.php:58
+msgid "View Advanced Shipping method"
+msgstr "Ver método de Expedição Avançada"
+
+#: ../includes/class-was-post-type.php:59
+msgid "Search Advanced Shipping methods"
+msgstr "Pesquisar métodos de Expedição Avançada"
+
+#: ../includes/class-was-post-type.php:60
+msgid "No Advanced Shipping methods"
+msgstr "Não existem métodos de Expedição Avançada"
+
+#: ../includes/class-was-post-type.php:61
+msgid "No Advanced Shipping methods found in Trash"
+msgstr "Não foram encontrados método de Expedição Avançada no lixo"
+
+#: ../includes/class-was-post-type.php:98
+#: ../includes/class-was-post-type.php:101
+msgid "Advanced shipping method updated."
+msgstr "Método de Expedição Avançada actualizado"
+
+#: ../includes/class-was-post-type.php:99
+msgid "Custom field updated."
+msgstr "Campo customizado actualizado."
+
+#: ../includes/class-was-post-type.php:100
+msgid "Custom field deleted."
+msgstr "Campo customizado eliminado."
+
+#: ../includes/class-was-post-type.php:103
+#, php-format
+msgid "Advanced shipping method restored to revision from %s"
+msgstr "Método de envio restaurado para a revisão de %s"
+
+#: ../includes/class-was-post-type.php:105
+msgid "Advanced shipping method published."
+msgstr "Método de expedição publicado."
+
+#: ../includes/class-was-post-type.php:106
+msgid "Advanced shipping method saved."
+msgstr "Método de expedição guardado."
+
+#: ../includes/class-was-post-type.php:107
+msgid "Advanced shipping method submitted."
+msgstr "Método de expedição submetido."
+
+#: ../includes/class-was-post-type.php:109
+#, php-format
+msgid "Advanced shipping method scheduled for: <strong>%1$s</strong>."
+msgstr "Método de expedição agendado para <strong>%1$s</strong>."
+
+#: ../includes/class-was-post-type.php:110
+msgid "M j, Y @ G:i"
+msgstr "M j, Y @ G:i"
+
+#: ../includes/class-was-post-type.php:112
+msgid "Advanced shipping method draft updated."
+msgstr "Rascunho de método de expedição actualizado."
+
+#: ../includes/class-was-post-type.php:116
+msgid "Return to overview."
+msgstr "Voltar à visão geral."
+
+#: ../includes/class-was-post-type.php:137
+msgid "Advanced Shipping conditions"
+msgstr "Condições de Expedição"
+
+#: ../includes/class-was-post-type.php:138
+msgid "Shipping settings"
+msgstr "Configurações de Expedição"

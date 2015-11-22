@@ -1,0 +1,13 @@
+{
+	"require": {
+		"geoip2/geoip2": "~2.0",
+		"yahnis-elsts/plugin-update-checker": "dev-master",
+		"nategood/httpful": "*"
+  },
+	"require-dev": {
+		"mockery/mockery": "*"
+  },
+	"autoload" : {
+		"classmap": ["lib/classes/"]
+	}
+}

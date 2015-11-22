@@ -1,0 +1,7 @@
+== Changelog ==
+= 1.0 =
+Plugin Name: WooCommerce Products Image swapper
+
+*  Stable 1.0 Initial Release.
+
+*  Released at 31-December-2013

@@ -1,0 +1,28 @@
+*** Storefront WooCommerce Customiser Changelog ***
+
+2015.02.04 - version 1.3.0
+* New - Added several options to be used in conjunction with Composite Products extension. (Requires version 3.0+).
+
+2015.01.27 - version 1.2.2
+* Tweak - Hide the 'More' section in the Customizer.
+
+2015.01.07 - version 1.2.1
+* Dev - Adopted new Storefront grid system.
+
+2014.12.09 - version 1.2.0
+* New - Toggle product ordering / result count display.
+* Tweak - Some setting labels.
+
+2014.11.26 - version 1.1.2
+* Fix - Error on activation.
+
+2014.11.25 - version 1.1.1
+* Fix - Now works with child themes.
+
+2014.11.24 - version 1.1.0
+* New - Toggle product meta on details page.
+* Fix - Sale flash display toggle on product archives.
+* Localisation - Added .pot file.
+
+2014.09.09 - version 1.0.0
+* Initial release

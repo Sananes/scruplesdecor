@@ -1,0 +1,366 @@
+msgid ""
+msgstr ""
+"Project-Id-Version: Drop Shadow Boxes\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2013-04-10 09:35+0100\n"
+"PO-Revision-Date: 2013-04-10 09:35+0100\n"
+"Last-Translator: Steven Henty <stevehenty@gmail.com>\n"
+"Language-Team: \n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"X-Poedit-KeywordsList: _e;__\n"
+"X-Poedit-Basepath: .\n"
+"X-Generator: Poedit 1.5.5\n"
+"X-Poedit-SearchPath-0: .\n"
+
+#: dropshadowboxes.php:241
+msgid "Add Drop-Shadow Box"
+msgstr "Añadir una caja con sombras"
+
+#: dropshadowboxes.php:257
+msgid "Add Drop Shadow Box"
+msgstr "Añadir una caja con sombras"
+
+#: dropshadowboxes.php:257
+msgid "Add Box"
+msgstr ""
+
+#: dropshadowboxes.php:362
+msgid "Insert a Drop-Shadow Box"
+msgstr "Insertar una caja con sombras"
+
+#: dropshadowboxes.php:364
+msgid "Select the options below for your drop-shadow box."
+msgstr ""
+"Seleccionar las opciones de abajo para personalizar tu caja con sombras"
+
+#: dropshadowboxes.php:367 widget.php:132
+msgid "Effect:"
+msgstr "Efecto:"
+
+#: dropshadowboxes.php:369 widget.php:134
+msgid "Lifted (Both)"
+msgstr "Alzada (dos)"
+
+#: dropshadowboxes.php:370 widget.php:135
+msgid "Lifted (Left)"
+msgstr "Alzada (izquierda)"
+
+#: dropshadowboxes.php:371 widget.php:136
+msgid "Lifted (Right)"
+msgstr "Alzada (derecha)"
+
+#: dropshadowboxes.php:373 widget.php:138
+msgid "Curled"
+msgstr "Enrrollado"
+
+#: dropshadowboxes.php:374 widget.php:139
+msgid "Perspective (Left)"
+msgstr "Con perpectiva (izquierda)"
+
+#: dropshadowboxes.php:375 widget.php:140
+msgid "Perspective (Right)"
+msgstr "Con perpectiva (derecha)"
+
+#: dropshadowboxes.php:376 widget.php:141
+msgid "Raised"
+msgstr "Levantada"
+
+#: dropshadowboxes.php:377 widget.php:142
+msgid "Vertical Curve (Left)"
+msgstr "Curva vertical (Izquierda)"
+
+#: dropshadowboxes.php:378 widget.php:143
+msgid "Vertical Curve (Both)"
+msgstr "Curva vertical (Dos)"
+
+#: dropshadowboxes.php:379 widget.php:144
+msgid "Horizontal Curve (Bottom)"
+msgstr "Curva horizontal (Abajo)"
+
+#: dropshadowboxes.php:380 widget.php:145
+msgid "Horizontal Curve (Both)"
+msgstr "Curva horizontal (Dos)"
+
+#: dropshadowboxes.php:383 widget.php:181
+msgid "Background:"
+msgstr ""
+
+#: dropshadowboxes.php:387 widget.php:149
+msgid "Alignment:"
+msgstr "Alineación"
+
+#: dropshadowboxes.php:389 widget.php:151
+msgid "None"
+msgstr "Ninguna"
+
+#: dropshadowboxes.php:390 widget.php:152
+msgid "Left"
+msgstr "Izquierda"
+
+#: dropshadowboxes.php:391 widget.php:153
+msgid "Right"
+msgstr "Derecha"
+
+#: dropshadowboxes.php:392 widget.php:154
+msgid "Center"
+msgstr "Centro"
+
+#: dropshadowboxes.php:402 widget.php:166
+#, fuzzy
+msgid "Height:"
+msgstr "Derecha"
+
+#: dropshadowboxes.php:405 widget.php:158
+msgid "Width:"
+msgstr "Anchura:"
+
+#: dropshadowboxes.php:408 widget.php:161 widget.php:168 widget.php:173
+msgid "pixels"
+msgstr "pixeles"
+
+#: dropshadowboxes.php:409 widget.php:162
+msgid "%"
+msgstr "%"
+
+#: dropshadowboxes.php:412
+#, fuzzy
+msgid "Border (pixels):"
+msgstr "Anchura del borde:"
+
+#: dropshadowboxes.php:418 widget.php:191
+msgid "Rounded corners"
+msgstr "Esquinas redondeadas"
+
+#: dropshadowboxes.php:419 widget.php:192
+msgid "Inside shadow"
+msgstr "Sombra interior"
+
+#: dropshadowboxes.php:420 widget.php:193
+msgid "Outside shadow"
+msgstr "Sombra exterior"
+
+#: dropshadowboxes.php:425 widget.php:98
+msgid "Enter your content here."
+msgstr "Introducir contenido aquí."
+
+#: dropshadowboxes.php:429
+msgid "Refresh Preview"
+msgstr "Actualizar vista previa"
+
+#: dropshadowboxes.php:430
+msgid "Insert Box"
+msgstr "Insertar caja"
+
+#: dropshadowboxes.php:431
+msgid "Cancel"
+msgstr "Cancelar"
+
+#: dropshadowboxes.php:434
+msgid "Preview"
+msgstr "Vista previa"
+
+#: widget.php:16
+msgid "Drop Shadow Box Widget"
+msgstr "Caja con sombra"
+
+#: widget.php:86
+msgid "Title"
+msgstr "Título"
+
+#: widget.php:128
+msgid "Title:"
+msgstr "Título:"
+
+#: widget.php:172
+msgid "Border:"
+msgstr "Borde:"
+
+#~ msgid "Border color:"
+#~ msgstr "Color del borde:"
+
+#~ msgid "Gray"
+#~ msgstr "Gris"
+
+#~ msgid "Red"
+#~ msgstr "Rojo"
+
+#~ msgid "Blue"
+#~ msgstr "Azúl"
+
+#~ msgid "Green"
+#~ msgstr "Verde"
+
+#~ msgid "Black"
+#~ msgstr "Negro"
+
+#~ msgid "White"
+#~ msgstr "Blanco"
+
+#~ msgid "Username"
+#~ msgstr "Usuario"
+
+#~ msgid "Password"
+#~ msgstr "Contraseña"
+
+#~ msgid "Remember Me"
+#~ msgstr "Recordarme"
+
+#~ msgid "Log In"
+#~ msgstr "Acceder"
+
+#~ msgid "No previous transactions."
+#~ msgstr "No existen transacciones todavía."
+
+#~ msgid ""
+#~ "Please <a href=%1$s/wp-login.php?redirect_to=%2$s>log in</a> to see your "
+#~ "previous transactions."
+#~ msgstr ""
+#~ "Por favor, <a href=%1$s/wp-login.php?redirect_to=%2$s>entrar aquí</a> "
+#~ "para ver tus transacciones anteriores."
+
+#~ msgid "Sorry, you don't have enough credits."
+#~ msgstr "No tiene crédito suficiente."
+
+#~ msgid "Submitted"
+#~ msgstr "Enviado"
+
+#~ msgid "Error while trying to connect to the server"
+#~ msgstr "Error conectando al servidor"
+
+#~ msgid ""
+#~ "Sorry, there was an error while formatting your document. Please get in "
+#~ "touch with support."
+#~ msgstr "Error convirtiendo su documento."
+
+#~ msgid "Sorry, there appears to be a problem."
+#~ msgstr "El servidor ha tardado demasiado en responder"
+
+#~ msgid "Select File..."
+#~ msgstr "Seleccionar..."
+
+#~ msgid "Download"
+#~ msgstr "Descargar"
+
+#~ msgid "Downloading..."
+#~ msgstr "Descargando..."
+
+#~ msgid "Queued"
+#~ msgstr "En la cola"
+
+#~ msgid "Processing"
+#~ msgstr "Procesando"
+
+#~ msgid "Finishing"
+#~ msgstr "Terminando"
+
+#~ msgid "Complete"
+#~ msgstr "Terminado"
+
+#~ msgid "Please wait - analysing document..."
+#~ msgstr "Por favor espere, analizando documento..."
+
+#~ msgid "Please wait - processing image file..."
+#~ msgstr "Por favor espere, procesando fichero de imagen..."
+
+#~ msgid "Please log in here"
+#~ msgstr "Por favor, entrar aquí"
+
+#~ msgid "Thank you for your purchase."
+#~ msgstr "Muchas gracias por tu compra."
+
+#~ msgid "Credits available:"
+#~ msgstr "Créditos disponibles"
+
+#~ msgid "Loading..."
+#~ msgstr "Cargando..."
+
+#~ msgid "Upload a Word file"
+#~ msgstr "Subir un documento"
+
+#~ msgid "Select your Word document"
+#~ msgstr "Seleccionar un documento Word"
+
+#~ msgid "Document Analysis"
+#~ msgstr "Análisis del documento"
+
+#~ msgid "Upload your cover"
+#~ msgstr "Subir la cubierta"
+
+#~ msgid ""
+#~ "Select your jpeg file. If you don't upload a cover a temporary "
+#~ "placeholder cover will be generated automatically for you. Important: "
+#~ "don't include the cover inside the Word document - upload it here."
+#~ msgstr ""
+#~ "Seleccionar un fichero jpg. Si una imagen no se sube aquí,  se generará "
+#~ "una cubierta temporal automaticamente. No se debe incluir la cubierta "
+#~ "dentro del documento Word."
+
+#~ msgid "(5MB max size)"
+#~ msgstr "(5MB máximo)"
+
+#~ msgid "Options"
+#~ msgstr "Opciones"
+
+#~ msgid "Maximum 125 characters"
+#~ msgstr "Máximo de 125 carácteres"
+
+#~ msgid "Please specify a title"
+#~ msgstr "El titulo es obligatorio"
+
+#~ msgid "Author"
+#~ msgstr "Autor"
+
+#~ msgid "Please specify an author"
+#~ msgstr "El Autor es obligatorio"
+
+#~ msgid "Advanced Options"
+#~ msgstr "Opciones Avanzadas"
+
+#~ msgid "Add/Replace TOC"
+#~ msgstr "Añadir/reemplazar tabla de contenidos"
+
+#~ msgid "Remove tabs"
+#~ msgstr "Eliminar las tabluaciones"
+
+#~ msgid "Remove line breaks"
+#~ msgstr "Eliminar los saltos de línea"
+
+#~ msgid "Remove blank lines"
+#~ msgstr "Eliminar las líneas vacias"
+
+#~ msgid "Try to improve bullet points"
+#~ msgstr "Intentar mejorar las viñetas"
+
+#~ msgid "Generate"
+#~ msgstr "Generar"
+
+#~ msgid "Please wait... Latest status:"
+#~ msgstr "Espere por favor... Último estado:"
+
+#~ msgid "Formatting Report"
+#~ msgstr "Informe de formateo"
+
+#~ msgid "Delete all files from the server immediately"
+#~ msgstr "Eliminar los ficheros del servidor inmediatamente"
+
+#~ msgid "Next steps"
+#~ msgstr "Próximos pasos"
+
+#~ msgid ""
+#~ "View your .mobi file in the <a href=\"http://www.amazon.com/gp/feature."
+#~ "html/?docId=1000765261\">Kindle Previewer</a>"
+#~ msgstr ""
+#~ "Visualizar el fichero .mobi con la <a href=\"http://www.amazon.com/gp/"
+#~ "feature.html/?docId=1000765261\">Kindle Previewer</a>"
+
+#~ msgid "Make changes to your Word file and submit again"
+#~ msgstr "Modificar el documento y volver a subir"
+
+#~ msgid ""
+#~ "Happy with the result? Submit it to <a href=\"http://kdp.amazon.com"
+#~ "\">Kindle Desktop Publishing</a>!"
+#~ msgstr ""
+#~ "¿Contento con el resultado? ¡Eviarlo a <a href=\"http://kdp.amazon.com"
+#~ "\">Kindle Desktop Publishing</a>!"

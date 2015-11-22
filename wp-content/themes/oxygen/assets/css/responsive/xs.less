@@ -1,0 +1,47 @@
+// ! ########## Lower Width [2] ##########
+@media screen and (max-width: @screen-xs-max)
+{
+	
+	.clear-xs {
+		.clear;
+	}
+	
+	.search-results-header .row .search-box .search-submit {
+		float: right;
+		width: 20%;
+	}
+	
+	.search-results-header .row .search-box input {
+		float: none;
+		width: 80%;
+	}
+	
+	.hide-xs {
+		display: none !important;
+	}
+	
+	.cart-env .cart-item-row .col .item-name .rating,
+	.cart-env .cart-item-row .col .item-name .variation {
+		display: none;
+	}
+	
+	.cart-env .cart-item-row .col.col-thumb-name .remove {
+		.scale(.8);
+	}
+	
+	.cart-env .cart-item-row .col.col-subtotal, 
+	.cart-env .cart-item-row .col.col-total {
+		font-size: @main-font-size + 1;
+		width: 20%;
+	}
+	
+	.cart-env .cart-item-row .col .quantity input.qty {
+		width: 50px;
+	}
+}
+
+
+// ! ########## Smaller Screen [1] ##########
+@media screen and (min-width: @screen-xs) and (max-width: @screen-xs-max)
+{
+}

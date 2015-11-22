@@ -1,0 +1,331 @@
+.commission-rates,
+.my-commissions,
+.payment-details {
+	display: none;
+
+	.commission-thumbnail {
+
+		br {
+			display: none;
+		}
+	}
+
+	.table {
+		margin-bottom: 50px !important;
+
+		tr {
+
+			td, th {
+				vertical-align: middle;
+			}
+		}
+	}
+
+	.myaccount-tab & {
+		display: block;
+	}
+}
+
+.laborator-woocommerce {
+
+	.myaccount-env {
+
+		.col-md-12 {
+
+			> h2 {
+				background: #fff;
+				margin: 0;
+				padding: @base-margin @base-margin+10;
+				margin-top: @base-margin;
+
+				+ p {
+					background: #fff;
+					padding: @base-margin @base-margin+10;
+					padding-top: 0;
+					margin-bottom: @base-margin;
+				}
+			}
+		}
+
+		.spread-2 {
+			margin-bottom: 0;
+		}
+
+		.myaccount-tabs {
+			.list-unstyled;
+			margin: 0;
+			margin-right: 15px;
+
+			> li {
+				border-bottom: 1px solid lighten(@border-default, 5%);
+
+				a {
+					&:extend(.to-uppercase);
+					color: @default-text-color;
+					display: block;
+					padding: @base-padding @base-padding;
+					.transall;
+
+					span {
+						.opacity(.5);
+						display: inline-block;
+						margin-left: @base-padding/2;
+					}
+				}
+
+				&.active {
+
+					> a {
+						color: @dark-text-color;
+					}
+				}
+
+				&:hover {
+
+					> a {
+						background-color: fade(#fafafa, 50%);
+						color: @dark-text-color;
+					}
+				}
+
+				&:last-child {
+					border-bottom: 0;
+				}
+			}
+		}
+
+		.my_account_orders {
+			width: 100%;
+			position: relative;
+			margin-top: -15px;
+
+			th, td {
+				.main-font-size-to-pct(@main-font-size + 3);
+				&:extend(.to-uppercase);
+				padding: @base-padding 0;
+				&:extend(.heading-font);
+			}
+
+
+			thead {
+
+				th {
+					border-bottom: 2px solid @background-color;
+					padding: @base-padding+5 0;
+					padding-bottom: @base-margin;
+
+					&.order-actions {
+					}
+				}
+			}
+
+			tbody {
+
+				> tr {
+
+					td {
+						border-bottom: 1px solid @background-color;
+						.main-font-size-to-pct(@main-font-size + 2);
+
+						&.order-total {
+							.main-font-size-to-pct(@main-font-size - 1);
+							color: #999;
+
+							.amount {
+								display: block;
+								.main-font-size-to-pct(@main-font-size + 3);
+								color: @default-text-color;
+							}
+						}
+
+						&.order-status {
+							color: #888;
+						}
+					}
+
+					&:last-child {
+
+						td {
+							border-bottom: 0;
+						}
+					}
+				}
+			}
+
+			.order-number a {
+				color: @active-text-color;
+				font-size: 30px;
+				.transall;
+
+				&:hover {
+					color: @default-text-color;
+				}
+			}
+
+			.order-number br {
+				display: none;
+			}
+		}
+
+		.myaccount-tab {
+			margin-left: 15px;
+			display: none;
+
+			&.current {
+				display: block;
+			}
+		}
+
+		.tab-sep-container {
+			position: relative;
+			min-height: 200px;
+
+			.tab-separator {
+				position: absolute;
+				left: 0;
+				top: -30px;
+				bottom: -30px;
+				width: 1px;
+				background: @background-color;
+			}
+		}
+
+		.addresses {
+			.clearfix;
+
+			.address {
+				float: left;
+				background: #FAFAFA;
+				width: 40%;
+				margin-right: @base-margin;
+				margin-bottom: @base-margin;
+				margin-top: @base-padding;
+
+				.title {
+					background: @background-color;
+					padding: @base-padding @base-padding+5;
+					margin: 0;
+					.clearfix;
+
+					h5 {
+						padding-top: @base-padding/2 - 1;
+					}
+
+					.btn {
+						float: right;
+						.main-font-size-to-pct(@main-font-size - 1);
+						padding: 2px @base-padding;
+						//margin-top: @base-padding/2 + 2;
+						&:extend(.to-uppercase);
+					}
+				}
+
+				address {
+					padding: @base-padding @base-padding+5;
+					margin: 0;
+				}
+			}
+		}
+
+		.digital-downloads {
+
+			> li {
+				background: #FAFAFA;
+				padding: @base-padding/1.5 @base-padding;
+				border-bottom: 2px solid #FFF;
+				.transall;
+				.clearfix;
+
+				&:hover {
+					background: darken(#FAFAFA, 1%);
+				}
+
+				&:last-child {
+					border-bottom: 0;
+				}
+
+				.count {
+					float: right;
+					color: #999;
+					.main-font-size-to-pct(@main-font-size - 1);
+				}
+			}
+		}
+	}
+
+}
+
+/*#myaccount {
+	color: @default-text-color;
+
+	h4 {
+		color: black;
+	}
+}
+
+.block_title {
+
+	&.recent-orders {
+			margin-bottom: 0px ;
+	}
+}
+
+.side-navigation {
+
+	ul {
+		margin: 0px;
+		padding: 0px;
+		list-style: none;
+
+		li {
+
+			a {
+				line-height: 20px;
+				display: block;
+				padding: 10px 0px;
+				border-bottom: 2px solid #eeeeee;
+				&:extend(.to-uppercase);
+				color: @default-text-color;
+
+				&:hover,&.active {
+					color: black;
+				}
+			}
+		}
+	}
+}
+
+.navigation-content {
+	border-left: 1px solid #eee;
+	padding-top: 30px;
+
+	.table {
+
+		th {
+			&:extend(.to-uppercase);
+			padding: 20px 20px 20px 0;
+				&:last-child {
+					text-align: center;
+				}
+		}
+
+		td {
+			&:extend(.to-uppercase);
+			padding: 20px 20px 20px 0;
+
+			&:last-child {
+				text-align: center;
+			}
+
+			h2, .order_amount {
+				color: @active-text-color;
+			}
+
+			.date {
+				text-transform: none;
+			}
+
+		}
+	}
+
+}*/

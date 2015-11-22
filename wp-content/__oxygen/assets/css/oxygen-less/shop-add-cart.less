@@ -1,0 +1,238 @@
+.shop_add_cart {
+	background: url(../images/shop_add_cart_bg.png) repeat;
+	position: absolute;
+	width: 100%;
+	z-index: 5;
+	left: 0;
+	right: 0;
+		
+	.shop_add_cart_part {
+		position: relative;
+		background: #FFF;
+		width: 80%;
+		margin: 5% auto 10% auto;
+		left: inherit;
+		padding: 0px;
+		
+		.product_slider {
+			border: none;
+		}
+
+		.controls {
+			z-index: 100;	
+
+			.next-item {
+				position: absolute;
+				right: -80px;
+				top: 200px;
+				background-size: 22px 48px;
+				background-image: url(../images/popup_next@2x.png);
+				background-repeat: no-repeat;
+				height: 48px;
+				width: 22px;
+				
+				&:hover {
+					opacity: 0.8;
+				}
+			}
+	
+			.prev-item {
+				position: absolute;
+				left: -80px;
+				top: 200px;
+				background-size: 22px 48px;
+				background-image: url(../images/popup_prev@2x.png);
+				background-repeat: no-repeat;
+				height: 48px;
+				width: 22px;
+				
+				&:hover {
+					opacity: 0.8;
+				}
+			}
+		}
+
+		.col_1 {
+			background: #f9f9f9;	
+			
+				.sale_tag {
+					height: 75px;
+					margin-left: -5px;
+					margin-top: 9px;
+					z-index: 10;
+					
+					.ribbon {
+						position: absolute;
+						text-align: center;
+						background: @active-text-color;
+						.transform(~"rotate(-90deg)");
+						padding: 5px 20px;
+						
+						h1 {
+							font-size: 22px;
+							color: #fff;
+							margin: 0px;
+							padding: 5px 10px;
+						}
+						
+						&:after {
+							content: '';
+							position: absolute;
+							display: block;
+							bottom: -1em;
+							/*border: 1.5em solid #ffffff;*/
+							z-index: -1;
+						}
+						
+						& strong.ribbon-content:after {
+							border-color: #ac1a20 transparent transparent transparent;
+							position: absolute;
+							display: block;
+							border-style: solid;
+							bottom: -8px;
+							content: '';
+						}
+						
+						& strong.ribbon-content:after {
+							right: 0;
+							border-width: 8px 20px 0 0;
+						}
+					}
+				}
+				
+				.product_slider {
+					width: 100%;
+					text-align: center;
+					margin-top: -40px;
+					padding-bottom: 20px;
+					
+					img {
+						border: none;
+					}
+				}
+		}
+					
+		.col_2 {
+			padding: 20px 40px 20px 0;
+			background: #FFF;
+			
+			.close-slide {
+				position: absolute;
+				right: 0;
+				top: -42px;
+				background-size: 22px;
+				background-image: url(../images/popup_close@2x.png);
+				background-repeat: no-repeat;
+				height: 22px;
+				width: 22px;
+				
+				&:hover {
+					opacity: 0.8;
+				}
+			}
+			
+			h1 {
+				font-size: 27px;
+				padding-top: 20px;
+				&:extend(.to-uppercase);
+			}
+			
+			p {
+				font-size: 12px;
+				line-height: 21px;
+			}
+			
+			.price {
+				font-size: 40px;
+				padding-top: 15px;
+				color: @active-text-color;
+			}
+			
+			.real_price {
+				font-size: 18px;
+				padding-top: 10px;
+				color: #999;
+				text-decoration: line-through;
+			}
+			
+			.add_total_cart {
+				padding: 0px;
+				margin-top: 35px;
+				
+				.btn {
+					&:extend(.to-uppercase);
+					margin-bottom: 0px;
+					border: 0px;
+					padding: 8px 20px 8px 40px;
+				}
+				
+				.add_cart {
+					background-image: url(../images/add_cart_btn_icon.png);
+					background-repeat: no-repeat;
+					float: left;
+					background-position: 15px 11px;
+				}
+				
+				.total_cart {
+					float: left;
+					
+					ul {
+						padding: 0px;
+						margin: 0px;
+						list-style: none;
+						
+						li {
+							padding: 0;
+							float: left;
+							margin: 0px;
+							
+							a {
+								background: @active-text-color;
+								padding: 8px 17px;
+								color: #FFF;
+								display: block;
+								font-size: 14px;
+								
+								.min {
+									font-size: 30px;
+								}
+								
+								.plush {
+									font-size: 30px;
+								}
+								
+								&:hover {
+									background: #b31b21;
+								}
+								
+								&.active {
+									background: #b31b21;
+								}
+							}
+						}
+					}
+				}
+			}
+			
+			.pro_category_detail_text {
+				line-height: 20px;
+				color: @active-text-color;
+				margin-top: 30px;
+				.main-font-size-to-pct(@main-font-size);
+				
+				span {
+					color: #333333;
+				}
+
+				a {
+					color: @active-text-color;
+	
+					&:hover {
+						color: @dark-text-color;
+						text-decoration: underline;
+					}
+				}
+			}
+		}
+	}
+}

@@ -1,0 +1,278 @@
+.comments {
+	padding: 0px;
+	padding: @base-margin + 5;
+	background: #FFF;
+	margin-bottom: @base-margin;
+	
+	.children {
+		margin: 0;
+		padding: 0;
+		list-style: none;
+	}
+	
+	.depth-2 > .comment-entry {
+		margin-left: 100px;
+		
+		.comment-thumb {
+			width: 60px;
+		}
+	}
+	
+	.depth-3 > .comment-entry,
+	.depth-4 > .comment-entry,
+	.depth-5 > .comment-entry,
+	.depth-6 > .comment-entry {
+		margin-left: 90px * 2;
+		
+		.comment-thumb {
+			width: 60px;
+		}
+	}
+	
+	.comment-inner-body {
+		display: table;
+		width: 100%;
+		
+		.comment-thumb,
+		.comment-details {
+			display: table-cell;
+			vertical-align: top;
+		}
+		
+		.comment-thumb {
+			width: 80px;
+		}
+		
+		.comment-details {
+			padding-left: @base-margin;
+		}
+	}
+	
+	.form-only {
+		
+		h1.title {
+			margin-top: -15px;
+		}
+	}
+	
+	hr {
+		margin-bottom: 25px;
+		border-bottom: 1px solid #eee;
+	}
+	
+	h1 {
+		margin: 0px;
+		color: @dark-text-color;
+		&:extend(.to-uppercase);
+		font-size: 20px;
+		border-bottom: 2px solid #EEE;
+		padding-bottom: @base-margin;
+		margin-bottom: @base-margin;
+		
+		span {
+			color: @active-text-color;	
+		}
+	}
+	
+	hr {
+		margin-bottom: 30px;
+	}
+	
+	.author_post {
+		padding: 0px;
+		border-bottom: 1px solid #EEE;
+		margin-bottom: @base-margin;
+		padding-bottom: @base-margin;
+		
+		&.sub {
+			border: none;
+			padding: 0px;
+			margin: 0px;
+			padding-top: @base-margin;
+		}
+		
+		.author_img {
+			overflow: hidden;
+			.border-radius(50px);
+			text-align: center;
+			border: 4px solid #eee;
+			float: left;
+			
+			img {
+				width: 100%;
+				height: auto;
+			}
+		}
+		
+		.author_about_part {
+			padding: 0px;
+			padding-top: @base-padding/2;
+			margin-bottom: @base-padding/2;
+			
+			.meta {
+				&:extend(.heading-font);
+			}
+			
+			.author_name {
+				font-size: 14px;
+				&:extend(.to-uppercase);
+				&:extend(.heading-font);
+				color: @dark-text-color;
+				float: left;
+				
+				span {
+					color: #666;
+					font-weight: 300;
+				}
+			}
+			
+			.date_time_reply_text {
+				float: right;
+				color: #666;
+				&:extend(.heading-font);
+				&:extend(.to-uppercase);
+				
+				a {
+					color: @active-text-color;	
+				}
+			}
+			
+			.comment-content {
+				.main-font-size-to-pct(@main-font-size);
+				margin-top: 10px;
+				
+				.formatted-content();
+			}
+		}
+		
+		hr {
+			margin-bottom: 30px;
+		}
+	}
+		
+	.comment-respond {
+		
+		.red {
+			color: @active-text-color;
+		}
+		
+		.form-control {
+			margin-bottom: @base-margin;
+			font-weight: 300;
+		}
+		
+		h1 {
+			border-bottom: 2px solid #EEE;
+			padding-bottom: @base-margin;
+			margin: @base-margin 0;
+		}
+		
+		textarea {
+			width: 100%;
+			max-width: 100%;
+			min-height: 100px !important;
+			max-height: 250px;
+			box-shadow: none;
+			padding: 10px;
+			margin-bottom: @base-margin;
+			overflow: auto !important;
+			
+			&:focus {
+				box-shadow: none;
+				outline: none;
+			}
+			
+			.scroll-replace();
+		}
+	}
+	
+	.form-submit {
+		
+		#submit {
+			.btn;
+			.btn-default;
+			&:extend(.to-uppercase);
+			
+			&:hover {
+				color: #FFF;
+			}
+		}
+	}
+	
+	.comments-pagination {
+		background: #FAFAFA;
+		margin: 0;
+		line-height: 1;
+		text-align: right;
+		
+		@h: 24px;
+		
+		a, span {
+			display: inline-block;
+			line-height: 1;
+			padding: 10px 10px;
+			
+			&.current {
+				color: @block-background;
+				background: @active-text-color;
+			}
+		}
+	}
+}
+
+.comment-respond {
+
+	h1 + small {
+		float: right;
+	}
+	
+	form {
+		.clearfix;
+		clear: both;
+	}
+	
+	.row {
+		margin-left: -15px;
+		margin-right: -15px;
+	}
+	
+	input#submit {
+		.btn;
+	}
+	
+	.rules {
+		margin-top: @base-padding + @base-padding/2;
+	}
+	
+	.logged-in-as {
+		margin-bottom: @base-margin;
+	}
+}
+
+.comment + .comment-respond {
+	
+	background: #FAFAFA;
+	margin-left: -25px;
+	margin-right: -25px;
+	padding: 10px 25px;
+	position: relative;
+	top: -21px;
+	border-top: 1px solid @background-color;
+	border-bottom: 1px solid @background-color;
+	
+	&:after {
+		@s: 10px;
+		
+		content: '';
+		display: block;
+		position: absolute;
+		left: 50%;
+		top: -@s;
+		width: 0px;
+		height: 0px;
+		border-style: solid;
+		border-width: 0 @s @s @s;
+		border-color: transparent transparent @background-color transparent;
+		margin-left: -@s/2;
+	}
+}

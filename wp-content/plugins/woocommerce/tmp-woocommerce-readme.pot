@@ -1,0 +1,985 @@
+msgid ""
+msgstr "MIME-Version: 1.0\n"
+
+#. Name.
+msgid "WooCommerce - excelling eCommerce"
+msgstr ""
+
+#. Short description.
+msgid "WooCommerce is a powerful, extendable eCommerce plugin that helps you sell anything. Beautifully."
+msgstr ""
+
+#. Screenshot description.
+msgid "The slick WooCommerce settings panel."
+msgstr ""
+
+#. Screenshot description.
+msgid "WooCommerce products admin."
+msgstr ""
+
+#. Screenshot description.
+msgid "Product data panel."
+msgstr ""
+
+#. Screenshot description.
+msgid "WooCommerce sales reports."
+msgstr ""
+
+#. Screenshot description.
+msgid "A single product page."
+msgstr ""
+
+#. Screenshot description.
+msgid "A product archive (grid)."
+msgstr ""
+
+#. Found in description header.
+msgid "Sell anything, anywhere"
+msgstr ""
+
+#. Found in description header.
+msgid "Ship wherever you like"
+msgstr ""
+
+#. Found in description header.
+msgid "Extensive payment options"
+msgstr ""
+
+#. Found in description header.
+msgid "You control it all -- forever"
+msgstr ""
+
+#. Found in description header.
+msgid "Define your style with Storefront"
+msgstr ""
+
+#. Found in description header.
+msgid "Built with developers in mind"
+msgstr ""
+
+#. Found in description header.
+msgid "Extensions galore"
+msgstr ""
+
+#. Found in description header.
+msgid "Join our growing community"
+msgstr ""
+
+#. Found in description paragraph.
+msgid "WooCommerce is a free eCommerce plugin that allows you to sell anything, beautifully. Built to integrate seamlessly with WordPress, WooCommerce is the world’s favorite eCommerce solution that gives both store owners and developers complete control."
+msgstr ""
+
+#. Found in description paragraph.
+msgid "With endless flexibility and access to hundreds of free and premium WordPress extensions, WooCommerce now powers 30% of all online stores -- more than any other platform."
+msgstr ""
+
+#. Found in description paragraph.
+msgid "[youtube https://www.youtube.com/watch?v=1KahlicghaE]"
+msgstr ""
+
+#. Found in description paragraph.
+msgid "With WooCommerce, you can sell both physical and digital goods in all shapes and sizes, offer product variations, multiple configurations, and instant downloads to shoppers, and even sell affiliate goods from online marketplaces."
+msgstr ""
+
+#. Found in description paragraph.
+msgid "With premium extensions, you can offer bookings, memberships, and recurring subscriptions. Perhaps you’d like to sell monthly subscriptions for physical goods, or offer your members a discount on digital downloads? It’s all possible."
+msgstr ""
+
+#. Found in description paragraph.
+msgid "Offer free shipping, flat rate shipping, or make real-time calculations. Limit your shipments to specific countries, or open your store up to the world. Shipping is highly configurable, and WooCommerce even supports drop shipping."
+msgstr ""
+
+#. Found in description paragraph.
+msgid "WooCommerce comes bundled with the ability to accept major credit cards, PayPal, BACS (bank transfers), and cash on delivery. Need additional options? More than 140 region-specific gateways integrate with WooCommerce, including popular choices like Stripe, Authorize.Net, and Amazon Payments."
+msgstr ""
+
+#. Found in description paragraph.
+msgid "WooCommerce gives you complete control of your store, from taxes to stock levels to customer accounts. Add and remove extensions, change your design, and switch settings as you please. It’s all under your control."
+msgstr ""
+
+#. Found in description paragraph.
+msgid "One of the biggest risks of using a hosted eCommerce platform is what happens to your store if the provider closes up shop. With WooCommerce, you have complete control, so there’s never any reason to worry. Your data belongs to you -- and it’s kept secure, thanks to regular audits by industry leaders."
+msgstr ""
+
+#. Found in description paragraph.
+msgid "<a href=\"https://wordpress.org/themes/storefront/\">Storefront</a> is a free WordPress theme available to any WooCommerce store. Along with deep WooCommerce integration, Storefront prioritizes speed and uptime while eliminating theme and plugin conflicts during major updates."
+msgstr ""
+
+#. Found in description paragraph.
+msgid "Define your style even further by customizing Storefront to your liking or choosing from one of our several <a href=\"http://www.woothemes.com/product-category/themes/storefront-child-theme-themes/\">Storefront child themes</a>. It’s all up to you, and all open source."
+msgstr ""
+
+#. Found in description paragraph.
+msgid "Extendable, adaptable, and open source -- WooCommerce was created with developers in mind. With its strong, robust framework, you can scale your client’s store all the way from basic to high-end (infinity and beyond)."
+msgstr ""
+
+#. Found in description paragraph.
+msgid "Built with a REST API, WooCommerce can integrate with virtually any service. Your store’s data can be accessed anywhere, anytime, 100% securely. WooCommerce allows developers to easily create, modify, and grow a store that meets their specifications."
+msgstr ""
+
+#. Found in description paragraph.
+msgid "No matter the size of the store you want to build, WooCommerce will scale to meet your requirements. With a growing collection of more than 300 extensions, you can enhance each store’s features to meet your client’s unique needs -- or even create your own solution."
+msgstr ""
+
+#. Found in description paragraph.
+msgid "If security is a concern, rest easy. WooCommerce is audited by a dedicated team of developers working around the clock to identify and patch any and all discovered bugs."
+msgstr ""
+
+#. Found in description paragraph.
+msgid "We also support WooCommerce and all its extensions with comprehensive, easily-accessible documentation. With our docs, you’ll learn how to create the exact site your client needs."
+msgstr ""
+
+#. Found in description paragraph.
+msgid "WordPress.org is home to some amazing extensions for WooCommerce, including:"
+msgstr ""
+
+#. Found in description paragraph.
+msgid ""
+"<a href=\"https://wordpress.org/plugins/woocommerce-google-analytics-integration/\">Google Analytics</a>\n"
+"<a href=\"https://wordpress.org/plugins/woocommerce-delivery-notes/\">Delivery Notes</a>\n"
+"<a href=\"https://wordpress.org/plugins/woocommerce-pdf-invoices-packing-slips/\">PDF Invoices and Packing Slips</a>\n"
+"<a href=\"https://wordpress.org/plugins/affiliates-woocommerce-light/\">Affiliates Integration Light</a>\n"
+"<a href=\"https://wordpress.org/plugins/woocommerce-new-product-badge/\">New Product Badges</a>"
+msgstr ""
+
+#. Found in description paragraph.
+msgid "Keen to see them all? Search WordPress.org for ‘WooCommerce’ to dive in."
+msgstr ""
+
+#. Found in description paragraph.
+msgid "If you’re looking for something endorsed and maintained by the developers who built WooCommerce, there are a plethora of premium eCommerce extensions, the most popular of which include:"
+msgstr ""
+
+#. Found in description paragraph.
+msgid ""
+"<a href=\"http://www.woothemes.com/products/woocommerce-subscriptions/\">WooCommerce Subscriptions</a>\n"
+"<a href=\"http://www.woothemes.com/products/woocommerce-memberships/\">WooCommerce Memberships</a>\n"
+"<a href=\"http://www.woothemes.com/products/woocommerce-bookings/\">WooCommerce Bookings</a>\n"
+"<a href=\"http://www.woothemes.com/products/dynamic-pricing/\">Dynamic Pricing</a>\n"
+"<a href=\"http://www.woothemes.com/products/table-rate-shipping/\">Table Rate Shipping</a>\n"
+"<a href=\"http://www.woothemes.com/products/product-csv-import-suite/\">Product CSV Import Suite</a>"
+msgstr ""
+
+#. Found in description paragraph.
+msgid "And there’s plenty more where they came from. Visit our <a href=\"http://www.woothemes.com/product-category/woocommerce-extensions/\">extensions page</a> to find out everything you’re capable of and all that's possible with premium WooCommerce extensions."
+msgstr ""
+
+#. Found in description paragraph.
+msgid "When you download WooCommerce, you join a community of more than a million store owners, developers, and WordPress enthusiasts. We’re one of the fastest-growing open source communities online, and whether you’re a n00b or a Ninja, we’d love to have you!"
+msgstr ""
+
+#. Found in description paragraph.
+msgid "If you’re interested in contributing to WooCommerce we’ve got more than 350 contributors, and there’s always room for more. Head over to the <a href=\"https://github.com/woothemes/woocommerce\">WooCommerce GitHub Repository</a> to find out how you can pitch in."
+msgstr ""
+
+#. Found in description paragraph.
+msgid "Want to add a new language to WooCommerce? Swell! You can contribute via <a href=\"http://translate.wordpress.org/projects/wp-plugins/woocommerce\">translate.wordpress.org</a>."
+msgstr ""
+
+#. Found in description paragraph.
+msgid "And, finally, consider joining or spearheading a WooCommerce Meetup locally, more about those <a href=\"http://www.woothemes.com/woocommerce/meetups/\">here</a>."
+msgstr ""
+
+#. Found in installation header.
+msgid "Minimum Requirements"
+msgstr ""
+
+#. Found in installation header.
+msgid "Automatic installation"
+msgstr ""
+
+#. Found in installation header.
+msgid "Manual installation"
+msgstr ""
+
+#. Found in installation header.
+msgid "Updating"
+msgstr ""
+
+#. Found in installation header.
+msgid "Dummy data"
+msgstr ""
+
+#. Found in installation list item.
+msgid "WordPress 3.8 or greater"
+msgstr ""
+
+#. Found in installation list item.
+msgid "PHP version 5.2.4 or greater"
+msgstr ""
+
+#. Found in installation list item.
+msgid "MySQL version 5.0 or greater"
+msgstr ""
+
+#. Found in installation list item.
+msgid "Some payment gateways require fsockopen support (for IPN access)"
+msgstr ""
+
+#. Found in installation paragraph.
+msgid "Automatic installation is the easiest option as WordPress handles the file transfers itself and you don’t need to leave your web browser. To do an automatic install of WooCommerce, log in to your WordPress dashboard, navigate to the Plugins menu and click Add New."
+msgstr ""
+
+#. Found in installation paragraph.
+msgid "In the search field type “WooCommerce” and click Search Plugins. Once you’ve found our eCommerce plugin you can view details about it such as the the point release, rating and description. Most importantly of course, you can install it by simply clicking “Install Now”."
+msgstr ""
+
+#. Found in installation paragraph.
+msgid "The manual installation method involves downloading our eCommerce plugin and uploading it to your webserver via your favourite FTP application. The WordPress codex contains <a href=\"http://codex.wordpress.org/Managing_Plugins#Manual_Plugin_Installation\">instructions on how to do this here</a>."
+msgstr ""
+
+#. Found in installation paragraph.
+msgid "Automatic updates should work like a charm; as always though, ensure you backup your site just in case."
+msgstr ""
+
+#. Found in installation paragraph.
+msgid "If on the off-chance you do encounter issues with the shop/category pages after an update you simply need to flush the permalinks by going to WordPress &gt; Settings &gt; Permalinks and hitting 'save'. That should return things to normal."
+msgstr ""
+
+#. Found in installation paragraph.
+msgid "WooCommerce comes with some dummy data you can use to see how products look; either import dummy_data.xml via the <a href=\"http://wordpress.org/extend/plugins/wordpress-importer/\">WordPress importer</a> or use our <a href=\"http://www.woothemes.com/products/product-csv-import-suite/\">CSV Import Suite plugin</a> to import dummy_data.csv and dummy_data_variations.csv."
+msgstr ""
+
+#. Found in changelog list item.
+msgid "Fix - Geo IP - Correctly parse .dat files."
+msgstr ""
+
+#. Found in changelog list item.
+msgid "Fix - Geo IP - Ensure WC_Logger class exists before logging errors."
+msgstr ""
+
+#. Found in changelog list item.
+msgid "Fix - Geo IP - Prevent notices in ipv6 methods."
+msgstr ""
+
+#. Found in changelog list item.
+msgid "Tweak - Add information about credit card address for Simplify Commerce."
+msgstr ""
+
+#. Found in changelog list item.
+msgid "Fix - Check abspath exists in more files to prevent errors on direct access."
+msgstr ""
+
+#. Found in changelog list item.
+msgid "Fix - Hide SQL errors during ajax requests."
+msgstr ""
+
+#. Found in changelog list item.
+msgid "Fix - Fixed redirection loop on customizer screen."
+msgstr ""
+
+#. Found in changelog list item.
+msgid "Fix - Improved error handling in WC_Geo_IP."
+msgstr ""
+
+#. Found in changelog list item.
+msgid "Fix - Bulk edit sale prices."
+msgstr ""
+
+#. Found in changelog list item.
+msgid "Fix - Check for child themes in System Status."
+msgstr ""
+
+#. Found in changelog list item.
+msgid "Fix - API - Warnings when create attributes."
+msgstr ""
+
+#. Found in changelog list item.
+msgid "Fix - System Report: Template version check path."
+msgstr ""
+
+#. Found in changelog list item.
+msgid "Fix - Potential XSS within price.php fixed with escape on get_price() (would require edit/admin permissions to take advantage of). Discovered by FortiGuard Labs (http://www.fortiguard.com/). Template version has been bumped."
+msgstr ""
+
+#. Found in changelog list item.
+msgid "Fix - Help tips in variations admin."
+msgstr ""
+
+#. Found in changelog list item.
+msgid "Fix - API - Fixed customer count method."
+msgstr ""
+
+#. Found in changelog list item.
+msgid "Fix - Locale switching for city field."
+msgstr ""
+
+#. Found in changelog list item.
+msgid "Fix - Notice in wc_nav_menu_items when endpoint is not set."
+msgstr ""
+
+#. Found in changelog list item.
+msgid "Fix - Loading of correct variation prices when display is true and false in the same page load."
+msgstr ""
+
+#. Found in changelog list item.
+msgid "Fix - Shipping priority for methods with colons in the name."
+msgstr ""
+
+#. Found in changelog list item.
+msgid "Fix - Saving of passwords with '&amp;' inside."
+msgstr ""
+
+#. Found in changelog list item.
+msgid "Fix - Remove double escaping of coupon descriptions."
+msgstr ""
+
+#. Found in changelog list item.
+msgid "Fix - Settings API default value should not apply if value of option is 0 ."
+msgstr ""
+
+#. Found in changelog list item.
+msgid "Fix - Avoid potential PHP Fatals by avoiding premature script enqueues."
+msgstr ""
+
+#. Found in changelog list item.
+msgid "Fix - Pass mimes when checking file type ."
+msgstr ""
+
+#. Found in changelog list item.
+msgid "Fix - Reset shipping totals before calculation to prevent totals being used incorrectly."
+msgstr ""
+
+#. Found in changelog list item.
+msgid "Fix - API - Corrected how attributes terms saves non-latin characters."
+msgstr ""
+
+#. Found in changelog list item.
+msgid "Fix - API - Variations price sync."
+msgstr ""
+
+#. Found in changelog list item.
+msgid "Fix - API - Fixed lost variable products data when create/edit an order."
+msgstr ""
+
+#. Found in changelog list item.
+msgid "Tweak - Add trailing slash in get_page_uris to reduce likelihood of conflicts."
+msgstr ""
+
+#. Found in changelog list item.
+msgid "Tweak - API - Added refunded_item_id on GET orders//refunds endpoint."
+msgstr ""
+
+#. Found in changelog list item.
+msgid "Tweak - API - Allow variable products to get retrieved by SKU."
+msgstr ""
+
+#. Found in changelog list item.
+msgid "Tweak - API - Allow edit variations without define the product type to variable."
+msgstr ""
+
+#. Found in changelog list item.
+msgid "Fix - Handle Switzerland in get_european_union_countries."
+msgstr ""
+
+#. Found in changelog list item.
+msgid "Fix - For geolocation with static cache support, ensure hash is appended during form submission."
+msgstr ""
+
+#. Found in changelog list item.
+msgid "Fix - To prevent discounts being applied in 'random' order (based on order added to cart), sort cart items based on subtotal during calculate_totals."
+msgstr ""
+
+#. Found in changelog list item.
+msgid "Fix - Removed extra ob_start() in class-wc-shortcodes.php."
+msgstr ""
+
+#. Found in changelog list item.
+msgid "Fix - Show counts in category dropdown."
+msgstr ""
+
+#. Found in changelog list item.
+msgid "Fix - Escape add to cart messages to stop translations from breaking cart events."
+msgstr ""
+
+#. Found in changelog list item.
+msgid "Fix - Display of product/order tables in the dashboard when viewed on handheld devices."
+msgstr ""
+
+#. Found in changelog list item.
+msgid "Fix - API order item 'key' value."
+msgstr ""
+
+#. Found in changelog list item.
+msgid "Fix - Check specifically for Post IDs in WC Query verbose rules fix."
+msgstr ""
+
+#. Found in changelog list item.
+msgid "Fix - Only run maybe_set_cart_cookies if cart was loaded to prevent notices."
+msgstr ""
+
+#. Found in changelog list item.
+msgid "Fix - Variation loading/refresh after attribute saving."
+msgstr ""
+
+#. Found in changelog list item.
+msgid "Fix - Added monthly cron schedule."
+msgstr ""
+
+#. Found in changelog list item.
+msgid "Fix - Remove use of 'input' event in checkout scripts to prevent IE11 triggering updates on placeholder change."
+msgstr ""
+
+#. Found in changelog list item.
+msgid "Fix - AJAX variations not being found in some cases when product version was &lt; 2.4, but attributes were updated after sync()."
+msgstr ""
+
+#. Found in changelog list item.
+msgid "Fix - Changed the way variable product prices get cached for greater plugin compatibility. See http://wp.me/p6wtcw-5x"
+msgstr ""
+
+#. Found in changelog list item.
+msgid "Fix - Highlighting of reports chart."
+msgstr ""
+
+#. Found in changelog list item.
+msgid "Fix - Network activated plugins not showing up in system status report."
+msgstr ""
+
+#. Found in changelog list item.
+msgid "Fix - Tax fields showing on bulk/quick edit when disabled the tax system."
+msgstr ""
+
+#. Found in changelog list item.
+msgid "Fix - Tax status and tax class values within bulk edit."
+msgstr ""
+
+#. Found in changelog list item.
+msgid "Tweak - Allow bulk edit price to 0 ."
+msgstr ""
+
+#. Found in changelog list item.
+msgid "Tweak - Add filters to control \"shipped via\" text."
+msgstr ""
+
+#. Found in changelog list item.
+msgid "Tweak - Allow line breaks in non-variation attributes."
+msgstr ""
+
+#. Found in changelog list item.
+msgid "Tweak - Renamed wc_var_prices transient to allow them to flush on product save."
+msgstr ""
+
+#. Found in changelog list item.
+msgid "Tweak - woocommerce_save_account_details_required_fields hook."
+msgstr ""
+
+#. Found in changelog list item.
+msgid "Tweak - Only 'count' published variations."
+msgstr ""
+
+#. Found in changelog list item.
+msgid "Tweak - Display of order total in admin with refunds."
+msgstr ""
+
+#. Found in changelog list item.
+msgid "Tweak - Use Geolocation class for customer IP detection."
+msgstr ""
+
+#. Found in changelog list item.
+msgid "Tweak - Use the needs_payment function (DRY)."
+msgstr ""
+
+#. Found in changelog list item.
+msgid "Tweak - Tweak wc_create_page to work with trashed pages."
+msgstr ""
+
+#. Found in changelog list item.
+msgid "Tweak - Redirect 'not right now' to referer in onboarding wizard."
+msgstr ""
+
+#. Found in changelog list item.
+msgid "Tweak - woocommerce_update_new_customer_past_order action."
+msgstr ""
+
+#. Found in changelog list item.
+msgid "Tweak - Prevent empty terms when using <code>wc_get_formatted_variation()</code>."
+msgstr ""
+
+#. Found in changelog list item.
+msgid "Tweak - Unslash shipping label on orders admin screen."
+msgstr ""
+
+#. Found in changelog list item.
+msgid "Tweak - Prevent wrong phone numbers on PayPal for CA and US when users add the prefix <code>+1</code>."
+msgstr ""
+
+#. Found in changelog list item.
+msgid "Template - Removed 'Payment' heading in <code>templates/checkout/form-pay.php</code>."
+msgstr ""
+
+#. Found in changelog list item.
+msgid "Template - Removed unnecessary clearing div in <code>templates/checkout/payment.php</code>."
+msgstr ""
+
+#. Found in changelog list item.
+msgid "Fix - menu_order notices on IIS."
+msgstr ""
+
+#. Found in changelog list item.
+msgid "Fix - Grouped product is_purchasable check during add to cart."
+msgstr ""
+
+#. Found in changelog list item.
+msgid "Fix - Subscriptions 2.0 (unreleased) compatibility."
+msgstr ""
+
+#. Found in changelog list item.
+msgid "Fix - Encode variation data in add_to_cart_url method."
+msgstr ""
+
+#. Found in changelog list item.
+msgid "Fix - Bulk update variation: Set manage stock when _manage_stock meta data is missing."
+msgstr ""
+
+#. Found in changelog list item.
+msgid "Fix - Bulk update variation: Allow stock to be set to 0."
+msgstr ""
+
+#. Found in changelog list item.
+msgid "Fix - Ajax variation &lt; 2.4 attribute name handling."
+msgstr ""
+
+#. Found in changelog list item.
+msgid "Fix - During updates, only recreate .htaccess if not using redirect download method."
+msgstr ""
+
+#. Found in changelog list item.
+msgid "Fix - Handle non standard decimals in flat rate costs."
+msgstr ""
+
+#. Found in changelog list item.
+msgid "Tweak - WC Setup wizard: Fix manual setting of decimal/thousand separator."
+msgstr ""
+
+#. Found in changelog list item.
+msgid "Tweak - Set ajax/nocache headers for ajax requests."
+msgstr ""
+
+#. Found in changelog list item.
+msgid "Tweak - Add tooltips for tax status and tax class options."
+msgstr ""
+
+#. Found in changelog list item.
+msgid "Tweak - WC Setup wizard: multi-line step styling."
+msgstr ""
+
+#. Found in changelog list item.
+msgid "Tweak - WC Setup wizard: site icon display on WP 4.3."
+msgstr ""
+
+#. Found in changelog list item.
+msgid "Tweak - WC Setup wizard: tweaked wording."
+msgstr ""
+
+#. Found in changelog list item.
+msgid "Tweak - WC Setup wizard: Add spinner/loading indication between onboarding steps."
+msgstr ""
+
+#. Found in changelog list item.
+msgid "Tweak - Allow HTML in store notice."
+msgstr ""
+
+#. Found in changelog list item.
+msgid "Fix - Global text based attribute saving on product page."
+msgstr ""
+
+#. Found in changelog list item.
+msgid "Fix - save_account_details should check display name of current user."
+msgstr ""
+
+#. Found in changelog list item.
+msgid "Fix - Show the right 'no shipping available' message when a country does not have states."
+msgstr ""
+
+#. Found in changelog list item.
+msgid "Fix - Add required postcode marker after label replace."
+msgstr ""
+
+#. Found in changelog list item.
+msgid "Fix - Flush product cache so prices are regenerated after scheduled sale ends."
+msgstr ""
+
+#. Found in changelog list item.
+msgid "Fix - Removed /page/ when using layered nav dropdown."
+msgstr ""
+
+#. Found in changelog list item.
+msgid "Tweak - Allowed Zip/Post Codes description for Local Delivery."
+msgstr ""
+
+#. Found in changelog list item.
+msgid "Tweak - Improve display_item_downloads numbering and use same function in emails."
+msgstr ""
+
+#. Found in changelog list item.
+msgid "Tweak - API - Fixes notices about deprecated <code>$HTTP_RAW_POST_DATA</code> on PHP 5.6."
+msgstr ""
+
+#. Found in changelog list item.
+msgid "Tweak - In add_to_cart_action, check is_purchasable rather than post status."
+msgstr ""
+
+#. Found in changelog list item.
+msgid "Tweak - Add expand/close links for attributes and match variation UI."
+msgstr ""
+
+#. Found in changelog list item.
+msgid "Tweak - Added locale info for BD, NP, JP and HU"
+msgstr ""
+
+#. Found in changelog list item.
+msgid "Tweak - woocommerce_delete_version_transients_limit filter."
+msgstr ""
+
+#. Found in changelog list item.
+msgid "Tweak - Suppress errors when calling set_time_limit to avoid hosting conflicts."
+msgstr ""
+
+#. Found in changelog list item.
+msgid "Tweak - Keep new variation in sync so actions can modify data."
+msgstr ""
+
+#. Found in changelog list item.
+msgid "Tweak - Improved download numbering in emails and order page."
+msgstr ""
+
+#. Found in changelog list item.
+msgid "Tweak - Allowed users to install translations for the current language during the Setup Wizard."
+msgstr ""
+
+#. Found in changelog list item.
+msgid "Fix - Ajax variation handling when 'any' attribute is set."
+msgstr ""
+
+#. Found in changelog list item.
+msgid "Fix - Run html_entity_decode over text attributes to fix problems with quote characters."
+msgstr ""
+
+#. Found in changelog list item.
+msgid "Fix - COD: remove shipping check if the cart is 100% virtual."
+msgstr ""
+
+#. Found in changelog list item.
+msgid "Tweak - Order variations by menu_order by fallback to ID."
+msgstr ""
+
+#. Found in changelog list item.
+msgid "Tweak - Include attribute archives support in the breadcrumbs."
+msgstr ""
+
+#. Found in changelog list item.
+msgid "Tweak - woocommerce_variable_children_args hook."
+msgstr ""
+
+#. Found in changelog list item.
+msgid "Fix - Query within wc_customer_bought_product()."
+msgstr ""
+
+#. Found in changelog list item.
+msgid "Fix - Tab hiding with some theme markup."
+msgstr ""
+
+#. Found in changelog list item.
+msgid "Fix - Ajax variations: stripslashes to fix attributes with quotes."
+msgstr ""
+
+#. Found in changelog list item.
+msgid "Fix - No longer returns to the first variation list page when deleting one variation."
+msgstr ""
+
+#. Found in changelog list item.
+msgid "Fix - Refund subjects when order contains downloadable product."
+msgstr ""
+
+#. Found in changelog list item.
+msgid "Fix - wc_get_product_variation_attributes should only get parent attributes which are for variations."
+msgstr ""
+
+#. Found in changelog list item.
+msgid "Tweak - Disable display_errors during ajax requests to prevent malformed JSON."
+msgstr ""
+
+#. Found in changelog list item.
+msgid "Tweak - When merging shipping taxes with a shipping rate taxes, ensure shipping rate taxes is not malformed."
+msgstr ""
+
+#. Found in changelog list item.
+msgid "Tweak - Improved refund email events and woocommerce_order_fully_refunded hook."
+msgstr ""
+
+#. Found in changelog list item.
+msgid "Fix - If all variations are out of stock, maintain pricing display."
+msgstr ""
+
+#. Found in changelog list item.
+msgid "Fix - Prevent double add to cart due to ajax endpoints."
+msgstr ""
+
+#. Found in changelog list item.
+msgid "Fix - ordering_args in product_category shortcode."
+msgstr ""
+
+#. Found in changelog list item.
+msgid "Fix - Tax inclusive prices rounding case."
+msgstr ""
+
+#. Found in changelog list item.
+msgid "Tweak - If no variation prices are found, show no price label rather than free."
+msgstr ""
+
+#. Found in changelog list item.
+msgid "Tweak - Made tab panel selector more specific to avoid theme conflicts."
+msgstr ""
+
+#. Found in changelog list item.
+msgid "Tweak - Made checkout make use of new ajax endpoints."
+msgstr ""
+
+#. Found in changelog list item.
+msgid "Tweak - woocommerce_force_ssl_checkout no longer needs to check for admin-ajax actions."
+msgstr ""
+
+#. Found in changelog list item.
+msgid "Tweak - Hide get_formatted_legacy notices when doing ajax."
+msgstr ""
+
+#. Found in changelog list item.
+msgid "Tweak - use shop_single instead of full image size for variations."
+msgstr ""
+
+#. Found in changelog list item.
+msgid "Fix - Tweaked the 2.4 upgrade routine to disable refund emails during update."
+msgstr ""
+
+#. Found in changelog list item.
+msgid "Fix - Notices when calling get_shipping_classes()."
+msgstr ""
+
+#. Found in changelog list item.
+msgid "Fix - Added upgrade routine to ensure _stock_status meta exists for variations created before WooCommerce 2.2"
+msgstr ""
+
+#. Found in changelog list item.
+msgid "Feature - Onboarding/setup wizard for new users to handle basic store settings and installation."
+msgstr ""
+
+#. Found in changelog list item.
+msgid "Feature - Improved help tabs with inline video tutorials where applicable."
+msgstr ""
+
+#. Found in changelog list item.
+msgid "Feature - New AJAX powered variations interface to improve edit product page loading times and posting large amounts of data."
+msgstr ""
+
+#. Found in changelog list item.
+msgid "Feature - For products with many variations, on the frontend switch to AJAX to load matching variations based on user input attributes, instead of doing it all inline."
+msgstr ""
+
+#. Found in changelog list item.
+msgid "Feature - Show full category hierarchy in permalinks."
+msgstr ""
+
+#. Found in changelog list item.
+msgid "Feature - Added priorities for shipping methods to give more control over defaults."
+msgstr ""
+
+#. Found in changelog list item.
+msgid "Feature - <a href=\"https://woocommerce.wordpress.com/2015/07/02/making-geolocation-static-cache-friendly-in-2-4/\">Added a new geolocation option to support static page caching using AJAX and a querystring.</a>"
+msgstr ""
+
+#. Found in changelog list item.
+msgid "Feature - Email notifications for partial refunds."
+msgstr ""
+
+#. Found in changelog list item.
+msgid "Feature - Visual API authentication endpoint for 3rd party use."
+msgstr ""
+
+#. Found in changelog list item.
+msgid "Feature - API key generation changes. Secret keys no longer stored in database."
+msgstr ""
+
+#. Found in changelog list item.
+msgid "Feature - <a href=\"https://woocommerce.wordpress.com/2015/06/simplifying-flat-rate-shipping-in-wc-2-4/\">Refactored Flat Rate Shipping for simplicity.</a>"
+msgstr ""
+
+#. Found in changelog list item.
+msgid "Feature - Made international shipping UI the same as flat rate."
+msgstr ""
+
+#. Found in changelog list item.
+msgid "Feature - New ajax endpoints to improve performance by avoiding admin overhead."
+msgstr ""
+
+#. Found in changelog list item.
+msgid "Fix - Ensure coupon taxes are reset when calculating totals."
+msgstr ""
+
+#. Found in changelog list item.
+msgid "Fix - Improve discount amount rounding."
+msgstr ""
+
+#. Found in changelog list item.
+msgid "Fix - Update order shipping after editing shipping from API."
+msgstr ""
+
+#. Found in changelog list item.
+msgid "Tweak - Moved country next to other address fields in Checkout UI."
+msgstr ""
+
+#. Found in changelog list item.
+msgid "Tweak - Improved reports, in particular for refunds."
+msgstr ""
+
+#. Found in changelog list item.
+msgid "Tweak - Improve save_attributes ajax function to correctly save text attributes."
+msgstr ""
+
+#. Found in changelog list item.
+msgid "Tweak - Base discounts on the undiscounted price. #5874"
+msgstr ""
+
+#. Found in changelog list item.
+msgid "Tweak - Added wc_product_cat_class functions."
+msgstr ""
+
+#. Found in changelog list item.
+msgid "Tweak - Display related products and upsells in 4 columns."
+msgstr ""
+
+#. Found in changelog list item.
+msgid "Tweak - Only redirect to welcome page for MAJOR versions/updates."
+msgstr ""
+
+#. Found in changelog list item.
+msgid "Tweak - GeoLocation IPv6 database."
+msgstr ""
+
+#. Found in changelog list item.
+msgid "Tweak - Improved text based attribute handling to prevent issues with slashes."
+msgstr ""
+
+#. Found in changelog list item.
+msgid "Tweak - Ajaxified the grouped product option."
+msgstr ""
+
+#. Found in changelog list item.
+msgid "Tweak - Email template improvements and wider email client compatibility."
+msgstr ""
+
+#. Found in changelog list item.
+msgid "Dev - Created a template file for the Proceed to Checkout button."
+msgstr ""
+
+#. Found in changelog list item.
+msgid "Dev - API version v3."
+msgstr ""
+
+#. Found in changelog list item.
+msgid "Dev - API - Implemented full support for Basic Authentication for v3, following the RFC 2617 specs."
+msgstr ""
+
+#. Found in changelog list item.
+msgid "Dev - API - Fixed Oauth 1.0a to strictly follow all specs from RFC 5849 for v3."
+msgstr ""
+
+#. Found in changelog list item.
+msgid "Dev - API - Added an endpoint to handle product attributes."
+msgstr ""
+
+#. Found in changelog list item.
+msgid "Dev - API - Auto generete passwords for new customers only when enabled the generate_password option."
+msgstr ""
+
+#. Found in changelog list item.
+msgid "Dev - API - Added display and image on product categories response."
+msgstr ""
+
+#. Found in changelog list item.
+msgid "Dev - API - Added endpoint for bulk update/insert coupons, customers, products and orders."
+msgstr ""
+
+#. Found in changelog list item.
+msgid "Dev - API - Deprecated /product/sku endpoint from v3."
+msgstr ""
+
+#. Found in changelog list item.
+msgid "Dev - API - Created the /products/id/orders endpoint to fetch orders containing a specific product."
+msgstr ""
+
+#. Found in changelog list item.
+msgid "Localisation - Added Argentine currency and provinces."
+msgstr ""
+
+#. Found in changelog list item.
+msgid "<a href=\"https://github.com/woothemes/woocommerce/issues?q=is%3Aissue+milestone%3A%222.4+Helpful+Hedgehog%22+is%3Aclosed\">Various other small fixes and enhancements.</a>"
+msgstr ""
+
+#. Found in changelog paragraph.
+msgid "<a href=\"https://raw.githubusercontent.com/woothemes/woocommerce/master/CHANGELOG.txt\">See changelog for all versions</a>."
+msgstr ""
+
+#. Found in faq header.
+msgid "Where can I find WooCommerce documentation and user guides?"
+msgstr ""
+
+#. Found in faq header.
+msgid "Where can I get support or talk to other users?"
+msgstr ""
+
+#. Found in faq header.
+msgid "Will WooCommerce work with my theme?"
+msgstr ""
+
+#. Found in faq header.
+msgid "Where can I request new features, eCommerce themes and extensions?"
+msgstr ""
+
+#. Found in faq header.
+msgid "Where can I report bugs or contribute to the project?"
+msgstr ""
+
+#. Found in faq header.
+msgid "Where can I found the Rest API documentation?"
+msgstr ""
+
+#. Found in faq header.
+msgid "WooCommerce is awesome! Can I contribute?"
+msgstr ""
+
+#. Found in faq paragraph.
+msgid "For help setting up and configuring WooCommerce please refer to our <a href=\"http://docs.woothemes.com/documentation/plugins/woocommerce/getting-started/\">user guide</a>"
+msgstr ""
+
+#. Found in faq paragraph.
+msgid "For extending or theming WooCommerce, see our <a href=\"http://docs.woothemes.com/documentation/plugins/woocommerce/woocommerce-codex/\">codex</a>."
+msgstr ""
+
+#. Found in faq paragraph.
+msgid "If you get stuck, you can ask for help in the <a href=\"https://wordpress.org/support/plugin/woocommerce\">WooCommerce Plugin Forum</a>."
+msgstr ""
+
+#. Found in faq paragraph.
+msgid "For help with premium add-ons from WooThemes, use <a href=\"http://support.woothemes.com/\">our helpdesk</a>."
+msgstr ""
+
+#. Found in faq paragraph.
+msgid "Yes; WooCommerce will work with any theme, but may require some styling to make it match nicely. Please see our <a href=\"http://docs.woothemes.com/documentation/plugins/woocommerce/woocommerce-codex/\">codex</a> for help. If you're looking for a theme with built in WooCommerce integration we recommend <a href=\"http://www.woothemes.com/storefront/\">Storefront</a>."
+msgstr ""
+
+#. Found in faq paragraph.
+msgid "You can vote on and request new features and extensions in our <a href=\"http://ideas.woothemes.com/forums/133476-woocommerce\">WooIdeas board</a>"
+msgstr ""
+
+#. Found in faq paragraph.
+msgid "Bugs can be reported either in our support forum or preferably on the <a href=\"https://github.com/woothemes/woocommerce/issues\">WooCommerce GitHub repository</a>."
+msgstr ""
+
+#. Found in faq paragraph.
+msgid "You can find the documentation of our REST API on the <a href=\"http://woothemes.github.io/woocommerce-rest-api-docs/\">WooCommerce REST API Docs</a>."
+msgstr ""
+
+#. Found in faq paragraph.
+msgid "Yes you can! Join in on our <a href=\"http://github.com/woothemes/woocommerce/\">GitHub repository</a> :)"
+msgstr ""

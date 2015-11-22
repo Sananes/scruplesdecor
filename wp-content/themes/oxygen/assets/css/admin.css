@@ -1,0 +1,110 @@
+.widget-content .nl {
+	display: block;
+	width: 100%;
+}
+
+.widget-content a[data-more] {
+	margin-bottom: 5px;
+	display: inline-block;
+}
+
+.options_group {
+}
+
+.hidden_option {
+	display: none;
+}
+
+#lab_post_thumbnail {
+	width: 70px;
+	text-align: center;
+}
+
+#laborator_likes {
+	width: 85px;
+}
+
+#taxonomy-portfolio-category {
+	width: 275px;
+}
+
+.lab_post_thumbnail {
+	text-align: center;
+}
+
+.lab_post_thumbnail img {
+	box-shadow: 0px 0px 0px 5px rgba(255,255,255,1);
+}
+
+body #of_container input.of-radio {
+	position: relative;
+	top: 7px;
+	width: 17px;
+	border-radius: 50%;
+}
+
+body #of_container input.of-radio + label {
+	display: inline-block;
+}
+
+body #of_container input.checkbox {
+	width: 17px;
+	position: relative;
+	top: 7px;
+}
+
+#of_container #of-nav li.blog a {
+	background-image: url(../images/smof-blog.png);
+}
+
+#of_container #of-nav li.portfolio a {
+	background-image: url(../images/smof-portfolio.png);
+}
+
+#of_container #header .icon-option {
+	background-image: url(../images/laborator-logo.png) !important;
+}
+
+
+
+/* Other Styling */
+#of_container .controls .of-radio-img-img {
+	border-color: #eee !important;
+}
+
+#of_container .controls .of-radio-img-img.of-radio-img-selected, #of_container .controls .of-radio-tile-selected {
+	border-color: #0074a2 !important;
+}
+
+
+body #of_container #of-nav li a,
+body #of_container #of-nav ul li a:link, 
+body #of-nav ul li a:visited {
+	padding-left: 10px;
+	background-image: none !important;
+}
+
+
+#section-use_skin_type .of-radio-tile-img {
+	width: 41px !important;
+	height: 41px !important;
+}
+
+#section-use_skin_type .of-radio-tile-img.of-radio-tile-selected {
+	border-color: #333 !important;
+}
+
+
+#testimonial_featured_image {
+	width: 80px;
+}
+
+.testimonial_featured_image img {
+	display: inline-block;
+	border-radius: 50%;
+}
+
+.testimonial_featured_image small {
+	position: relative;
+	top: 10px;
+}

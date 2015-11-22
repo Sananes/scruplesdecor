@@ -1,0 +1,332 @@
+msgid ""
+msgstr ""
+"Project-Id-Version: woocommerce-advbulkedit\n"
+"POT-Creation-Date: 2015-03-19 14:54+0200\n"
+"PO-Revision-Date: 2015-03-19 14:54+0200\n"
+"Last-Translator: George Iron <obuilities@abv.bg>\n"
+"Language-Team: \n"
+"Language: en\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"X-Generator: Poedit 1.7.5\n"
+"X-Poedit-Basepath: .\n"
+"Plural-Forms: nplurals=2; plural=(n != 1);\n"
+"X-Poedit-KeywordsList: _e;__\n"
+"X-Poedit-SearchPath-0: C:\\wamp\\www\\wordpress\\wp-content\\plugins"
+"\\woocommerce-advanced-bulk-edit\\languages\n"
+"X-Poedit-SearchPath-1: E:\\PluginTranslations\\translate.php\n"
+
+#: E:\PluginTranslations\translate.php:5
+msgid "Page"
+msgstr ""
+
+#: E:\PluginTranslations\translate.php:6
+msgid "Selection Manager"
+msgstr ""
+
+#: E:\PluginTranslations\translate.php:7
+msgid "Bulk Edit"
+msgstr ""
+
+#: E:\PluginTranslations\translate.php:8
+msgid "contains"
+msgstr ""
+
+#: E:\PluginTranslations\translate.php:9
+msgid "does not contain"
+msgstr ""
+
+#: E:\PluginTranslations\translate.php:10
+msgid "starts with"
+msgstr ""
+
+#: E:\PluginTranslations\translate.php:11
+msgid "ends with"
+msgstr ""
+
+#: E:\PluginTranslations\translate.php:12
+msgid "field is empty"
+msgstr ""
+
+#: E:\PluginTranslations\translate.php:13
+msgid "Ignore case"
+msgstr ""
+
+#: E:\PluginTranslations\translate.php:14
+msgid "select"
+msgstr ""
+
+#: E:\PluginTranslations\translate.php:15
+msgid "deselect"
+msgstr ""
+
+#: E:\PluginTranslations\translate.php:16
+msgid "products and variations"
+msgstr ""
+
+#: E:\PluginTranslations\translate.php:17
+msgid "products only"
+msgstr ""
+
+#: E:\PluginTranslations\translate.php:18
+msgid "variations only"
+msgstr ""
+
+#: E:\PluginTranslations\translate.php:19
+msgid "which meet"
+msgstr ""
+
+#: E:\PluginTranslations\translate.php:20
+msgid "any of the search criteria"
+msgstr ""
+
+#: E:\PluginTranslations\translate.php:21
+msgid "all of the search criteria"
+msgstr ""
+
+#: E:\PluginTranslations\translate.php:22
+msgid "set new"
+msgstr ""
+
+#: E:\PluginTranslations\translate.php:23
+msgid "prepend"
+msgstr ""
+
+#: E:\PluginTranslations\translate.php:24
+msgid "append"
+msgstr ""
+
+#: E:\PluginTranslations\translate.php:25
+msgid "replace text"
+msgstr ""
+
+#: E:\PluginTranslations\translate.php:26
+msgid "with text"
+msgstr ""
+
+#: E:\PluginTranslations\translate.php:27
+msgid "add"
+msgstr ""
+
+#: E:\PluginTranslations\translate.php:28
+msgid "remove"
+msgstr ""
+
+#: E:\PluginTranslations\translate.php:29
+msgid "delete"
+msgstr ""
+
+#: E:\PluginTranslations\translate.php:30
+msgid "increase by value"
+msgstr ""
+
+#: E:\PluginTranslations\translate.php:31
+msgid "decrease by value"
+msgstr ""
+
+#: E:\PluginTranslations\translate.php:32
+msgid "increase by %"
+msgstr ""
+
+#: E:\PluginTranslations\translate.php:33
+msgid "decrease by %"
+msgstr ""
+
+#: E:\PluginTranslations\translate.php:34
+msgid "delete value"
+msgstr ""
+
+#: E:\PluginTranslations\translate.php:35
+msgid "Get Products"
+msgstr ""
+
+#: E:\PluginTranslations\translate.php:36
+msgid "Save Changes"
+msgstr ""
+
+#: E:\PluginTranslations\translate.php:37
+msgid "Selected rows for bulk editing"
+msgstr ""
+
+#: E:\PluginTranslations\translate.php:38
+msgid ""
+"Changes are saved on going to a different page of products, adding products/"
+"variations or via the 'Save Changes' button"
+msgstr ""
+
+#: E:\PluginTranslations\translate.php:39
+msgid "First"
+msgstr ""
+
+#: E:\PluginTranslations\translate.php:40
+msgid "Previous"
+msgstr ""
+
+#: E:\PluginTranslations\translate.php:41
+msgid "Next"
+msgstr ""
+
+#: E:\PluginTranslations\translate.php:42
+msgid "Total records"
+msgstr ""
+
+#: E:\PluginTranslations\translate.php:43
+msgid "Revert to original vaue"
+msgstr ""
+
+#: E:\PluginTranslations\translate.php:44
+msgid "Active Cell"
+msgstr ""
+
+#: E:\PluginTranslations\translate.php:45
+msgid "Active Row"
+msgstr ""
+
+#: E:\PluginTranslations\translate.php:46
+msgid "Selected Rows"
+msgstr ""
+
+#: E:\PluginTranslations\translate.php:47
+msgid "Show/Hide Fields"
+msgstr ""
+
+#: E:\PluginTranslations\translate.php:48
+msgid "Custom Fields"
+msgstr ""
+
+#: E:\PluginTranslations\translate.php:49
+msgid "Plugin Settings"
+msgstr ""
+
+#: E:\PluginTranslations\translate.php:50
+msgid "Export to CSV"
+msgstr ""
+
+#: E:\PluginTranslations\translate.php:51
+msgid "Linked editing"
+msgstr ""
+
+#: E:\PluginTranslations\translate.php:52
+msgid "Manual changes on any selected product will affect all of them"
+msgstr ""
+
+#: E:\PluginTranslations\translate.php:53
+msgid "All products in table"
+msgstr ""
+
+#: E:\PluginTranslations\translate.php:54
+msgid "Selected products only"
+msgstr ""
+
+#: E:\PluginTranslations\translate.php:55
+msgid "Delimiter"
+msgstr ""
+
+#: E:\PluginTranslations\translate.php:56
+msgid "Are you sure you want to continue ?"
+msgstr ""
+
+#: E:\PluginTranslations\translate.php:57
+msgid "Limit on product retrieval"
+msgstr ""
+
+#: E:\PluginTranslations\translate.php:58
+msgid "Do not retrieve total number"
+msgstr ""
+
+#: E:\PluginTranslations\translate.php:59
+msgid ""
+"check if you have a large number of products and want to speed up the query"
+msgstr ""
+
+#: E:\PluginTranslations\translate.php:60
+msgid "Retrieve all variations on attribute search"
+msgstr ""
+
+#: E:\PluginTranslations\translate.php:61
+msgid "if the parent has it"
+msgstr ""
+
+#: E:\PluginTranslations\translate.php:62
+msgid "Get all children of selected category on search"
+msgstr ""
+
+#: E:\PluginTranslations\translate.php:63
+msgid ""
+"Note ! - Linked editing is turned on, all new variations will be added to "
+"all of the selected products. A large number of products * variations can "
+"cause a php timeout"
+msgstr ""
+
+#: E:\PluginTranslations\translate.php:64
+msgid "Bulk Add"
+msgstr ""
+
+#: E:\PluginTranslations\translate.php:65
+msgid "Add Single Variation"
+msgstr ""
+
+#: E:\PluginTranslations\translate.php:66
+msgid "Selected product does not have any attributes"
+msgstr ""
+
+#: E:\PluginTranslations\translate.php:67
+msgid "Call woocommerce action on save"
+msgstr ""
+
+#: E:\PluginTranslations\translate.php:68
+msgid "for better compatibility with third-party cache plugins"
+msgstr ""
+
+#: E:\PluginTranslations\translate.php:69
+msgid "Attributes"
+msgstr ""
+
+#: E:\PluginTranslations\translate.php:70
+msgid "Regular/Sale Price"
+msgstr ""
+
+#: E:\PluginTranslations\translate.php:71
+msgid "SKU/Tags"
+msgstr ""
+
+#: E:\PluginTranslations\translate.php:72
+msgid "Do not check \"Used for variations\" automatically"
+msgstr ""
+
+#: E:\PluginTranslations\translate.php:73
+msgid "Convert manually to UTF-8"
+msgstr ""
+
+#: E:\PluginTranslations\translate.php:74
+msgid "Disable attribute support"
+msgstr ""
+
+#: E:\PluginTranslations\translate.php:75
+msgid "Require confirmation on save"
+msgstr ""
+
+#: E:\PluginTranslations\translate.php:76
+msgid "Duplicate"
+msgstr ""
+
+#: E:\PluginTranslations\translate.php:77
+msgid "Time(s)"
+msgstr ""
+
+#: E:\PluginTranslations\translate.php:78
+msgid "Find custom fields by product ID"
+msgstr ""
+
+#: E:\PluginTranslations\translate.php:79
+msgid "Find"
+msgstr ""
+
+#: E:\PluginTranslations\translate.php:80
+msgid "Find Taxonomies"
+msgstr ""
+
+#: E:\PluginTranslations\translate.php:81
+msgid "OR"
+msgstr ""

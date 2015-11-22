@@ -1,0 +1,54 @@
+.accordion {
+	
+	.accordion-group {
+		margin-bottom: 10px;
+	}
+		
+	.accordion-inner p {
+		color: #666;
+	}
+	
+	.accordion-body {
+		.main-font-size-to-pct(@main-font-size);
+		background: none repeat scroll 0 0 #FFFFFF;
+		padding: 17px;
+	}
+		
+	.accordion-heading {
+		font-size: 16px;
+		font-weight: 400;
+		background: none repeat scroll 0 0 #FFFFFF;
+		margin-bottom: 2px;
+
+
+		.plus_icon {
+			background: url("../images/plus_img.jpg") no-repeat scroll left 0 transparent;
+			width: 60px;
+			height: 58px;
+			float: left;
+		}
+		
+		a {
+			color: #000;
+			text-decoration: none;
+			min-height: 58px;
+			
+			&:hover {
+				color: #000;
+				text-decoration: none;
+			}
+		}
+		
+		h5 {
+			padding: 0px;
+			margin: 0px;
+			padding: 17px;
+			min-height: 58px;
+			font-size: 16px;
+			font-weight: 400;
+			display: inline-block;
+		}
+	}
+	
+	
+}

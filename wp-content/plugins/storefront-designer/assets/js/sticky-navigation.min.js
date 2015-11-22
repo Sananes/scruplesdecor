@@ -1,0 +1,1 @@
+jQuery(document).ready(function(){if(jQuery("body").hasClass("admin-bar"))var i=32;else var i=0;jQuery(window).width()>768&&jQuery(".sd-sticky-navigation").sticky({topSpacing:i,responsiveWidth:!0})});

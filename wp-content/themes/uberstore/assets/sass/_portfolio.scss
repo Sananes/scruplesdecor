@@ -1,0 +1,292 @@
+@import "compass/css3";
+@import 'compass/css3/filter';
+@import "compass/css3/user-interface";
+
+$break-small: 767px;
+$break-medium: 940px;
+$break-large: 1290px;
+$transition: cubic-bezier(0.75, 0, 0.175, 1);
+$color1: #222; // black
+
+.cf {
+	&:before,
+	&:after {
+	    content: " ";
+	    display: table;
+	}
+	&:after {
+	    clear: both;
+	}
+}
+
+/* Isotope Specific (AJAX Portfolio) */
+.isotope-item {
+	z-index: 2;
+	height: auto;
+	
+	@media only screen and (max-width: $break-small) {
+		width: 100% !important;
+	}
+}
+
+.isotope-hidden.isotope-item {
+	pointer-events: none;
+	z-index: 1;
+}
+.isotope,
+.isotope .isotope-item {
+  @include transition-duration(1s);
+  @include transition-property(all);
+  &.no-transition {
+     @include transition-duration(0s);
+  }
+}
+
+/* Image Hover */
+.fresco {
+	display: block;
+	float: left;
+	position: relative;
+	width: 100%;
+	line-height: 0;
+	
+	img {
+		width: 100%;
+		max-width: 100%;
+	}
+
+	.overlay {
+		position: absolute;
+		top: 10px;
+		left: 10px;
+		bottom: 10px;
+		right: 10px;
+		background-color: transparent;
+		overflow: hidden;
+		z-index: 20;
+		@include single-transition(all, 0.2s, ease-in-out);
+		
+		.buttons {
+			position: absolute;
+			text-align: center;
+			top: 50%;
+			left: 0;
+			right: 0;
+			margin:-25px 0 0 0;
+		}
+		.details,
+		.zoom {
+			display: inline-block;
+			color: #fff;
+			background: transparent;
+			padding: 0;
+			border: 1px solid rgba(255,255,255,0.6);
+			height: 50px;
+			line-height: 48px;
+			font-size: 14px;
+			font-weight: 300;
+			text-align: center;
+			z-index: 40;
+			padding: 0 20px;
+			text-transform: uppercase;
+			@include opacity(0);
+
+			
+			& + a {
+				margin-left: 8px;
+			}
+			&:hover {
+				background: #a6a6a6;
+				border-color: #a6a6a6;
+			}
+		}
+	}
+
+	&:hover {
+		.overlay {
+			background-color: rgba(0,0,0,0.6);
+			
+			.details,
+			.zoom {
+				@include opacity(1);
+				@include rotate3d(1, 0, 0, 0deg);
+			}
+		}
+	}
+}
+/* Filters */
+.filters {
+	list-style: none;
+	margin-bottom: 35px;
+	text-align: center;
+	
+	li {
+		display: inline-block;
+		
+		a {
+			display: block;
+			color: #737373;
+			font-size: 12px;
+			padding: 10px 12px;
+			text-transform: uppercase;
+			line-height: 1;
+			&:hover {
+				background: $color1;
+				color: #fff;
+			}
+			&.active {
+				background: #10b4aa;
+				color: #fff;
+			}
+		}
+	}
+}
+/* Single */
+.portfolio-content {
+	padding: 30px 35px;
+	z-index: 99px;
+	background: #fff;
+	margin-top: -30px;
+	&.margin {
+		margin-top: -120px;
+		z-index: 1000;
+		@media only screen and (max-width: $break-small) {
+			margin-top: 0;
+		}
+	}
+	.post-title h2 {
+		margin: 0;
+	}
+	@media only screen and (max-width: $break-small) {
+		padding: 30px 15px;
+	}
+	
+}
+.portfolio-layout2,
+.portfolio-layout1 {
+	#product_share {
+		float: left;
+		border: 0;
+		height: 25px;
+		line-height: 25px;
+		margin-bottom: 25px;
+		.placeholder {
+			float: left;
+			padding: 0;
+			width: 100%;
+			.button {
+				padding: 0 20px 0 0;
+			}
+		}
+	}
+	.post-title {
+		margin-bottom: 15px;
+		
+		h2 {
+			text-transform: uppercase;
+		}
+	}
+}
+.portfolio-layout2 {
+	.post-content {
+		margin-bottom: 40px;
+	}
+}
+.portfolio_attributes {
+	margin: 0;
+	padding: 0;
+	list-style: none;
+	
+	li {
+		border-bottom: 1px solid #e8e8e8;
+		padding-bottom: 15px;
+		margin-bottom: 15px;
+		label {
+			margin-bottom: 5px;
+		}
+		p {
+			margin: 0;
+			color: $color1;
+		}
+	}
+	.portfolio-layout2 & {
+		li {
+			border-bottom: 1px dotted #e8e8e8;
+			
+			label {
+				float: left;
+				text-transform: none;
+				min-width: 140px;
+				font-weight: 700;
+				margin: 0;
+				font-size: 14px;
+			}
+			p {
+				font-size: 14px;
+			}
+		}
+	}
+}
+
+#portfolioselect {
+	position: relative;
+	float: left;
+	margin-bottom: 30px;
+	width: 100%;
+	
+	#sortportfolio {
+		display: block;
+		float: left;
+		line-height: 36px;
+		font-size: 12px;
+		width: 100%;
+		height: 36px;
+		padding: 0 34px 0 12px;
+		border: 1px solid #dcdcdc;
+		text-transform: uppercase;
+		color: #737373;
+		@include box-sizing(border-box);
+		@include single-transition(all, 0.4s, ease-in-out);
+		
+		&:after {
+			content: '';
+			display: block;
+			position: absolute;
+			top: 15px;
+			right: 14px;
+			width: 0px;
+			height: 0px;
+			border-style: solid;
+			border-width: 6px 5px 0 5px;
+			border-color: #bababa transparent transparent transparent;
+		}
+	}
+	
+	ul {
+		list-style: none;
+		margin: 0;
+		display: none;
+		float: left;
+		width: 100%;
+		border-left: 1px solid #dcdcdc;
+		border-right: 1px solid #dcdcdc;
+		border-bottom: 1px solid #dcdcdc;
+		li {
+			a {
+				display: block;
+				width: 100%;
+				float: left;
+				font-size: 11px;
+				font-weight: 800;
+				text-transform: uppercase;
+				color: #878787;
+				padding: 10px 12px;
+				
+				&:hover,
+				&.active {
+					color: $color1;
+				}
+			}
+		}
+	}
+}

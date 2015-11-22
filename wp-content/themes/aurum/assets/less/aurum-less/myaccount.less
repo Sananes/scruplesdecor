@@ -1,0 +1,186 @@
+.my-account {
+	margin-top: @base-margin * 2;
+	margin-bottom: @base-margin * 2;
+
+	@media screen and (max-width: @screen-sm-min){
+		margin-top: 0;
+	}
+
+	.my-account-tabs-env {
+		position: relative;
+		z-index: 50;
+	}
+
+	.my-account-tabs {
+		padding: 0px;
+		color: @heading;
+		font-weight: 300;
+		text-transform: uppercase;
+		&:extend(.heading-font);
+
+		@media screen and (max-width: @screen-sm-min){
+			margin-bottom: @base-margin + @base-padding;
+		}
+
+		.user-profile {
+			margin-bottom: 50px;
+			padding-top: 20px;
+
+			@media screen and (max-width: @screen-sm-min){
+				padding-top: 0;
+				margin-bottom: 30px;
+			}
+
+			.image {
+				margin-right: 20px;
+				img {
+					.border-radius(30px);
+					width: 100%;
+					width: 65px;
+					height: 65px;
+				}
+			}
+
+			.name {
+				display: block;
+				color: @heading;
+				font-size: 20px;
+				padding-top: 10px;
+			}
+
+			.logout {
+				font-size: 13px;
+				display: block;
+				color: @sub-heading;
+			}
+		}
+
+		ul {
+			padding-left: 0px;
+
+			li {
+				border-top: 1px solid @border-color;
+				border-right: 1px solid transparent;
+				line-height: 32px;
+				padding: 5px 0px;
+				list-style-type:none;
+				font-size: 14px;
+
+				&.active {
+					position: relative;
+					background: #FFF;
+					border-right-color: #fff;
+					z-index:1;
+
+					a {
+						color: @heading;
+					}
+				}
+
+				a {
+					color: @sub-heading;
+					display: block;
+				}
+			}
+		}
+	}
+
+	.my-account-content {
+		padding-left: 60px;
+		min-height: 350px;
+		position: relative;
+
+		@media screen and (max-width: @screen-md-min){
+			padding-left: @base-margin;
+		}
+
+		@media screen and (max-width: @screen-sm-min){
+			padding-left: 0;
+		}
+
+		&:before {
+			position: absolute;
+			content: '';
+			left: -30px - 1;
+			top: 0;
+			bottom: 0;
+			width: 1px;
+			background: @border-color;
+		}
+
+		.page-title {
+
+			h2 {
+				margin-top: 0;
+			}
+		}
+
+		.content-pane {
+			display: none;
+			padding: 0;
+			margin: 0;
+
+			&.active {
+				display: block;
+			}
+
+			.address {
+
+				header {
+
+					.edit {
+						display: inline-block;
+						margin-bottom: @base-padding;
+						font-size: @font-size-small - 1;
+						text-transform: uppercase;
+						position: relative;
+						top: @base-margin;
+
+						+ h3 {
+							margin-bottom: @base-margin;
+						}
+					}
+				}
+			}
+		}
+
+		.no-entries {
+			margin: 0;
+			text-align: center;
+			color: @text-color-two;
+		}
+	}
+}
+
+.order-list {
+
+	td {
+		font-weight: 300;
+
+		&.order-number {
+			a {
+				font-size: 22px;
+				font-weight: 300;
+				color: @menu-color;
+			}
+		}
+
+		&.order-total {
+
+			.amount {
+				font-weight: 400;
+				text-decoration: underline;
+			}
+		}
+
+		.price {
+			display: block;
+			color: @menu-color;
+		}
+	}
+}
+
+.form-forgot-passwd-env {
+	margin-top: @base-margin + @base-padding;
+	margin-bottom: @base-margin + @base-padding;
+}

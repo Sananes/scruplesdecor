@@ -1,0 +1,351 @@
+msgid ""
+msgstr ""
+"Project-Id-Version: advanced bulk edit\n"
+"POT-Creation-Date: 2015-03-19 14:53+0200\n"
+"PO-Revision-Date: 2015-03-19 14:54+0200\n"
+"Last-Translator: George Iron <obuilities@abv.bg>\n"
+"Language-Team: \n"
+"Language: bg\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"X-Generator: Poedit 1.7.5\n"
+"X-Poedit-Basepath: .\n"
+"Plural-Forms: nplurals=2; plural=(n != 1);\n"
+"X-Poedit-SourceCharset: UTF-8\n"
+"X-Poedit-KeywordsList: __;_e\n"
+"X-Poedit-SearchPath-0: C:\\wamp\\www\\wordpress\\wp-content\\plugins"
+"\\woocommerce-advanced-bulk-edit\\languages\n"
+"X-Poedit-SearchPath-1: E:\\PluginTranslations\\translate.php\n"
+
+#: E:\PluginTranslations\translate.php:5
+msgid "Page"
+msgstr "Страница"
+
+#: E:\PluginTranslations\translate.php:6
+msgid "Selection Manager"
+msgstr "Селектирай"
+
+#: E:\PluginTranslations\translate.php:7
+msgid "Bulk Edit"
+msgstr "Редактирай"
+
+#: E:\PluginTranslations\translate.php:8
+msgid "contains"
+msgstr "съдържа"
+
+#: E:\PluginTranslations\translate.php:9
+msgid "does not contain"
+msgstr "не съдържа"
+
+#: E:\PluginTranslations\translate.php:10
+msgid "starts with"
+msgstr "започва с"
+
+#: E:\PluginTranslations\translate.php:11
+msgid "ends with"
+msgstr "завършва с"
+
+#: E:\PluginTranslations\translate.php:12
+msgid "field is empty"
+msgstr "полето е празно"
+
+#: E:\PluginTranslations\translate.php:13
+msgid "Ignore case"
+msgstr "без Г/м"
+
+#: E:\PluginTranslations\translate.php:14
+msgid "select"
+msgstr "избери"
+
+#: E:\PluginTranslations\translate.php:15
+msgid "deselect"
+msgstr "премахни избора"
+
+#: E:\PluginTranslations\translate.php:16
+msgid "products and variations"
+msgstr "продукти и вариации"
+
+#: E:\PluginTranslations\translate.php:17
+msgid "products only"
+msgstr "само продукти"
+
+#: E:\PluginTranslations\translate.php:18
+msgid "variations only"
+msgstr "само вариации"
+
+#: E:\PluginTranslations\translate.php:19
+msgid "which meet"
+msgstr "които отговарят на"
+
+#: E:\PluginTranslations\translate.php:20
+msgid "any of the search criteria"
+msgstr "който и да е критерий"
+
+#: E:\PluginTranslations\translate.php:21
+msgid "all of the search criteria"
+msgstr "всички критерии"
+
+#: E:\PluginTranslations\translate.php:22
+msgid "set new"
+msgstr "задай нов"
+
+#: E:\PluginTranslations\translate.php:23
+msgid "prepend"
+msgstr "добави отпред"
+
+#: E:\PluginTranslations\translate.php:24
+msgid "append"
+msgstr "добави отзад"
+
+#: E:\PluginTranslations\translate.php:25
+msgid "replace text"
+msgstr "замени текст"
+
+#: E:\PluginTranslations\translate.php:26
+msgid "with text"
+msgstr "с текст"
+
+#: E:\PluginTranslations\translate.php:27
+msgid "add"
+msgstr "добави"
+
+#: E:\PluginTranslations\translate.php:28
+msgid "remove"
+msgstr "премахни"
+
+#: E:\PluginTranslations\translate.php:29
+msgid "delete"
+msgstr "изтрий"
+
+#: E:\PluginTranslations\translate.php:30
+msgid "increase by value"
+msgstr "увеличи със стойност"
+
+#: E:\PluginTranslations\translate.php:31
+msgid "decrease by value"
+msgstr "намали със стойност"
+
+#: E:\PluginTranslations\translate.php:32
+msgid "increase by %"
+msgstr "увеличи с %"
+
+#: E:\PluginTranslations\translate.php:33
+msgid "decrease by %"
+msgstr "намали с %"
+
+#: E:\PluginTranslations\translate.php:34
+msgid "delete value"
+msgstr "изтрий стойност"
+
+#: E:\PluginTranslations\translate.php:35
+msgid "Get Products"
+msgstr "Зареди Продукти"
+
+#: E:\PluginTranslations\translate.php:36
+msgid "Save Changes"
+msgstr "Запази Промените"
+
+#: E:\PluginTranslations\translate.php:37
+msgid "Selected rows for bulk editing"
+msgstr "Избрани редици за масово редактиране"
+
+#: E:\PluginTranslations\translate.php:38
+msgid ""
+"Changes are saved on going to a different page of products, adding products/"
+"variations or via the 'Save Changes' button"
+msgstr ""
+"Промените се запазват при зареждане на друга страница с продукти, добавяне "
+"на продукти/вариации или чрез бутона 'Запази Промените'"
+
+#: E:\PluginTranslations\translate.php:39
+msgid "First"
+msgstr "Първа"
+
+#: E:\PluginTranslations\translate.php:40
+msgid "Previous"
+msgstr "Предишна"
+
+#: E:\PluginTranslations\translate.php:41
+msgid "Next"
+msgstr "Следваща"
+
+#: E:\PluginTranslations\translate.php:42
+msgid "Total records"
+msgstr "Общ брой"
+
+#: E:\PluginTranslations\translate.php:43
+msgid "Revert to original vaue"
+msgstr "Върни оригиналната стойност"
+
+#: E:\PluginTranslations\translate.php:44
+msgid "Active Cell"
+msgstr "Активна Клетка"
+
+#: E:\PluginTranslations\translate.php:45
+msgid "Active Row"
+msgstr "Активна Редица"
+
+#: E:\PluginTranslations\translate.php:46
+msgid "Selected Rows"
+msgstr "Избраните Редици"
+
+#: E:\PluginTranslations\translate.php:47
+msgid "Show/Hide Fields"
+msgstr "Покажи/Скрий Полета"
+
+#: E:\PluginTranslations\translate.php:48
+msgid "Custom Fields"
+msgstr "Собствени Полета"
+
+#: E:\PluginTranslations\translate.php:49
+msgid "Plugin Settings"
+msgstr "Настройки"
+
+#: E:\PluginTranslations\translate.php:50
+msgid "Export to CSV"
+msgstr "Експорт в ЦСВ"
+
+#: E:\PluginTranslations\translate.php:51
+msgid "Linked editing"
+msgstr "Свързано редактиране"
+
+#: E:\PluginTranslations\translate.php:52
+msgid "Manual changes on any selected product will affect all of them"
+msgstr ""
+"Ръчните промени на който и да е от избраните продукти се отразява на всички"
+
+#: E:\PluginTranslations\translate.php:53
+msgid "All products in table"
+msgstr "Всички продукти"
+
+#: E:\PluginTranslations\translate.php:54
+msgid "Selected products only"
+msgstr "Избраните продукти само"
+
+#: E:\PluginTranslations\translate.php:55
+msgid "Delimiter"
+msgstr "Разделител"
+
+#: E:\PluginTranslations\translate.php:56
+msgid "Are you sure you want to continue ?"
+msgstr "Сигурен ли сте, че искате да продължите ?"
+
+#: E:\PluginTranslations\translate.php:57
+msgid "Limit on product retrieval"
+msgstr "Лимит на продукти в таблицата"
+
+#: E:\PluginTranslations\translate.php:58
+msgid "Do not retrieve total number"
+msgstr "Не изчислявай общия брой"
+
+#: E:\PluginTranslations\translate.php:59
+msgid ""
+"check if you have a large number of products and want to speed up the query"
+msgstr "изберете ако имате голям брой продукти и искате на забързате заявката"
+
+#: E:\PluginTranslations\translate.php:60
+msgid "Retrieve all variations on attribute search"
+msgstr "Покажи всички вариации при търсене чрез атрибут"
+
+#: E:\PluginTranslations\translate.php:61
+msgid "if the parent has it"
+msgstr "ако продукта го има"
+
+#: E:\PluginTranslations\translate.php:62
+msgid "Get all children of selected category on search"
+msgstr "Добави и всички вложени категории на избраната при търсене"
+
+#: E:\PluginTranslations\translate.php:63
+msgid ""
+"Note ! - Linked editing is turned on, all new variations will be added to "
+"all of the selected products. A large number of products * variations can "
+"cause a php timeout"
+msgstr ""
+"Важно ! - Свързаното редактиране е включено, всички нови вариации ще бъдат "
+"добавени за всички избрани продукти. Голям брой продукти * вариации може да "
+"предизвика пхп таймаут"
+
+#: E:\PluginTranslations\translate.php:64
+msgid "Bulk Add"
+msgstr "Добави Много"
+
+#: E:\PluginTranslations\translate.php:65
+msgid "Add Single Variation"
+msgstr "Добави 1 Вариация"
+
+#: E:\PluginTranslations\translate.php:66
+msgid "Selected product does not have any attributes"
+msgstr "Избраните продукти нямат атрибути"
+
+#: E:\PluginTranslations\translate.php:67
+msgid "Call woocommerce action on save"
+msgstr "Викай woocommerce action при записване на промените"
+
+#: E:\PluginTranslations\translate.php:68
+msgid "for better compatibility with third-party cache plugins"
+msgstr "за по-добра съвместимост с кеш плъгините"
+
+#: E:\PluginTranslations\translate.php:69
+msgid "Attributes"
+msgstr "Атрибути"
+
+#: E:\PluginTranslations\translate.php:70
+msgid "Regular/Sale Price"
+msgstr "Редовна/Разпродажба цена"
+
+#: E:\PluginTranslations\translate.php:71
+msgid "SKU/Tags"
+msgstr "СЕП/Етикети"
+
+#: E:\PluginTranslations\translate.php:72
+msgid "Do not check \"Used for variations\" automatically"
+msgstr "Не обработвай автоматично \"Използван за вариации\" при атрибутите"
+
+#: E:\PluginTranslations\translate.php:73
+msgid "Convert manually to UTF-8"
+msgstr "Форсирай конвертиране в UTF-8"
+
+#: E:\PluginTranslations\translate.php:74
+msgid "Disable attribute support"
+msgstr "Забрани поддръжката на атрибути"
+
+#: E:\PluginTranslations\translate.php:75
+msgid "Require confirmation on save"
+msgstr "Искане на потвърждение преди запис"
+
+#: E:\PluginTranslations\translate.php:76
+msgid "Duplicate"
+msgstr "Дублиране"
+
+#: E:\PluginTranslations\translate.php:77
+msgid "Time(s)"
+msgstr "Път(и)"
+
+#: E:\PluginTranslations\translate.php:78
+msgid "Find custom fields by product ID"
+msgstr "Намери собствени полета по ID на продукт"
+
+#: E:\PluginTranslations\translate.php:79
+msgid "Find"
+msgstr "Намери"
+
+#: E:\PluginTranslations\translate.php:80
+msgid "Find Taxonomies"
+msgstr "Намери Таксономита"
+
+#: E:\PluginTranslations\translate.php:81
+msgid "OR"
+msgstr "или"
+
+#~ msgid "Find Taxonimies"
+#~ msgstr "Намери Таксономита"
+
+#~ msgid "Button text"
+#~ msgstr "Текст на бутона"
+
+#~ msgid "Find Custom Fields"
+#~ msgstr "Намери Собствени Полета"
+
+#~ msgid "Use comma instead of dot in decimal numbers"
+#~ msgstr "Използвай , вместо . при числата с десетичен знак"

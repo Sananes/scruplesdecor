@@ -1,0 +1,40 @@
+.not-found {
+	background: @dark-text-color;
+	width: 100%;
+	
+	.center {
+		width: 800px;
+		display: block;
+		margin-left: auto;
+		margin-right: auto;
+		margin-top: 200px;
+
+		
+		div {
+			display: inline-block;
+			vertical-align: middle;
+			float: none;
+			padding: 0;
+			width: 48%;
+			
+			
+			h2 {
+				&:extend(.to-uppercase);
+				color: white;
+			}
+			
+			a { 
+				&:extend(.to-uppercase);
+				color: @default-text-color;
+				
+				span {
+					font-size: 19px;
+				}
+				
+				&:hover {
+					color: @block-background;
+				}
+			}
+		}
+	}		
+}

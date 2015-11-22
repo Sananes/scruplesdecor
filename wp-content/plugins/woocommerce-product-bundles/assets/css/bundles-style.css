@@ -1,0 +1,24 @@
+.bundled_table_item .product-name, .bundled_table_item .product-price, .bundled_table_item .product-quantity, .bundled_table_item .product-subtotal, .bundled_table_item .product-total {
+	font-size: 85%;
+}
+
+.bundled_table_item .bundled_table_item_indent {
+	padding-left: 32px;
+}
+
+.woocommerce .bundled_table_item td.product-name dl.variation, .woocommerce-page .bundled_table_item td.product-name dl.variation {
+	font-size: 100%;
+}
+
+.bundled_table_item, .bundled_table_item td {
+	border-top: none !important;
+	border-bottom: none !important;
+}
+
+.bundle_table_item, .bundle_table_item td {
+	border-bottom: none !important;
+}
+
+dt.bundled_title_meta, .bundled_notice {
+	margin: 12px 0 5px;
+}

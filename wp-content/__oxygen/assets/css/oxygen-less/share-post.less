@@ -1,0 +1,36 @@
+.share-post {
+	padding: 25px;
+	background: #FFF;
+	margin-bottom: @base-margin;
+	.clearfix;
+	
+	h1 {
+		float: left;
+		font-size: 20px;
+		color: @dark-text-color;
+		&:extend(.to-uppercase);
+		margin: 5px 0px 0px;
+	}
+	
+	.share-post-links {
+		float: right;
+		
+		a {
+			@s: 30px;
+			
+			display: inline-block;
+			font-size: 16;
+			text-align: center;
+			line-height: @s;
+			background: fade(#FAFAFA, 90%);
+			margin-right: 4px;
+			.size(@s);
+			.transall;
+			
+			&:hover {			
+				background: @active-text-color;
+				color: @block-background;
+			}
+		}
+	}
+}
