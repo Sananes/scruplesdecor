@@ -1,9 +1,12 @@
 <?php
+if ( ! defined( 'ABSPATH' ) ) {
+	die( '-1' );
+}
 
 /**
  * Renders navigation bar for Editors.
  */
-Class Vc_Navbar implements Vc_Render {
+class Vc_Navbar implements Vc_Render {
 	/**
 	 * @var array
 	 */
@@ -13,7 +16,7 @@ Class Vc_Navbar implements Vc_Render {
 		'save_backend',
 		'preview',
 		'frontend',
-		'custom_css'
+		'custom_css',
 	);
 	/**
 	 * @var string
@@ -76,7 +79,7 @@ Class Vc_Navbar implements Vc_Render {
 			'css_class' => $this->css_class,
 			'controls' => $this->getControls(),
 			'nav_bar' => $this,
-			'post' => $this->post()
+			'post' => $this->post(),
 		) );
 	}
 
@@ -96,6 +99,10 @@ Class Vc_Navbar implements Vc_Render {
 	 * @return string
 	 */
 	public function getControlCustomCss() {
+		if ( ! vc_user_access()->part( 'post_settings' )->can()->get() ) {
+			return '';
+		}
+
 		return '<li class="vc_pull-right"><a id="vc_post-settings-button" class="vc_icon-btn vc_post-settings" title="'
 		       . __( 'Page settings', 'js_composer' ) . '">'
 		       . '<span id="vc_post-css-badge" class="vc_badge vc_badge-custom-css" style="display: none;">' . __( 'CSS', 'js_composer' ) . '</span></a>'
@@ -106,17 +113,30 @@ Class Vc_Navbar implements Vc_Render {
 	 * @return string
 	 */
 	public function getControlAddElement() {
-		return '<li class="vc_show-mobile">'
-		       . '	<a href="javascript:;" class="vc_icon-btn vc_element-button" data-model-id="vc_element" id="vc_add-new-element" title="'
-		       . '' . __( 'Add new element', 'js_composer' ) . '">'
-		       . '	</a>'
-		       . '</li>';
+		if ( vc_user_access()
+			     ->part( 'shortcodes' )
+			     ->checkStateAny( true, 'custom', null )
+			     ->get() &&
+		     vc_user_access_check_shortcode_all( 'vc_row' ) && vc_user_access_check_shortcode_all( 'vc_column' )
+		) {
+			return '<li class="vc_show-mobile">'
+			       . '	<a href="javascript:;" class="vc_icon-btn vc_element-button" data-model-id="vc_element" id="vc_add-new-element" title="'
+			       . '' . __( 'Add new element', 'js_composer' ) . '">'
+			       . '	</a>'
+			       . '</li>';
+		}
+
+		return '';
 	}
 
 	/**
 	 * @return string
 	 */
 	public function getControlTemplates() {
+		if ( ! vc_user_access()->part( 'templates' )->can()->get() ) {
+			return '';
+		}
+
 		return '<li><a href="javascript:;" class="vc_icon-btn vc_templates-button vc_navbar-border-right"  id="vc_templates-editor-button" title="'
 		       . __( 'Templates', 'js_composer' ) . '"></a></li>';
 	}
@@ -130,7 +150,7 @@ Class Vc_Navbar implements Vc_Render {
 		}
 
 		return '<li class="vc_pull-right">'
-		       . '<a href="' . vc_frontend_editor()->getInlineUrl() . '" class="vc_btn vc_btn-primary vc_btn-sm vc_navbar-btn" id="wpb-edit-inline">' . __( 'Frontend', "js_composer" ) . '</a>'
+		       . '<a href="' . vc_frontend_editor()->getInlineUrl() . '" class="vc_btn vc_btn-primary vc_btn-sm vc_navbar-btn" id="wpb-edit-inline">' . __( 'Frontend', 'js_composer' ) . '</a>'
 		       . '</li>';
 	}
 
@@ -146,8 +166,8 @@ Class Vc_Navbar implements Vc_Render {
 	 */
 	public function getControlSaveBackend() {
 		return '<li class="vc_pull-right vc_save-backend">'
-		       . '<a href="javascript:;" class="vc_btn vc_btn-grey vc_btn-sm vc_navbar-btn vc_control-preview">' . __( 'Preview', "js_composer" ) . '</a>'
-		       . '<a class="vc_btn vc_btn-sm vc_navbar-btn vc_btn-primary vc_control-save" id="wpb-save-post">' . __( 'Update', "js_composer" ) . '</a>'
+		       . '<a href="javascript:;" class="vc_btn vc_btn-grey vc_btn-sm vc_navbar-btn vc_control-preview">' . __( 'Preview', 'js_composer' ) . '</a>'
+		       . '<a class="vc_btn vc_btn-sm vc_navbar-btn vc_btn-primary vc_control-save" id="wpb-save-post">' . __( 'Update', 'js_composer' ) . '</a>'
 		       . '</li>';
 	}
 }

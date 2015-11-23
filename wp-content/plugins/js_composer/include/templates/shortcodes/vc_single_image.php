@@ -1,4 +1,8 @@
 <?php
+if ( ! defined( 'ABSPATH' ) ) {
+	die( '-1' );
+}
+
 /**
  * Shortcode attributes
  * @var $atts
@@ -33,7 +37,7 @@ $default_src = vc_asset_url( 'vc/no_image.png' );
 // backward compatibility. since 4.6
 if ( empty( $onclick ) && isset( $img_link_large ) && 'yes' === $img_link_large ) {
 	$onclick = 'img_link_large';
-} else if ( empty( $atts['onclick'] ) && ( ! isset( $atts['img_link_large'] ) || 'yes' !== $atts['img_link_large'] ) ) {
+} elseif ( empty( $atts['onclick'] ) && ( ! isset( $atts['img_link_large'] ) || 'yes' !== $atts['img_link_large'] ) ) {
 	$onclick = 'custom_link';
 }
 
@@ -42,7 +46,7 @@ if ( 'external_link' === $source ) {
 	$border_color = $external_border_color;
 }
 
-$border_color = ( $border_color !== '' ) ? ' vc_box_border_' . $border_color : '';
+$border_color = ( '' !== $border_color ) ? ' vc_box_border_' . $border_color : '';
 
 $img = false;
 
@@ -74,7 +78,7 @@ switch ( $source ) {
 		$img = wpb_getImageBySize( array(
 			'attach_id' => $img_id,
 			'thumb_size' => $img_size,
-			'class' => 'vc_single_image-img'
+			'class' => 'vc_single_image-img',
 		) );
 
 		// don't show placeholder in public version if post doesn't have featured image
@@ -93,7 +97,7 @@ switch ( $source ) {
 		$custom_src = $custom_src ? esc_attr( $custom_src ) : $default_src;
 
 		$img = array(
-			'thumbnail' => '<img class="vc_single_image-img" ' . $hwstring . ' src="' . $custom_src . '" />'
+			'thumbnail' => '<img class="vc_single_image-img" ' . $hwstring . ' src="' . $custom_src . '" />',
 		);
 		break;
 
@@ -149,7 +153,7 @@ switch ( $onclick ) {
 		// backward compatibility
 		if ( vc_has_class( 'prettyphoto', $el_class ) ) {
 			// $link is already defined
-		} else if ( 'external_link' === $source ) {
+		} elseif ( 'external_link' === $source ) {
 			$link = $custom_src;
 		} else {
 			$link = wp_get_attachment_image_src( $img_id, 'large' );
@@ -184,13 +188,18 @@ if ( vc_has_class( 'prettyphoto', $el_class ) ) {
 	$el_class = vc_remove_class( 'prettyphoto', $el_class );
 }
 
-$html = ( 'vc_box_shadow_3d' === $style ) ? '<span class="vc_box_shadow_3d_wrap">' . $img['thumbnail'] . '</span>' : $img['thumbnail'];
-$html = '<div class="vc_single_image-wrapper ' . $style . ' ' . $border_color . '">' . $html . '</div>';
+$wrapperClass = 'vc_single_image-wrapper ' . $style . ' ' . $border_color;
 
 if ( $link ) {
 	$a_attrs['href'] = $link;
 	$a_attrs['target'] = $img_link_target;
-	$html = '<a ' . vc_stringify_attributes( $a_attrs ) . '>' . $html . '</a>';
+	if ( ! empty( $a_attrs['class'] ) ) {
+		$wrapperClass .= ' ' . $a_attrs['class'];
+		unset( $a_attrs['class'] );
+	}
+	$html = '<a ' . vc_stringify_attributes( $a_attrs ) . ' class="' . $wrapperClass . '">' . $img['thumbnail'] . '</a>';
+} else {
+	$html = '<div class="' . $wrapperClass . '">' . $img['thumbnail'] . '</div>';
 }
 
 $class_to_filter = 'wpb_single_image wpb_content_element vc_align_' . $alignment . ' ' . $this->getCSSAnimation( $css_animation );
@@ -207,20 +216,15 @@ if ( in_array( $source, array( 'media_library', 'featured_image' ) ) && 'yes' ==
 }
 
 if ( 'yes' === $add_caption && '' !== $caption ) {
-	$html = '
-		<figure class="vc_figure">
-			' . $html . '
-			<figcaption class="vc_figure-caption">' . esc_html( $caption ) . '</figcaption>
-		</figure>
-	';
+	$html .= '<figcaption class="vc_figure-caption">' . esc_html( $caption ) . '</figcaption>';
 }
 
 $output = '
 	<div class="' . esc_attr( trim( $css_class ) ) . '">
-		<div class="wpb_wrapper">
-			' . wpb_widget_title( array( 'title' => $title, 'extraclass' => 'wpb_singleimage_heading' ) ) . '
+		' . wpb_widget_title( array( 'title' => $title, 'extraclass' => 'wpb_singleimage_heading' ) ) . '
+		<figure class="wpb_wrapper vc_figure">
 			' . $html . '
-		</div>
+		</figure>
 	</div>
 ';
 

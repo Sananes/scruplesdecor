@@ -1,4 +1,7 @@
 <?php
+if ( ! defined( 'ABSPATH' ) ) {
+	die( '-1' );
+}
 
 /**
  * @since 4.4 vendors initialization moved to hooks in autoload/vendors.
@@ -39,7 +42,7 @@ function vc_vendor_gravityforms_load() {
 				'value' => $gravity_forms_array,
 				'save_always' => true,
 				'description' => __( 'Select a form to add it to your post or page.', 'js_composer' ),
-				'admin_label' => true
+				'admin_label' => true,
 			),
 			array(
 				'type' => 'dropdown',
@@ -47,14 +50,14 @@ function vc_vendor_gravityforms_load() {
 				'param_name' => 'title',
 				'value' => array(
 					__( 'No', 'js_composer' ) => 'false',
-					__( 'Yes', 'js_composer' ) => 'true'
+					__( 'Yes', 'js_composer' ) => 'true',
 				),
 				'save_always' => true,
 				'description' => __( 'Would you like to display the forms title?', 'js_composer' ),
 				'dependency' => array(
 					'element' => 'id',
-					'not_empty' => true
-				)
+					'not_empty' => true,
+				),
 			),
 			array(
 				'type' => 'dropdown',
@@ -62,14 +65,14 @@ function vc_vendor_gravityforms_load() {
 				'param_name' => 'description',
 				'value' => array(
 					__( 'No', 'js_composer' ) => 'false',
-					__( 'Yes', 'js_composer' ) => 'true'
+					__( 'Yes', 'js_composer' ) => 'true',
 				),
 				'save_always' => true,
 				'description' => __( 'Would you like to display the forms description?', 'js_composer' ),
 				'dependency' => array(
 					'element' => 'id',
-					'not_empty' => true
-				)
+					'not_empty' => true,
+				),
 			),
 			array(
 				'type' => 'dropdown',
@@ -77,26 +80,26 @@ function vc_vendor_gravityforms_load() {
 				'param_name' => 'ajax',
 				'value' => array(
 					__( 'No', 'js_composer' ) => 'false',
-					__( 'Yes', 'js_composer' ) => 'true'
+					__( 'Yes', 'js_composer' ) => 'true',
 				),
 				'save_always' => true,
 				'description' => __( 'Enable AJAX submission?', 'js_composer' ),
 				'dependency' => array(
 					'element' => 'id',
-					'not_empty' => true
-				)
+					'not_empty' => true,
+				),
 			),
 			array(
 				'type' => 'textfield',
 				'heading' => __( 'Tab Index', 'js_composer' ),
 				'param_name' => 'tabindex',
 				'description' => __( '(Optional) Specify the starting tab index for the fields of this form. Leave blank if you\'re not sure what this is.',
-					'js_composer' ),
+				'js_composer' ),
 				'dependency' => array(
 					'element' => 'id',
-					'not_empty' => true
-				)
-			)
-		)
+					'not_empty' => true,
+				),
+			),
+		),
 	) );
 }

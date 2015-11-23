@@ -209,7 +209,8 @@ var VcGrid, vcGridSettings = {
 			vc_action: 'vc_get_vc_grid_data',
 			tag: this.settings.tag,
 			data: this.settings,
-			vc_post_id: this.$el.data( 'vcPostId' )
+			vc_post_id: this.$el.data( 'vcPostId' ),
+			_vcnonce: this.$el.data( 'vcPublicNonce' )
 		}, data );
 
 		$.ajax( {

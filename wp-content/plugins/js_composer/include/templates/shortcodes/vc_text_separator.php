@@ -1,4 +1,7 @@
 <?php
+if ( ! defined( 'ABSPATH' ) ) {
+	die( '-1' );
+}
 /**
  * Shortcode attributes
  * @var $atts
@@ -13,6 +16,21 @@
  * @var $layout
  * @var $css
  * @var $border_width
+ * @var $add_icon
+ * Icons:
+ * @var $i_type
+ * @var $i_icon_fontawesome
+ * @var $i_icon_openiconic
+ * @var $i_icon_typicons
+ * @var $i_icon_entypo
+ * @var $i_icon_linecons
+ * @var $i_color
+ * @var $i_custom_color
+ * @var $i_background_style
+ * @var $i_background_color
+ * @var $i_custom_background_color
+ * @var $i_size
+ * @var $i_css_animation
  * Shortcode class
  * @var $this WPBakeryShortcode_Vc_Text_Separator
  */
@@ -45,11 +63,25 @@ $inline_css = ( 'custom' === $color && '' !== $accent_color ) ? ' style="' . vc_
 $class_to_filter = $class;
 $class_to_filter .= vc_shortcode_custom_css_class( $css, ' ' ) . $this->getExtraClass( $el_class );
 $css_class = apply_filters( VC_SHORTCODE_CUSTOM_CSS_FILTER_TAG, $class_to_filter, $this->settings['base'], $atts );
+$css_class = esc_attr( trim( $css_class ) );
+$icon = '';
+if ( 'true' === $add_icon ) {
+	vc_icon_element_fonts_enqueue( $i_type );
+	$icon = $this->getVcIcon( $atts );
+}
 
-?>
-<div class="<?php echo esc_attr( trim( $css_class ) ); ?>"><span
-		class="vc_sep_holder vc_sep_holder_l"><span<?php echo $inline_css; ?>
-			class="vc_sep_line"></span></span><?php if ( '' !== $title && 'separator_no_text' !== $layout ): ?>
-		<h4><?php echo $title; ?></h4><?php endif ?><span
-		class="vc_sep_holder vc_sep_holder_r"><span<?php echo $inline_css; ?> class="vc_sep_line"></span></span>
-	</div>
+$content = '';
+if ( $icon ) {
+	$content = $icon;
+}
+if ( '' !== $title && 'separator_no_text' !== $layout ) {
+	$css_class .= ' vc_separator-has-text';
+	$content .= '<h4>' . $title . '</h4>';
+}
+
+
+$separatorHtml = <<<TEMPLATE
+<div class="$css_class"><span class="vc_sep_holder vc_sep_holder_l"><span $inline_css class="vc_sep_line"></span></span>$content<span class="vc_sep_holder vc_sep_holder_r"><span $inline_css class="vc_sep_line"></span></span>
+</div>
+TEMPLATE;
+echo $separatorHtml;

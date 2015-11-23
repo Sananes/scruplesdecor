@@ -1,4 +1,8 @@
 <?php
+if ( ! defined( 'ABSPATH' ) ) {
+	die( '-1' );
+}
+
 /**
  * An example of how to write WPBakery Visual Composer custom shortcode
  *
@@ -41,7 +45,7 @@ class WPBakeryShortCode_my_hello_world extends WPBakeryShortCode {
 			'width' => '1/2',
 			'el_position' => '',
 			'foo' => '',
-			'my_dropdown' => ''
+			'my_dropdown' => '',
 		), $atts ) );
 
 		$width_class = '';
@@ -87,36 +91,36 @@ class WPBakeryShortCode_my_hello_world extends WPBakeryShortCode {
  */
 
 vc_map( array(
-	"base" => "my_hello_world",
-	"name" => __( "Hello World", "js_composer" ),
-	"class" => "",
-	"icon" => "icon-heart",
-	"params" => array(
+	'base' => 'my_hello_world',
+	'name' => __( 'Hello World', 'js_composer' ),
+	'class' => '',
+	'icon' => 'icon-heart',
+	'params' => array(
 		array(
-			"type" => "textfield",
-			"holder" => "h3",
-			"class" => "",
-			"heading" => __( "Foo attribute", "js_composer" ),
-			"param_name" => "foo",
-			"value" => __( "I'm foo attribute", "js_composer" ),
-			"description" => __( "Enter foo value.", "js_composer" )
+			'type' => 'textfield',
+			'holder' => 'h3',
+			'class' => '',
+			'heading' => __( 'Foo attribute', 'js_composer' ),
+			'param_name' => 'foo',
+			'value' => __( "I'm foo attribute", 'js_composer' ),
+			'description' => __( 'Enter foo value.', 'js_composer' ),
 		),
 		array(
-			"type" => "textarea_html",
-			"holder" => "div",
-			"class" => "",
-			"heading" => __( "Text", "js_composer" ),
-			"param_name" => "content",
-			"value" => __( "I'm hello world", "js_composer" ),
-			"description" => __( "Enter your content.", "js_composer" )
+			'type' => 'textarea_html',
+			'holder' => 'div',
+			'class' => '',
+			'heading' => __( 'Text', 'js_composer' ),
+			'param_name' => 'content',
+			'value' => __( "I'm hello world", 'js_composer' ),
+			'description' => __( 'Enter your content.', 'js_composer' ),
 		),
 		array(
-			"type" => "dropdown",
-			"heading" => __( "Drop down example", "js_composer" ),
-			"param_name" => "my_dropdown",
-			"value" => array( 1, 2, "three" ),
-			"description" => __( "One, two or three?", "js_composer" )
+			'type' => 'dropdown',
+			'heading' => __( 'Drop down example', 'js_composer' ),
+			'param_name' => 'my_dropdown',
+			'value' => array( 1, 2, 'three' ),
+			'description' => __( 'One, two or three?', 'js_composer' ),
 		),
-	)
+	),
 ) );
 

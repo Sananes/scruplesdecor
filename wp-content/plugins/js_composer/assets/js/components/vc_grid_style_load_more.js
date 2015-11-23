@@ -93,7 +93,10 @@ var vcGridStyleLoadMore = null;
 
 		this.$content = els.find( '[data-vc-grid-content="true"]' );
 
-		this.$loadMoreBtn = els.find( '[data-vc-grid-load-more-btn="true"] .vc_btn' );
+		this.$loadMoreBtn = els.find( '[data-vc-grid-load-more-btn="true"] .vc_btn3' );
+		if ( ! this.$loadMoreBtn.length ) {
+			this.$loadMoreBtn = els.find( '[data-vc-grid-load-more-btn="true"] .vc_btn' );
+		}
 		var self = this;
 		this.$loadMoreBtn.click( function ( e ) {
 			e.preventDefault();

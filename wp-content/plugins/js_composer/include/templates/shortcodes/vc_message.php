@@ -1,4 +1,7 @@
 <?php
+if ( ! defined( 'ABSPATH' ) ) {
+	die( '-1' );
+}
 /**
  * Shortcode attributes
  *
@@ -21,7 +24,7 @@
  */
 $el_class = $message_box_color = $message_box_style = $style = $css = $color = $css_animation = $icon_type = '';
 $icon_fontawesome = $icon_linecons = $icon_openiconic = $icon_typicons = $icon_entypo = '';
-
+$defaultIconClass = 'fa fa-adjust';
 $atts = $this->convertAttributesToMessageBox2( $atts );
 $atts = vc_map_get_attributes( $this->getShortcode(), $atts );
 extract( $atts );
@@ -30,7 +33,7 @@ $elementClass = array(
 	'base' => apply_filters( VC_SHORTCODE_CUSTOM_CSS_FILTER_TAG, 'vc_message_box', $this->settings['base'], $atts ),
 	'style' => 'vc_message_box-' . $message_box_style,
 	'shape' => 'vc_message_box-' . $style,
-	'color' => ( strlen( $color ) > 0 && strpos( 'alert', $color ) === false ) ? 'vc_color-' . $color : 'vc_color-' . $message_box_color,
+	'color' => ( strlen( $color ) > 0 && false === strpos( 'alert', $color ) ) ? 'vc_color-' . $color : 'vc_color-' . $message_box_color,
 	'css_animation' => $this->getCSSAnimation( $css_animation ),
 );
 
@@ -39,7 +42,7 @@ $class_to_filter .= vc_shortcode_custom_css_class( $css, ' ' ) . $this->getExtra
 $css_class = apply_filters( VC_SHORTCODE_CUSTOM_CSS_FILTER_TAG, $class_to_filter, $this->settings['base'], $atts );
 
 // Pick up icons
-$iconClass = isset( ${"icon_" . $icon_type} ) ? ${"icon_" . $icon_type} : $defaultIconClass;
+$iconClass = isset( ${'icon_' . $icon_type} ) ? ${'icon_' . $icon_type} : $defaultIconClass;
 switch ( $color ) {
 	case 'info':
 		$icon_type = 'fontawesome';

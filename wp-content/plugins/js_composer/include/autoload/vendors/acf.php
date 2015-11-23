@@ -1,4 +1,8 @@
 <?php
+if ( ! defined( 'ABSPATH' ) ) {
+	die( '-1' );
+}
+
 /**
  * @since 4.4 vendors initialization moved to hooks in autoload/vendors.
  *
@@ -13,7 +17,7 @@ function vc_init_vendor_acf() {
 		$vendor = new Vc_Vendor_AdvancedCustomFields();
 		add_action( 'vc_after_set_mode', array(
 			$vendor,
-			'load'
+			'load',
 		) );
 	}
 }

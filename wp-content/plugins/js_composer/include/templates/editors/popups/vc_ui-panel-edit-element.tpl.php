@@ -1,15 +1,28 @@
+<?php
+if ( ! defined( 'ABSPATH' ) ) {
+	die( '-1' );
+}
+?>
 <div class="vc_ui-font-open-sans vc_ui-panel-window vc_media-xs vc_ui-panel"
      data-vc-panel=".vc_ui-panel-header-header" data-vc-ui-element="panel-edit-element" id="vc_ui-panel-edit-element">
 	<div class="vc_ui-panel-window-inner">
-		<?php vc_include_template( 'editors/popups/vc_ui-header.tpl.php', array(
-			'title' => __( 'Page settings', 'js_composer' ),
-			'controls' => array(
+		<?php
+		$controls = array(
+			'minimize',
+			'close',
+		);
+		if ( vc_user_access()->part( 'presets' )->can()->get() ) {
+			$controls = array(
 				array( 'template' => 'editors/partials/vc_ui-presets-dropdown.tpl.php' ),
 				'minimize',
-				'close'
-			),
+				'close',
+			);
+		}
+		vc_include_template( 'editors/popups/vc_ui-header.tpl.php', array(
+			'title' => __( 'Page settings', 'js_composer' ),
+			'controls' => $controls,
 			'header_css_class' => 'vc_ui-post-settings-header-container',
-			'content_template' => ''
+			'content_template' => '',
 		) ); ?>
 
 		<!-- param window footer-->
@@ -25,13 +38,14 @@
 				array(
 					'name' => 'close',
 					'label' => __( 'Close', 'js_composer' ),
+					'css_classes' => 'vc_ui-button-fw',
 				),
 				array(
 					'name' => 'save',
 					'label' => __( 'Save changes', 'js_composer' ),
 					'css_classes' => 'vc_ui-button-fw',
-					'style' => 'action'
-				)
+					'style' => 'action',
+				),
 			),
 		) ); ?>
 	</div>

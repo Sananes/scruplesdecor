@@ -431,6 +431,7 @@
 					next();
 				} )
 				.queue( function ( next ) {
+					$targetContent.attr( 'style', '' );
 					$targetContent.css( {
 						position: 'absolute', // Optional if #myDiv is already absolute
 						visibility: 'hidden',
@@ -458,7 +459,14 @@
 				} )
 				.queue( function ( next ) {
 					var height = $targetContent.data( 'vcHeight' );
-					$targetContent.animate( { 'height': height }, that.getAnimationDurationMilliseconds() );
+					$targetContent.animate( { 'height': height }, {
+						duration: that.getAnimationDurationMilliseconds(),
+						complete: function () {
+							if (!$targetContent.data('events')) {
+								$targetContent.attr( 'style', '' );
+							}
+						}
+					} );
 					$targetContent.css( {
 						'padding-top': '',
 						'padding-bottom': ''

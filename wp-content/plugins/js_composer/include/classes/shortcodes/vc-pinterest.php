@@ -1,9 +1,12 @@
 <?php
+if ( ! defined( 'ABSPATH' ) ) {
+	die( '-1' );
+}
 
 class WPBakeryShortCode_VC_Pinterest extends WPBakeryShortCode {
 	protected function contentInline( $atts, $content = null ) {
 		extract( shortcode_atts( array(
-			'type' => 'horizontal'
+			'type' => 'horizontal',
 		), $atts ) );
 
 		$css = isset( $atts['css'] ) ? $atts['css'] : '';

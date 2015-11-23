@@ -18,6 +18,9 @@
 					showTooltips: $this.data( 'vcTooltips' ),
 					animationEasing: $this.data( 'vcAnimation' ),
 					datasetFill: true,
+					scaleLabel: function ( object ) {
+						return ' ' + object.value;
+					},
 					responsive: true
 				},
 				color_keys = [

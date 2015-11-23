@@ -1,4 +1,7 @@
 <?php
+if ( ! defined( 'ABSPATH' ) ) {
+	die( '-1' );
+}
 /**
  * @since 4.4
  */
@@ -20,14 +23,14 @@
 	$categories_data = $box->getAllTemplatesSorted();
 	$categories = $box->getAllCategoriesNames( $categories_data );
 	$with_tabs = count( $categories ) > 0;
-	if ( count( $categories ) > 0 ):
+	if ( count( $categories ) > 0 ) :
 		?>
 		<div class="vc_panel-body vc_with-tabs">
 			<div class="vc_row">
 				<div class="vc_column">
 					<div class="vc_panel-tabs">
 						<ul class="vc_panel-tabs-menu">
-							<?php foreach ( $categories as $key => $value ):
+							<?php foreach ( $categories as $key => $value ) :
 								echo '<li'
 								     . ' class="vc_panel-tabs-control"><a'
 								     . ' class="vc_panel-tabs-link"'
@@ -42,7 +45,7 @@
 						 * Preparing tabs content
 						 */
 						?>
-						<?php foreach ( $categories_data as $key => $category ):
+						<?php foreach ( $categories_data as $key => $category ) :
 							echo '<div class="vc_panel-tab vc_clearfix"'
 							     . ' data-tab="'
 							     . esc_attr( $category['category'] )

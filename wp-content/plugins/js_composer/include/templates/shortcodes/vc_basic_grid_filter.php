@@ -1,9 +1,12 @@
 <?php
+if ( ! defined( 'ABSPATH' ) ) {
+	die( '-1' );
+}
 /**
  * Shortcode attributes
  * @var $atts
  */
-if ( 'yes' === $atts['show_filter'] && ! empty( $filter_terms ) ):
+if ( 'yes' === $atts['show_filter'] && ! empty( $filter_terms ) ) :
 	$unique_terms = array_unique( $filter_terms );
 	$terms_ids = ! empty( $atts['exclude_filter'] ) ?
 		array_diff(
@@ -11,9 +14,9 @@ if ( 'yes' === $atts['show_filter'] && ! empty( $filter_terms ) ):
 			array_map( 'abs', preg_split( '/\s*\,\s*/', $atts['exclude_filter'] ) )
 		) : $unique_terms;
 	$terms = count( $terms_ids ) > 0 ? get_terms( $atts['filter_source'], array(
-		'include' => implode( ',', $terms_ids )
+		'include' => implode( ',', $terms_ids ),
 	) ) : array();
-	if ( 'dropdown' !== $atts['filter_style'] ):
+	if ( 'dropdown' !== $atts['filter_style'] ) {
 		echo '<ul class="vc_grid-filter vc_clearfix vc_grid-filter-'
 			. esc_attr( $atts['filter_style'] )
 			. ' vc_grid-filter-size-'
@@ -27,7 +30,7 @@ if ( 'yes' === $atts['show_filter'] && ! empty( $filter_terms ) ):
 			. '"><li class="vc_active vc_grid-filter-item"><span data-vc-grid-filter-value="*">';
 		_e( 'All', 'js_composer' );
 		echo '</span></li>';
-		foreach ( $terms as $term ):
+		foreach ( $terms as $term ) {
 			echo '<li class="vc_grid-filter-item"><span'
 				. ' data-vc-grid-filter-value=".vc_grid-term-'
 				. $term->term_id
@@ -35,16 +38,16 @@ if ( 'yes' === $atts['show_filter'] && ! empty( $filter_terms ) ):
 			echo esc_attr( $term->name );
 			echo '</span><!-- fix whitespace
 				--></li>';
-		endforeach;
+		}
 		echo '</ul>';
-	endif; ?>
+	}
+
+	?>
 	<!-- for responsive vc_responsive !-->
-	<div
-		class="<?php echo 'dropdown' === $atts['filter_style'] ? 'vc_grid-filter-dropdown' : 'vc_grid-filter-select'; ?> vc_grid-filter-<?php echo esc_attr( $atts['filter_align'] ); ?> vc_grid-filter-color-<?php echo esc_attr( $atts['filter_color'] ); ?>"
-		data-vc-grid-filter-select="<?php echo esc_attr( $atts['filter_source'] ) ?>">
+	<div class="<?php echo 'dropdown' === $atts['filter_style'] ? 'vc_grid-filter-dropdown' : 'vc_grid-filter-select'; ?> vc_grid-filter-<?php echo esc_attr( $atts['filter_align'] ); ?> vc_grid-filter-color-<?php echo esc_attr( $atts['filter_color'] ); ?>" data-vc-grid-filter-select="<?php echo esc_attr( $atts['filter_source'] ) ?>">
 		<div class="vc_grid-styled-select"><select data-filter="<?php echo esc_attr( $atts['filter_source'] ) ?>">
 				<option class="vc_active" value="*"><?php _e( 'All', 'js_composer' ) ?>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</option>
-				<?php foreach ( $terms as $term ):
+				<?php foreach ( $terms as $term ) :
 					echo '<option value=".vc_grid-term-'
 						. esc_attr( $term->term_id )
 						. '">'
@@ -54,4 +57,5 @@ if ( 'yes' === $atts['show_filter'] && ! empty( $filter_terms ) ):
 			</select><i class="vc_arrow-icon-navicon"></i>
 		</div>
 	</div>
-<?php endif; 
+<?php endif;
+

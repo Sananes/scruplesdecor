@@ -1,4 +1,7 @@
 <?php
+if ( ! defined( 'ABSPATH' ) ) {
+	die( '-1' );
+}
 /**
  * Shortcode attributes
  * @var $atts
@@ -57,7 +60,7 @@ if ( 'custom' === $height_mode ) {
 		. ( strlen( $height_mode ) > 0 ? ' vc-gitem-zone-height-mode-auto-' . $height_mode : '' );
 }
 if ( 'yes' === $featured_image ) {
-	$css_style .= "{{ post_image_background_image_css }}";
+	$css_style .= '{{ post_image_background_image_css }}';
 	$image = '<img src="{{ post_image_url'
 		. ( false !== $background_image_css_editor ? ':' . rawurlencode( $background_image_css_editor ) . '' : '' )
 		. ' }}" class="vc_gitem-zone-img" alt="{{ post_image_alt }}">';
@@ -94,9 +97,7 @@ echo( empty( $css_style ) ? '' : ' style="' . esc_attr( $css_style ) . '"' )
 ?>>
 	<?php echo $image_block ?>
 	<?php echo $image ?>
-	<div class="<?php echo esc_attr( $css_class_mini ) ?>"<?php
-	echo( empty( $css_style_mini ) ? '' : ' style="' . esc_attr( $css_style_mini ) . '"' )
-	?>>
+	<div class="<?php echo esc_attr( $css_class_mini ) ?>"<?php echo( empty( $css_style_mini ) ? '' : ' style="' . esc_attr( $css_style_mini ) . '"' ) ?>>
 		<?php echo do_shortcode( $content ) ?>
 	</div>
 </div>

@@ -1,4 +1,7 @@
 <?php
+if ( ! defined( 'ABSPATH' ) ) {
+	die( '-1' );
+}
 
 vc_map( array(
 	'name' => __( 'Pageable Container', 'js_composer' ),
@@ -7,7 +10,7 @@ vc_map( array(
 	'is_container' => true,
 	'show_settings_on_create' => false,
 	'as_parent' => array(
-		'only' => 'vc_tta_section'
+		'only' => 'vc_tta_section',
 	),
 	'category' => __( 'Content', 'js_composer' ),
 	'description' => __( 'Pageable content container', 'js_composer' ),
@@ -21,7 +24,7 @@ vc_map( array(
 		array(
 			'type' => 'hidden',
 			'param_name' => 'no_fill_content_area',
-			'std' => true
+			'std' => true,
 		),
 		array(
 			'type' => 'dropdown',
@@ -64,7 +67,7 @@ vc_map( array(
 			),
 			'heading' => __( 'Pagination style', 'js_composer' ),
 			'description' => __( 'Select pagination style.', 'js_composer' ),
-			'std' => 'outline-round'
+			'std' => 'outline-round',
 		),
 		array(
 			'type' => 'dropdown',
@@ -100,7 +103,7 @@ vc_map( array(
 			'type' => 'css_editor',
 			'heading' => __( 'CSS box', 'js_composer' ),
 			'param_name' => 'css',
-			'group' => __( 'Design Options', 'js_composer' )
+			'group' => __( 'Design Options', 'js_composer' ),
 		),
 	),
 	'js_view' => 'VcBackendTtaPageableView',
@@ -118,10 +121,10 @@ vc_map( array(
 	</div>
 </div>',
 	'default_content' => '
-[vc_tta_section title="' . sprintf( "%s %d", __( 'Section', 'js_composer' ), 1 ) . '"][/vc_tta_section]
-[vc_tta_section title="' . sprintf( "%s %d", __( 'Section', 'js_composer' ), 2 ) . '"][/vc_tta_section]
+[vc_tta_section title="' . sprintf( '%s %d', __( 'Section', 'js_composer' ), 1 ) . '"][/vc_tta_section]
+[vc_tta_section title="' . sprintf( '%s %d', __( 'Section', 'js_composer' ), 2 ) . '"][/vc_tta_section]
 	',
 	'admin_enqueue_js' => array(
 		vc_asset_url( 'lib/vc_tabs/vc-tabs.js' )
-	)
+	),
 ) );

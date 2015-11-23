@@ -1,4 +1,7 @@
 <?php
+if ( ! defined( 'ABSPATH' ) ) {
+	die( '-1' );
+}
 
 /**
  * Class Vc_AutoComplete
@@ -45,7 +48,7 @@ class Vc_AutoComplete {
 	public function render() {
 		$output = '<div class="vc_autocomplete-field">' .
 		          '<ul class="vc_autocomplete' .
-		          ( ( isset( $this->settings['settings'], $this->settings['settings']['display_inline'] ) && $this->settings['settings']['display_inline'] === true ) ? ' vc_autocomplete-inline' : '' ) .
+		          ( ( isset( $this->settings['settings'], $this->settings['settings']['display_inline'] ) && true === $this->settings['settings']['display_inline'] ) ? ' vc_autocomplete-inline' : '' ) .
 		          '">';
 
 		if ( isset( $this->value ) && strlen( $this->value ) > 0 ) {
@@ -53,11 +56,11 @@ class Vc_AutoComplete {
 			foreach ( $values as $key => $val ) {
 				$value = array(
 					'value' => trim( $val ),
-					'label' => trim( $val )
+					'label' => trim( $val ),
 				);
 				if ( isset( $this->settings['settings'], $this->settings['settings']['values'] ) && ! empty( $this->settings['settings']['values'] ) ) {
 					foreach ( $this->settings['settings']['values'] as $data ) {
-						if ( $data['value'] == $val ) {
+						if ( trim( $data['value'] ) == trim( $val ) ) {
 							$value['label'] = $data['label'];
 							break;
 						}
@@ -82,7 +85,7 @@ class Vc_AutoComplete {
 		           '" class="wpb_vc_param_value  ' .
 		           $this->settings['param_name'] . ' ' .
 		           $this->settings['type'] . '_field" type="hidden" value="' . $this->value . '" ' .
-		           ( ( isset( $this->settings['settings'] ) && ! empty( $this->settings['settings'] ) ) ? ' data-settings="' . htmlentities( json_encode( $this->settings['settings'] ), ENT_QUOTES, "utf-8" ) . '" ' : '' ) .
+		           ( ( isset( $this->settings['settings'] ) && ! empty( $this->settings['settings'] ) ) ? ' data-settings="' . htmlentities( json_encode( $this->settings['settings'] ), ENT_QUOTES, 'utf-8' ) . '" ' : '' ) .
 		           ' /></div>';
 
 		return $output;
@@ -97,8 +100,14 @@ add_action( 'wp_ajax_vc_get_autocomplete_suggestion', 'vc_get_autocomplete_sugge
  * @since 4.4
  */
 function vc_get_autocomplete_suggestion() {
+	vc_user_access()
+		->checkAdminNonce()
+		->validateDie()
+		->wpAny( 'edit_posts', 'edit_pages' )
+		->validateDie();
+
 	$query = vc_post_param( 'query' );
-	$tag = vc_post_param( 'shortcode' );
+	$tag = strip_tags( vc_post_param( 'shortcode' ) );
 	$param_name = vc_post_param( 'param' );
 	vc_render_suggestion( $query, $tag, $param_name );
 }
@@ -138,7 +147,6 @@ function vc_autocomplete_form_field( $settings, $value, $tag ) {
 
 	return apply_filters( 'vc_autocomplete_render_filter', $auto_complete->render() );
 }
-
 
 // Some examples
 /*	vc_map(

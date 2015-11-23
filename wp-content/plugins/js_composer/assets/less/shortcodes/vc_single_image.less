@@ -15,9 +15,9 @@
     outline: none;
   }
   img {
-    vertical-align: top;
     height: auto;
     max-width: 100%;
+    vertical-align: top;
     &.vc_img-placeholder {
       width: 100%;
     }
@@ -58,7 +58,7 @@
       &shadow,
       &shadow_border,
       &shadow_border_circle,
-      &shadow_circle, {
+      &shadow_circle {
         border-radius: 0;
         .box-shadow(0 0px 5px rgba(0, 0, 0, 0.1));
         img {
@@ -111,7 +111,7 @@
     text-align: left;
   }
 
-  .vc_box_shadow_3d_wrap {
+  .vc_box_shadow_3d {
     position: relative;
     z-index: 0;
     display: inline-block;
@@ -144,15 +144,14 @@
 
   .vc_figure {
     display: inline-block;
-    text-align: center;
-
-    .vc_single_image-wrapper {
-      margin-bottom: 0.5em;
-    }
+    vertical-align: top;
+    margin: 0;
+    max-width: 100%;
   }
 
   .vc_figure-caption {
-    text-align: center;
+    margin-top: .2em;
+    font-size: .8em;
   }
 
   .vc_box_border_variants(_blue, @blue);

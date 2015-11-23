@@ -258,7 +258,10 @@ function vc_cta_button_param_target_callback() {
 function vc_grid_exclude_dependency_callback() {
 	var $ = jQuery;
 	var exclude_el = $( '.wpb_vc_param_value[name=exclude]', this.$content );
-	var exclude_obj = exclude_el.data( 'object' );
+	var exclude_obj = exclude_el.data( 'vc-param-object' );
+	if ( undefined === exclude_obj ) {
+		return false;
+	}
 	var post_type_object = $( 'select.wpb_vc_param_value[name="post_type"]', this.$content );
 	var val = post_type_object.val();
 	exclude_obj.source_data = function ( request, response ) {
@@ -284,7 +287,10 @@ function vcGridFilterExcludeCallBack() {
 	$filterBy = $( '.wpb_vc_param_value[name=filter_source]', this.$content );
 	defaultValue = $filterBy.val();
 	$exclude = $( '.wpb_vc_param_value[name=exclude_filter]', this.$content );
-	autocomplete = $exclude.data( 'object' );
+	autocomplete = $exclude.data( 'vc-param-object' );
+	if(undefined === autocomplete) {
+		return false;
+	}
 	$filterBy.change( function () {
 		var $this = $( this );
 		defaultValue !== $this.val() && autocomplete.clearValue();
@@ -423,7 +429,7 @@ function vc_wpautop( pee ) {
 		} );
 	}
 
-	pee = pee + '\n\n';
+	pee += '\n\n';
 	pee = pee.replace( /<br \/>\s*<br \/>/gi, '\n\n' );
 	pee = pee.replace( new RegExp( '(<(?:' + blocklist + ')(?: [^>]*)?>)', 'gi' ), '\n$1' );
 	pee = pee.replace( new RegExp( '(</(?:' + blocklist + ')>)', 'gi' ), '$1\n\n' );

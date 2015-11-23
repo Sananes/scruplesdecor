@@ -1,26 +1,55 @@
 // Animated blocks
 .vc_gitem-tabs {
-  margin: 0;
+  margin: 0 -1px;
+
+  display: flex;
+  flex-direction: column;
+  flex-wrap: nowrap;
+  justify-content: flex-start;
+  align-content: stretch;
+  align-items: stretch;
+  @media screen and (min-width: @screen-sm-min) {
+    flex-direction: row;
+  }
+
   .vc_gitem-animated-block-tab {
-    display: block;
     float: left;
-    margin: 0 2px 0 0;
-    .border-top-radius(@vc_gitem_round_radius);
+    margin: 0 1px;
     background-color: #e6e6e6;
     border: 1px solid transparent;
+    box-sizing: border-box;
+    flex: 0 0 auto;
+    display: flex;
+
+    &:first-child {
+      .border-top-radius(@vc_gitem_round_radius);
+    }
+    @media screen and (min-width: @screen-sm-min) {
+      flex: 1 0 0;
+      .border-top-radius(@vc_gitem_round_radius);
+    }
+
     a {
       margin: 0;
       display: inline-block;
       padding: 4px;
       color: #444;
       text-decoration: none;
+      outline: none;
+      flex: 0 0 auto;
+      &:first-child {
+        flex: 1 1 0;
+      }
+
       .vc_label {
-        display: inline-block;
+        display: block;
         line-height: 16px;
         height: 16px;
-        text-align: center;
         box-sizing: border-box;
         margin: 0 3px;
+        white-space: nowrap;
+        overflow: hidden;
+        text-overflow: ellipsis;
       }
     }
     &.vc_active {

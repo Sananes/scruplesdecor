@@ -1,3 +1,46 @@
+6.11.2015 - ver 4.8.1
+   - Added: Support for Advanced TinyMCE
+   - Improved: Envato API changed to new version 2.0
+   - Improved: ABSPATH check added to all php files
+   - Improved: Filter in getParamTabsList method of the TTA added
+   - Fixed: Post grid loads in http when using https
+   - Fixed: Responsiveness in full height row
+   - Fixed: Responsive Column Behavior
+   - Fixed: Numbers of line chart displayed properly
+   - Fixed: Text display on grid buttons
+   - Fixed: Error 404 on vc-general on WP multi site install !!!!!
+   - Fixed: wp multisite hardcoded 'js_composer/js_composer.php', so impossible to use other plugin name
+   - Fixed: Backend display proper column width
+   - Fixed: Column offset resets after update
+   - Fixed: Full image is broken on Firefox
+   - Fixed: Error for non-logged in users
+   - Fixed: Image Carousel display correctly
+   - Fixed: Text element with animation is properly displayed in TTA
+   - Fixed: Grid Element display price prefix $ per WooCommerce Settings
+
+22.10.2015 - ver 4.8
+   - New: Advanced Role manager for Visual Composer. Now you can fine tune access to Visual Composer functionality based on user roles
+   - New: New interface with template preview option in Default Templates and My Templates sections
+   - New: No need for license activation on localhost
+   - New: "vc_register_settings_preset" action is added. Theme authors can add elements presets through the inner API
+   - New: New design styles for Separator element
+   - New: Option to add icon to Separator element
+   - Improved: Single image element markup revises and improved
+   - Improved: UX improvements for "Save template" under the Templates section
+   - Improved: Load more button in grid now use latest VC button version
+   - Improved: Lighter and cleaner welcome screen on empty page
+   - Fixed: Protocol is replaced with // in css import (google fonts)
+   - Fixed: Loading of Google subsets
+   - Fixed: Display of icons for nested shortcodes
+   - Fixed: Post grid display if loaded from Templatera element
+   - Fixed: Fast switching between tabs
+   - Fixed: Autocomplete of categories (woocommerce)
+   - Fixed: Separator text moves to the next line when no space available
+
+2.10.2015 - ver 4.7.4
+   - Fixed: Bug in grid builder presets
+   - Added extra ajax check
+
 29.09.2015 - ver 4.7.3
    - Re: Backwards compatibility for images with custom link
    - Added border for single image with external source

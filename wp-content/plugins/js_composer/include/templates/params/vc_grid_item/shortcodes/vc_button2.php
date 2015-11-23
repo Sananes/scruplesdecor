@@ -1,4 +1,7 @@
 <?php
+if ( ! defined( 'ABSPATH' ) ) {
+	die( '-1' );
+}
 $wrapper_css_class = 'vc_button-2-wrapper';
 /** @var $this WPBakeryShortCode_VC_Button2 */
 $atts = vc_map_get_attributes( $this->getShortcode(), $atts );
@@ -7,9 +10,9 @@ extract( $atts );
 $class = 'vc_btn';
 //parse link
 
-$class .= ( $color !== '' ) ? ( ' vc_btn_' . $color . ' vc_btn-' . $color ) : '';
-$class .= ( $size !== '' ) ? ( ' vc_btn_' . $size . ' vc_btn-' . $size ) : '';
-$class .= ( $style !== '' ) ? ' vc_btn_' . $style : '';
+$class .= ( '' !== $color ) ? ( ' vc_btn_' . $color . ' vc_btn-' . $color ) : '';
+$class .= ( '' !== $size ) ? ( ' vc_btn_' . $size . ' vc_btn-' . $size ) : '';
+$class .= ( '' !== $style ) ? ' vc_btn_' . $style : '';
 
 $css = isset( $css ) ? $css : '';
 $class_to_filter = $class;
@@ -36,7 +39,7 @@ if ( isset( $atts['link'] ) ) {
 }
 
 $link = apply_filters( 'vc_gitem_post_data_get_link_link', 'a ' . $link, $atts, $css_class )
-        . apply_filters( 'vc_gitem_post_data_get_link_target', $target, $atts );
+		. apply_filters( 'vc_gitem_post_data_get_link_target', $target, $atts );
 
 if ( $align ) {
 	$wrapper_css_class .= ' vc_button-2-align-' . $align;

@@ -1,4 +1,7 @@
 <?php
+if ( ! defined( 'ABSPATH' ) ) {
+	die( '-1' );
+}
 /**
  * Shortcode attributes
  * @var $atts
@@ -43,15 +46,15 @@ $css_class .= $this->getCSSAnimation( $css_animation );
 <div<?php echo $inline_css; ?> class="<?php echo esc_attr( trim( $css_class ) ); ?>">
 	<?php if ( '' !== $link && 'bottom' !== $position ) {
 		echo do_shortcode( '[vc_button2 align="' . $position . '" link="' . $link . '" title="' . $title . '" color="' . $color . '" size="' . $size . '" style="' . $btn_style . '" el_class="vc_cta_btn"]' );
-	} ?>
-	<?php if ( '' !== $h2 || '' !== $h4 ): ?>
+} ?>
+	<?php if ( '' !== $h2 || '' !== $h4 ) :  ?>
 		<hgroup>
-			<?php if ( '' !== $h2 ): ?><h2 class="wpb_heading"><?php echo $h2; ?></h2><?php endif ?>
-			<?php if ( '' !== $h4 ): ?><h4 class="wpb_heading"><?php echo $h4; ?></h4><?php endif ?>
+			<?php if ( '' !== $h2 ) :  ?><h2 class="wpb_heading"><?php echo $h2; ?></h2><?php endif ?>
+			<?php if ( '' !== $h4 ) :  ?><h4 class="wpb_heading"><?php echo $h4; ?></h4><?php endif ?>
 		</hgroup>
 	<?php endif ?>
 	<?php echo wpb_js_remove_wpautop( $content, true ); ?>
 	<?php if ( '' !== $link && 'bottom' === $position ) {
 		echo do_shortcode( '[vc_button2 link="' . $link . '" title="' . $title . '" color="' . $color . '" size="' . $size . '" style="' . $btn_style . '" el_class="vc_cta_btn"]' );
-	} ?>
+} ?>
 </div>

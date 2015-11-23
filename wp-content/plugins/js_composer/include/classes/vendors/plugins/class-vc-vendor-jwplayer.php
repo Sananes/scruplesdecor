@@ -1,10 +1,13 @@
 <?php
+if ( ! defined( 'ABSPATH' ) ) {
+	die( '-1' );
+}
 
 /**
  * JWPLayer loader.
  * @since 4.3
  */
-Class Vc_Vendor_Jwplayer implements Vc_Vendor_Interface {
+class Vc_Vendor_Jwplayer implements Vc_Vendor_Interface {
 	/**
 	 * Dublicate jwplayer logic for editor, when used in frontend editor mode.
 	 *
@@ -14,21 +17,21 @@ Class Vc_Vendor_Jwplayer implements Vc_Vendor_Interface {
 
 		add_action( 'wp_enqueue_scripts', array(
 			&$this,
-			'vc_load_iframe_jscss'
+			'vc_load_iframe_jscss',
 		) );
 		add_filter( 'vc_front_render_shortcodes', array(
 			&$this,
-			'renderShortcodes'
+			'renderShortcodes',
 		) );
 		add_filter( 'vc_frontend_template_the_content', array(
 			&$this,
-			'wrapPlaceholder'
+			'wrapPlaceholder',
 		) );
 
 		// fix for #1065
 		add_filter( 'vc_shortcode_content_filter_after', array(
 			&$this,
-			'renderShortcodesPreview'
+			'renderShortcodesPreview',
 		) );
 	}
 

@@ -1,6 +1,9 @@
 <?php
+if ( ! defined( 'ABSPATH' ) ) {
+	die( '-1' );
+}
 
-Class Vc_Gitem_Woocommerce_Shortcode extends WPBakeryShortCode {
+class Vc_Gitem_Woocommerce_Shortcode extends WPBakeryShortCode {
 	/**
 	 * @param $atts
 	 * @param null $content

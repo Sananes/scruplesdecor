@@ -1,4 +1,8 @@
 <?php
+if ( ! defined( 'ABSPATH' ) ) {
+	die( '-1' );
+}
+
 return array(
 	'vc_gitem_wocommerce' => array(
 		'name' => __( 'WooCommerce field', 'js_composer' ),
@@ -27,7 +31,7 @@ return array(
 				'value' => Vc_Vendor_Woocommerce::getProductsFieldsList(),
 				'dependency' => array(
 					'element' => 'post_type',
-					'value' => array( 'product' )
+					'value' => array( 'product' ),
 				),
 				'save_always' => true,
 				'description' => __( 'Select field from product.', 'js_composer' ),
@@ -39,7 +43,7 @@ return array(
 				'description' => __( 'Enter custom key.', 'js_composer' ),
 				'dependency' => array(
 					'element' => 'product_field_key',
-					'value' => array( '_custom_' )
+					'value' => array( '_custom_' ),
 				),
 			),
 			array(
@@ -49,7 +53,7 @@ return array(
 				'value' => Vc_Vendor_Woocommerce::getOrderFieldsList(),
 				'dependency' => array(
 					'element' => 'post_type',
-					'value' => array( 'order' )
+					'value' => array( 'order' ),
 				),
 				'save_always' => true,
 				'description' => __( 'Select field from order.', 'js_composer' ),
@@ -60,7 +64,7 @@ return array(
 				'param_name' => 'order_custom_key',
 				'dependency' => array(
 					'element' => 'order_field_key',
-					'value' => array( '_custom_' )
+					'value' => array( '_custom_' ),
 				),
 				'description' => __( 'Enter custom key.', 'js_composer' ),
 			),
@@ -89,9 +93,9 @@ return array(
 				'type' => 'textfield',
 				'heading' => __( 'Extra class name', 'js_composer' ),
 				'param_name' => 'el_class',
-				'description' => __( 'Style particular content element differently - add a class name and refer to it in custom CSS.', 'js_composer' )
+				'description' => __( 'Style particular content element differently - add a class name and refer to it in custom CSS.', 'js_composer' ),
 			),
 		),
 		'post_type' => Vc_Grid_Item_Editor::postType(),
-	)
+	),
 );

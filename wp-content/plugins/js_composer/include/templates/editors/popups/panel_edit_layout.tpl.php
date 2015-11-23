@@ -1,3 +1,8 @@
+<?php
+if ( ! defined( 'ABSPATH' ) ) {
+	die( '-1' );
+}
+?>
 <div id="vc_row-layout-panel" class="vc_panel" style="display: none;">
 	<div class="vc_panel-heading">
 		<a title="<?php _e( 'Close panel', 'js_composer' ); ?>" href="#" class="vc_close" data-dismiss="panel"
@@ -11,15 +16,15 @@
 		<div class="vc_edit_form_elements">
 			<div class="vc_col-sm-12 vc_column vc_layout-panel-switcher">
 				<div class="wpb_element_label"><?php _e( 'Row layout', 'js_composer' ) ?></div>
-				<?php foreach ( $vc_row_layouts as $layout ): ?>
+				<?php foreach ( $vc_row_layouts as $layout ) :  ?>
 					<a class="vc_layout-btn <?php echo $layout['icon_class']
 					                                   . '" data-cells="' . $layout['cells']
 					                                   . '" data-cells-mask="' . $layout['mask']
 					                                   . '" title="' . $layout['title'] ?>"><span
 							class="icon"></span></a>
-				<?php endforeach; ?>
+				<?php endforeach ?>
 				<span
-					class="vc_description vc_clearfix"><?php _e( "Select row layout from predefined options.", "js_composer" ); ?></span>
+					class="vc_description vc_clearfix"><?php _e( 'Select row layout from predefined options.', 'js_composer' ); ?></span>
 			</div>
 			<div class="vc_col-sm-12 vc_column">
 				<div class="wpb_element_label"><?php _e( 'Enter custom layout for your row', 'js_composer' ) ?></div>
@@ -28,7 +33,7 @@
 					<button id="vc_row-layout-update"
 					        class="vc_btn vc_btn-primary vc_btn-sm"><?php _e( 'Update', 'js_composer' ) ?></button>
 					<span
-						class="vc_description vc_clearfix"><?php _e( "Change particular row layout manually by specifying number of columns and their size value.", "js_composer" ); ?></span>
+						class="vc_description vc_clearfix"><?php _e( 'Change particular row layout manually by specifying number of columns and their size value.', 'js_composer' ); ?></span>
 				</div>
 			</div>
 		</div>

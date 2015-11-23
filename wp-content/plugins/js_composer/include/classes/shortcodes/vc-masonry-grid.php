@@ -1,4 +1,7 @@
 <?php
+if ( ! defined( 'ABSPATH' ) ) {
+	die( '-1' );
+}
 require_once vc_path_dir( 'SHORTCODES_DIR', 'vc-basic-grid.php' );
 
 class WPBakeryShortCode_VC_Masonry_Grid extends WPBakeryShortCode_VC_Basic_Grid {
@@ -10,11 +13,14 @@ class WPBakeryShortCode_VC_Masonry_Grid extends WPBakeryShortCode_VC_Basic_Grid 
 		parent::shortcodeScripts();
 		wp_register_script( 'vc_masonry', vc_asset_url( 'lib/bower/masonry/dist/masonry.pkgd.min.js' ) );
 		wp_register_script( 'vc_grid-style-all-masonry', vc_asset_url( 'js/components/vc_grid_style_all_masonry.js' ),
-			array( 'vc_grid-style-all' ), WPB_VC_VERSION, true );
+			array( 'vc_grid-style-all' ), WPB_VC_VERSION, true
+		);
 		wp_register_script( 'vc_grid-style-lazy-masonry', vc_asset_url( 'js/components/vc_grid_style_lazy_masonry.js' ),
-			array( 'vc_grid-style-all' ), WPB_VC_VERSION, true );
+			array( 'vc_grid-style-all' ), WPB_VC_VERSION, true
+		);
 		wp_register_script( 'vc_grid-style-load-more-masonry', vc_asset_url( 'js/components/vc_grid_style_load_more_masonry.js' ),
-			array( 'vc_grid-style-all' ), WPB_VC_VERSION, true );
+			array( 'vc_grid-style-all' ), WPB_VC_VERSION, true
+		);
 	}
 
 	public function enqueueScripts() {

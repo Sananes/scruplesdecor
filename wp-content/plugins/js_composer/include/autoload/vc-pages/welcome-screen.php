@@ -1,4 +1,8 @@
 <?php
+if ( ! defined( 'ABSPATH' ) ) {
+	die( '-1' );
+}
+
 // The List of welcome pages tabs.
 global $vc_page_welcome_tabs;
 /**
@@ -36,17 +40,24 @@ function vc_page_welcome_add_sub_page() {
 	$page = add_submenu_page( VC_PAGE_MAIN_SLUG,
 		__( 'About', 'js_composer' ),
 		__( 'About', 'js_composer' ),
-		'manage_options',
-		vc_page_welcome_slug(), 'vc_page_welcome_render' );
+		'exist',
+	vc_page_welcome_slug(), 'vc_page_welcome_render' );
 	// Css for perfect styling.
 	add_action( 'admin_print_styles-' . $page, 'vc_page_css_enqueue' );
 
 }
 
-add_action( 'vc_menu_page_build', 'vc_page_welcome_add_sub_page', 11 );
-add_action( 'vc_network_menu_page_build', 'vc_page_welcome_add_sub_page', 1 );
+function vc_welcome_menu_hooks() {
+	$settings_tab_enabled = vc_user_access()->wpAny( 'manage_options' )
+	                                        ->part( 'settings' )
+	                                        ->can( 'vc-general-tab' )
+	                                        ->get();
+	add_action( 'vc_menu_page_build', 'vc_page_welcome_add_sub_page',
+	$settings_tab_enabled ? 11 : 1 );
+	add_action( 'vc_network_menu_page_build', 'vc_page_welcome_add_sub_page', $settings_tab_enabled ? 11 : 1 );
+}
 
-
+add_action( 'init', 'vc_welcome_menu_hooks' );
 /**
  * ====================
  * Redirect to welcome page on plugin activation.
