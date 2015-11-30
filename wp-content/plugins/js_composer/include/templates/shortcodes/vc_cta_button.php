@@ -1,4 +1,8 @@
 <?php
+if ( ! defined( 'ABSPATH' ) ) {
+	die( '-1' );
+}
+
 /**
  * Shortcode attributes
  * @var $atts
@@ -33,7 +37,7 @@ $icon = ( '' !== $icon && 'none' !== $icon ) ? ' ' . $icon : '';
 $i_icon = ( '' !== $icon ) ? ' <i class="icon"> </i>' : '';
 
 $color = ( '' !== $color ) ? ' wpb_' . $color : '';
-$size = ( '' !== $size && $size !== 'wpb_regularsize' ) ? ' wpb_' . $size : ' ' . $size;
+$size = ( '' !== $size && 'wpb_regularsize' !== $size ) ? ' wpb_' . $size : ' ' . $size;
 
 $a_class = '';
 if ( '' !== $el_class ) {

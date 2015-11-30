@@ -1,4 +1,7 @@
 <?php
+if ( ! defined( 'ABSPATH' ) ) {
+	die( '-1' );
+}
 
 /**
  * LayerSlider loader.
@@ -27,7 +30,7 @@ class Vc_Vendor_Layerslider implements Vc_Vendor_Interface {
 	 */
 	public function buildShortcode() {
 		$use_old = class_exists( 'LS_Sliders' );
-		if ( ! class_exists( 'LS_Sliders' ) && defined( 'LS_ROOT_PATH' ) && strpos( LS_ROOT_PATH, '.php' ) === false ) {
+		if ( ! class_exists( 'LS_Sliders' ) && defined( 'LS_ROOT_PATH' ) && false === strpos( LS_ROOT_PATH, '.php' ) ) {
 			include_once LS_ROOT_PATH . '/classes/class.ls.sliders.php';
 			$use_old = false;
 		}
@@ -44,9 +47,9 @@ class Vc_Vendor_Layerslider implements Vc_Vendor_Interface {
 		if ( $use_old ) {
 			global $wpdb;
 			$ls = $wpdb->get_results(
-				"
+				'
   SELECT id, name, date_c
-  FROM " . $wpdb->prefix . "layerslider
+  FROM ' . $wpdb->prefix . "layerslider
   WHERE flag_hidden = '0' AND flag_deleted = '0'
   ORDER BY date_c ASC LIMIT 999
   "
@@ -84,7 +87,7 @@ class Vc_Vendor_Layerslider implements Vc_Vendor_Interface {
 					'type' => 'textfield',
 					'heading' => __( 'Widget title', 'js_composer' ),
 					'param_name' => 'title',
-					'description' => __( 'Enter text used as widget title (Note: located above content element).', 'js_composer' )
+					'description' => __( 'Enter text used as widget title (Note: located above content element).', 'js_composer' ),
 				),
 				array(
 					'type' => 'dropdown',
@@ -93,15 +96,15 @@ class Vc_Vendor_Layerslider implements Vc_Vendor_Interface {
 					'admin_label' => true,
 					'value' => $layer_sliders,
 					'save_always' => true,
-					'description' => __( 'Select your LayerSlider.', 'js_composer' )
+					'description' => __( 'Select your LayerSlider.', 'js_composer' ),
 				),
 				array(
 					'type' => 'textfield',
 					'heading' => __( 'Extra class name', 'js_composer' ),
 					'param_name' => 'el_class',
-					'description' => __( 'Style particular content element differently - add a class name and refer to it in custom CSS.', 'js_composer' )
-				)
-			)
+					'description' => __( 'Style particular content element differently - add a class name and refer to it in custom CSS.', 'js_composer' ),
+				),
+			),
 		) );
 
 		// Load layer slider shortcode && change id

@@ -1,4 +1,7 @@
 <?php
+if ( ! defined( 'ABSPATH' ) ) {
+	die( '-1' );
+}
 return '
 <div class="vc_controls vc_controls-row controls vc_clearfix vc_param_group-controls">
 	<a class="vc_control column_move vc_move-param" href="#" title="' . __( 'Drag row to reorder', 'js_composer' ) . '" data-vc-control="move"><i class="vc_icon"></i></a>

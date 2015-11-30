@@ -13,10 +13,8 @@
 @vcui-panel-header-search-width: 200px;
 @vcui-panel-header-search-width-focus: 110%;
 @vcui-panel-header-search-color: #333;
-@vcui-panel-header-search-background: #fff;
 @vcui-panel-header-search-placeholder-color: #aaa;
 @vcui-panel-header-transition-duration: .2s;
-@vcui-panel-header-button-transition-properties: opacity, transform;
 
 .vc_ui-panel-header-container {
   padding: @vcui-panel-header-padding-vertical  @vcui-panel-header-padding-horizontal;
@@ -71,50 +69,18 @@
   .vc_ui-panel-header-content {
     clear: both;
   }
-}
 
-.vc_general.vc_ui-control-button {
-  display: inline-block;
-  margin: 0;
-  padding: 0;
-  text-align: center;
-  vertical-align: middle;
-  cursor: pointer;
-  background: transparent;
-  color: inherit;
-  border: none;
-  box-sizing: border-box;
-  word-wrap: break-word;
-  user-select: none;
-  text-decoration: none;
-  transition-property: @vcui-panel-header-button-transition-properties;
-  transition-duration: @vcui-panel-header-transition-duration;
-  transition-timing-function: ease-in-out;
-  line-height: normal;
-  opacity: .9;
-  outline: none;
-  &:hover,
-  &:focus {
-    opacity: 1;
-    background-color: transparent;
-  }
-  &:active {
-    box-shadow: none;
-  }
-
-  &[disabled] {
-    cursor: default;
-  }
-}
-
-.vc_ui-control-button {
-  // buttons with icons
-  .vc_ui-icon-pixel-close,
-  .vc_ui-icon-pixel-minimize {
-    margin: 5px;
-  }
-  .vc_ui-icon-pixel-cog {
-    margin: 3px;
+  .vc_ui-control-button {
+    margin: 0;
+    padding: 0;
+    // buttons with icons
+    .vc_ui-icon-pixel-close,
+    .vc_ui-icon-pixel-minimize {
+      margin: 5px;
+    }
+    .vc_ui-icon-pixel-cog {
+      margin: 3px;
+    }
   }
 }
 

@@ -1,4 +1,7 @@
 <?php
+if ( ! defined( 'ABSPATH' ) ) {
+	die( '-1' );
+}
 
 /* Call to action
  * @since 4.5
@@ -20,19 +23,19 @@ $h2_custom_heading = vc_map_integrate_shortcode( 'vc_custom_heading', 'h2_', __(
 // This is needed to remove custom heading _tag and _align options.
 if ( is_array( $h2_custom_heading ) && ! empty( $h2_custom_heading ) ) {
 	foreach ( $h2_custom_heading as $key => $param ) {
-		if ( is_array( $param ) && isset( $param['type'] ) && $param['type'] === 'font_container' ) {
+		if ( is_array( $param ) && isset( $param['type'] ) && 'font_container' === $param['type'] ) {
 			$h2_custom_heading[ $key ]['value'] = '';
 			if ( isset( $param['settings'] ) && is_array( $param['settings'] ) && isset( $param['settings']['fields'] ) ) {
 				$sub_key = array_search( 'tag', $param['settings']['fields'] );
 				if ( false !== $sub_key ) {
 					unset( $h2_custom_heading[ $key ]['settings']['fields'][ $sub_key ] );
-				} else if ( isset( $param['settings']['fields']['tag'] ) ) {
+				} elseif ( isset( $param['settings']['fields']['tag'] ) ) {
 					unset( $h2_custom_heading[ $key ]['settings']['fields']['tag'] );
 				}
 				$sub_key = array_search( 'text_align', $param['settings']['fields'] );
 				if ( false !== $sub_key ) {
 					unset( $h2_custom_heading[ $key ]['settings']['fields'][ $sub_key ] );
-				} else if ( isset( $param['settings']['fields']['text_align'] ) ) {
+				} elseif ( isset( $param['settings']['fields']['text_align'] ) ) {
 					unset( $h2_custom_heading[ $key ]['settings']['fields']['text_align'] );
 				}
 			}
@@ -56,19 +59,19 @@ $h4_custom_heading = vc_map_integrate_shortcode( 'vc_custom_heading', 'h4_', __(
 // This is needed to remove custom heading _tag and _align options.
 if ( is_array( $h4_custom_heading ) && ! empty( $h4_custom_heading ) ) {
 	foreach ( $h4_custom_heading as $key => $param ) {
-		if ( is_array( $param ) && isset( $param['type'] ) && $param['type'] === 'font_container' ) {
+		if ( is_array( $param ) && isset( $param['type'] ) && 'font_container' === $param['type'] ) {
 			$h4_custom_heading[ $key ]['value'] = '';
 			if ( isset( $param['settings'] ) && is_array( $param['settings'] ) && isset( $param['settings']['fields'] ) ) {
 				$sub_key = array_search( 'tag', $param['settings']['fields'] );
 				if ( false !== $sub_key ) {
 					unset( $h4_custom_heading[ $key ]['settings']['fields'][ $sub_key ] );
-				} else if ( isset( $param['settings']['fields']['tag'] ) ) {
+				} elseif ( isset( $param['settings']['fields']['tag'] ) ) {
 					unset( $h4_custom_heading[ $key ]['settings']['fields']['tag'] );
 				}
 				$sub_key = array_search( 'text_align', $param['settings']['fields'] );
 				if ( false !== $sub_key ) {
 					unset( $h4_custom_heading[ $key ]['settings']['fields'][ $sub_key ] );
-				} else if ( isset( $param['settings']['fields']['text_align'] ) ) {
+				} elseif ( isset( $param['settings']['fields']['text_align'] ) ) {
 					unset( $h4_custom_heading[ $key ]['settings']['fields']['text_align'] );
 				}
 			}
@@ -155,7 +158,7 @@ $params = array_merge(
 			'description' => __( 'Select custom background color.', 'js_composer' ),
 			'dependency' => array(
 				'element' => 'style',
-				'value' => array( 'custom' )
+				'value' => array( 'custom' ),
 			),
 			'edit_field_class' => 'vc_col-sm-6 vc_column',
 		),
@@ -166,7 +169,7 @@ $params = array_merge(
 			'description' => __( 'Select custom text color.', 'js_composer' ),
 			'dependency' => array(
 				'element' => 'style',
-				'value' => array( 'custom' )
+				'value' => array( 'custom' ),
 			),
 			'edit_field_class' => 'vc_col-sm-6 vc_column',
 		),
@@ -181,14 +184,14 @@ $params = array_merge(
 			'param_holder_class' => 'vc_colored-dropdown vc_cta3-colored-dropdown',
 			'dependency' => array(
 				'element' => 'style',
-				'value_not_equal_to' => array( 'custom' )
+				'value_not_equal_to' => array( 'custom' ),
 			),
 		),
 		array(
 			'type' => 'textarea_html',
 			'heading' => __( 'Text', 'js_composer' ),
 			'param_name' => 'content',
-			'value' => __( 'I am promo text. Click edit button to change this text. Lorem ipsum dolor sit amet, consectetur adipiscing elit. Ut elit tellus, luctus nec ullamcorper mattis, pulvinar dapibus leo.', 'js_composer' )
+			'value' => __( 'I am promo text. Click edit button to change this text. Lorem ipsum dolor sit amet, consectetur adipiscing elit. Ut elit tellus, luctus nec ullamcorper mattis, pulvinar dapibus leo.', 'js_composer' ),
 		),
 		array(
 			'type' => 'dropdown',
@@ -220,7 +223,7 @@ $params = array_merge(
 	),
 	vc_map_integrate_shortcode( 'vc_btn', 'btn_', __( 'Button', 'js_composer' ),
 		array(
-			'exclude' => array( 'css' )
+			'exclude' => array( 'css' ),
 		),
 		array(
 			'element' => 'add_button',
@@ -255,7 +258,7 @@ $params = array_merge(
 	),
 	vc_map_integrate_shortcode( 'vc_icon', 'i_', __( 'Icon', 'js_composer' ),
 		array(
-			'exclude' => array( 'align', 'css' )
+			'exclude' => array( 'align', 'css' ),
 		),
 		array(
 			'element' => 'add_icon',
@@ -269,13 +272,13 @@ $params = array_merge(
 			'type' => 'textfield',
 			'heading' => __( 'Extra class name', 'js_composer' ),
 			'param_name' => 'el_class',
-			'description' => __( 'Style particular content element differently - add a class name and refer to it in custom CSS.', 'js_composer' )
+			'description' => __( 'Style particular content element differently - add a class name and refer to it in custom CSS.', 'js_composer' ),
 		),
 		array(
 			'type' => 'css_editor',
 			'heading' => __( 'CSS box', 'js_composer' ),
 			'param_name' => 'css',
-			'group' => __( 'Design Options', 'js_composer' )
+			'group' => __( 'Design Options', 'js_composer' ),
 		),
 	)
 );

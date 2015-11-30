@@ -1,4 +1,7 @@
 <?php
+if ( ! defined( 'ABSPATH' ) ) {
+	die( '-1' );
+}
 require_once vc_path_dir( 'SHORTCODES_DIR', 'vc-basic-grid.php' );
 
 class WPBakeryShortCode_VC_Media_Grid extends WPBakeryShortCode_VC_Basic_Grid {
@@ -40,7 +43,7 @@ class WPBakeryShortCode_VC_Media_Grid extends WPBakeryShortCode_VC_Basic_Grid {
 			$grid_item->shortcodes();
 			$item = '[vc_gitem]<img src="' . vc_asset_url( 'vc/vc_gitem_image.png' ) . '">[/vc_gitem]';
 			$grid_item->parseTemplate( $item );
-			$items = str_repeat( $grid_item->renderItem( get_post( vc_request_param( 'vc_post_id' ) ) ), 3 );
+			$items = str_repeat( $grid_item->renderItem( get_post( (int) vc_request_param( 'vc_post_id' ) ) ), 3 );
 		}
 
 		return $items;

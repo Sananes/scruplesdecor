@@ -1,36 +1,34 @@
 <?php
+if ( ! defined( 'ABSPATH' ) ) {
+	die( '-1' );
+}
+
 require_once vc_path_dir( 'EDITORS_DIR', 'navbar/class-vc-navbar.php' );
 
 /**
  * Renders navigation bar for Editors.
  */
-Class Vc_Navbar_Grid_Item extends Vc_Navbar {
+class Vc_Navbar_Grid_Item extends Vc_Navbar {
 	protected $controls = array(
 		'templates',
 		'save_backend',
 		'preview_template',
 		'animation_list',
 		'preview_item_width',
-		'edit'
+		'edit',
 	);
 
-	public function getControlFrontend() {
-		if ( ! vc_enabled_frontend() ) {
-			return '';
-		}
-
-		return '<li class="vc_pull-right">'
-		       . '<a href="' . vc_frontend_editor()->getInlineUrl() . '" class="vc_btn vc_btn-primary vc_btn-sm vc_navbar-btn" id="wpb-edit-inline">' . __( 'Frontend', "js_composer" ) . '</a>'
-		       . '</li>';
+	/**
+	 * @return string
+	 */
+	public function getControlTemplates() {
+		return '<li><a href="javascript:;" class="vc_icon-btn vc_templates-button vc_navbar-border-right"  id="vc_templates-editor-button" title="'
+		. __( 'Templates', 'js_composer' ) . '"></a></li>';
 	}
 
 	public function getControlPreviewTemplate() {
-		if ( ! vc_enabled_frontend() ) {
-			return '';
-		}
-
 		return '<li class="vc_pull-right">'
-		       . '<a href="#" class="vc_btn vc_btn-grey vc_btn-sm vc_navbar-btn" data-vc-navbar-control="preview">' . __( 'Preview', "js_composer" ) . '</a>'
+		       . '<a href="#" class="vc_btn vc_btn-grey vc_btn-sm vc_navbar-btn" data-vc-navbar-control="preview">' . __( 'Preview', 'js_composer' ) . '</a>'
 		       . '</li>';
 	}
 
@@ -47,7 +45,7 @@ Class Vc_Navbar_Grid_Item extends Vc_Navbar {
 	 */
 	public function getControlSaveBackend() {
 		return '<li class="vc_pull-right vc_save-backend">'
-		       . '<a class="vc_btn vc_btn-sm vc_navbar-btn vc_btn-primary vc_control-save" id="wpb-save-post">' . __( 'Update', "js_composer" ) . '</a>'
+		       . '<a class="vc_btn vc_btn-sm vc_navbar-btn vc_btn-primary vc_control-save" id="wpb-save-post">' . __( 'Update', 'js_composer' ) . '</a>'
 		       . '</li>';
 	}
 

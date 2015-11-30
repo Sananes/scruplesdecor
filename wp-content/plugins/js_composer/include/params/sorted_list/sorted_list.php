@@ -1,4 +1,8 @@
 <?php
+if ( ! defined( 'ABSPATH' ) ) {
+	die( '-1' );
+}
+
 /**
  * @param $settings
  * @param $value
@@ -47,9 +51,9 @@ class Vc_Teaser_Box {
 	public function jsComposerEditPage() {
 		$pt_array = vc_editor_post_types();
 		foreach ( $pt_array as $pt ) {
-			add_meta_box( 'vc_teaser', __( 'VC: Custom Teaser', "js_composer" ), Array(
+			add_meta_box( 'vc_teaser', __( 'VC: Custom Teaser', 'js_composer' ), array(
 				&$this,
-				'outputTeaser'
+				'outputTeaser',
 			), $pt, 'side' );
 		}
 		add_action( 'save_post', array( &$this, 'saveTeaserMetaBox' ) );
@@ -65,7 +69,7 @@ class Vc_Teaser_Box {
 	 * @return string
 	 */
 	public function getTeaserData( $name, $id = false ) {
-		if ( $id === false ) {
+		if ( false === $id ) {
 			$id = get_the_ID();
 		}
 		$this->teaser_data = get_post_meta( $id, self::$meta_data_name, true );
@@ -81,23 +85,23 @@ class Vc_Teaser_Box {
 	public function outputTeaser() {
 		wp_enqueue_script( 'wpb_jscomposer_teaser_js' );
 		wp_localize_script( 'wpb_jscomposer_teaser_js', 'i18nVcTeaser', array(
-			'empty_title' => __( 'Empty title', "js_composer" ),
-			'text_label' => __( 'Text', "js_composer" ),
-			'image_label' => __( 'Image', "js_composer" ),
-			'title_label' => __( 'Title', "js_composer" ),
-			'link_label' => __( 'Link', "js_composer" ),
-			'text_text' => __( 'Text', "js_composer" ),
-			'text_excerpt' => __( 'Excerpt', "js_composer" ),
-			'text_custom' => __( 'Custom', "js_composer" ),
-			'image_featured' => __( 'Featered', "js_composer" ),
-			'image_custom' => __( 'Custom', "js_composer" ),
-			'link_label_text' => __( 'Link text', "js_composer" ),
-			'no_link' => __( 'No link', "js_composer" ),
-			'link_post' => __( 'Link to post', "js_composer" ),
-			'link_big_image' => __( 'Link to big image', "js_composer" ),
-			'add_custom_image' => __( 'Add custom image', "js_composer" )
+			'empty_title' => __( 'Empty title', 'js_composer' ),
+			'text_label' => __( 'Text', 'js_composer' ),
+			'image_label' => __( 'Image', 'js_composer' ),
+			'title_label' => __( 'Title', 'js_composer' ),
+			'link_label' => __( 'Link', 'js_composer' ),
+			'text_text' => __( 'Text', 'js_composer' ),
+			'text_excerpt' => __( 'Excerpt', 'js_composer' ),
+			'text_custom' => __( 'Custom', 'js_composer' ),
+			'image_featured' => __( 'Featered', 'js_composer' ),
+			'image_custom' => __( 'Custom', 'js_composer' ),
+			'link_label_text' => __( 'Link text', 'js_composer' ),
+			'no_link' => __( 'No link', 'js_composer' ),
+			'link_post' => __( 'Link to post', 'js_composer' ),
+			'link_big_image' => __( 'Link to big image', 'js_composer' ),
+			'add_custom_image' => __( 'Add custom image', 'js_composer' ),
 		) );
-		$output = '<div class="vc_teaser-switch"><label><input type="checkbox" name="' . self::$meta_data_name . '[enable]" value="1" id="vc_teaser-checkbox"' . ( $this->getTeaserData( 'enable' ) === '1' ? ' checked="true"' : '' ) . '> ' . __( 'Enable custom teaser', "js_composer" ) . '</label></div>';
+		$output = '<div class="vc_teaser-switch"><label><input type="checkbox" name="' . self::$meta_data_name . '[enable]" value="1" id="vc_teaser-checkbox"' . ( '1' === $this->getTeaserData( 'enable' ) ? ' checked="true"' : '' ) . '> ' . __( 'Enable custom teaser', 'js_composer' ) . '</label></div>';
 		$output .= '<input type="hidden" name="' . self::$meta_data_name . '[data]" class="vc_teaser-data-field" value="' . htmlspecialchars( $this->getTeaserData( 'data' ) ) . '">';
 		$output .= '<div class="vc_teaser-constructor-hint">';
 		$output .= '<p>' . __( 'Customize teaser block design to overwrite default settings used in "Carousel" content element.', 'js_composer' ) . '</p>';

@@ -1,4 +1,8 @@
 <?php
+if ( ! defined( 'ABSPATH' ) ) {
+	die( '-1' );
+}
+
 /**
  * Add script for grid item add to card link
  *
@@ -8,7 +12,7 @@ function vc_woocommerce_add_to_cart_script() {
 	wp_enqueue_script( 'vc_woocommerce-add-to-cart-js',
 		vc_asset_url( 'js/vendors/woocommerce-add-to-cart.js' ),
 		array( 'wc-add-to-cart' ),
-		WPB_VC_VERSION );
+	WPB_VC_VERSION );
 }
 
 /**
@@ -24,7 +28,7 @@ function vc_init_vendor_woocommerce() {
 		$vendor = new Vc_Vendor_Woocommerce();
 		add_action( 'vc_after_set_mode', array(
 			$vendor,
-			'load'
+			'load',
 		) );
 		require_once vc_path_dir( 'VENDORS_DIR', 'plugins/woocommerce/grid-item-filters.php' );
 		// Add 'add to card' link to the list of Add link.

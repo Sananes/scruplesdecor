@@ -1,4 +1,7 @@
 <?php
+if ( ! defined( 'ABSPATH' ) ) {
+	die( '-1' );
+}
 /**
  * Shortcode attributes
  * @var $atts
@@ -55,7 +58,7 @@ $wrapper_classes = array(
 	'vc_btn3-container',
 	$this->getExtraClass( $el_class ),
 	$this->getCSSAnimation( $css_animation ),
-	'vc_btn3-' . $align
+	'vc_btn3-' . $align,
 );
 
 $button_classes = array(
@@ -63,7 +66,7 @@ $button_classes = array(
 	'vc_btn3',
 	'vc_btn3-size-' . $size,
 	'vc_btn3-shape-' . $shape,
-	'vc_btn3-style-' . $style
+	'vc_btn3-style-' . $style,
 );
 
 $button_html = $title;
@@ -79,11 +82,11 @@ if ( 'true' === $add_icon ) {
 	$button_classes[] = 'vc_btn3-icon-' . $i_align;
 	vc_icon_element_fonts_enqueue( $i_type );
 
-	if ( isset( ${"i_icon_" . $i_type} ) ) {
+	if ( isset( ${'i_icon_' . $i_type} ) ) {
 		if ( 'pixelicons' === $i_type ) {
 			$icon_wrapper = true;
 		}
-		$icon_class = ${"i_icon_" . $i_type};
+		$icon_class = ${'i_icon_' . $i_type};
 	} else {
 		$icon_class = 'fa fa-adjust';
 	}
@@ -113,7 +116,7 @@ if ( 'custom' === $style ) {
 	if ( ! $custom_background && ! $custom_text ) {
 		$button_classes[] = 'vc_btn3-color-grey';
 	}
-} else if ( 'outline-custom' === $style ) {
+} elseif ( 'outline-custom' === $style ) {
 	if ( $outline_custom_color ) {
 		$styles[] = vc_get_css_color( 'border-color', $outline_custom_color );
 		$styles[] = vc_get_css_color( 'color', $outline_custom_color );
@@ -173,6 +176,6 @@ $attributes = implode( ' ', $attributes );
 ?>
 <div class="<?php echo trim( esc_attr( $css_class ) ) ?>"><?php if ( $use_link ) {
 		echo '<a ' . $attributes . '>' . $button_html . '</a>';
-	} else {
-		echo '<button ' . $attributes . '>' . $button_html . '</button>';
-	} ?></div>
+} else {
+	echo '<button ' . $attributes . '>' . $button_html . '</button>';
+} ?></div>

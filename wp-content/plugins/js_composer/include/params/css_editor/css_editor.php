@@ -1,4 +1,7 @@
 <?php
+if ( ! defined( 'ABSPATH' ) ) {
+	die( '-1' );
+}
 
 if ( ! class_exists( 'WPBakeryVisualComposerCssEditor' ) ) {
 	/**
@@ -88,7 +91,7 @@ if ( ! class_exists( 'WPBakeryVisualComposerCssEditor' ) ) {
 		 * @return mixed|void
 		 */
 		function render() {
-			$output = '<div class="vc_css-editor vc_row" data-css-editor="true">';
+			$output = '<div class="vc_css-editor vc_row vc_ui-flex-row" data-css-editor="true">';
 			$output .= $this->onionLayout();
 			$output .= '<div class="vc_col-xs-5 vc_settings">'
 			           . '    <label>' . __( 'Border color', 'js_composer' ) . '</label> '
@@ -111,7 +114,7 @@ if ( ! class_exists( 'WPBakeryVisualComposerCssEditor' ) ) {
 			           . '  <div class="inner" style="width: 80px; height: 80px; overflow: hidden;text-align: center;">'
 			           . '    <img src="{{ img.url }}?id={{ img.id }}" data-image-id="{{ img.id }}" class="vc_ce-image<# if (!_.isUndefined(img.css_class)) {#> {{ img.css_class }}<# }#>">'
 			           . '  </div>'
-			           . '  <a href="#" class="icon-remove"></a>'
+			           . '  <a href="#" class="vc_icon-remove"></a>'
 			           . '</li>'
 			           . '</script>';
 			if ( ! $this->js_script_appended ) {
@@ -127,8 +130,8 @@ if ( ! class_exists( 'WPBakeryVisualComposerCssEditor' ) ) {
 		 */
 		function getBackgroundImageControl() {
 			return apply_filters( 'vc_css_editor_background_image_control', '<ul class="vc_image">'
-			                                                                . '</ul>'
-			                                                                . '<a href="#" class="vc_add-image">' . __( 'Add image', 'js_composer' ) . '</a>' );
+				. '</ul>'
+			. '<a href="#" class="vc_add-image">' . __( 'Add image', 'js_composer' ) . '</a>' );
 		}
 
 		/**
@@ -147,7 +150,7 @@ if ( ! class_exists( 'WPBakeryVisualComposerCssEditor' ) ) {
 				'20px' => '20px',
 				'25px' => '25px',
 				'30px' => '30px',
-				'35px' => '35px'
+				'35px' => '35px',
 			) );
 
 			$output = '';
@@ -175,7 +178,7 @@ if ( ! class_exists( 'WPBakeryVisualComposerCssEditor' ) ) {
 				'inset',
 				'outset',
 				'initial',
-				'inherit'
+				'inherit',
 			) );
 			foreach ( $styles as $style ) {
 				$output .= '<option value="' . $style . '">' . __( ucfirst( $style ), 'js_composer' ) . '</option>';
@@ -190,10 +193,10 @@ if ( ! class_exists( 'WPBakeryVisualComposerCssEditor' ) ) {
 		function getBackgroundStyleOptions() {
 			$output = '<option value="">' . __( 'Theme defaults', 'js_composer' ) . '</option>';
 			$styles = apply_filters( 'vc_css_editor_background_style_options_data', array(
-				__( "Cover", 'js_composer' ) => 'cover',
+				__( 'Cover', 'js_composer' ) => 'cover',
 				__( 'Contain', 'js_composer' ) => 'contain',
 				__( 'No Repeat', 'js_composer' ) => 'no-repeat',
-				__( 'Repeat', 'js_composer' ) => 'repeat'
+				__( 'Repeat', 'js_composer' ) => 'repeat',
 			) );
 			foreach ( $styles as $name => $style ) {
 				$output .= '<option value="' . $style . '">' . $name . '</option>';
@@ -228,7 +231,7 @@ if ( ! class_exists( 'WPBakeryVisualComposerCssEditor' ) ) {
 		protected function layerControls( $name, $prefix = '' ) {
 			$output = '<label>' . $name . '</label>';
 			foreach ( $this->positions as $pos ) {
-				$output .= '<input type="text" name="' . $name . '_' . $pos . ( $prefix !== '' ? '_' . $prefix : '' ) . '" data-name="' . $name . ( $prefix !== '' ? '-' . $prefix : '' ) . '-' . $pos . '" class="vc_' . $pos . '" placeholder="-" data-attribute="' . $name . '" value="">';
+				$output .= '<input type="text" name="' . $name . '_' . $pos . ( '' !== $prefix ? '_' . $prefix : '' ) . '" data-name="' . $name . ( '' !== $prefix ? '-' . $prefix : '' ) . '-' . $pos . '" class="vc_' . $pos . '" placeholder="-" data-attribute="' . $name . '" value="">';
 			}
 
 			return apply_filters( 'vc_css_editor_layer_controls', $output );

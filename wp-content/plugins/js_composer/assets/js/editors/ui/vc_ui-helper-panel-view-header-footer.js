@@ -85,38 +85,69 @@
 				} );
 			}
 		},
-		setButtonMessage: function () {
-			var currentTextHtml, $saveBtn, message, type;
+		/**
+		 * Set button message and type
+		 *
+		 * @param {string} [message=saved]
+		 * @param {string} [type=success]
+		 * @param {boolean} [showInBackend=false] By default, this function is ignored in BE. This option overrides that
+		 * @return {vc.HelperPanelViewHeaderFooter}
+		 */
+		setButtonMessage: function ( message, type, showInBackend ) {
+			var currentTextHtml, $saveBtn;
 
-			// Binding to context
-			this.clearButtonMessage = _.bind( this.clearButtonMessage, this );
-			// we can show only if frontend and only if old message cleared (to avoid double execution)
-			if ( vc.frame_window && ! this.buttonMessageTimeout ) {
-				type = 'success'; // currently only one message type
-				message = window.i18nLocale.ui_saved;
-				$saveBtn = this.$el.find( '[data-vc-ui-element="button-save"]' );
-				currentTextHtml = $saveBtn.html();
-				$saveBtn.addClass( 'vc_ui-button-' + type );
-				$saveBtn.removeClass( 'vc_ui-button-action' );
-				$saveBtn.data( 'vcCurrentTextHtml', currentTextHtml );
-				$saveBtn.data( 'vcCurrentTextType', type );
-				$saveBtn.html( message );
-				_.delay( this.clearButtonMessage, 5000 );
-				this.buttonMessageTimeout = true;
+			if ( 'undefined' === typeof(showInBackend) ) {
+				showInBackend = false;
 			}
+
+			// binding to context
+			this.clearButtonMessage = _.bind( this.clearButtonMessage, this );
+
+			// we can show only if frontend and only if old message cleared (to avoid double execution)
+			if ( (! showInBackend && ! vc.frame_window ) || this.buttonMessageTimeout ) {
+				return this;
+			}
+
+			if ( 'undefined' === typeof(message) ) {
+				message = window.i18nLocale.ui_saved;
+			}
+
+			if ( 'undefined' === typeof(type) ) {
+				type = 'success';
+			}
+
+			$saveBtn = this.$el.find( '[data-vc-ui-element="button-save"]' );
+
+			currentTextHtml = $saveBtn.html();
+
+			$saveBtn
+				.addClass( 'vc_ui-button-' + type + ' vc_ui-button-undisabled' )
+				.removeClass( 'vc_ui-button-action' )
+				.data( 'vcCurrentTextHtml', currentTextHtml )
+				.data( 'vcCurrentTextType', type )
+				.html( message );
+
+			_.delay( this.clearButtonMessage, 5000 );
+
+			this.buttonMessageTimeout = true;
+
+			return this;
 		},
 		clearButtonMessage: function () {
 			var type, currentTextHtml, $saveBtn;
 
 			if ( this.buttonMessageTimeout ) {
 				window.clearTimeout( this.buttonMessageTimeout );
+
 				$saveBtn = this.$el.find( '[data-vc-ui-element="button-save"]' );
 				currentTextHtml = $saveBtn.data( 'vcCurrentTextHtml' ) || 'Save';
 				type = $saveBtn.data( 'vcCurrentTextType' );
-				$saveBtn.html( currentTextHtml );
+
+				$saveBtn.html( currentTextHtml )
+					.removeClass( 'vc_ui-button-' + type + ' vc_ui-button-undisabled' )
+					.addClass( 'vc_ui-button-action' );
+
 				this.buttonMessageTimeout = false;
-				$saveBtn.removeClass( 'vc_ui-button-' + type );
-				$saveBtn.addClass( 'vc_ui-button-action' );
 			}
 		}
 	};

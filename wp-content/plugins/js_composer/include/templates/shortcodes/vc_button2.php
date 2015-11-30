@@ -1,4 +1,7 @@
 <?php
+if ( ! defined( 'ABSPATH' ) ) {
+	die( '-1' );
+}
 /**
  * Shortcode attributes
  * @var $atts
@@ -36,8 +39,5 @@ if ( $align ) {
 	$wrapper_css_class .= ' vc_button-2-align-' . $align;
 }
 ?>
-<div class="<?php echo esc_attr( $wrapper_css_class ) ?>"><a class="<?php echo esc_attr( trim( $css_class ) ); ?>"
-															 href="<?php echo esc_attr( $a_href ); ?>"
-															 title="<?php echo esc_attr( $a_title ); ?>"
-															 target="<?php echo esc_attr( $a_target ); ?>"><?php echo $title; ?></a>
+<div class="<?php echo esc_attr( $wrapper_css_class ) ?>"><a class="<?php echo esc_attr( trim( $css_class ) ); ?>" href="<?php echo esc_attr( $a_href ); ?>" title="<?php echo esc_attr( $a_title ); ?>" target="<?php echo esc_attr( $a_target ); ?>"><?php echo $title; ?></a>
 </div>

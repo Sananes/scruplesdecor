@@ -1,3 +1,8 @@
+<?php
+if ( ! defined( 'ABSPATH' ) ) {
+	die( '-1' );
+}
+?>
 <!-- Modal -->
 <div class="vc_general modal fade" id="vc_edit-element-dialog" tabindex="-1" role="dialog" aria-labelledby="myModalLabelTitle"
      aria-hidden="true">

@@ -1,4 +1,7 @@
 <?php
+if ( ! defined( 'ABSPATH' ) ) {
+	die( '-1' );
+}
 /**
  * Shortcode attributes
  * @var $atts
@@ -9,12 +12,11 @@
 
 $atts = vc_map_get_attributes( $this->getShortcode(), $atts );
 $this->buildTemplate( $atts, $content );
-$containerClass = 'vc_cta3-container ' . esc_attr( implode( ' ', $this->getTemplateVariable( 'container-class' ) ) );
-$containerClass = trim( $containerClass );
+$containerClass = trim( 'vc_cta3-container ' . esc_attr( implode( ' ', $this->getTemplateVariable( 'container-class' ) ) ) );
+$cssClass = trim( 'vc_general ' . esc_attr( implode( ' ', $this->getTemplateVariable( 'css-class' ) ) ) );
 ?>
-<section
-	class="<?php echo $containerClass; ?>">
-	<div class="vc_general <?php echo esc_attr( implode( ' ', $this->getTemplateVariable( 'css-class' ) ) ); ?>"<?php
+<section class="<?php echo esc_attr( $containerClass ); ?>">
+	<div class="<?php echo esc_attr( $cssClass ); ?>"<?php
 	if ( $this->getTemplateVariable( 'inline-css' ) ) {
 		echo ' style="' . esc_attr( implode( ' ', $this->getTemplateVariable( 'inline-css' ) ) ) . '"';
 	}

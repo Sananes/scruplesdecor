@@ -1,4 +1,7 @@
 <?php
+if ( ! defined( 'ABSPATH' ) ) {
+	die( '-1' );
+}
 
 class VcShortcodeAutoloader {
 
@@ -22,7 +25,7 @@ class VcShortcodeAutoloader {
 		$config = array(
 			'classmap_file' => vc_path_dir( 'APP_ROOT', 'vc_classmap.json.php' ),
 			'shortcodes_dir' => vc_path_dir( 'SHORTCODES_DIR' ),
-			'root_dir' => vc_path_dir( 'APP_ROOT' )
+			'root_dir' => vc_path_dir( 'APP_ROOT' ),
 		);
 
 		if ( is_file( $config['classmap_file'] ) ) {
@@ -85,9 +88,9 @@ class VcShortcodeAutoloader {
 		$class_token = false;
 		foreach ( $tokens as $token ) {
 			if ( is_array( $token ) ) {
-				if ( $token[0] == T_CLASS ) {
+				if ( T_CLASS == $token[0] ) {
 					$class_token = true;
-				} else if ( $class_token && $token[0] == T_STRING ) {
+				} elseif ( $class_token && T_STRING == $token[0] ) {
 					$classes[] = $token[1];
 					$class_token = false;
 				}
@@ -181,14 +184,14 @@ class VcShortcodeAutoloader {
 						'wpbakeryshortcodescontainer',
 						'wpbakeryvisualcomposer',
 						'wpbakeryshortcode',
-						'wpbmap'
+						'wpbmap',
 					) ) ) {
 						$extends = null;
 					}
 					$flat_map[ $class ] = array(
 						'class' => $class,
 						'file' => $file,
-						'extends' => $extends
+						'extends' => $extends,
 					);
 				}
 			}
@@ -199,8 +202,8 @@ class VcShortcodeAutoloader {
 			$dependencies = array(
 				array(
 					'class' => $params['class'],
-					'file' => $params['file']
-				)
+					'file' => $params['file'],
+				),
 			);
 
 			if ( $params['extends'] ) {
@@ -244,7 +247,7 @@ class VcShortcodeAutoloader {
 	 * @param string[]|string $dirs Directories where to look (recursive)
 	 * @param string $target Output file
 	 *
-	 * @return boolean
+	 * @return bool
 	 */
 	public static function saveClassMap( $dirs, $target ) {
 		if ( ! $target ) {
@@ -255,6 +258,6 @@ class VcShortcodeAutoloader {
 
 		$code = '<?php return (array) json_decode(\'' . json_encode( $classmap ) . '\') ?>';
 
-		return (bool) @file_put_contents( $target, $code );
+		return (bool) file_put_contents( $target, $code );
 	}
 }

@@ -1,4 +1,7 @@
 <?php
+if ( ! defined( 'ABSPATH' ) ) {
+	die( '-1' );
+}
 
 vc_map( array(
 	'name' => __( 'Tabs', 'js_composer' ),
@@ -7,7 +10,7 @@ vc_map( array(
 	'is_container' => true,
 	'show_settings_on_create' => false,
 	'as_parent' => array(
-		'only' => 'vc_tta_section'
+		'only' => 'vc_tta_section',
 	),
 	'category' => __( 'Content', 'js_composer' ),
 	'description' => __( 'Tabbed content', 'js_composer' ),
@@ -75,7 +78,7 @@ vc_map( array(
 			),
 			'heading' => __( 'Spacing', 'js_composer' ),
 			'description' => __( 'Select tabs spacing.', 'js_composer' ),
-			'std' => '1'
+			'std' => '1',
 		),
 		array(
 			'type' => 'dropdown',
@@ -183,7 +186,7 @@ vc_map( array(
 			'type' => 'css_editor',
 			'heading' => __( 'CSS box', 'js_composer' ),
 			'param_name' => 'css',
-			'group' => __( 'Design Options', 'js_composer' )
+			'group' => __( 'Design Options', 'js_composer' ),
 		),
 	),
 	'js_view' => 'VcBackendTtaTabsView',
@@ -201,10 +204,10 @@ vc_map( array(
 	</div>
 </div>',
 	'default_content' => '
-[vc_tta_section title="' . sprintf( "%s %d", __( 'Tab', 'js_composer' ), 1 ) . '"][/vc_tta_section]
-[vc_tta_section title="' . sprintf( "%s %d", __( 'Tab', 'js_composer' ), 2 ) . '"][/vc_tta_section]
+[vc_tta_section title="' . sprintf( '%s %d', __( 'Tab', 'js_composer' ), 1 ) . '"][/vc_tta_section]
+[vc_tta_section title="' . sprintf( '%s %d', __( 'Tab', 'js_composer' ), 2 ) . '"][/vc_tta_section]
 	',
 	'admin_enqueue_js' => array(
 		vc_asset_url( 'lib/vc_tabs/vc-tabs.js' ),
-	)
+	),
 ) );

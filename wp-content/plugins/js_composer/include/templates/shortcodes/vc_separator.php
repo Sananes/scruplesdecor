@@ -1,4 +1,8 @@
 <?php
+if ( ! defined( 'ABSPATH' ) ) {
+	die( '-1' );
+}
+
 /**
  * Shortcode attributes
  * @var $atts
@@ -21,11 +25,9 @@ $class_to_filter = '';
 $class_to_filter .= vc_shortcode_custom_css_class( $css, ' ' ) . $this->getExtraClass( $el_class );
 $css_class = apply_filters( VC_SHORTCODE_CUSTOM_CSS_FILTER_TAG, $class_to_filter, $this->settings['base'], $atts );
 
-echo do_shortcode( '[vc_text_separator layout="separator_no_text" align="' .
-	$align . '" style="' .
-	$style . '" color="' .
-	$color . '" accent_color="' .
-	$accent_color . '" border_width="' .
-	$border_width . '" el_width="' .
-	$el_width . '" el_class="' .
-	$css_class . '" ]' );
+$vc_text_separator = visual_composer()->getShortCode( 'vc_text_separator' );
+$atts['el_class'] = $css_class;
+$atts['layout'] = 'separator_no_text';
+if ( is_object( $vc_text_separator ) ) {
+	echo $vc_text_separator->render( $atts );
+}

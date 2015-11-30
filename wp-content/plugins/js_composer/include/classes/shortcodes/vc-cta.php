@@ -1,4 +1,8 @@
 <?php
+if ( ! defined( 'ABSPATH' ) ) {
+	die( '-1' );
+}
+
 /**
  * WPBakery Visual Composer shortcodes
  *
@@ -82,13 +86,13 @@ class WPBakeryShortCode_VC_Cta extends WPBakeryShortCode {
 
 	public function getHeading( $tag, $atts ) {
 		$inline_css = '';
-		if ( isset( $atts[ $tag ] ) && trim( $atts[ $tag ] ) !== '' ) {
+		if ( isset( $atts[ $tag ] ) && '' !== trim( $atts[ $tag ] ) ) {
 			if ( isset( $atts[ 'use_custom_fonts_' . $tag ] ) && 'true' === $atts[ 'use_custom_fonts_' . $tag ] ) {
 				$custom_heading = visual_composer()->getShortCode( 'vc_custom_heading' );
 				$data = vc_map_integrate_parse_atts( $this->shortcode, 'vc_custom_heading', $atts, $tag . '_' );
 				$data['font_container'] = implode( '|', array_filter( array(
 					'tag:' . $tag,
-					$data['font_container']
+					$data['font_container'],
 				) ) );
 				$data['text'] = $atts[ $tag ]; // provide text to shortcode
 
@@ -119,7 +123,7 @@ class WPBakeryShortCode_VC_Cta extends WPBakeryShortCode {
 			}
 		}
 
-		return "";
+		return '';
 	}
 
 	public function getVcIcon( $atts ) {
@@ -135,7 +139,7 @@ class WPBakeryShortCode_VC_Cta extends WPBakeryShortCode {
 			}
 		}
 
-		return "";
+		return '';
 	}
 
 	public function getTemplateVariable( $string ) {
@@ -144,6 +148,6 @@ class WPBakeryShortCode_VC_Cta extends WPBakeryShortCode {
 			return $this->template_vars[ $string ];
 		}
 
-		return "";
+		return '';
 	}
 }

@@ -1,3 +1,8 @@
+<?php
+if ( ! defined( 'ABSPATH' ) ) {
+	die( '-1' );
+}
+?>
 <div id="vc_properties-panel"
      class="<?php echo esc_attr( apply_filters( 'vc_edit_form_css_class', 'vc_panel vc_shortcode-edit-form vc_media-xs' ) ) ?>">
 	<div class="vc_panel-heading">

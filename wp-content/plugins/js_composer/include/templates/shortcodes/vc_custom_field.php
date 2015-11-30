@@ -1,4 +1,7 @@
 <?php
+if ( ! defined( 'ABSPATH' ) ) {
+	die( '-1' );
+}
 /**
  * @var array $atts
  * @var string $field_key
@@ -15,7 +18,7 @@ extract( shortcode_atts( array(
 
 $key = strlen( $custom_field_key ) > 0 ? $custom_field_key : $field_key;
 
-if ( strlen( $key ) ): ?>
+if ( strlen( $key ) ) :  ?>
 	<div class="vc_gitem-custom-field-<?php echo esc_attr( $key ) ?>">{{ post_meta_value:<?php echo esc_attr( $key ) ?>
 		}}
 	</div>

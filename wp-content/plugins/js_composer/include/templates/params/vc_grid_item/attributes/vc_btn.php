@@ -1,4 +1,8 @@
 <?php
+if ( ! defined( 'ABSPATH' ) ) {
+	die( '-1' );
+}
+
 /**
  * @var $vc_btn WPBakeryShortCode_VC_Btn
  * @var $post WP_Post
@@ -57,13 +61,13 @@ if ( 'true' === $add_icon ) {
 	$button_class .= ' vc_btn3-icon-' . $i_align;
 	vc_icon_element_fonts_enqueue( $i_type );
 
-	if ( isset( ${"i_icon_" . $i_type} ) ) {
+	if ( isset( ${'i_icon_' . $i_type} ) ) {
 		switch ( $i_type ) {
 			case 'pixelicons':
 				$icon_wrapper = true;
 				break;
 		}
-		$iconClass = ${"i_icon_" . $i_type};
+		$iconClass = ${'i_icon_' . $i_type};
 	} else {
 		$iconClass = 'fa fa-info';
 	}
@@ -74,7 +78,6 @@ if ( 'true' === $add_icon ) {
 		$icon_html = '<i class="vc_btn3-icon ' . esc_attr( $iconClass ) . '"></i>';
 	}
 
-
 	if ( 'left' === $i_align ) {
 		$button_html = $icon_html . ' ' . $button_html;
 	} else {
@@ -84,7 +87,7 @@ if ( 'true' === $add_icon ) {
 
 if ( 'custom' === $style ) {
 	$inline_css = vc_get_css_color( 'background-color', $custom_background ) . vc_get_css_color( 'color', $custom_text );
-} else if ( 'outline-custom' === $style ) {
+} elseif ( 'outline-custom' === $style ) {
 	$inline_css = vc_get_css_color( 'border-color', $outline_custom_color ) . vc_get_css_color( 'color', $outline_custom_color );
 	$attributes[] = 'onmouseenter="this.style.borderColor=\'' . $outline_custom_hover_background . '\'; this.style.backgroundColor=\'' . $outline_custom_hover_background . '\'; this.style.color=\'' . $outline_custom_hover_text . '\'"';
 	$attributes[] = 'onmouseleave="this.style.borderColor=\'' . $outline_custom_color . '\'; this.style.backgroundColor=\'transparent\'; this.style.color=\'' . $outline_custom_color . '\'"';
@@ -98,20 +101,24 @@ if ( '' !== $inline_css ) {
 
 $attributes = implode( ' ', $attributes );
 
+$link = trim( $link );
 // Add link
 $use_link = strlen( $link ) > 0 && 'none' !== $link;
 $link_output = '';
 if ( $use_link ) {
-	$link_output = vc_gitem_create_link_real( $atts, $post, 'vc_general vc_btn3 ' . trim( $button_class ), $title, false );
+	$link_output = vc_gitem_create_link_real( $atts, $post, 'vc_general vc_btn3 ' . trim( $button_class ), $title );
 }
 $output = '<div class="'
-          . esc_attr( trim( $css_class ) )
-          . ' vc_btn3-' . esc_attr( $align ) . '">';
-if ( preg_match( '/href=\"[^\"]+/', $link_output ) ):
+	. esc_attr( trim( $css_class ) )
+	. ' vc_btn3-' . esc_attr( $align ) . '">';
+if ( preg_match( '/href=\"[^\"]+/', $link_output ) ) :
 	$output .= '<' . $link_output . ' ' . $inline_css . ' ' . $attributes . '>' . $button_html . '</a>';
-else:
+elseif ( 'load-more-grid' === $link ) :
+	$output .= '<a href="javascript:;" class="vc_general vc_btn3 ' . esc_attr( $button_class ) . '" ' . $inline_css . ' ' . $attributes . '>' . $button_html . '</a>';
+else :
 	$output .= '<button class="vc_general vc_btn3 ' . esc_attr( $button_class ) . '"' . $inline_css . ' ' . $attributes . '>' .
-	           $button_html . '</button>';
+		$button_html . '</button>';
 endif;
 $output .= '</div>';
+
 return $output;

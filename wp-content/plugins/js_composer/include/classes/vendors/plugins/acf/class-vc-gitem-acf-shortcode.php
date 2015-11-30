@@ -1,6 +1,9 @@
 <?php
+if ( ! defined( 'ABSPATH' ) ) {
+	die( '-1' );
+}
 
-Class Vc_Gitem_Acf_Shortcode extends WPBakeryShortCode {
+class Vc_Gitem_Acf_Shortcode extends WPBakeryShortCode {
 	/**
 	 * @param $atts
 	 * @param null $content
@@ -19,7 +22,7 @@ Class Vc_Gitem_Acf_Shortcode extends WPBakeryShortCode {
 			'el_class' => '',
 			'field_group' => '',
 			'show_label' => '',
-			'align' => ''
+			'align' => '',
 		), $atts ) );
 		if ( 0 === strlen( $field_group ) ) {
 			$groups = function_exists( 'acf_get_field_groups' ) ? acf_get_field_groups() : apply_filters( 'acf/get_field_groups', array() );
@@ -31,7 +34,7 @@ Class Vc_Gitem_Acf_Shortcode extends WPBakeryShortCode {
 		if ( ! empty( $field_group ) ) {
 			$field_key = ! empty( $atts[ 'field_from_' . $field_group ] ) ? $atts[ 'field_from_' . $field_group ] : 'field_from_group_' . $field_group;
 		}
-		if ( $show_label === 'yes' && $field_key ) {
+		if ( 'yes' === $show_label && $field_key ) {
 			$field_key .= '_labeled';
 		}
 		$css_class = 'vc_gitem-acf'

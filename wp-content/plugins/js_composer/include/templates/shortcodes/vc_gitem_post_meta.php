@@ -1,4 +1,7 @@
 <?php
+if ( ! defined( 'ABSPATH' ) ) {
+	die( '-1' );
+}
 /**
  * Shortcode attributes
  * @var $atts
@@ -21,8 +24,7 @@ $css_class = 'vc_gitem-post-meta-field-' . $key
 if ( strlen( $label ) ) {
 	$label_html = '<span class="vc_gitem-post-meta-label">' . esc_html( $label ) . '</span>';
 }
-if ( strlen( $key ) ): ?>
-	<div class="<?php echo esc_attr( $css_class ) ?>"><?php echo $label_html ?> {{
-		post_meta_value:<?php echo esc_attr( $key ) ?> }}
+if ( strlen( $key ) ) :  ?>
+	<div class="<?php echo esc_attr( $css_class ) ?>"><?php echo $label_html ?> {{ post_meta_value:<?php echo esc_attr( $key ) ?> }}
 	</div>
 <?php endif ?>

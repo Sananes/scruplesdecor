@@ -1,4 +1,8 @@
 <?php
+if ( ! defined( 'ABSPATH' ) ) {
+	die( '-1' );
+}
+
 /***
  * @since 4.4
  * Hook Vc-Iconpicker-Param.php
@@ -9,7 +13,6 @@
  *  - register/enqueue js for iconpicker param
  *  - register/enqueue css for iconpicker param
  */
-
 
 // @see Vc_Base::frontCss, used to append actions when frontCss(frontend editor/and real view mode) method called
 // This action registers all styles(fonts) to be enqueue later

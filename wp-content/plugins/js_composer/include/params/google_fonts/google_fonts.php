@@ -1,4 +1,7 @@
 <?php
+if ( ! defined( 'ABSPATH' ) ) {
+	die( '-1' );
+}
 
 /**
  * Class Vc_Google_Fonts
@@ -54,8 +57,8 @@ class Vc_Google_Fonts {
 	 * vc_filter: vc_google_fonts_get_fonts_filter
 	 * @since 4.3
 	 * @return array List of available fonts as array of objects. {"font_family":"Abril
-     *     Fatface","font_styles":"regular","font_types":"400 regular:400:normal"}
-     * 
+	 *     Fatface","font_styles":"regular","font_types":"400 regular:400:normal"}
+	 *
 	 * @return array
 	 */
 	public function _vc_google_fonts_get_fonts() {
@@ -74,7 +77,7 @@ class Vc_Google_Fonts {
 		if ( is_array( $attr ) && ! empty( $attr ) ) {
 			foreach ( $attr as $key => $val ) {
 				if ( is_numeric( $key ) ) {
-					$fields[ $val ] = "";
+					$fields[ $val ] = '';
 				} else {
 					$fields[ $key ] = $val;
 				}

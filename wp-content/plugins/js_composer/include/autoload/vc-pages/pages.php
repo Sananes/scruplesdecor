@@ -1,11 +1,14 @@
 <?php
+if ( ! defined( 'ABSPATH' ) ) {
+	die( '-1' );
+}
 
 
 /**
  * @since 4.5
  */
 function vc_page_css_enqueue() {
-	wp_enqueue_style( 'vc_page-css', vc_asset_url( 'css/js_composer_settings.css' ), array(), WPB_VC_VERSION );
+	wp_enqueue_style( 'vc_page-css', vc_asset_url( 'css/js_composer_settings.min.css' ), array(), WPB_VC_VERSION );
 }
 
 /**
@@ -28,10 +31,15 @@ function vc_pages_group_build( $slug, $title, $tab = '' ) {
 		$tab = $slug;
 	}
 	$page = new Vc_Page();
-	$page->setSlug( $tab )->setTitle( $title )->setTemplatePath( 'pages/' . $slug . '/' . $tab . '.php' );
+	$page->setSlug( $tab )
+	     ->setTitle( $title )
+	     ->setTemplatePath( 'pages/' . $slug . '/' . $tab . '.php' );
 	// Create page group to stick with other in template.
 	$pages_group = new Vc_Pages_Group();
-	$pages_group->setSlug( $slug )->setPages( $vc_page_welcome_tabs )->setActivePage( $page )->setTemplatePath( 'pages/vc-welcome/index.php' );
+	$pages_group->setSlug( $slug )
+	            ->setPages( $vc_page_welcome_tabs )
+	            ->setActivePage( $page )
+	            ->setTemplatePath( 'pages/vc-welcome/index.php' );
 
 	return $pages_group;
 }
@@ -40,14 +48,30 @@ function vc_pages_group_build( $slug, $title, $tab = '' ) {
  * @since 4.5
  */
 function vc_menu_page_build() {
-	define( 'VC_PAGE_MAIN_SLUG', 'vc-general' );
-	add_menu_page( __( 'Visual Composer', 'js_composer' ), __( 'Visual Composer', 'js_composer' ), 'manage_options', VC_PAGE_MAIN_SLUG, null, vc_asset_url( 'vc/visual_composer.png' ), 76 );
+	if ( vc_user_access()->wpAny( 'manage_options' )
+	                     ->part( 'settings' )
+	                     ->can( 'vc-general-tab' )
+	                     ->get()
+	) {
+		define( 'VC_PAGE_MAIN_SLUG', 'vc-general' );
+	} else {
+		define( 'VC_PAGE_MAIN_SLUG', 'vc-welcome' );
+	}
+	add_menu_page( __( 'Visual Composer', 'js_composer' ), __( 'Visual Composer', 'js_composer' ), 'exist', VC_PAGE_MAIN_SLUG, null, vc_asset_url( 'vc/visual_composer.png' ), 76 );
 	do_action( 'vc_menu_page_build' );
 }
 
 function vc_network_menu_page_build() {
-	define( 'VC_PAGE_MAIN_SLUG', vc_page_welcome_slug() );
-	add_menu_page( __( 'Visual Composer', 'js_composer' ), __( 'Visual Composer', 'js_composer' ), 'manage_options', VC_PAGE_MAIN_SLUG, null, vc_asset_url( 'vc/visual_composer.png' ), 76 );
+	if ( vc_user_access()->wpAny( 'manage_options' )
+	                     ->part( 'settings' )
+	                     ->can( 'vc-general-tab' )
+	                     ->get() && ! is_main_site()
+	) {
+		define( 'VC_PAGE_MAIN_SLUG', 'vc-general' );
+	} else {
+		define( 'VC_PAGE_MAIN_SLUG', 'vc-welcome' );
+	}
+	add_menu_page( __( 'Visual Composer', 'js_composer' ), __( 'Visual Composer', 'js_composer' ), 'exist', VC_PAGE_MAIN_SLUG, null, vc_asset_url( 'vc/visual_composer.png' ), 76 );
 	do_action( 'vc_network_menu_page_build' );
 }
 

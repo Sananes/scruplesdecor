@@ -1,11 +1,15 @@
 <?php
+if ( ! defined( 'ABSPATH' ) ) {
+	die( '-1' );
+}
+
 require_once vc_path_dir( 'VENDORS_DIR', 'plugins/class-vc-vendor-qtranslate.php' );
 
 /**
  * Class Vc_Vendor_Mqtranslate extends class Vc_Vendor_Qtranslate::__construct
  * @since 4.3
  */
-Class Vc_Vendor_Mqtranslate extends Vc_Vendor_Qtranslate implements Vc_Vendor_Interface {
+class Vc_Vendor_Mqtranslate extends Vc_Vendor_Qtranslate implements Vc_Vendor_Interface {
 
 	/**
 	 * @since 4.3

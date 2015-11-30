@@ -1,10 +1,13 @@
 <?php
+if ( ! defined( 'ABSPATH' ) ) {
+	die( '-1' );
+}
 require_once vc_path_dir( 'EDITORS_DIR', 'navbar/class-vc-navbar.php' );
 
 /**
  *
  */
-Class Vc_Navbar_Frontend extends Vc_Navbar {
+class Vc_Navbar_Frontend extends Vc_Navbar {
 	/**
 	 * @var array
 	 */
@@ -15,7 +18,7 @@ Class Vc_Navbar_Frontend extends Vc_Navbar {
 		'save_update',
 		'screen_size',
 		'guides_switch',
-		'custom_css'
+		'custom_css',
 	);
 	/**
 	 * @var string
@@ -43,39 +46,39 @@ Class Vc_Navbar_Frontend extends Vc_Navbar {
 	 */
 	public function getControlScreenSize() {
 		$disable_responsive = vc_settings()->get( 'not_responsive_css' );
-		if ( $disable_responsive !== '1' ) {
+		if ( '1' !== $disable_responsive ) {
 			$screen_sizes = array(
 				array(
 					'title' => __( 'Desktop', 'js_composer' ),
 					'size' => '100%',
 					'key' => 'default',
-					'active' => true
+					'active' => true,
 				),
 				array(
 					'title' => __( 'Tablet landscape mode', 'js_composer' ),
 					'size' => '1024px',
-					'key' => 'landscape-tablets'
+					'key' => 'landscape-tablets',
 				),
 				array(
 					'title' => __( 'Tablet portrait mode', 'js_composer' ),
 					'size' => '768px',
-					'key' => 'portrait-tablets'
+					'key' => 'portrait-tablets',
 				),
 				array(
 					'title' => __( 'Smartphone landscape mode', 'js_composer' ),
 					'size' => '480px',
-					'key' => 'landscape-smartphones'
+					'key' => 'landscape-smartphones',
 				),
 				array(
 					'title' => __( 'Smartphone portrait mode', 'js_composer' ),
 					'size' => '320px',
-					'key' => 'portrait-smartphones'
+					'key' => 'portrait-smartphones',
 				),
 			);
 			$output = '<li class="vc_pull-right">'
 			          . '<div class="vc_dropdown" id="vc_screen-size-control">'
 			          . '<a href="#" class="vc_dropdown-toggle"'
-			          . ' title="' . __( "Responsive preview", 'js_composer' ) . '"><i class="vc_icon default"'
+			          . ' title="' . __( 'Responsive preview', 'js_composer' ) . '"><i class="vc_icon default"'
 			          . ' id="vc_screen-size-current"></i><b class="vc_caret"></b></a>'
 			          . '<ul class="vc_dropdown-list">';
 			while ( $screen = current( $screen_sizes ) ) {
@@ -105,30 +108,38 @@ Class Vc_Navbar_Frontend extends Vc_Navbar {
 		<li class="vc_show-mobile vc_pull-right">
 			<button data-url="<?php esc_attr_e( get_edit_post_link( $post->ID ) . '&wpb_vc_js_status=true' ) ?>"
 			        class="vc_btn vc_btn-default vc_btn-sm vc_navbar-btn vc_btn-backend-editor" id="vc_button-cancel"
-			        title="<?php _e( "Cancel all changes and return to WP dashboard", 'js_composer' ) ?>"><?php _e( 'Backend Editor', 'js_composer' ) ?></button>
-			<?php if ( ! in_array( $post->post_status, array( 'publish', 'future', 'private' ) ) ): ?>
-				<?php if ( $post->post_status === 'draft' ): ?>
+			        title="<?php _e( 'Cancel all changes and return to WP dashboard', 'js_composer' ) ?>"><?php echo vc_user_access()
+					->part( 'backend_editor' )
+					->can()
+					->get() ? __( 'Backend Editor', 'js_composer' ) : __( 'Edit', 'js_composer' ); ?></button>
+			<?php if ( ! in_array( $post->post_status, array(
+				'publish',
+				'future',
+				'private',
+			) )
+			) : ?>
+				<?php if ( 'draft' === $post->post_status ) : ?>
 					<button type="button" class="vc_btn vc_btn-default vc_btn-sm vc_navbar-btn vc_btn-save-draft"
 					        id="vc_button-save-draft"
-					        title="<?php esc_attr_e( "Save Draft", 'js_composer' ) ?>"><?php _e( 'Save Draft', 'js_composer' ) ?></button>
-				<?php elseif ( $post->post_status === 'pending' && $can_publish ): ?>
+					        title="<?php esc_attr_e( 'Save Draft', 'js_composer' ) ?>"><?php _e( 'Save Draft', 'js_composer' ) ?></button>
+				<?php elseif ( 'pending' === $post->post_status && $can_publish ) : ?>
 					<button type="button" class="vc_btn vc_btn-primary vc_btn-sm vc_navbar-btn vc_btn-save"
 					        id="vc_button-save-as-pending"
-					        title="<?php esc_attr_e( "Save as Pending", 'js_composer' ) ?>"><?php _e( 'Save as Pending', 'js_composer' ) ?></button>
+					        title="<?php esc_attr_e( 'Save as Pending', 'js_composer' ) ?>"><?php _e( 'Save as Pending', 'js_composer' ) ?></button>
 				<?php endif ?>
 				<?php if ( $can_publish ) : ?>
 					<button type="button" class="vc_btn vc_btn-primary vc_btn-sm vc_navbar-btn vc_btn-save"
-					        id="vc_button-update" title="<?php esc_attr_e( "Publish", 'js_composer' ) ?>"
+					        id="vc_button-update" title="<?php esc_attr_e( 'Publish', 'js_composer' ) ?>"
 					        data-change-status="publish"><?php _e( 'Publish', 'js_composer' ) ?></button>
-				<?php else: ?>
+				<?php else : ?>
 					<button type="button" class="vc_btn vc_btn-primary vc_btn-sm vc_navbar-btn vc_btn-save"
-					        id="vc_button-update" title="<?php esc_attr_e( "Submit for Review", 'js_composer' ) ?>"
+					        id="vc_button-update" title="<?php esc_attr_e( 'Submit for Review', 'js_composer' ) ?>"
 					        data-change-status="pending"><?php _e( 'Submit for Review', 'js_composer' ) ?></button>
 				<?php endif ?>
-			<?php else: ?>
+			<?php else : ?>
 				<button type="button" class="vc_btn vc_btn-primary vc_btn-sm vc_navbar-btn vc_btn-save"
 				        id="vc_button-update"
-				        title="<?php esc_attr_e( "Update", 'js_composer' ) ?>"><?php _e( 'Update', 'js_composer' ) ?></button>
+				        title="<?php esc_attr_e( 'Update', 'js_composer' ) ?>"><?php _e( 'Update', 'js_composer' ) ?></button>
 			<?php endif ?>
 		</li>
 		<?php
@@ -144,7 +155,7 @@ Class Vc_Navbar_Frontend extends Vc_Navbar {
 	public function getControlViewPost() {
 		return '<li class="vc_pull-right">'
 		       . '<a href="' . esc_attr( get_permalink( $this->post() ) ) . '" class="vc_icon-btn vc_back-button"'
-		       . ' title="' . esc_attr__( "Exit Visual Composer edit mode", 'js_composer' ) . '"></a>'
+		       . ' title="' . esc_attr__( 'Exit Visual Composer edit mode', 'js_composer' ) . '"></a>'
 		       . '</li>';
 	}
 }

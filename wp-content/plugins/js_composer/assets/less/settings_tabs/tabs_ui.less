@@ -5,16 +5,18 @@ a, h3 {
   }
 }
 
-label {
-  padding: 0 0 5px 0;
-  input {
-    margin-top: -1px;
-    margin-right: 5px;
-  }
-}
+//label {
+//  padding: 0 0 5px 0;
+//  input {
+//    margin-top: -1px;
+//    margin-right: 5px;
+//    margin-bottom: 2px;
+//  }
+//}
 
 .vc_settings-tab-content {
   display: none;
+  // @todo check is it needed maybe make .vc_settings-tab-content: display: block.
   &.vc_settings-tab-content-active {
     display: block;
   }
@@ -28,7 +30,9 @@ label {
   .vc_updater-passive {
     .opacity(0.4);
   }
-
+  .spinner {
+    float: left;
+  }
 }
 
 .vc_helper {

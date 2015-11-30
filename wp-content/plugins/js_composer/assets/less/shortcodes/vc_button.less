@@ -3,13 +3,11 @@
 // Core
 .wpb_button {
   display: inline-block;
-  .ie7-inline-block();
   padding: 4px 10px 4px;
   margin-bottom: 0; // For input.btn
   margin-top: 0;
   font-size: @baseFontSize;
   line-height: @baseLineHeight;
-  *line-height: 20px;
   color: @grayDark;
   text-align: center;
   text-shadow: 0 1px 1px rgba(255, 255, 255, .75);
@@ -17,10 +15,8 @@
   cursor: pointer;
   .buttonBackground(@vc_btnBackground, @vc_btnBackgroundHighlight);
   border: 1px solid @vc_btnBorder;
-  *border: 0; // Remove the border to prevent IE7's black border on input:focus
   border-bottom-color: darken(@vc_btnBorder, 10%);
   .border-radius(2px);
-  .ie7-restore-left-whitespace(); // Give IE7 some love
 }
 
 .vc_vc_button2 {
@@ -42,7 +38,6 @@
   color: @grayDark;
   text-decoration: none;
   background-color: darken(@white, 10%);
-  *background-color: darken(@white, 15%); /* Buttons in IE7 don't get borders, so darken on hover */
 
   // transition is only when going to hover, otherwise the background
   // behind the gradient (there for IE<=9 fallback) gets mismatched
@@ -58,7 +53,6 @@
 .wpb_button.active,
 .wpb_button:active {
   background-color: darken(@white, 10%);
-  background-color: darken(@white, 15%) e("\9");
   background-image: none;
   outline: 0;
   .box-shadow(~"inset 0 2px 4px rgba(0,0,0,.15), 0 1px 2px rgba(0,0,0,.05)");
@@ -174,22 +168,6 @@ input[type="submit"].wpb_button {
   &::-moz-focus-inner {
     padding: 0;
     border: 0;
-  }
-
-  // IE7 has some default padding on button controls
-  *padding-top: 2px;
-  *padding-bottom: 2px;
-  &.wpb_btn-large {
-    *padding-top: 7px;
-    *padding-bottom: 7px;
-  }
-  &.wpb_btn-small {
-    *padding-top: 3px;
-    *padding-bottom: 3px;
-  }
-  &.wpb_btn-mini {
-    *padding-top: 1px;
-    *padding-bottom: 1px;
   }
 }
 

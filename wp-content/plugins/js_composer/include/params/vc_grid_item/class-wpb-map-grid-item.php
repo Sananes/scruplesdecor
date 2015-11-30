@@ -1,6 +1,9 @@
 <?php
+if ( ! defined( 'ABSPATH' ) ) {
+	die( '-1' );
+}
 
-Class WpbMap_Grid_Item extends WPBMap {
+class WpbMap_Grid_Item extends WPBMap {
 	protected static $gitem_user_sc = false;
 	protected static $gitem_user_categories = false;
 	protected static $gitem_user_sorted_sc = false;
@@ -16,7 +19,7 @@ Class WpbMap_Grid_Item extends WPBMap {
 	 * @param bool $force - force data generation even data already generated.
 	 */
 	protected static function generateGitemUserData( $force = false ) {
-		if ( ! $force && self::$gitem_user_sc !== false && self::$gitem_user_categories !== false ) {
+		if ( ! $force && false !== self::$gitem_user_sc && false !== self::$gitem_user_categories ) {
 			return;
 		}
 		self::$gitem_user_sc = self::$gitem_user_categories = self::$gitem_user_sorted_sc = array();
@@ -24,23 +27,23 @@ Class WpbMap_Grid_Item extends WPBMap {
 		$add_deprecated = false;
 		if ( is_array( self::$sc ) && ! empty( self::$sc ) ) {
 			foreach ( self::$sc as $name => $values ) {
-				if ( isset( $values['post_type'] ) && Vc_Grid_Item_Editor::postType() === $values['post_type'] ) {
-					if ( ! isset( $values['content_element'] ) || $values['content_element'] === true ) {
+				if ( isset( $values['post_type'] ) && Vc_Grid_Item_Editor::postType() === $values['post_type'] && vc_user_access_check_shortcode_all( $name ) ) {
+					if ( ! isset( $values['content_element'] ) || true === $values['content_element'] ) {
 						$categories = isset( $values['category'] ) ? $values['category'] : '_other_category_';
 						$values['_category_ids'] = array();
-						if ( isset( $values['deprecated'] ) && $values['deprecated'] !== false ) {
+						if ( isset( $values['deprecated'] ) && false !== $values['deprecated'] ) {
 							$add_deprecated = true;
 							$values['_category_ids'][] = $deprecated;
 						} else {
 							if ( is_array( $categories ) && ! empty( $categories ) ) {
 								foreach ( $categories as $c ) {
-									if ( array_search( $c, self::$gitem_user_categories ) === false ) {
+									if ( false === array_search( $c, self::$gitem_user_categories ) ) {
 										self::$gitem_user_categories[] = $c;
 									}
 									$values['_category_ids'][] = md5( $c );
 								}
 							} else {
-								if ( array_search( $categories, self::$gitem_user_categories ) === false ) {
+								if ( false === array_search( $categories, self::$gitem_user_categories ) ) {
 									self::$gitem_user_categories[] = $categories;
 								}
 								$values['_category_ids'][] = md5( $categories );
@@ -80,7 +83,7 @@ Class WpbMap_Grid_Item extends WPBMap {
 	 * @return array - associated array of shortcodes settings with tag as the key.
 	 */
 	public static function getGitemUserShortCodes() {
-		self::generateUserData();
+		self::generateGitemUserData();
 
 		return self::$gitem_user_sc;
 	}

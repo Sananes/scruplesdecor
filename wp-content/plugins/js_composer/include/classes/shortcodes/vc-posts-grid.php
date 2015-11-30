@@ -1,6 +1,10 @@
 <?php
+if ( ! defined( 'ABSPATH' ) ) {
+	die( '-1' );
+}
 
 class WPBakeryShortCode_VC_Posts_Grid extends WPBakeryShortCode {
+	public $pretty_rel_random;
 	protected $filter_categories = array();
 	protected $query = false;
 	protected $loop_args = array();
@@ -17,17 +21,6 @@ class WPBakeryShortCode_VC_Posts_Grid extends WPBakeryShortCode {
 		parent::__construct( $settings );
 	}
 
-	public function jsComposerEditPage() {
-		$pt_array = vc_editor_post_types();
-		foreach ( $pt_array as $pt ) {
-			add_meta_box( 'vc_teaser', __( 'VC: Custom Teaser', "js_composer" ), Array(
-				&$this,
-				'outputTeaser'
-			), $pt, 'side' );
-		}
-		add_action( 'save_post', array( &$this, 'saveTeaserMetaBox' ) );
-	}
-
 	/**
 	 * Get teaser box data from database.
 	 *
@@ -37,7 +30,7 @@ class WPBakeryShortCode_VC_Posts_Grid extends WPBakeryShortCode {
 	 * @return string
 	 */
 	public function getTeaserData( $name, $id = false ) {
-		if ( $id === false ) {
+		if ( false === $id ) {
 			$id = get_the_ID();
 		}
 		$this->teaser_data = get_post_meta( $id, self::$meta_data_name, true );
@@ -63,10 +56,10 @@ class WPBakeryShortCode_VC_Posts_Grid extends WPBakeryShortCode {
 	}
 
 	protected function getTaxonomies() {
-		if ( $this->taxonomies === false ) {
+		if ( false === $this->taxonomies ) {
 			$this->taxonomies = get_object_taxonomies( ! empty( $this->loop_args['post_type'] ) ? $this->loop_args['post_type'] : get_post_types( array(
 				'public' => false,
-				'name' => 'attachment'
+				'name' => 'attachment',
 			), 'names', 'NOT' ) );
 		}
 
@@ -107,13 +100,13 @@ class WPBakeryShortCode_VC_Posts_Grid extends WPBakeryShortCode {
 	}
 
 	protected function getMainCssClass( $filter ) {
-		return 'wpb_' . ( $filter === 'yes' ? 'filtered_' : '' ) . 'grid';
+		return 'wpb_' . ( 'yes' === $filter ? 'filtered_' : '' ) . 'grid';
 	}
 
 	protected function getFilterCategories() {
 		return get_terms( $this->getTaxonomies(), array(
 			'orderby' => 'name',
-			'include' => implode( ',', $this->filter_categories )
+			'include' => implode( ',', $this->filter_categories ),
 		) );
 	}
 
@@ -137,11 +130,11 @@ class WPBakeryShortCode_VC_Posts_Grid extends WPBakeryShortCode {
 
 	protected function getLinked( $post, $content, $type, $css_class ) {
 		$output = '';
-		if ( $type === 'link_post' || empty( $type ) ) {
+		if ( 'link_post' === $type || empty( $type ) ) {
 			$url = get_permalink( $post->id );
-			$title = sprintf( esc_attr__( 'Permalink to %s', "js_composer" ), $post->title_attribute );
+			$title = sprintf( esc_attr__( 'Permalink to %s', 'js_composer' ), $post->title_attribute );
 			$output .= '<a href="' . $url . '" class="' . $css_class . '"' . $this->link_target . ' title="' . $title . '">' . $content . '</a>';
-		} elseif ( $type === 'link_image' && isset( $post->image_link ) && ! empty( $post->image_link ) ) {
+		} elseif ( 'link_image' === $type && isset( $post->image_link ) && ! empty( $post->image_link ) ) {
 			$this->loadPrettyPhoto();
 			// actually fixes relations if more prettyphoto added on page
 			if ( ! $this->pretty_rel_random ) {
@@ -164,7 +157,7 @@ class WPBakeryShortCode_VC_Posts_Grid extends WPBakeryShortCode {
 	}
 
 	protected function setLinkTarget( $grid_link_target = '' ) {
-		$this->link_target = $grid_link_target === '_blank' ? ' target="_blank"' : '';
+		$this->link_target = '_blank' === $grid_link_target ? ' target="_blank"' : '';
 	}
 
 	protected function findBlockTemplate() {

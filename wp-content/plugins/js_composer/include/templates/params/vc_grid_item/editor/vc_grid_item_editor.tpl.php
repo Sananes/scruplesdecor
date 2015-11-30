@@ -1,4 +1,7 @@
 <?php
+if ( ! defined( 'ABSPATH' ) ) {
+	die( '-1' );
+}
 require_once vc_path_dir( 'PARAMS_DIR', 'vc_grid_item/editor/navbar/class-vc-navbar-grid-item.php' );
 $nav_bar = new Vc_Navbar_Grid_Item( $post );
 $nav_bar->render();
@@ -12,16 +15,16 @@ $nav_bar->render();
 </div>
 <input type="hidden" name="vc_js_composer_group_access_show_rule" class="vc_js_composer_group_access_show_rule"
        value="<?php echo $editor->showRulesValue() ?>"/>
-<input type="hidden" id="wpb_vc_js_status" name="wpb_vc_js_status" value="<?php esc_attr_e( 'true' ) ?>"/>
+<input type="hidden" id="wpb_vc_js_status" name="wpb_vc_js_status" value="true"/>
 <input type="hidden" id="wpb_vc_loading" name="wpb_vc_loading"
-       value="<?php _e( "Loading, please wait...", "js_composer" ) ?>"/>
+       value="<?php _e( 'Loading, please wait...', 'js_composer' ) ?>"/>
 <input type="hidden" id="wpb_vc_loading_row" name="wpb_vc_loading_row"
-       value="<?php _e( "Crunching...", "js_composer" ) ?>"/>
+       value="<?php _e( 'Crunching...', 'js_composer' ) ?>"/>
 <input type="hidden" name="vc_grid_item_editor" value="true"/>
 <script type="text/javascript">
 	<?php
 	$vc_gitem_template = vc_request_param( 'vc_gitem_template' );
-	if (strlen($vc_gitem_template) && false !== ($template = Vc_Grid_Item::predefinedTemplate($vc_gitem_template))) {
+	if ( strlen( $vc_gitem_template ) && false !== ($template = Vc_Grid_Item::predefinedTemplate( $vc_gitem_template )) ) {
 		echo "var vcDefaultGridItemContent = '" . $template['template'] . "';";
 	} else {
 	?>
@@ -60,6 +63,6 @@ $nav_bar->render();
 		'[/vc_gitem_animated_block]' +
 		'[/vc_gitem]';
 	<?php
-}
- ?>
+	}
+	?>
 </script>

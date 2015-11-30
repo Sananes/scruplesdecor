@@ -677,7 +677,7 @@
 				this.notRequestTemplate = true;
 			}
 			this.model = model;
-			this.currentModelParams = this.model.get('params');
+			this.currentModelParams = this.model.get( 'params' );
 			vc.active_panel = this;
 			this.resetMinimize();
 			this.clicked = false;
@@ -695,6 +695,7 @@
 				this.mapped_params[ param.param_name ] = param;
 			}, this );
 			this.trigger( 'render' );
+			this.$el.find( '[data-vc-ui-element="settings-dropdown"]' ).hide();
 			this.show();
 			this.ajax = $.ajax( {
 				type: 'POST',
@@ -718,6 +719,10 @@
 			$panelHeader = this.$el.find( '[data-vc-ui-element="panel-header-content"]' );
 			$tabs.prependTo( $panelHeader );
 			this.$content.html( $data );
+			// must be called when content added to DOM
+			if ( window.vc_presets_show ) {
+				this.$el.find( '[data-vc-ui-element="settings-dropdown"]' ).show();
+			}
 			this.$content.removeAttr( 'data-vc-param-initialized' );
 			this.active_tab_index = 0;
 			this.tabsInit = false;
@@ -739,9 +744,19 @@
 		resetMinimize: function () {
 			this.$el.removeClass( 'vc_panel-opacity' );
 		},
+		saveSettingsAjaxData: function ( shortcode_name, title, is_default, data ) {
+			return {
+				action: 'vc_action_save_settings_preset',
+				shortcode_name: shortcode_name,
+				is_default: is_default ? 1 : 0,
+				vc_inline: true,
+				title: title,
+				data: data,
+				_vcnonce: window.vcAdminNonce
+			};
+		},
 		saveSettings: function ( title, is_default ) {
 			var shortcode_name = this.model.get( 'shortcode' ),
-				that = this,
 				data = JSON.stringify( this.getParams() ),
 				success = false;
 
@@ -757,27 +772,21 @@
 				type: 'POST',
 				dataType: 'json',
 				url: window.ajaxurl,
-				data: {
-					action: 'vc_action_save_settings_preset',
-					shortcode_name: shortcode_name,
-					is_default: is_default ? 1 : 0,
-					vc_inline: true,
-					title: title,
-					data: data
-				}
+				data: this.saveSettingsAjaxData( shortcode_name, title, is_default, data ),
+				context: this
 			} ).done( function ( response ) {
-				var $button = that.$el.find( that.settingsButtonSelector );
+				var $button = this.$el.find( this.settingsButtonSelector );
 
 				if ( response.success ) {
 					success = true;
-					that.setSettingsMenuContent( response.html );
-					that.settingsPresetId = response.id;
+					this.setSettingsMenuContent( response.html );
+					this.settingsPresetId = response.id;
 
 					if ( is_default ) {
-						window.vc_settings_presets[ shortcode_name ] = that.getParams();
+						window.vc_settings_presets[ shortcode_name ] = this.getParams();
 					}
 
-					that.untaintSettingsPresetData();
+					this.untaintSettingsPresetData();
 
 					$button.addClass( 'vc_done' );
 
@@ -790,6 +799,13 @@
 					vcConsoleLog( 'Could not save settings preset' );
 				}
 			} );
+		},
+		fetchSaveSettingsDialogAjaxData: function () {
+			return {
+				action: 'vc_action_render_settings_preset_title_prompt',
+				vc_inline: true,
+				_vcnonce: window.vcAdminNonce
+			};
 		},
 		/**
 		 * Fetch save settings dialog and insert it into DOM
@@ -813,10 +829,7 @@
 				type: 'POST',
 				dataType: 'json',
 				url: window.ajaxurl,
-				data: {
-					action: 'vc_action_render_settings_preset_title_prompt',
-					vc_inline: true
-				}
+				data: this.fetchSaveSettingsDialogAjaxData()
 			} ).done( function ( response ) {
 				if ( response.success ) {
 					success = true;
@@ -848,7 +861,6 @@
 			this.fetchSaveSettingsDialog( function ( created ) {
 				var $dropdown = that.$el.find( that.settingsDropdownSelector ),
 					$button = that.$el.find( that.settingsButtonSelector ),
-					$submit = $dropdown.find( '.vc_ui-button' ),
 					$prompt = $dropdown.find( '.vc_ui-prompt' ),
 					$title = $prompt.find( '.textfield' );
 
@@ -859,14 +871,6 @@
 				if ( ! created ) {
 					return;
 				}
-
-				$title.on( 'keyup', function () {
-					if ( $( this ).val().length ) {
-						$submit.removeProp( 'disabled' );
-					} else {
-						$submit.prop( 'disabled', true );
-					}
-				} );
 
 				$prompt.on( 'submit', function () {
 					var title = $title.val(),
@@ -896,14 +900,21 @@
 				} );
 			} );
 		},
+		loadSettingsAjaxData: function ( id ) {
+			return {
+				action: 'vc_action_get_settings_preset',
+				vc_inline: true,
+				id: id,
+				_vcnonce: window.vcAdminNonce
+			};
+		},
 		/**
 		 * Load and render specific preset
 		 *
 		 * @param {number} id
 		 */
 		loadSettings: function ( id ) {
-			var that = this,
-				success = false;
+			var success = false;
 
 			this.panelInit = false;
 
@@ -911,22 +922,28 @@
 				type: 'POST',
 				dataType: 'json',
 				url: window.ajaxurl,
-				data: {
-					action: 'vc_action_get_settings_preset',
-					vc_inline: true,
-					id: id
-				}
+				data: this.loadSettingsAjaxData( id ),
+				context: this
 			} ).done( function ( response ) {
 				if ( response.success ) {
 					success = true;
-					that.settingsPresetId = id;
-					that.renderSettingsPreset( response.data );
+					this.settingsPresetId = id;
+					this.renderSettingsPreset( response.data );
 				}
 			} ).always( function () {
 				if ( ! success ) {
 					vcConsoleLog( 'Could not get settings preset' );
 				}
 			} );
+		},
+		deleteSettingsAjaxData: function ( shortcode_name, id ) {
+			return {
+				action: 'vc_action_delete_settings_preset',
+				shortcode_name: shortcode_name,
+				vc_inline: true,
+				id: id,
+				_vcnonce: window.vcAdminNonce
+			};
 		},
 		/**
 		 * Delete specific preset
@@ -935,7 +952,6 @@
 		 */
 		deleteSettings: function ( id ) {
 			var shortcode_name = this.model.get( 'shortcode' ),
-				that = this,
 				success = false;
 
 			if ( ! confirm( window.i18nLocale.delete_preset_confirmation ) ) {
@@ -946,23 +962,24 @@
 				type: 'POST',
 				dataType: 'json',
 				url: window.ajaxurl,
-				data: {
-					action: 'vc_action_delete_settings_preset',
-					shortcode_name: shortcode_name,
-					vc_inline: true,
-					id: id
-				}
+				data: this.deleteSettingsAjaxData( shortcode_name, id ),
+				context: this
 			} ).done( function ( response ) {
-				if ( response.success ) {
+				if ( response && response.success ) {
 					success = true;
-					that.setSettingsMenuContent( response.html );
+					this.setSettingsMenuContent( response.html );
 
-					if ( id === that.settingsPresetId ) {
-						that.settingsPresetId = null;
+					if ( id === this.settingsPresetId ) {
+						this.settingsPresetId = null;
 					}
 
 					if ( response.default ) {
 						delete window.vc_settings_presets[ shortcode_name ];
+
+						// restore default vendor preset if there is any
+						if ( 'undefined' !== window.vc_vendor_settings_presets[ shortcode_name ] ) {
+							window.vc_settings_presets[ shortcode_name ] = window.vc_vendor_settings_presets[ shortcode_name ];
+						}
 					}
 				}
 			} ).always( function () {
@@ -970,6 +987,15 @@
 					vcConsoleLog( 'Could not delete settings preset' );
 				}
 			} );
+		},
+		saveAsDefaultSettingsAjaxData: function ( shortcode_name ) {
+			return {
+				action: 'vc_action_set_as_default_settings_preset',
+				shortcode_name: shortcode_name,
+				id: this.settingsPresetId,
+				vc_inline: true,
+				_vcnonce: window.vcAdminNonce
+			};
 		},
 		/**
 		 * Save currently loaded preset as default
@@ -979,30 +1005,24 @@
 		 */
 		saveAsDefaultSettings: function () {
 			var shortcode_name = this.model.get( 'shortcode' ),
-				that = this,
 				success = false;
 
 			// if user has not loaded preset or made any changes...
-			if ( ! that.settingsPresetId || this.isSettingsPresetDataTainted() ) {
+			if ( ! this.settingsPresetId || this.isSettingsPresetDataTainted() ) {
 				this.showSaveSettingsDialog( true );
 			} else {
 				$.ajax( {
 					type: 'POST',
 					dataType: 'json',
 					url: window.ajaxurl,
-					data: {
-						action: 'vc_action_set_as_default_settings_preset',
-						shortcode_name: shortcode_name,
-						id: that.settingsPresetId,
-						vc_inline: true
-					}
+					data: this.saveAsDefaultSettingsAjaxData( shortcode_name ),
+					context: this
 				} ).done( function ( response ) {
 					if ( response.success ) {
 						success = true;
-						that.setSettingsMenuContent( response.html );
-						that.untaintSettingsPresetData();
-
-						window.vc_settings_presets[ shortcode_name ] = that.getParams();
+						this.setSettingsMenuContent( response.html );
+						this.untaintSettingsPresetData();
+						window.vc_settings_presets[ shortcode_name ] = this.getParams();
 					}
 				} ).always( function () {
 					if ( ! success ) {
@@ -1011,29 +1031,37 @@
 				} );
 			}
 		},
+		restoreDefaultSettingsAjaxData: function ( shortcode_name ) {
+			return {
+				action: 'vc_action_restore_default_settings_preset',
+				shortcode_name: shortcode_name,
+				vc_inline: true,
+				_vcnonce: window.vcAdminNonce
+			};
+		},
 		/**
 		 * Remove "default" flag from currently default preset
 		 */
 		restoreDefaultSettings: function () {
 			var shortcode_name = this.model.get( 'shortcode' ),
-				that = this,
 				success = false;
 
 			$.ajax( {
 				type: 'POST',
 				dataType: 'json',
 				url: window.ajaxurl,
-				data: {
-					action: 'vc_action_restore_default_settings_preset',
-					shortcode_name: shortcode_name,
-					vc_inline: true
-				}
+				data: this.restoreDefaultSettingsAjaxData( shortcode_name ),
+				context: this
 			} ).done( function ( response ) {
 				if ( response.success ) {
 					success = true;
-					that.setSettingsMenuContent( response.html );
-
+					this.setSettingsMenuContent( response.html );
 					delete window.vc_settings_presets[ shortcode_name ];
+
+					// restore default vendor preset if there is any
+					if ( 'undefined' !== window.vc_vendor_settings_presets[ shortcode_name ] ) {
+						window.vc_settings_presets[ shortcode_name ] = window.vc_vendor_settings_presets[ shortcode_name ];
+					}
 				}
 			} ).always( function () {
 				if ( ! success ) {
@@ -1082,6 +1110,14 @@
 			} );
 
 		},
+		reloadSettingsMenuContentAjaxData: function ( shortcode_name ) {
+			return {
+				action: 'vc_action_render_settings_preset_popup',
+				shortcode_name: shortcode_name,
+				vc_inline: true,
+				_vcnonce: window.vcAdminNonce
+			};
+		},
 		/**
 		 * Reload settings menu (popup) content
 		 *
@@ -1091,8 +1127,7 @@
 		reloadSettingsMenuContent: function () {
 			var shortcode_name = this.model.get( 'shortcode' ),
 				$button = this.$el.find( this.settingsButtonSelector ),
-				success = false,
-				self = this;
+				success = false;
 
 			$button.addClass( 'vc_loading' );
 
@@ -1102,15 +1137,12 @@
 				type: 'POST',
 				dataType: 'json',
 				url: window.ajaxurl,
-				data: {
-					action: 'vc_action_render_settings_preset_popup',
-					shortcode_name: shortcode_name,
-					vc_inline: true
-				}
+				data: this.reloadSettingsMenuContentAjaxData( shortcode_name ),
+				context: this
 			} ).done( function ( response ) {
 				if ( response.success ) {
 					success = true;
-					self.setSettingsMenuContent( response.html );
+					this.setSettingsMenuContent( response.html );
 					$button
 						.data( 'vcSettingsMenuLoaded', true )
 						.removeClass( 'vc_loading' );
@@ -1168,6 +1200,20 @@
 
 			this.$el.data( 'vcSettingsPresetHash', vc_globalHashCode( params ) );
 		},
+		renderSettingsPresetAjaxData: function ( params ) {
+			var parent_id;
+
+			parent_id = this.model.get( 'parent_id' );
+
+			return {
+				action: 'vc_edit_form',
+				tag: this.model.get( 'shortcode' ),
+				parent_tag: parent_id ? this.model.collection.get( parent_id ).get( 'shortcode' ) : null,
+				post_id: $( '#post_ID' ).val(),
+				params: params,
+				_vcnonce: window.vcAdminNonce
+			};
+		},
 		/**
 		 * Render preset
 		 *
@@ -1177,9 +1223,6 @@
 		 * @return {vc.EditElementPanelView}
 		 */
 		renderSettingsPreset: function ( params ) {
-			var parent_id;
-
-			parent_id = this.model.get( 'parent_id' );
 			this.currentModelParams = params;
 			// @todo update with event
 			// generate new random tab_id if needed
@@ -1194,29 +1237,30 @@
 			this.ajax = $.ajax( {
 				type: 'POST',
 				url: window.ajaxurl,
-				data: {
-					action: 'vc_edit_form',
-					tag: this.model.get( 'shortcode' ),
-					parent_tag: parent_id ? this.model.collection.get( parent_id ).get( 'shortcode' ) : null,
-					post_id: $( '#post_ID' ).val(),
-					params: params
-				},
+				data: this.renderSettingsPresetAjaxData( params ),
 				context: this
 			} ).done( this.buildParamsContent );
 			return this;
 		},
 		ajaxData: function () {
-			var parent_tag, parent_id;
+			var parent_tag, parent_id, params, mergedParams;
 
 			parent_id = this.model.get( 'parent_id' );
 			parent_tag = parent_id ? this.model.collection.get( parent_id ).get( 'shortcode' ) : null;
+			params = this.model.get( 'params' );
+			mergedParams = vc.getMergedParams( this.model.get( 'shortcode' ),
+				_.extend( {}, vc.getDefaults( this.model.get( 'shortcode' ) ), params ) );
+			if ( ! _.isUndefined( params.content ) ) {
+				mergedParams.content = params.content;
+			}
 
 			return {
 				action: 'vc_edit_form', // OLD version wpb_show_edit_form
 				tag: this.model.get( 'shortcode' ),
 				parent_tag: parent_tag,
 				post_id: $( '#post_ID' ).val(),
-				params: this.model.get( 'params' )
+				params: mergedParams,
+				_vcnonce: window.vcAdminNonce
 			};
 		},
 		init: function () {
@@ -1646,7 +1690,8 @@
 					data: {
 						action: 'wpb_delete_template',
 						template_id: $button.attr( 'rel' ),
-						vc_inline: true
+						vc_inline: true,
+						_vcnonce: window.vcAdminNonce
 					},
 					context: this
 				} ).done( function ( html ) {
@@ -1668,7 +1713,8 @@
 				data: {
 					action: 'vc_frontend_template',
 					template_id: $button.data( 'template_id' ),
-					vc_inline: true
+					vc_inline: true,
+					_vcnonce: window.vcAdminNonce
 				},
 				context: this
 			} ).done( function ( html ) {
@@ -1688,13 +1734,15 @@
 				} );
 				template && data && vc.builder.buildFromTemplate( template, data );
 				this.showMessage( window.i18nLocale.template_added, 'success' );
+				vc.closeActivePanel();
 			} );
 		},
 		ajaxData: function ( $button ) {
 			return {
 				action: 'vc_frontend_default_template',
 				template_name: $button.data( 'template_name' ),
-				vc_inline: true
+				vc_inline: true,
+				_vcnonce: window.vcAdminNonce
 			};
 		},
 		/**
@@ -1748,7 +1796,8 @@
 					template: shortcodes,
 					template_name: name,
 					frontend: true,
-					vc_inline: true
+					vc_inline: true,
+					_vcnonce: window.vcAdminNonce
 				};
 				this.$name.val( '' );
 				this.showMessage( window.i18nLocale.template_save, 'success' );
@@ -1772,7 +1821,8 @@
 			return {
 				action: 'vc_backend_template',
 				template_id: $button.attr( 'data-template_id' ),
-				vc_inline: true
+				vc_inline: true,
+				_vcnonce: window.vcAdminNonce
 			};
 		},
 		/**
@@ -1794,7 +1844,8 @@
 				} );
 				vc.storage.append( shortcodes );
 				vc.shortcodes.fetch( { reset: true } );
-				this.showMessage( window.i18nLocale.template_added, 'success' );
+				//this.showMessage( window.i18nLocale.template_added, 'success' );
+				vc.closeActivePanel();
 			} );
 		},
 		/**
@@ -1811,7 +1862,8 @@
 				data: {
 					action: 'vc_backend_default_template',
 					template_name: $button.attr( 'data-template_name' ),
-					vc_inline: true
+					vc_inline: true,
+					_vcnonce: window.vcAdminNonce
 				},
 				context: this
 			} ).done( function ( shortcodes ) {
@@ -1820,7 +1872,7 @@
 				} );
 				vc.storage.append( shortcodes );
 				vc.shortcodes.fetch( { reset: true } );
-				this.showMessage( window.i18nLocale.template_added, 'success' );
+				//this.showMessage( window.i18nLocale.template_added, 'success' );
 			} );
 		},
 		getPostContent: function () {
@@ -1836,6 +1888,7 @@
 		$name: false,
 		$list: false,
 		template_load_action: 'vc_backend_load_template',
+		templateLoadPreviewAction: 'vc_load_template_preview',
 		save_template_action: 'vc_save_template',
 		delete_template_action: 'vc_delete_template',
 		appendedTemplateType: 'my_templates',
@@ -1849,11 +1902,13 @@
 			'click .vc_template-delete-icon': 'removeTemplate'
 		} ),
 		initialize: function () {
+			_.bindAll( this, 'checkInput', 'saveTemplate' );
 			vc.TemplatesPanelViewBackend.__super__.initialize.call( this );
 		},
 		render: function () {
 			this.$el.css( 'left', ($( window ).width() - this.$el.width()) / 2 );
-			this.$name = this.$el.find( '.vc_panel-templates-name' );
+			this.$name = this.$el.find( '[data-js-element="vc-templates-input"]' );
+			this.$name.off( 'keypress' ).on( 'keypress', this.checkInput );
 			this.$list = this.$el.find( '.vc_templates-list-my_templates' );
 			return vc.TemplatesPanelViewBackend.__super__.render.call( this );
 		},
@@ -1864,9 +1919,9 @@
 		 * @return {boolean}
 		 */
 		saveTemplate: function ( e ) {
-			e.preventDefault();
+			e && e.preventDefault && e.preventDefault();
 			var name = this.$name.val(),
-				data, shortcodes;
+				data, shortcodes, _this = this;
 			if ( _.isString( name ) && name.length ) {
 				shortcodes = this.getPostContent();
 				if ( ! shortcodes.trim().length ) {
@@ -1877,12 +1932,27 @@
 					action: this.save_template_action,
 					template: shortcodes,
 					template_name: name,
-					vc_inline: true
+					vc_inline: true,
+					_vcnonce: window.vcAdminNonce
 				};
-				this.$name.val( '' );
-				this.reloadTemplateList( data ); // TODO: modify this
+				this
+					.setButtonMessage( undefined, undefined, true )
+					.reloadTemplateList( data, function () {
+						//success
+						_this.$name.val( '' ).change();
+					}, function () {
+						//error
+						_this.showMessage( window.i18nLocale.template_save_error, 'error' );
+						_this.clearButtonMessage();
+					} );
 			} else {
 				this.showMessage( window.i18nLocale.please_enter_templates_name, 'error' );
+				return false;
+			}
+		},
+		checkInput: function ( e ) {
+			if ( e.which === 13 ) {
+				this.saveTemplate();
 				return false;
 			}
 		},
@@ -1893,8 +1963,9 @@
 		 */
 		removeTemplate: function ( e ) {
 			e && e.preventDefault();
+			e.stopPropagation();
 			var $button = $( e.target );
-			var $template = $button.parents( '.vc_template' );
+			var $template = $button.closest( '[data-template_id]' );
 			var template_name = $template.find( '[data-vc-ui-element="template-title"]' ).text();
 			var answer = confirm( window.i18nLocale.confirm_deleting_template.replace( '{template_name}',
 				template_name ) );
@@ -1907,7 +1978,8 @@
 					data: {
 						action: this.delete_template_action,
 						template_id: template_id,
-						vc_inline: true
+						vc_inline: true,
+						_vcnonce: window.vcAdminNonce
 					},
 					context: this
 				} ).done( function () {
@@ -1915,16 +1987,18 @@
 				} );
 			}
 		},
-		reloadTemplateList: function ( data ) {
-			var self = this;
-			var $template = $( '<li class="vc_template vc_col-sm-6 vc_col-xs-12 vc_col-md-4 vc_templates-template-type-' + this.appendedClass + '"></li>' );
-			$template.load( window.ajaxurl, data, function ( html ) {
-				self.filter = false; // reset current filter
-				$template.attr( 'data-category', self.appendedTemplateCategory );
-				$template.attr( 'data-template_unique_id', $( html ).data( 'template_id' ) );
-				$template.attr( 'data-template_type', self.appendedTemplateType );
-				self.showMessage( window.i18nLocale.template_save, 'success' );
-				self.$list.prepend( $( this ) );
+		reloadTemplateList: function ( data, successCallback, errorCallback ) {
+			var _this = this;
+			$.ajax( {
+				type: 'POST',
+				url: window.ajaxurl,
+				data: data,
+				context: this
+			} ).done( function ( html ) {
+				_this.filter = false; // reset current filter
+				_this.$list.prepend( $( html ) );
+				'function' === typeof successCallback && successCallback( html );
+			} ).error( 'function' === typeof errorCallback ? errorCallback : function () {
 			} );
 		},
 		getPostContent: function () {
@@ -1932,7 +2006,8 @@
 		},
 		loadTemplate: function ( e ) {
 			e.preventDefault();
-			var $template_data = $( e.target ).parents( '.vc_template' );
+			e.stopPropagation();
+			var $template_data = $( e.target ).closest( '[data-template_unique_id][data-template_type]' );
 			$.ajax( {
 				type: 'POST',
 				url: this.loadUrl,
@@ -1940,34 +2015,82 @@
 					action: this.template_load_action,
 					template_unique_id: $template_data.data( 'template_unique_id' ),
 					template_type: $template_data.data( 'template_type' ),
-					vc_inline: true
+					vc_inline: true,
+					_vcnonce: window.vcAdminNonce
 				},
 				context: this
 			} ).done( this.renderTemplate );
 		},
 		renderTemplate: function ( html ) {
-			var models, models_has_id;
+			var models;
 
 			_.each( vc.filters.templates, function ( callback ) {
 				html = callback( html );
 			} );
-
 			models = vc.storage.parseContent( {}, html );
-			models_has_id = false;
 			_.each( models, function ( model ) {
 				vc.shortcodes.create( model );
-				if ( ! models_has_id ) {
-					var param = vc.shortcodeHasIdParam( model.shortcode );
-					if ( param && ! _.isUndefined( model.params ) && ! _.isUndefined( model.params[ param.param_name ] ) && 0 < model.params[ param.param_name ].length ) {
-						models_has_id = true;
-					}
-				}
 			} );
+			vc.closeActivePanel();
+		},
+		buildTemplatePreview: function ( e ) {
+			e && e.preventDefault && e.preventDefault();
 
-			if ( models_has_id ) {
-				this.showMessage( window.i18nLocale.template_added_with_id, 'error' );
-			} else {
-				this.showMessage( window.i18nLocale.template_added, 'success' );
+			try {
+				var url, $el = $( e.currentTarget );
+				var $wrapper = $el.closest( '[data-template_unique_id]' );
+				if ( ! $wrapper.hasClass( 'vc_active' ) && ! $wrapper.hasClass( 'vc_loading' ) ) {
+					var $localContent = $wrapper.find( '[data-js-content]' );
+					var localContentChilds = $localContent.children().length > 0;
+					this.$content = $localContent;
+					if ( this.$content.find( 'iframe' ).length ) {
+						$el.vcAccordion( 'collapseTemplate' );
+						return true;
+					}
+					var templateId = $wrapper.data( 'template_unique_id' );
+					var templateType = $wrapper.data( 'template_type' );
+					if ( templateId && ! localContentChilds ) {
+						url = window.ajaxurl + '?' + $.param( {
+								action: this.templateLoadPreviewAction,
+								template_unique_id: templateId,
+								template_type: templateType,
+								vc_inline: true,
+								post_id: $( '#post_ID' ).val(),
+								_vcnonce: window.vcAdminNonce
+							} );
+						$el.find( 'i' ).addClass( 'spinner is-active' );
+
+						this.$content.html( '<iframe style="width: 100%;" data-vc-template-preview-frame="' + templateId + '"></iframe>' );
+						var $frame = this.$content.find( '[data-vc-template-preview-frame]' );
+						$frame.attr( 'src', url );
+						$wrapper.addClass( 'vc_loading' );
+						$frame.load( function () {
+							$wrapper.removeClass( 'vc_loading' );
+							$el.find( 'i' ).removeClass( 'spinner is-active' );
+							$el.vcAccordion( 'collapseTemplate' );
+						} );
+					}
+				} else {
+					$el.vcAccordion( 'collapseTemplate' );
+				}
+			} catch ( e ) {
+				window.console && window.console.error && window.console.error( e );
+				this.showMessage( 'Failed to build preview', 'error' );
+			}
+		},
+		/**
+		 * Set template iframe height
+		 * @param height (int) optional
+		 */
+		setTemplatePreviewSize: function ( height ) {
+			var iframe = this.$content.find( 'iframe' );
+			if ( iframe.length > 0 ) {
+				iframe = iframe[ 0 ];
+				if ( undefined === height ) {
+					iframe.height = iframe.contentWindow.document.body.offsetHeight;
+					height = iframe.contentWindow.document.body.scrollHeight;
+				}
+				iframe.height = height + 'px';
 			}
 		}
 	} );
@@ -2000,11 +2123,13 @@
 					template = element.innerHTML;
 				}
 			} );
+			// todo check this message appearing: #48591595835639
 			if ( template && data && vc.builder.buildFromTemplate( template, data ) ) {
 				this.showMessage( window.i18nLocale.template_added_with_id, 'error' );
 			} else {
 				this.showMessage( window.i18nLocale.template_added, 'success' );
 			}
+			vc.closeActivePanel();
 		}
 	} );
 
@@ -2094,7 +2219,7 @@
 				return 1000;
 
 			} ), function ( num, memo ) {
-				memo = memo + num;
+				memo += num;
 				return memo;
 			}, 0 );
 			if ( 1000 <= sum ) {
@@ -2135,4 +2260,20 @@
 	$( window ).bind( 'resize.fixElContainment', function () {
 		vc.active_panel && vc.active_panel.fixElContainment && vc.active_panel.fixElContainment();
 	} );
+
+	/**
+	 * If element has vc-disable-empty data attribute (usually text input), bind it to another element
+	 * (usually button). If first is empty on change event, disable target element. And vice versa
+	 */
+	$( 'body' ).on( 'keyup change input', '[data-vc-disable-empty]', function () {
+		var _this = $( this ),
+			$target = $( _this.data( 'vcDisableEmpty' ) );
+
+		if ( _this.val().length ) {
+			$target.removeProp( 'disabled' );
+		} else {
+			$target.prop( 'disabled', true );
+		}
+	} );
+
 })( window.jQuery );

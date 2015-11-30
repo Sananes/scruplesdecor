@@ -1,4 +1,7 @@
 <?php
+if ( ! defined( 'ABSPATH' ) ) {
+	die( '-1' );
+}
 /**
  * Shortcode attributes
  * @var $atts
@@ -56,14 +59,14 @@ while ( $my_query->have_posts() ) {
 			foreach ( $data as $block ) {
 				$settings = array();
 				if ( 'title' === $block->name ) {
-					$post->title = the_title( "", "", false );
+					$post->title = the_title( '', '', false );
 				} elseif ( 'image' === $block->name ) {
 					if ( 'featured' === $block->image ) {
 						$post->thumbnail_data = $this->getPostThumbnail( $post->id, $grid_thumb_size );
 					} elseif ( ! empty( $block->image ) ) {
 						$post->thumbnail_data = wpb_getImageBySize( array(
 							'attach_id' => (int) $block->image,
-							'thumb_size' => $grid_thumb_size
+							'thumb_size' => $grid_thumb_size,
 						) );
 					} else {
 						$post->thumbnail_data = false;
@@ -127,30 +130,29 @@ if ( ! empty( $args['post_type'] ) && is_array( $args['post_type'] ) ) {
 $li_span_class = $this->spanClass( $grid_columns_count );
 
 $css_class = 'wpb_row wpb_teaser_grid wpb_content_element ' .
-             $this->getMainCssClass( $filter ) . // Css class as selector for isotope plugin
-             ' columns_count_' . $grid_columns_count . // Custom margin/padding for different count of columns in grid
-             ' columns_count_' . $grid_columns_count . // Combination of layout and column count
-             ' ' . $post_types_teasers; // Css classes by selected post types
+			 $this->getMainCssClass( $filter ) . // Css class as selector for isotope plugin
+			 ' columns_count_' . $grid_columns_count . // Custom margin/padding for different count of columns in grid
+			 ' columns_count_' . $grid_columns_count . // Combination of layout and column count
+			 ' ' . $post_types_teasers; // Css classes by selected post types
 
 $class_to_filter = $css_class;
 $class_to_filter .= $this->getExtraClass( $el_class );
 $css_class = apply_filters( VC_SHORTCODE_CUSTOM_CSS_FILTER_TAG, $class_to_filter, $this->settings['base'], $atts );
 
-$this->setLinktarget( $grid_link_target );
+$this->setLinkTarget( $grid_link_target );
 
 ?>
-	<div
-		class="<?php echo esc_attr( trim( $css_class ) ); ?>">
+	<div class="<?php echo esc_attr( trim( $css_class ) ); ?>">
 		<div class="wpb_wrapper">
 			<?php echo wpb_widget_title( array( 'title' => $title, 'extraclass' => 'wpb_teaser_grid_heading' ) ) ?>
 			<div class="teaser_grid_container">
-				<?php if ( 'yes' === $filter && ! empty( $this->filter_categories ) ):
+				<?php if ( 'yes' === $filter && ! empty( $this->filter_categories ) ) :
 					$categories_array = $this->getFilterCategories();
 					echo '<ul class="categories_filter vc_col-sm-12 vc_clearfix">'
 					     . '<li class="active"><a href="#" data-filter="*">';
 					_e( 'All', 'js_composer' );
 					echo '</a></li>';
-					foreach ( $this->getFilterCategories() as $cat ):
+					foreach ( $this->getFilterCategories() as $cat ) :
 						echo '<li><a href="#"'
 						     . ' data-filter=".grid-cat-<?php echo $cat->term_id ?>">'
 						     . esc_attr( $cat->name )
@@ -160,8 +162,7 @@ $this->setLinktarget( $grid_link_target );
 					?>
 					<div class="vc_clearfix"></div>
 				<?php endif ?>
-				<ul class="wpb_thumbnails wpb_thumbnails-fluid vc_clearfix"
-				    data-layout-mode="<?php echo $grid_layout_mode ?>">
+				<ul class="wpb_thumbnails wpb_thumbnails-fluid vc_clearfix" data-layout-mode="<?php echo $grid_layout_mode ?>">
 					<?php
 					/**
 					 * Enqueue js/css
@@ -170,9 +171,9 @@ $this->setLinktarget( $grid_link_target );
 					wp_enqueue_style( 'isotope-css' );
 					wp_enqueue_script( 'isotope' );
 					?>
-					<?php if ( count( $posts ) > 0 ): ?>
-						<?php foreach ( $posts as $post ):
-							$blocks_to_build = $post->custom_user_teaser === true ? $post->custom_teaser_blocks : $teaser_blocks;
+					<?php if ( count( $posts ) > 0 ) :  ?>
+						<?php foreach ( $posts as $post ) :
+							$blocks_to_build = true === $post->custom_user_teaser ? $post->custom_teaser_blocks : $teaser_blocks;
 							$block_style = isset( $post->bgcolor ) ? ' style="background-color: ' . $post->bgcolor . '"' : '';
 							echo '<li'
 							     . ' class="isotope-item '
@@ -183,13 +184,13 @@ $this->setLinktarget( $grid_link_target );
 							     . $block_style
 							     . '>';
 							echo '<div class="isotope-inner">';
-							foreach ( $blocks_to_build as $block_data ):
+							foreach ( $blocks_to_build as $block_data ) :
 								include $this->getBlockTemplate();
 							endforeach;
 							echo '</div></li>';
-							 ?>
-						<?php endforeach; ?>
-					<?php else: ?>
+								?>
+						<?php endforeach ?>
+					<?php else : ?>
 						<li class="<?php echo $this->spanClass( 1 ); ?>"><?php _e( 'Nothing found.', 'js_composer' ) ?></li>
 					<?php endif ?>
 				</ul>

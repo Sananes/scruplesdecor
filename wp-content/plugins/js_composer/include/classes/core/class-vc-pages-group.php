@@ -1,4 +1,7 @@
 <?php
+if ( ! defined( 'ABSPATH' ) ) {
+	die( '-1' );
+}
 
 /**
  * Class Vs_Pages_Group Show the groups of the pages likes pages with tabs.

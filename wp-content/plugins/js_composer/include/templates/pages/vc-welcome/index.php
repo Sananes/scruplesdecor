@@ -1,3 +1,8 @@
+<?php
+if ( ! defined( 'ABSPATH' ) ) {
+	die( '-1' );
+}
+?>
 <div class="wrap vc-page-welcome about-wrap">
 	<h1><?php echo sprintf( __( 'Welcome to Visual Composer %s', 'js_composer' ), preg_replace( '/^(\d+)(\.\d+)?(\.\d)?/', '$1$2', WPB_VC_VERSION ) ) ?></h1>
 
@@ -8,8 +13,12 @@
 		<?php echo sprintf( __( 'Version %s', 'js_composer' ), WPB_VC_VERSION ) ?>
 	</div>
 	<p class="vc-page-actions">
-		<a href="<?php echo esc_attr( admin_url( 'admin.php?page=vc-general' ) ) ?>"
-		   class="button button-primary"><?php _e( 'Settings', 'js_composer' ) ?></a>
+		<?php if ( vc_user_access()
+			->wpAny( 'manage_options' )
+			->part( 'settings' )
+			->can( 'vc-general-tab' )
+			->get() && ! is_main_site() ) : ?><a href="<?php echo esc_attr( admin_url( 'admin.php?page=vc-general' ) ) ?>"
+		   class="button button-primary"><?php _e( 'Settings', 'js_composer' ) ?></a><?php endif; ?>
 		<a href="https://twitter.com/share" class="twitter-share-button"
 		   data-text="Take full control over your WordPress site with Visual Composer page builder by @WPBakery"
 		   data-url="http://vc.wpbakery.com" data-size="large">Tweet</a>
@@ -24,10 +33,10 @@
 			}( document, 'script', 'twitter-wjs' );</script>
 	</p>
 	<?php vc_include_template( '/pages/partials/_tabs.php',
-		array(
+	array(
 			'slug' => $page->getSlug(),
 			'active_tab' => $active_page->getSlug(),
-			'tabs' => $pages
+			'tabs' => $pages,
 		) );
 	?>
 	<?php echo $active_page->render(); ?>

@@ -11,7 +11,7 @@
 	function InitGalleries() {
 		// TODO: Backbone style for view binding
 		$( '.gallery_widget_attached_images_list', this.$view ).unbind( 'click.removeImage' ).on( 'click.removeImage',
-			'a.icon-remove',
+			'a.vc_icon-remove',
 			function ( e ) {
 				e.preventDefault();
 				var $block = $( this ).closest( '.edit_form_line' );
