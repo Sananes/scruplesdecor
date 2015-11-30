@@ -6,131 +6,204 @@
   display: inline-block;
   vertical-align: middle;
   font-style: normal;
+  font-size: 1em;
+  height: 1em;
+  padding-top: .5em;
+  box-sizing: border-box;
   &::before {
     content: '';
-    display: inline-block;
-    vertical-align: baseline;
+    display: block;
     background: transparent url(../vc/editors/ui/vc_ui-icon-pixel/vc_ui-sprite.png) no-repeat;
     line-height: 1;
+    transform: translateY(-50%);
   }
 }
 
 .vc_ui-icon-pixel-info {
   &::before {
-    height: 20px;
-    width: 20px;
-    background-position: -2px -2px;
-    font-size: 20px;
+    height: 22px;
+    width: 22px;
+    background-position: -1px -1px;
+    font-size: 22px;
   }
 }
 
 .vc_ui-icon-pixel-close {
   &::before {
-    height: 14px;
-    width: 14px;
-    background-position: -5px -29px;
-    font-size: 14px;
+    height: 16px;
+    width: 16px;
+    background-position: -4px -28px;
+    font-size: 16px;
   }
 }
 
 .vc_ui-icon-pixel-minimize {
   &::before {
-    height: 14px;
-    width: 14px;
-    background-position: -5px -53px;
-    font-size: 14px;
+    height: 16px;
+    width: 16px;
+    background-position: -4px -52px;
+    font-size: 16px;
   }
 }
 
 .vc_ui-icon-pixel-cog {
   &::before {
-    height: 18px;
-    width: 18px;
-    background-position: -3px -75px;
-    font-size: 18px;
+    height: 20px;
+    width: 20px;
+    background-position: -2px -74px;
+    font-size: 20px;
   }
 }
 
 .vc_ui-icon-pixel-lt-sm {
   &::before {
-    height: 10px;
-    width: 7px;
-    background-position: -3px -97px;
-    font-size: 10px;
+    height: 12px;
+    width: 8px;
+    background-position: -2px -96px;
+    font-size: 12px;
   }
 }
 
 .vc_ui-icon-pixel-gt-sm {
   &::before {
-    height: 10px;
-    width: 7px;
-    background-position: -15px -97px;
-    font-size: 10px;
+    height: 12px;
+    width: 8px;
+    background-position: -15px -96px;
+    font-size: 12px;
   }
 }
 
 .vc_ui-icon-pixel-times-sm {
   &::before {
-    height: 10px;
-    width: 10px;
-    background-position: -1px -109px;
-    font-size: 10px;
+    height: 12px;
+    width: 12px;
+    background-position: 0 -108px;
+    font-size: 12px;
   }
 }
 
 .vc_ui-icon-pixel-times-grey-sm {
   &::before {
-    height: 10px;
-    width: 10px;
-    background-position: -1px -193px;
-    font-size: 10px;
+    height: 12px;
+    width: 12px;
+    background-position: -1px -192px;
+    font-size: 12px;
   }
 }
 
 .vc_ui-icon-pixel-plus-sm {
   &::before {
-    height: 10px;
-    width: 10px;
-    background-position: -13px -109px;
-    font-size: 10px;
+    height: 12px;
+    width: 12px;
+    background-position: -12px -108px;
+    font-size: 12px;
   }
 }
 
 .vc_ui-icon-pixel-times {
   &::before {
-    height: 12px;
-    width: 12px;
-    background-position: -6px -126px;
-    font-size: 14px;
+    height: 14px;
+    width: 14px;
+    background-position: -5px -125px;
+    font-size: 12px;
   }
 }
 
 .vc_ui-icon-pixel-check {
   &::before {
-    height: 12px;
+    height: 14px;
     width: 17px;
     background-position: -4px -150px;
-    font-size: 12px;
+    font-size: 14px;
   }
 }
 
 .vc_ui-icon-pixel-search {
   &::before {
-    height: 13px;
-    width: 13px;
-    background-position: -6px -174px;
-    font-size: 13px;
+    height: 15px;
+    width: 15px;
+    background-position: -5px -173px;
+    font-size: 15px;
+  }
+}
+
+.vc_ui-icon-pixel-control-plus {
+  &::before {
+    height: 18px;
+    width: 18px;
+    background-position: -3px -204px;
+    font-size: 18px;
+  }
+}
+.vc_ui-icon-pixel-control-edit {
+  &::before {
+    height: 26px;
+    width: 24px;
+    background-position: 0 -246px;
+    font-size: 26px;
+  }
+}
+.vc_ui-icon-pixel-control-template {
+  &::before {
+    height: 23px;
+    width: 23px;
+    background-position: 0 -222px;
+    font-size: 23px;
   }
 }
 
 .vc_ui-icon-pixel-control-trash-dark {
   &::before {
-    height: 15px;
-    width: 15px;
+    height: 17px;
+    width: 16px;
     background-image: url(../vc/editors/ui/vc_ui-icon-pixel/controls.png);
-    background-position: -16px -65px;
-    font-size: 13px;
+    background-position: -16px -64px;
+    font-size: 17px;
+  }
+}
+.vc_ui-icon-pixel-control-search-dark {
+  &::before {
+    height: 14px;
+    width: 14px;
+    background-image: url(../vc/editors/ui/vc_ui-icon-pixel/controls.png);
+    background-position: -17px -97px;
+    font-size: 14px;
+  }
+}
+.vc_ui-icon-pixel-control-edit-dark {
+  &::before {
+    height: 16px;
+    width: 16px;
+    background-image: url(../vc/editors/ui/vc_ui-icon-pixel/controls.png);
+    background-position: -16px -32px;
+    font-size: 16px;
+  }
+}
+.vc_ui-icon-pixel-control-add-dark {
+  &::before {
+    height: 14px;
+    width: 14px;
+    background-image: url(../vc/editors/ui/vc_ui-icon-pixel/controls.png);
+    background-position: -17px -17px;
+    font-size: 14px;
+  }
+}
+.vc_ui-icon-pixel-control-triangle-desc-dark {
+  &::before {
+    height: 7px;
+    width: 11px;
+    background-image: url(../vc/editors/ui/vc_ui-icon-pixel/controls.png);
+    background-position: -18px -165px;
+    font-size: 7px;
   }
 }
 
-
+.vc_ui-icon-pixel-control-triangle-asc-dark {
+  &::before {
+    height: 7px;
+    width: 11px;
+    background-image: url(../vc/editors/ui/vc_ui-icon-pixel/controls.png);
+    background-position: -18px -181px;
+    font-size: 7px;
+  }
+}

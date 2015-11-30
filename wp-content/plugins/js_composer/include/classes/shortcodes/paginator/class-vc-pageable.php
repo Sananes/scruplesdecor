@@ -1,10 +1,12 @@
 <?php
+if ( ! defined( 'ABSPATH' ) ) {
+	die( '-1' );
+}
 
 /**
  * Class Vc_Pageable
  */
 abstract class WPBakeryShortCode_Vc_Pageable extends WPBakeryShortCode {
-
 	/**
 	 * @param $settings
 	 */
@@ -46,12 +48,32 @@ abstract class WPBakeryShortCode_Vc_Pageable extends WPBakeryShortCode {
 	 * @return string
 	 */
 	protected function contentLoadMore( $grid_style, $settings, $content ) {
-		return '<div class="vc_pageable-slide-wrapper vc_clearfix" data-vc-grid-content="true">'
-		       . $content
-		       . '</div>'
-		       . '<div class="vc_pageable-load-more-btn" data-vc-grid-load-more-btn="true">'
-		       . do_shortcode( '[vc_button2 size="' . $settings['button_size'] . '" title="' . __( 'Load more', 'js_composer' ) . '" style="' . $settings['button_style'] . '" color="' . $settings['button_color'] . '" el_class="vc_grid-btn-load_more"]' )
-		       . '</div>';
+		if ( ! isset( $settings['btn_data'] ) && isset( $settings['button_style'] ) && isset( $settings['button_size'] ) && isset( $settings['button_color'] ) ) {
+			// BC: for those who overrided
+			return '<div class="vc_pageable-slide-wrapper vc_clearfix" data-vc-grid-content="true">'
+			. $content
+			. '</div>'
+			. '<div class="vc_pageable-load-more-btn" data-vc-grid-load-more-btn="true">'
+			. do_shortcode( '[vc_button2 size="' . $settings['button_size'] . '" title="' . __( 'Load more', 'js_composer' ) . '" style="' . $settings['button_style'] . '" color="' . $settings['button_color'] . '" el_class="vc_grid-btn-load_more"]' )
+			. '</div>';
+		} elseif ( isset( $settings['btn_data'] ) ) {
+			$data = $settings['btn_data'];
+			$data['el_class'] = 'vc_grid-btn-load_more';
+			$data['link'] = 'load-more-grid';
+			$button3 = new WPBakeryShortCode_VC_Btn( array( 'base' => 'vc_btn' ) );
+
+			return '<div class="vc_pageable-slide-wrapper vc_clearfix" data-vc-grid-content="true">'
+			. $content
+			. '</div>'
+			. '<div class="vc_pageable-load-more-btn" data-vc-grid-load-more-btn="true">'
+			. apply_filters( 'vc_gitem_template_attribute_' . 'vc_btn', '', array(
+				'post' => new stdClass(),
+				'data' => str_replace( array( '{{ vc_btn:', '}}' ), '', $button3->output( $data ) ),
+			) )
+			. '</div>';
+		}
+
+		return '';
 	}
 
 	/**
@@ -63,8 +85,8 @@ abstract class WPBakeryShortCode_Vc_Pageable extends WPBakeryShortCode {
 	 */
 	protected function contentLazy( $grid_style, $settings, $content ) {
 		return '<div class="vc_pageable-slide-wrapper vc_clearfix" data-vc-grid-content="true">'
-		       . $content
-		       . '</div><div data-lazy-loading-btn="true" style="display: none;"><a href="' . get_permalink( $settings['page_id'] ) . '"></a></div>';
+		. $content
+		. '</div><div data-lazy-loading-btn="true" style="display: none;"><a href="' . get_permalink( $settings['page_id'] ) . '"></a></div>';
 	}
 
 	/**
@@ -82,7 +104,7 @@ abstract class WPBakeryShortCode_Vc_Pageable extends WPBakeryShortCode {
 		$content = method_exists( $this, $content_method ) ? $this->$content_method( $grid_style, $settings, $content ) : $content;
 
 		$output = '<div class="' . esc_attr( $css_class ) . '" data-vc-pageable-content="true">'
-		          . $content . '</div>';
+			. $content . '</div>';
 
 		return $output;
 
@@ -103,4 +125,26 @@ abstract class WPBakeryShortCode_Vc_Pageable extends WPBakeryShortCode {
 	 * @return string - rendered content for ajax
 	 */
 	abstract function renderAjax( $vc_request_param );
+
+	/**
+	 * Check is pageable
+	 * @since 4.7.4
+	 * @return bool
+	 */
+	public function isObjectPageable() {
+		return true;
+	}
+
+	/**
+	 * Check can user manage post.
+	 *
+	 * @param int $page_id
+	 *
+	 * @return bool
+	 */
+	public function currentUserCanManage( $page_id ) {
+		return vc_user_access()
+			->wpAny( array( 'edit_post', (int) $page_id ) )
+			->get();
+	}
 }

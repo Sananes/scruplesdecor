@@ -1,4 +1,8 @@
 <?php
+if ( ! defined( 'ABSPATH' ) ) {
+	die( '-1' );
+}
+
 global $vc_params_preset_form_field_js_appended;
 $vc_params_preset_form_field_js_appended = false;
 /**
@@ -24,7 +28,9 @@ function vc_params_preset_form_field( $settings, $value ) {
 	foreach ( $settings['options'] as $option ) {
 		$selected = '';
 		if ( isset( $option['value'] ) ) {
-			if ( $value !== '' && (string) $option['value'] === (string) $value ) {
+			$option_value_string = (string) $option['value'];
+			$value_string = (string) $value;
+			if ( '' !== $value && $option_value_string === $value_string ) {
 				$selected = ' selected';
 			}
 			$output .= '<option class="vc_params-preset-' . $option['value']

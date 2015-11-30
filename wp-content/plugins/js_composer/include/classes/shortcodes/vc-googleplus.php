@@ -1,10 +1,13 @@
 <?php
+if ( ! defined( 'ABSPATH' ) ) {
+	die( '-1' );
+}
 
 class WPBakeryShortCode_VC_GooglePlus extends WPBakeryShortCode {
 	protected function contentInline( $atts, $content = null ) {
 		extract( shortcode_atts( array(
 			'type' => 'standard',
-			'annotation' => 'bubble'
+			'annotation' => 'bubble',
 		), $atts ) );
 		if ( strlen( $type ) === 0 ) {
 			$type = 'standard';

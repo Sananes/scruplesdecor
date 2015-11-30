@@ -1,67 +1,89 @@
-<div id="vc_no-content-helper" class="vc_welcome">
-	<span class="icon"></span>
-	<h5><?php _e( 'Welcome to Blank Page, You Have No Content Yet!', 'js_composer' ) ?></h5>
-
-	<h3><?php _e( ' Add Some Content or Use Predefined Layouts...', 'js_composer' ) ?></h3>
-
-	<div class="vc_buttons">
-		<a id="vc_not-empty-add-element" class="vc_add-element-not-empty-button vc_add-element-action"
-		   title="<?php _e( 'Add Element', 'js_composer' ) ?>"></a><a id="vc_no-content-add-element"
-		                                                              class="vc_add-element-button vc_add-element-action vc_btn vc_btn-grace vc_btn-md vc_btn_3d"
-		                                                              href="#"
-		                                                              title="<?php _e( 'Add Element', 'js_composer' ) ?>"><?php _e( 'Add Element', 'js_composer' ) ?></a><?php
-		if ( vc_mapper()->userHasAccess( 'vc_column_text' ) ):
-		?><a
-			id="vc_no-content-add-text-block" class="vc_add-text-block-button vc_btn vc_btn-sky vc_btn-md vc_btn_3d"
-			href="#"
-			title="<?php _e( 'Add Text Block', 'js_composer' ) ?>"><?php _e( 'Add Text Block', 'js_composer' ) ?></a><?php endif ?>
-	</div>
-	<?php
-	$total_templates = visual_composer()->templatesPanelEditor()->loadDefaultTemplates();
-	$templates_total_count = count( $total_templates );
-	$templates = apply_filters( 'vc_load_default_templates_welcome_block', $total_templates );
+<?php
+if ( ! defined( 'ABSPATH' ) ) {
+	die( '-1' );
+}
+$total_templates = visual_composer()
+	->templatesPanelEditor()
+	->loadDefaultTemplates();
+$templates_total_count = count( $total_templates );
+?>
+<?php if ( vc_user_access()
+	           ->part( 'shortcodes' )
+	           ->checkStateAny( true, 'custom', null )
+	           ->get() &&
+		   vc_user_access_check_shortcode_all( 'vc_row' ) && vc_user_access_check_shortcode_all( 'vc_column' )
+) :
 	?>
-	<?php if ( is_array( $templates ) && ! empty( $templates ) ): ?>
-		<div class="vc_default-templates-separator vc_element vc_vc_text_separator">
-			<div class="vc_separator vc_sep_dashed vc_separator_align_center vc_el_width_100 vc_sep_color_outline_grey">
-				<span class="vc_sep_holder vc_sep_holder_l"><span class="vc_sep_line"></span></span>
-				<h4 class="normal"><?php _e( 'Choose Your Layout', 'js_composer' ) ?></h4><span
-					class="vc_sep_holder vc_sep_holder_r"><span class="vc_sep_line"></span></span>
-			</div>
+	<div id="vc_no-content-helper" class="vc_welcome vc_ui-font-open-sans">
+		<div class="vc_welcome-brand vc_welcome-visible-e">
+			<img src="<?php echo vc_asset_url( 'vc/logo/64x64.png' ); ?>" alt="">
 		</div>
-		<div class="vc_default-templates">
-			<div class="wpb_row vc_row-fluid">
-
-				<?php foreach ( $templates as $key => $template ): ?>
-					<?php if ( isset( $template['show_on_welcome_block'] ) && false === $template['show_on_welcome_block'] ) {
-						continue;
-					} ?>
-					<div
-						class="vc_template<?php if ( isset( $template['custom_class'] ) && strlen( trim( $template['custom_class'] ) ) > 0 ): echo ' ' . $template['custom_class']; endif; ?>"
-						data-template_type="default_templates" data-template_unique_id="<?php echo $key; ?>">
-						<div class="wpb_wrapper">
-
-							<div class="wpb_single_image">
-								<div class="wpb_wrapper">
-									<div
-										class="vc_templates-image"<?php if ( isset( $template['image_path'] ) ): ?> style="background-image:url('<?php echo $template['image_path']; ?>');"<?php endif ?>></div>
-								</div>
-							</div>
-
-							<div class="wpb_text_column">
-								<div class="wpb_wrapper">
-									<p><?php echo $template['name']; ?></p>
-								</div>
-							</div>
-						</div>
-					</div>
-				<?php endforeach; ?>
-				<?php if ( $templates_total_count != count( $templates ) ): ?>
-					<div class="vc_default-templates-more-layouts"><a
-							class="vc_btn vc_btn-md vc_btn_3d vc_btn_more-layouts"
-							id="vc_templates-more-layouts"><?php echo __( 'More Layouts', 'js_composer' ); ?></a></div>
-				<?php endif ?>
-			</div>
+		<div class="vc_welcome-header vc_welcome-visible-e">
+			<?php _e( 'You have blank page <br> Start adding content or templates', 'js_composer' ) ?>
 		</div>
-	<?php endif ?>
-</div>
+		<div class="vc_ui-btn-group vc_welcome-visible-e">
+			<?php
+			if ( vc_user_access()
+				     ->part( 'shortcodes' )
+				     ->checkStateAny( true, 'custom', null )
+				     ->get() &&
+			     vc_user_access_check_shortcode_all( 'vc_row' ) && vc_user_access_check_shortcode_all( 'vc_column' )
+			) :
+				?>
+				<a id="vc_no-content-add-element"
+				   class="vc_general vc_ui-button vc_ui-button-shape-rounded vc_ui-button-info vc_welcome-visible-e"
+				   title="<?php _e( 'Add Element', 'js_composer' ) ?>"
+				   data-vc-element="add-element-action" href="#">
+					<i class="vc_ui-icon-pixel vc_ui-icon-pixel-control-plus"></i>
+					<?php _e( 'Add element', 'js_composer' ) ?>
+				</a>
+			<?php endif; ?>
+			<?php if ( vc_user_access()
+				->part( 'shortcodes' )
+				->can( 'vc_column_text_all' )
+				->get()
+			) :  ?>
+				<a id="vc_no-content-add-text-block"
+				   class="vc_general vc_ui-button vc_ui-button-shape-rounded vc_ui-button-success"
+				   data-vc-element="add-text-block-action" href="#"
+				   title="<?php _e( 'Add text block', 'js_composer' ) ?>">
+					<i class="vc_ui-icon-pixel vc_ui-icon-pixel-control-edit"></i>
+					<?php _e( 'Add Text Block', 'js_composer' ) ?>
+				</a>
+			<?php endif ?>
+			<?php if ( $templates_total_count > 0 && vc_user_access()
+					->part( 'templates' )
+					->can()
+					->get()
+			) :  ?>
+				<a id="vc_templates-more-layouts"
+				   class="vc_general vc_ui-button vc_ui-button-shape-rounded vc_ui-button-warning" href="#">
+					<i class="vc_ui-icon-pixel vc_ui-icon-pixel-control-template"></i>
+					<?php echo __( 'Add template', 'js_composer' ); ?>
+				</a>
+			<?php endif ?>
+		</div>
+		<?php
+		if ( vc_user_access()
+			     ->part( 'shortcodes' )
+			     ->checkStateAny( true, 'custom', null )
+			     ->get() &&
+		     vc_user_access_check_shortcode_all( 'vc_row' ) && vc_user_access_check_shortcode_all( 'vc_column' )
+		) :
+			?>
+			<div class="vc_welcome-visible-ne">
+				<a id="vc_not-empty-add-element" class="vc_add-element-not-empty-button"
+				   title="<?php _e( 'Add Element', 'js_composer' ) ?>" data-vc-element="add-element-action">
+				</a>
+			</div>
+		<?php endif; ?>
+		<p class="vc_ui-help-block vc_welcome-visible-e">
+			<?php
+			$targetLink = '<a href="http://kb.wpbakery.com" target="_blank">' . __( 'knowledge base', 'js_composer' ) . '</a>';
+			$targetText = __( 'Don\'t know where to start? Visit our %s.', 'js_composer' );
+			$targetText = sprintf( $targetText, $targetLink );
+			echo $targetText;
+			?>
+		</p>
+	</div>
+<?php endif; ?>

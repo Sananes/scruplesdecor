@@ -1,4 +1,8 @@
 <?php
+if ( ! defined( 'ABSPATH' ) ) {
+	die( '-1' );
+}
+
 require_once vc_path_dir( 'EDITORS_DIR', 'popups/class-vc-add-element-box.php' );
 
 /**
@@ -6,7 +10,7 @@ require_once vc_path_dir( 'EDITORS_DIR', 'popups/class-vc-add-element-box.php' )
  *
  * @since 4.4
  */
-Class Vc_Add_Element_Box_Grid_Item extends Vc_Add_Element_Box {
+class Vc_Add_Element_Box_Grid_Item extends Vc_Add_Element_Box {
 	/**
 	 * Get shortcodes from param type vc_grid_item
 	 * @return array|bool
@@ -24,5 +28,9 @@ Class Vc_Add_Element_Box_Grid_Item extends Vc_Add_Element_Box {
 	 */
 	public function getCategories() {
 		return WpbMap_Grid_Item::getGitemUserCategories();
+	}
+
+	public function getPartState() {
+		return vc_user_access()->part( 'grid_builder' )->getState();
 	}
 }

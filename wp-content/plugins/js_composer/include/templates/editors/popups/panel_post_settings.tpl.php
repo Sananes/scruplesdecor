@@ -1,3 +1,8 @@
+<?php
+if ( ! defined( 'ABSPATH' ) ) {
+	die( '-1' );
+}
+?>
 <div id="vc_post-settings-panel" class="vc_panel" style="display: none;">
 	<div class="vc_panel-heading">
 		<a title="<?php _e( 'Close panel', 'js_composer' ); ?>" href="#" class="vc_close" data-dismiss="panel"
@@ -24,7 +29,7 @@
 				<div class="edit_form_line">
 					<pre id="wpb_csseditor" class="wpb_content_element custom_css wpb_frontend"></pre>
 					<span
-						class="vc_description vc_clearfix"><?php _e( 'Enter custom CSS (Note: it will be outputted only on this particular page).', "js_composer" ) ?></span>
+						class="vc_description vc_clearfix"><?php _e( 'Enter custom CSS (Note: it will be outputted only on this particular page).', 'js_composer' ) ?></span>
 				</div>
 			</div>
 		</div>

@@ -1,4 +1,7 @@
 <?php
+if ( ! defined( 'ABSPATH' ) ) {
+	die( '-1' );
+}
 /** @var $editor Vc_Frontend_Editor */
 global $menu, $submenu, $parent_file, $post_ID, $post, $post_type;
 $post_ID = $editor->post_id;
@@ -12,7 +15,9 @@ $menu = array();
 add_thickbox();
 wp_enqueue_media( array( 'post' => $editor->post_id ) );
 require_once( $editor->adminFile( 'admin-header.php' ) );
-vc_include_settings_preset_class();
+// @since 4.8 js logic for user role access manager.
+vc_include_template( 'editors/partials/access-manager-js.tpl.php' );
+
 ?>
 	<div id="vc_preloader"></div>
 	<script type="text/javascript">
@@ -23,51 +28,72 @@ vc_include_settings_preset_class();
 	<input type="hidden" name="vc_post_title" id="vc_title-saved" value="<?php echo esc_attr( $post_title ); ?>"/>
 	<input type="hidden" name="vc_post_id" id="vc_post-id" value="<?php echo esc_attr( $editor->post_id ); ?>"/>
 <?php
+
+// [vc_navbar frontend]
 require_once vc_path_dir( 'EDITORS_DIR', 'navbar/class-vc-navbar-frontend.php' );
-$nav_bar = new Vc_NavBar_Frontend( $post );
+$nav_bar = new Vc_Navbar_Frontend( $post );
 $nav_bar->render();
+// [/vc_navbar frontend]
 ?>
 	<div id="vc_inline-frame-wrapper"></div>
 <?php
-// Add element popup
+// [add element popup/box]
 require_once vc_path_dir( 'EDITORS_DIR', 'popups/class-vc-add-element-box.php' );
 $add_element_box = new Vc_Add_Element_Box( $editor );
 $add_element_box->render();
+// [/add element popup/box]
 
-// Edit form for mapped shortcode.
+// [shortcodes edit form panel render]
 visual_composer()->editForm()->render();
+// [/shortcodes edit form panel render]
 
-// Templates manager old panel @deprecated and will be removed
-visual_composer()->templatesEditor()->render();
-// Templates manager new panel
-// visual_composer()->templatesPanelEditor()->render();
-visual_composer()->templatesPanelEditor()->renderUITemplate();
+// [templates panel editor render]
+if ( vc_user_access()->part( 'templates' )->can()->get() ) {
+	visual_composer()->templatesPanelEditor()->renderUITemplate();
+}
+// [/templates panel editor render]
 
-require_once vc_path_dir( 'EDITORS_DIR', 'popups/class-vc-post-settings.php' );
-$post_settings = new Vc_Post_Settings( $editor );
-$post_settings->renderUITemplate();
+// [post settings panel render]
+if ( vc_user_access()->part( 'post_settings' )->can()->get() ) {
+	require_once vc_path_dir( 'EDITORS_DIR', 'popups/class-vc-post-settings.php' );
+	$post_settings = new Vc_Post_Settings( $editor );
+	$post_settings->renderUITemplate();
+}
+// [/post settings panel render]
+
+// [panel edit layout render]
 require_once vc_path_dir( 'EDITORS_DIR', 'popups/class-vc-edit-layout.php' );
 $edit_layout = new Vc_Edit_Layout();
 $edit_layout->renderUITemplate();
+// [/panel edit layout render]
+
+// fe controls
 vc_include_template( 'editors/partials/frontend_controls.tpl.php' );
+
+// [shortcodes presets data]
+if ( vc_user_access()->part( 'presets' )->can()->get() ) {
+	require_once vc_path_dir( 'AUTOLOAD_DIR', 'class-vc-settings-presets.php' );
+	$vc_settings_presets = Vc_Settings_Preset::listDefaultSettingsPresets();
+	$vc_vendor_settings_presets = Vc_Settings_Preset::listDefaultVendorSettingsPresets();
+} else {
+	$vc_settings_presets = array();
+	$vc_vendor_settings_presets = array();
+}
+// [/shortcodes presets data]
+
 ?>
 	<input type="hidden" name="vc_post_custom_css" id="vc_post-custom-css"
 	       value="<?php echo esc_attr( $editor->post_custom_css ); ?>" autocomplete="off"/>
 	<script type="text/javascript">
-		var vc_user_mapper = <?php echo json_encode(WPBMap::getUserShortCodes()) ?>,
-			vc_mapper = <?php echo json_encode(WPBMap::getShortCodes()) ?>,
-			vc_settings_presets = <?php echo json_encode(Vc_Settings_Preset::listDefaultSettingsPresets()) ?>,
-			vc_roles = <?php echo json_encode( array_merge( array( 'current_user' => $editor->current_user->roles ), (array) vc_settings()->get( 'groups_access_rules' ) ) ) ?>;
+		var vc_user_mapper = <?php echo json_encode( WPBMap::getUserShortCodes() ) ?>,
+			vc_mapper = <?php echo json_encode( WPBMap::getShortCodes() ) ?>,
+			vc_vendor_settings_presets = <?php echo json_encode( $vc_vendor_settings_presets ) ?>,
+			vc_settings_presets = <?php echo json_encode( $vc_settings_presets ) ?>,
+			vc_roles = [], // @todo fix_roles BC for roles
+			vcAdminNonce = '<?php echo vc_generate_nonce( 'vc-admin-nonce' ); ?>';
 	</script>
 
-	<script type="text/html" id="vc_settings-image-block">
-		<li class="added">
-			<div class="inner" style="width: 80px; height: 80px; overflow: hidden;text-align: center;">
-				<img rel="<%= id %>" src="<%= url %>"/>
-			</div>
-			<a href="#" class="icon-remove"></a>
-		</li>
-	</script>
+<?php vc_include_template( 'editors/partials/vc_settings-image-block.tpl.php' ) ?>
 	<div style="height: 1px; visibility: hidden; overflow: hidden;">
 		<?php
 
@@ -83,4 +109,7 @@ vc_include_template( 'editors/partials/frontend_controls.tpl.php' );
 
 		?>
 	</div>
-<?php require_once( $editor->adminFile( 'admin-footer.php' ) ); ?>
+<?php
+
+// other admin footer files and actions.
+require_once( $editor->adminFile( 'admin-footer.php' ) ); ?>

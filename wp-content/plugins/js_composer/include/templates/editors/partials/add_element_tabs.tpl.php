@@ -1,27 +1,30 @@
 <?php
+if ( ! defined( 'ABSPATH' ) ) {
+	die( '-1' );
+}
 
 $other_tab = false;
 
 $tabs = array(
 	array(
-		'name' => __( 'All', "js_composer" ),
+		'name' => __( 'All', 'js_composer' ),
 		'active' => true,
-		'filter' => '*'
-	)
+		'filter' => '*',
+	),
 );
 
 foreach ( $categories as $key => $name ) {
-	if ( $name === '_other_category_' ) {
+	if ( '_other_category_' === $name ) {
 		$other_tab = array(
-			'name' => __( 'Other', "js_composer" ),
+			'name' => __( 'Other', 'js_composer' ),
 			'filter' => '.js-category-' . $key,
-			'active' => false
+			'active' => false,
 		);
 		continue;
 	}
 
-	if ( $name === 'deprecated' ) {
-		$name = __( 'Deprecated', "js_composer" );
+	if ( 'deprecated' === $name ) {
+		$name = __( 'Deprecated', 'js_composer' );
 		$filter = '.js-category-deprecated';
 	} else {
 		$filter = '.js-category-' . md5( $name );
@@ -30,7 +33,7 @@ foreach ( $categories as $key => $name ) {
 	$tabs[] = array(
 		'name' => $name,
 		'filter' => $filter,
-		'active' => false
+		'active' => false,
 	);
 }
 
@@ -42,7 +45,7 @@ $tabs = apply_filters( 'vc_add_element_categories', $tabs );
 
 ?>
 <ul class="vc_general vc_ui-tabs-line" data-vc-ui-element="panel-tabs-controls">
-	<?php foreach ( $tabs as $v ): ?>
+	<?php foreach ( $tabs as $v ) :  ?>
 		<?php
 
 		$classes = array( 'vc_edit-form-tab-control' );

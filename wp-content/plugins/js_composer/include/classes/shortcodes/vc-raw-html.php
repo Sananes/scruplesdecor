@@ -1,4 +1,7 @@
 <?php
+if ( ! defined( 'ABSPATH' ) ) {
+	die( '-1' );
+}
 
 /**
  */
@@ -17,7 +20,7 @@ class WPBakeryShortCode_VC_Raw_html extends WPBakeryShortCode {
 			'button_yellow',
 			'button_blue',
 			'button_red',
-			'button_orange'
+			'button_orange',
 		);
 		$new_names = array(
 			'alert-block',
@@ -28,7 +31,7 @@ class WPBakeryShortCode_VC_Raw_html extends WPBakeryShortCode {
 			'btn-info',
 			'btn-primary',
 			'btn-danger',
-			'btn-warning'
+			'btn-warning',
 		);
 		$value = str_ireplace( $old_names, $new_names, $value );
 
@@ -36,8 +39,8 @@ class WPBakeryShortCode_VC_Raw_html extends WPBakeryShortCode {
 		$type = isset( $param['type'] ) ? $param['type'] : '';
 		$class = isset( $param['class'] ) ? $param['class'] : '';
 
-		if ( isset( $param['holder'] ) && $param['holder'] !== 'hidden' ) {
-			if ( $param['type'] === 'textarea_raw_html' ) {
+		if ( isset( $param['holder'] ) && 'hidden' !== $param['holder'] ) {
+			if ( 'textarea_raw_html' === $param['type'] ) {
 				$output .= '<' . $param['holder'] . ' class="wpb_vc_param_value ' . $param_name . ' ' . $type . ' ' . $class . '" name="' . $param_name . '">' . htmlentities( rawurldecode( base64_decode( strip_tags( $value ) ) ), ENT_COMPAT, 'UTF-8' ) . '</' . $param['holder'] . '><input type="hidden" name="' . $param_name . '_code" class="' . $param_name . '_code" value="' . strip_tags( $value ) . '" />';
 			} else {
 				$output .= '<' . $param['holder'] . ' class="wpb_vc_param_value ' . $param_name . ' ' . $type . ' ' . $class . '" name="' . $param_name . '">' . $value . '</' . $param['holder'] . '>';

@@ -1,4 +1,8 @@
 <?php
+if ( ! defined( 'ABSPATH' ) ) {
+	die( '-1' );
+}
+
 /**
  * Sort array values by key, default key is 'weight'
  * Used in usort() function.
@@ -55,7 +59,7 @@ class Vc_Sort {
 	 */
 	public function sortByKey( $key = 'weight' ) {
 		$this->key = $key;
-		@usort( $this->data, array( &$this, '_key' ) );
+		usort( $this->data, array( &$this, '_key' ) );
 
 		return $this->data;
 	}

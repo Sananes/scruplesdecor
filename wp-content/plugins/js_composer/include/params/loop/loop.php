@@ -1,4 +1,7 @@
 <?php
+if ( ! defined( 'ABSPATH' ) ) {
+	die( '-1' );
+}
 
 /**
  * @param $settings
@@ -39,7 +42,7 @@ function vc_loop_get_value( $param ) {
 	if ( isset( $param['options'] ) && is_array( $param['options'] ) ) {
 		foreach ( $param['options'] as $option ) {
 			if ( is_array( $option ) && isset( $option['value'] ) ) {
-				if ( in_array( ( ( $option['action'] === '-' ? '-' : '' ) . $option['value'] ), $selected_values ) ) {
+				if ( in_array( ( ( '-' === $option['action'] ? '-' : '' ) . $option['value'] ), $selected_values ) ) {
 					$value[] = $option['action'] . $option['name'];
 				}
 			} elseif ( is_array( $option ) && isset( $option[0] ) ) {
@@ -92,7 +95,7 @@ class VcLoopQueryBuilder {
 	 * @param $value
 	 */
 	protected function parse_size( $value ) {
-		$this->args['posts_per_page'] = $value === 'All' ? - 1 : (int) $value;
+		$this->args['posts_per_page'] = 'All' === $value ? - 1 : (int) $value;
 	}
 
 	/**
@@ -169,7 +172,7 @@ class VcLoopQueryBuilder {
 				'field' => 'id',
 				'taxonomy' => $t->taxonomy,
 				'terms' => $t->term_id,
-				'operator' => $operator
+				'operator' => $operator,
 			);
 		}
 	}
@@ -289,7 +292,7 @@ class VcLoopSettings {
 		'categories',
 		'tags',
 		'tax_query',
-		'by_id'
+		'by_id',
 	);
 
 	/**
@@ -308,21 +311,21 @@ class VcLoopSettings {
 			'categories' => __( 'Categories', 'js_composer' ),
 			'tags' => __( 'Tags', 'js_composer' ),
 			'tax_query' => __( 'Taxonomies', 'js_composer' ),
-			'by_id' => __( 'Individual posts/pages', 'js_composer' )
+			'by_id' => __( 'Individual posts/pages', 'js_composer' ),
 		);
 		$this->settings = $settings;
 		// Parse loop string
 		$data = $this->parseData( $value );
 		foreach ( $this->query_parts as $part ) {
 			$value = isset( $data[ $part ] ) ? $data[ $part ] : '';
-			$locked = $this->getSettings( $part, 'locked' ) === 'true';
+			$locked = 'true' === $this->getSettings( $part, 'locked' );
 			// Predefined value check.
 			if ( ! is_null( $this->getSettings( $part, 'value' ) ) && $this->replaceLockedValue( $part )
-			     && ( $locked === true || strlen( (string) $value ) === 0 )
+			     && ( true === $locked || 0 === strlen( (string) $value ) )
 			) {
 				$value = $this->settings[ $part ]['value'];
 			} elseif ( ! is_null( $this->getSettings( $part, 'value' ) ) && ! $this->replaceLockedValue( $part )
-			           && ( $locked === true || strlen( (string) $value ) === 0 )
+			           && ( true === $locked || 0 === strlen( (string) $value ) )
 			) {
 				$value = implode( ',', array_unique( explode( ',', $value . ',' . $this->settings[ $part ]['value'] ) ) );
 			}
@@ -338,7 +341,7 @@ class VcLoopSettings {
 				$this->content[ $part ]['locked'] = true;
 			}
 			//
-			if ( $this->getSettings( $part, 'hidden' ) === 'true' ) {
+			if ( 'true' === $this->getSettings( $part, 'hidden' ) ) {
 				$this->content[ $part ]['hidden'] = true;
 			}
 		}
@@ -417,14 +420,14 @@ class VcLoopSettings {
 	 */
 	public function parse_order_by( $value ) {
 		return $this->parseDropDown( $value, array(
-			array( 'date', __( "Date", 'js_composer' ) ),
+			array( 'date', __( 'Date', 'js_composer' ) ),
 			'ID',
-			array( 'author', __( "Author", 'js_composer' ) ),
-			array( 'title', __( "Title", 'js_composer' ) ),
-			array( 'modified', __( "Modified", 'js_composer' ) ),
-			array( 'rand', __( "Random", 'js_composer' ) ),
-			array( 'comment_count', __( "Comment count", 'js_composer' ) ),
-			array( 'menu_order', __( "Menu order", 'js_composer' ) ),
+			array( 'author', __( 'Author', 'js_composer' ) ),
+			array( 'title', __( 'Title', 'js_composer' ) ),
+			array( 'modified', __( 'Modified', 'js_composer' ) ),
+			array( 'rand', __( 'Random', 'js_composer' ) ),
+			array( 'comment_count', __( 'Comment count', 'js_composer' ) ),
+			array( 'menu_order', __( 'Menu order', 'js_composer' ) ),
 		) );
 	}
 
@@ -436,8 +439,8 @@ class VcLoopSettings {
 	 */
 	public function parse_order( $value ) {
 		return $this->parseDropDown( $value, array(
-			array( 'ASC', __( "Ascending", 'js_composer' ) ),
-			array( 'DESC', __( "Descending", 'js_composer' ) )
+			array( 'ASC', __( 'Ascending', 'js_composer' ) ),
+			array( 'DESC', __( 'Descending', 'js_composer' ) ),
 		) );
 	}
 
@@ -450,11 +453,11 @@ class VcLoopSettings {
 	public function parse_post_type( $value ) {
 		$options = array();
 		$args = array(
-			'public' => true
+			'public' => true,
 		);
 		$post_types = get_post_types( $args );
 		foreach ( $post_types as $post_type ) {
-			if ( $post_type !== 'attachment' ) {
+			if ( 'attachment' !== $post_type ) {
 				$options[] = $post_type;
 			}
 		}
@@ -484,7 +487,7 @@ class VcLoopSettings {
 			$options[] = array(
 				'value' => (string) $user->ID,
 				'name' => $user->data->user_nicename,
-				'action' => in_array( (int) $user->ID, $not_in ) ? '-' : '+'
+				'action' => in_array( (int) $user->ID, $not_in ) ? '-' : '+',
 			);
 		}
 
@@ -513,7 +516,7 @@ class VcLoopSettings {
 			$options[] = array(
 				'value' => (string) $obj->cat_ID,
 				'name' => $obj->cat_name,
-				'action' => in_array( (int) $obj->cat_ID, $not_in ) ? '-' : '+'
+				'action' => in_array( (int) $obj->cat_ID, $not_in ) ? '-' : '+',
 			);
 		}
 
@@ -542,7 +545,7 @@ class VcLoopSettings {
 			$options[] = array(
 				'value' => (string) $obj->term_id,
 				'name' => $obj->name,
-				'action' => in_array( (int) $obj->term_id, $not_in ) ? '-' : '+'
+				'action' => in_array( (int) $obj->term_id, $not_in ) ? '-' : '+',
 			);
 		}
 
@@ -566,12 +569,12 @@ class VcLoopSettings {
 				$not_in[] = abs( $id );
 			}
 		}
-		$list = get_terms( VcLoopSettings::getTaxonomies(), array( 'include' => array_map( 'abs', $list ) ) );
+		$list = get_terms( self::getTaxonomies(), array( 'include' => array_map( 'abs', $list ) ) );
 		foreach ( $list as $obj ) {
 			$options[] = array(
 				'value' => (string) $obj->term_id,
 				'name' => $obj->name,
-				'action' => in_array( (int) $obj->term_id, $not_in ) ? '-' : '+'
+				'action' => in_array( (int) $obj->term_id, $not_in ) ? '-' : '+',
 			);
 		}
 
@@ -601,7 +604,7 @@ class VcLoopSettings {
 			$options[] = array(
 				'value' => (string) $obj->ID,
 				'name' => $obj->post_title,
-				'action' => in_array( (int) $obj->ID, $not_in ) ? '-' : '+'
+				'action' => in_array( (int) $obj->ID, $not_in ) ? '-' : '+',
 			);
 		}
 
@@ -744,7 +747,7 @@ class VcLoopSuggestions {
 	public function get_authors( $query ) {
 		$args = ! empty( $query ) ? array(
 			'search' => '*' . $query . '*',
-			'search_columns' => array( 'user_nicename' )
+			'search_columns' => array( 'user_nicename' ),
 		) : array();
 		if ( ! empty( $this->exclude ) ) {
 			$args['exclude'] = $this->exclude;
@@ -846,6 +849,12 @@ function vc_build_loop_query( $query, $exclude_id = false ) {
  * @since 4.2
  */
 function vc_get_loop_suggestion() {
+	vc_user_access()
+		->checkAdminNonce()
+		->validateDie()
+		->wpAny( 'edit_posts', 'edit_pages' )
+		->validateDie();
+
 	$loop_suggestions = new VcLoopSuggestions( vc_post_param( 'field' ), vc_post_param( 'query' ), vc_post_param( 'exclude' ) );
 	$loop_suggestions->render();
 	die();
@@ -855,6 +864,12 @@ function vc_get_loop_suggestion() {
  * @since 4.2
  */
 function vc_get_loop_settings_json() {
+	vc_user_access()
+		->checkAdminNonce()
+		->validateDie()
+		->wpAny( 'edit_posts', 'edit_pages' )
+		->validateDie();
+
 	$loop_settings = new VcLoopSettings( vc_post_param( 'value' ), vc_post_param( 'settings' ) );
 	$loop_settings->render();
 	die();

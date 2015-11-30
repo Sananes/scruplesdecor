@@ -70,6 +70,7 @@ var vc_iframe = {
 			cursor: 'move',
 			cursorAt: { top: 20, left: 16 },
 			placeholder: "vc_placeholder-row",
+			cancel: '.vc-non-draggable-row',
 			helper: this.renderPlaceholder,
 			start: function ( event, ui ) {
 				vc_iframe.startSorting();
@@ -91,6 +92,7 @@ var vc_iframe = {
 			cursorAt: { top: 20, left: 16 },
 			connectWith: '.vc_element-container',
 			items: '> [data-model-id]',
+			cancel: '.vc-non-draggable',
 			handle: '.vc_element-move',
 			start: this.startSorting,
 			update: app.saveElementOrder,

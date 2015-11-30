@@ -1,0 +1,1293 @@
+msgid ""
+msgstr ""
+"Project-Id-Version: Savoy Theme\n"
+"POT-Creation-Date: 2015-11-10 20:23+0100\n"
+"PO-Revision-Date: 2015-11-10 20:23+0100\n"
+"Last-Translator: \n"
+"Language-Team: NordicMade\n"
+"Language: en_US\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"X-Generator: Poedit 1.8.4\n"
+"X-Poedit-Basepath: ..\n"
+"X-Poedit-WPHeader: style.css\n"
+"Plural-Forms: nplurals=2; plural=(n != 1);\n"
+"X-Poedit-SourceCharset: UTF-8\n"
+"X-Poedit-KeywordsList: __;_e;_n:1,2;_x:1,2c;_ex:1,2c;_nx:4c,1,2;esc_attr__;"
+"esc_attr_e;esc_attr_x:1,2c;esc_html__;esc_html_e;esc_html_x:1,2c;_n_noop:1,2;"
+"_nx_noop:3c,1,2;__ngettext_noop:1,2;_nx\n"
+"X-Poedit-SearchPath-0: .\n"
+"X-Poedit-SearchPathExcluded-0: *.js\n"
+"X-Poedit-SearchPathExcluded-1: includes/theme-plugins\n"
+"X-Poedit-SearchPathExcluded-2: includes/tgmpa\n"
+"X-Poedit-SearchPathExcluded-3: includes/options\n"
+"X-Poedit-SearchPathExcluded-4: includes/visual-composer/elements\n"
+"X-Poedit-SearchPathExcluded-5: includes/visual-composer/params\n"
+"X-Poedit-SearchPathExcluded-6: includes/woocommerce/admin\n"
+"X-Poedit-SearchPathExcluded-7: includes/visual-composer/elements-config.php\n"
+"X-Poedit-SearchPathExcluded-8: includes/visual-composer/init.php\n"
+
+#: 404.php:7
+msgid "Oops, page not found."
+msgstr ""
+
+#: 404.php:8
+msgid ""
+"It looks like nothing was found at this location. Click the link below to "
+"return home."
+msgstr ""
+
+#: 404.php:9
+msgid "Homepage &nbsp;&nbsp;&rarr;"
+msgstr ""
+
+#: archive.php:10
+#, php-format
+msgid "Daily Archives: %s"
+msgstr ""
+
+#: archive.php:12
+#, php-format
+msgid "Monthly Archives: %s"
+msgstr ""
+
+#: archive.php:14
+#, php-format
+msgid "Yearly Archives: %s"
+msgstr ""
+
+#: archive.php:16
+msgid "Archives"
+msgstr ""
+
+#: author.php:7
+#, php-format
+msgid "Author Archives: %s"
+msgstr ""
+
+#: comments.php:18
+#, php-format
+msgctxt "comments title"
+msgid "One reply to &ldquo;%2$s&rdquo;"
+msgid_plural "%1$s replies to &ldquo;%2$s&rdquo;"
+msgstr[0] ""
+msgstr[1] ""
+
+#: comments.php:43
+msgid "Comment navigation"
+msgstr ""
+
+#: comments.php:44
+msgid "&larr; Older Comments"
+msgstr ""
+
+#: comments.php:45
+msgid "Newer Comments &rarr;"
+msgstr ""
+
+#: comments.php:50
+msgid "Comments are closed."
+msgstr ""
+
+#: content-grid.php:42 content-list.php:41 single.php:41
+msgid "Pages:"
+msgstr ""
+
+#: content-grid.php:51
+msgid "More &nbsp;&rarr;"
+msgstr ""
+
+#: content-none.php:6
+#, php-format
+msgid ""
+"Ready to publish your first post? <a href=\"%1$s\">Get started here</a>."
+msgstr ""
+
+#: content-none.php:10
+msgid ""
+"Sorry, but nothing matched your search terms. Please try again with some "
+"different keywords."
+msgstr ""
+
+#: content-none.php:14
+msgid "It seems we can&rsquo;t find what you&rsquo;re looking for."
+msgstr ""
+
+#: footer.php:100 woocommerce/product-searchform_nm.php:14
+msgid "Search store"
+msgstr ""
+
+#: footer.php:168
+msgid "Close"
+msgstr ""
+
+#: functions.php:560
+msgid "Top Bar Menu"
+msgstr ""
+
+#: functions.php:561
+msgid "Main Menu"
+msgstr ""
+
+#: functions.php:562
+msgid "Right Menu"
+msgstr ""
+
+#: functions.php:563
+msgid "Footer Menu"
+msgstr ""
+
+#: functions.php:621
+msgid "Pingback:"
+msgstr ""
+
+#: functions.php:621 functions.php:646 woocommerce/myaccount/my-address.php:71
+msgid "Edit"
+msgstr ""
+
+#: functions.php:633
+#, php-format
+msgid "%1$s at %2$s"
+msgstr ""
+
+#: functions.php:638
+msgid "Your comment is awaiting moderation"
+msgstr ""
+
+#: functions.php:728 woocommerce/content-product_nm_header.php:44
+msgid "Categories"
+msgstr ""
+
+#: functions.php:729 includes/widgets/woocommerce-price-filter.php:233
+#: includes/widgets/woocommerce-price-filter.php:235
+#: includes/woocommerce/woocommerce.php:281
+#: includes/woocommerce/woocommerce.php:369
+msgid "All"
+msgstr ""
+
+#: functions.php:857
+msgid "Sidebar"
+msgstr ""
+
+#: functions.php:869 functions.php:900
+msgid "Shop"
+msgstr ""
+
+#: functions.php:912
+msgid "Footer"
+msgstr ""
+
+#: header-login.php:9 woocommerce/myaccount/form-login.php:66
+#: woocommerce/myaccount/form-login.php:79
+#: woocommerce/myaccount/form-login.php:116
+msgid "Register"
+msgstr ""
+
+#: header-login.php:10 includes/helpers.php:97
+#: woocommerce/global/form-login.php:21 woocommerce/global/form-login.php:40
+#: woocommerce/myaccount/form-login.php:31
+#: woocommerce/myaccount/form-login.php:50
+#: woocommerce/myaccount/form-login.php:125
+msgid "Login"
+msgstr ""
+
+#: includes/helpers.php:79
+msgid "Cart"
+msgstr ""
+
+#: includes/helpers.php:97 woocommerce/checkout/thankyou.php:35
+msgid "My Account"
+msgstr ""
+
+#: includes/visual-composer/element-templates/vc_toggle.php:6
+msgid "Click to toggle"
+msgstr ""
+
+#: includes/visual-composer/page-templates.php:36
+msgid "About"
+msgstr ""
+
+#: includes/visual-composer/page-templates.php:44
+msgid "Contact"
+msgstr ""
+
+#: includes/visual-composer/page-templates.php:52
+msgid "FAQ"
+msgstr ""
+
+#: includes/visual-composer/shortcodes/button.php:6
+msgid "Button with Text"
+msgstr ""
+
+#: includes/widgets/woocommerce-color-filter.php:19
+msgid ""
+"Shows \"color\" attributes in a widget which lets you narrow down the list "
+"of products when viewing products. "
+msgstr ""
+
+#: includes/widgets/woocommerce-color-filter.php:21
+msgid "WooCommerce Color Filter"
+msgstr ""
+
+#: includes/widgets/woocommerce-color-filter.php:42
+#: includes/widgets/woocommerce-color-filter.php:130
+msgid "Color"
+msgstr ""
+
+#: includes/widgets/woocommerce-color-filter.php:80
+#: includes/widgets/woocommerce-price-filter.php:26
+#: includes/widgets/woocommerce-product-sorting.php:22
+msgid "Title"
+msgstr ""
+
+#: includes/widgets/woocommerce-color-filter.php:85
+msgid "Columns"
+msgstr ""
+
+#: includes/widgets/woocommerce-color-filter.php:115
+msgid "Query type"
+msgstr ""
+
+#: includes/widgets/woocommerce-color-filter.php:117
+msgid "AND"
+msgstr ""
+
+#: includes/widgets/woocommerce-color-filter.php:118
+msgid "OR"
+msgstr ""
+
+#: includes/widgets/woocommerce-color-filter.php:130
+msgid "Term"
+msgstr ""
+
+#: includes/widgets/woocommerce-price-filter.php:19
+msgid ""
+"Shows a price filter list in a widget which lets you narrow down the list of "
+"shown products when viewing product categories."
+msgstr ""
+
+#: includes/widgets/woocommerce-price-filter.php:21
+msgid "WooCommerce Price Filter List"
+msgstr ""
+
+#: includes/widgets/woocommerce-price-filter.php:25
+msgid "Filter by price"
+msgstr ""
+
+#: includes/widgets/woocommerce-price-filter.php:34
+msgid "Price range size"
+msgstr ""
+
+#: includes/widgets/woocommerce-price-filter.php:42
+msgid "Max price ranges"
+msgstr ""
+
+#: includes/widgets/woocommerce-price-filter.php:47
+msgid "Hide empty price ranges"
+msgstr ""
+
+#: includes/widgets/woocommerce-product-sorting.php:15
+msgid "Display a product sorting list."
+msgstr ""
+
+#: includes/widgets/woocommerce-product-sorting.php:17
+msgid "WooCommerce Product Sorting"
+msgstr ""
+
+#: includes/widgets/woocommerce-product-sorting.php:21
+msgid "Sort By"
+msgstr ""
+
+#: includes/widgets/woocommerce-product-sorting.php:54
+msgid "Default"
+msgstr ""
+
+#: includes/widgets/woocommerce-product-sorting.php:55
+msgid "Popularity"
+msgstr ""
+
+#: includes/widgets/woocommerce-product-sorting.php:56
+msgid "Average rating"
+msgstr ""
+
+#: includes/widgets/woocommerce-product-sorting.php:57
+msgid "Newness"
+msgstr ""
+
+#: includes/widgets/woocommerce-product-sorting.php:58
+msgid "Price: Low to High"
+msgstr ""
+
+#: includes/widgets/woocommerce-product-sorting.php:59
+msgid "Price: High to Low"
+msgstr ""
+
+#: includes/woocommerce/woocommerce.php:382
+msgid "Back"
+msgstr ""
+
+#: page.php:21
+msgid "Sorry, nothing to display."
+msgstr ""
+
+#: pagination.php:5
+msgid "Older Posts"
+msgstr ""
+
+#: pagination.php:8
+msgid "Newer Posts"
+msgstr ""
+
+#: search.php:7
+#, php-format
+msgid "%s Search Results for: %s"
+msgstr ""
+
+#: searchform.php:2
+msgid "Search .."
+msgstr ""
+
+#: single.php:26
+msgid "By"
+msgstr ""
+
+#: single.php:26
+msgid "on"
+msgstr ""
+
+#: single.php:59
+msgid "Posted in "
+msgstr ""
+
+#: single.php:62
+msgid " and tagged "
+msgstr ""
+
+#: single.php:70
+msgid "Tagged "
+msgstr ""
+
+#: single.php:80
+msgid "Share"
+msgstr ""
+
+#: single.php:81 woocommerce/single-product/share.php:31
+msgid "Share on Facebook"
+msgstr ""
+
+#: single.php:82 woocommerce/single-product/share.php:32
+msgid "Share on Twitter"
+msgstr ""
+
+#: single.php:83 woocommerce/single-product/share.php:33
+msgid "Pin in Pinterest"
+msgstr ""
+
+#: single.php:88
+msgid "&larr;&nbsp; Prev"
+msgstr ""
+
+#: single.php:91
+msgid "Next &nbsp;&rarr;"
+msgstr ""
+
+#: tag.php:7
+#, php-format
+msgid "Tag Archives: %s"
+msgstr ""
+
+#: woocommerce/cart/cart-empty.php:25 woocommerce/cart/mini-cart.php:31
+msgid "Your cart is currently empty."
+msgstr ""
+
+#: woocommerce/cart/cart-empty.php:26
+msgid "Return To Shop"
+msgstr ""
+
+#: woocommerce/cart/cart-shipping.php:21
+#, php-format
+msgid "Shipping #%d"
+msgstr ""
+
+#: woocommerce/cart/cart-shipping.php:23 woocommerce/cart/cart-shipping.php:99
+msgid "Shipping"
+msgstr ""
+
+#: woocommerce/cart/cart-shipping.php:61
+msgid "Please use the shipping calculator to see available shipping methods."
+msgstr ""
+
+#: woocommerce/cart/cart-shipping.php:65
+msgid ""
+"Please continue to the checkout and enter your full address to see if there "
+"are any available shipping methods."
+msgstr ""
+
+#: woocommerce/cart/cart-shipping.php:69
+msgid "Please fill in your details to see available shipping methods."
+msgstr ""
+
+#: woocommerce/cart/cart-shipping.php:78 woocommerce/cart/cart-shipping.php:84
+msgid ""
+"There are no shipping methods available. Please double check your address, "
+"or contact us if you need any help."
+msgstr ""
+
+#: woocommerce/cart/cart-totals.php:22 woocommerce/cart/mini-cart.php:100
+#: woocommerce/checkout/review-order.php:64
+msgid "Subtotal"
+msgstr ""
+
+#: woocommerce/cart/cart-totals.php:69
+#: woocommerce/checkout/review-order.php:111
+#: woocommerce/myaccount/my-orders.php:35
+#: woocommerce/myaccount/my-orders.php:58
+msgid "Total"
+msgstr ""
+
+#: woocommerce/cart/cart-totals.php:83
+#, php-format
+msgid " (taxes estimated for %s)"
+msgstr ""
+
+#: woocommerce/cart/cart-totals.php:86
+#, php-format
+msgid ""
+"Note: Shipping and taxes are estimated%s and will be updated during checkout "
+"based on your billing and shipping information."
+msgstr ""
+
+#: woocommerce/cart/cart.php:31
+msgid "Shopping Cart"
+msgstr ""
+
+#: woocommerce/cart/cart.php:65 woocommerce/cart/mini-cart.php:74
+msgid "Remove this item"
+msgstr ""
+
+#: woocommerce/cart/cart.php:86
+msgid "Qty"
+msgstr ""
+
+#: woocommerce/cart/cart.php:111
+msgid "Available on backorder"
+msgstr ""
+
+#: woocommerce/cart/cart.php:130
+msgid "Summary"
+msgstr ""
+
+#: woocommerce/cart/cart.php:138
+msgid "Coupon"
+msgstr ""
+
+#: woocommerce/cart/cart.php:139
+msgid "Enter coupon code"
+msgstr ""
+
+#: woocommerce/cart/cart.php:140
+msgid "Apply"
+msgstr ""
+
+#: woocommerce/cart/cart.php:149
+msgid "Update Cart"
+msgstr ""
+
+#: woocommerce/cart/cross-sells.php:47
+msgid "You may be interested in &hellip;"
+msgstr ""
+
+#: woocommerce/cart/mini-cart.php:25
+msgid "Updating .."
+msgstr ""
+
+#: woocommerce/cart/mini-cart.php:35
+msgid "Continue Shopping"
+msgstr ""
+
+#: woocommerce/cart/mini-cart.php:88
+msgid "Qty:"
+msgstr ""
+
+#: woocommerce/cart/mini-cart.php:105
+msgid "Edit Cart"
+msgstr ""
+
+#: woocommerce/cart/mini-cart.php:106
+msgid "Checkout"
+msgstr ""
+
+#: woocommerce/cart/proceed-to-checkout-button.php:16
+msgid "Proceed to Checkout"
+msgstr ""
+
+#: woocommerce/cart/shipping-calculator.php:22
+msgid "Calculate Shipping"
+msgstr ""
+
+#: woocommerce/cart/shipping-calculator.php:29
+msgid "Select a country&hellip;"
+msgstr ""
+
+#: woocommerce/cart/shipping-calculator.php:46
+#: woocommerce/cart/shipping-calculator.php:52
+#: woocommerce/cart/shipping-calculator.php:64
+msgid "State / county"
+msgstr ""
+
+#: woocommerce/cart/shipping-calculator.php:53
+msgid "Select a state&hellip;"
+msgstr ""
+
+#: woocommerce/cart/shipping-calculator.php:73
+msgid "City"
+msgstr ""
+
+#: woocommerce/cart/shipping-calculator.php:81
+msgid "Postcode / Zip"
+msgstr ""
+
+#: woocommerce/cart/shipping-calculator.php:86
+msgid "Update Totals"
+msgstr ""
+
+#: woocommerce/checkout/cart-errors.php:18
+msgid ""
+"There are some issues with the items in your cart (shown above). Please go "
+"back to the cart page and resolve these issues before checking out."
+msgstr ""
+
+#: woocommerce/checkout/cart-errors.php:22
+msgid "Return To Cart"
+msgstr ""
+
+#: woocommerce/checkout/form-billing.php:18
+msgid "Billing &amp; Shipping"
+msgstr ""
+
+#: woocommerce/checkout/form-billing.php:22
+msgid "Billing Details"
+msgstr ""
+
+#: woocommerce/checkout/form-billing.php:44
+msgid "Create an account?"
+msgstr ""
+
+#: woocommerce/checkout/form-billing.php:55
+msgid ""
+"Create an account by entering the information below. If you are a returning "
+"customer please login at the top of the page."
+msgstr ""
+
+#: woocommerce/checkout/form-checkout.php:16
+msgid "You must be logged in to checkout."
+msgstr ""
+
+#: woocommerce/checkout/form-coupon.php:18
+msgid "Have a coupon?"
+msgstr ""
+
+#: woocommerce/checkout/form-coupon.php:18
+msgid "Enter your code &rarr;"
+msgstr ""
+
+#: woocommerce/checkout/form-coupon.php:28
+msgid "Coupon code"
+msgstr ""
+
+#: woocommerce/checkout/form-coupon.php:32
+msgid "Apply Coupon"
+msgstr ""
+
+#: woocommerce/checkout/form-login.php:20
+msgid "Returning customer?"
+msgstr ""
+
+#: woocommerce/checkout/form-login.php:20
+msgid "Login &rarr;"
+msgstr ""
+
+#: woocommerce/checkout/form-login.php:21
+msgid "&larr;&nbsp; Return to Checkout"
+msgstr ""
+
+#: woocommerce/checkout/form-login.php:33
+msgid ""
+"If you have shopped with us before, please enter your details in the boxes "
+"below. If you are a new customer please proceed to the Billing &amp; "
+"Shipping section."
+msgstr ""
+
+#: woocommerce/checkout/form-pay.php:19
+msgid "Unpaid Order"
+msgstr ""
+
+#: woocommerce/checkout/form-pay.php:72 woocommerce/checkout/payment.php:23
+msgid "Payment"
+msgstr ""
+
+#: woocommerce/checkout/form-pay.php:104
+msgid ""
+"Sorry, it seems that there are no available payment methods for your "
+"location. Please contact us if you require assistance or wish to make "
+"alternate arrangements."
+msgstr ""
+
+#: woocommerce/checkout/form-pay.php:114
+msgid "Pay for order"
+msgstr ""
+
+#: woocommerce/checkout/form-shipping.php:17
+msgid "Additional Information"
+msgstr ""
+
+#: woocommerce/checkout/form-shipping.php:19
+msgid "Shipping Details"
+msgstr ""
+
+#: woocommerce/checkout/form-shipping.php:41
+msgid "Ship to a different address?"
+msgstr ""
+
+#: woocommerce/checkout/payment.php:35
+msgid "Please fill in your details above to see available payment methods."
+msgstr ""
+
+#: woocommerce/checkout/payment.php:37
+msgid ""
+"Sorry, it seems that there are no available payment methods for your state. "
+"Please contact us if you require assistance or wish to make alternate "
+"arrangements."
+msgstr ""
+
+#: woocommerce/checkout/payment.php:50
+msgid ""
+"Since your browser does not support JavaScript, or it is disabled, please "
+"ensure you click the <em>Update Totals</em> button before placing your "
+"order. You may be charged more than the amount stated above if you fail to "
+"do so."
+msgstr ""
+
+#: woocommerce/checkout/payment.php:50
+msgid "Update totals"
+msgstr ""
+
+#: woocommerce/checkout/payment.php:61
+#, php-format
+msgid ""
+"I&rsquo;ve read and accept the <a href=\"%s\" target=\"_blank\">terms &amp; "
+"conditions</a>"
+msgstr ""
+
+#: woocommerce/checkout/review-order.php:16
+msgid "Your Order"
+msgstr ""
+
+#: woocommerce/checkout/thankyou.php:22
+msgid ""
+"Unfortunately your order cannot be processed as the originating bank/"
+"merchant has declined your transaction."
+msgstr ""
+
+#: woocommerce/checkout/thankyou.php:26
+msgid "Please attempt your purchase again or go to your account page."
+msgstr ""
+
+#: woocommerce/checkout/thankyou.php:28
+msgid "Please attempt your purchase again."
+msgstr ""
+
+#: woocommerce/checkout/thankyou.php:33 woocommerce/myaccount/my-orders.php:68
+msgid "Pay"
+msgstr ""
+
+#: woocommerce/checkout/thankyou.php:41 woocommerce/checkout/thankyou.php:78
+msgid "Thank you. Your order has been received."
+msgstr ""
+
+#: woocommerce/checkout/thankyou.php:46
+msgid "Order Number:"
+msgstr ""
+
+#: woocommerce/checkout/thankyou.php:50
+msgid "Date:"
+msgstr ""
+
+#: woocommerce/checkout/thankyou.php:54
+msgid "Total:"
+msgstr ""
+
+#: woocommerce/checkout/thankyou.php:59
+msgid "Payment Method:"
+msgstr ""
+
+#: woocommerce/content-product.php:130
+msgid "Show more"
+msgstr ""
+
+#: woocommerce/content-product_nm_header.php:53
+msgid "Filter"
+msgstr ""
+
+#: woocommerce/content-product_nm_header.php:62
+msgid "Search"
+msgstr ""
+
+#: woocommerce/content-product_nm_results_bar.php:31
+#, php-format
+msgid "Search results for %s"
+msgstr ""
+
+#: woocommerce/content-product_nm_results_bar.php:36
+#, php-format
+msgid "Showing &ldquo;%s&rdquo;"
+msgstr ""
+
+#: woocommerce/content-product_nm_results_bar.php:38
+#, php-format
+msgid "Products tagged &ldquo;%s&rdquo;"
+msgstr ""
+
+#: woocommerce/content-single-product.php:109
+msgctxt "breadcrumb"
+msgid "Shop"
+msgstr ""
+
+#: woocommerce/content-single-product.php:109
+msgctxt "breadcrumb"
+msgid "Home"
+msgstr ""
+
+#: woocommerce/global/form-login.php:28
+#: woocommerce/myaccount/form-lost-password.php:31
+msgid "Username or email"
+msgstr ""
+
+#: woocommerce/global/form-login.php:32 woocommerce/myaccount/form-login.php:42
+#: woocommerce/myaccount/form-login.php:102
+msgid "Password"
+msgstr ""
+
+#: woocommerce/global/form-login.php:45 woocommerce/myaccount/form-login.php:55
+msgid "Remember me"
+msgstr ""
+
+#: woocommerce/global/form-login.php:47 woocommerce/myaccount/form-login.php:57
+#: woocommerce/myaccount/form-lost-password.php:28
+msgid "Lost your password?"
+msgstr ""
+
+#: woocommerce/global/quantity-input.php:15
+msgid "Quantity"
+msgstr ""
+
+#: woocommerce/global/quantity-input.php:17
+msgctxt "Product quantity input tooltip"
+msgid "Qty"
+msgstr ""
+
+#: woocommerce/loop/no-products-found.php:17
+msgid "No products were found matching your selection."
+msgstr ""
+
+#: woocommerce/loop/pagination.php:54
+msgid "Load More"
+msgstr ""
+
+#: woocommerce/loop/pagination.php:56
+msgid "All products loaded."
+msgstr ""
+
+#: woocommerce/loop/result-count.php:31
+msgid "Showing the single result"
+msgstr ""
+
+#: woocommerce/loop/result-count.php:33
+#, php-format
+msgid "Showing all %d results"
+msgstr ""
+
+#: woocommerce/loop/result-count.php:35
+#, php-format
+msgctxt "%1$d = first, %2$d = last, %3$d = total"
+msgid "Showing %1$d&ndash;%2$d of %3$d results"
+msgstr ""
+
+#: woocommerce/loop/sale-flash.php:28
+#: woocommerce/single-product/sale-flash.php:28
+msgid "Sale!"
+msgstr ""
+
+#: woocommerce/myaccount/form-add-payment-method.php:42
+msgid ""
+"Sorry, it seems that there are no payment methods which support adding a new "
+"payment method. Please contact us if you require assistance or wish to make "
+"alternate arrangements."
+msgstr ""
+
+#: woocommerce/myaccount/form-add-payment-method.php:50
+msgid "Add Payment Method"
+msgstr ""
+
+#: woocommerce/myaccount/form-edit-account.php:22
+msgid "Edit Account"
+msgstr ""
+
+#: woocommerce/myaccount/form-edit-account.php:27
+msgid "First name"
+msgstr ""
+
+#: woocommerce/myaccount/form-edit-account.php:31
+msgid "Last name"
+msgstr ""
+
+#: woocommerce/myaccount/form-edit-account.php:37
+#: woocommerce/myaccount/form-login.php:95
+msgid "Email address"
+msgstr ""
+
+#: woocommerce/myaccount/form-edit-account.php:42
+msgid "Password Change"
+msgstr ""
+
+#: woocommerce/myaccount/form-edit-account.php:45
+msgid "Current Password (leave blank to leave unchanged)"
+msgstr ""
+
+#: woocommerce/myaccount/form-edit-account.php:49
+msgid "New Password (leave blank to leave unchanged)"
+msgstr ""
+
+#: woocommerce/myaccount/form-edit-account.php:53
+msgid "Confirm New Password"
+msgstr ""
+
+#: woocommerce/myaccount/form-edit-account.php:63
+msgid "Save changes"
+msgstr ""
+
+#: woocommerce/myaccount/form-edit-address.php:16
+#: woocommerce/myaccount/my-address.php:19
+#: woocommerce/myaccount/my-address.php:25
+#: woocommerce/order/order-details-customer.php:52
+msgid "Billing Address"
+msgstr ""
+
+#: woocommerce/myaccount/form-edit-address.php:16
+#: woocommerce/myaccount/my-address.php:20
+#: woocommerce/order/order-details-customer.php:64
+msgid "Shipping Address"
+msgstr ""
+
+#: woocommerce/myaccount/form-edit-address.php:46
+msgid "Save Address"
+msgstr ""
+
+#: woocommerce/myaccount/form-login.php:38
+msgid "Username or email address"
+msgstr ""
+
+#: woocommerce/myaccount/form-login.php:64
+#: woocommerce/myaccount/form-login.php:123
+msgid "Or"
+msgstr ""
+
+#: woocommerce/myaccount/form-login.php:88
+msgid "Username"
+msgstr ""
+
+#: woocommerce/myaccount/form-login.php:109
+msgid "Anti-spam"
+msgstr ""
+
+#: woocommerce/myaccount/form-lost-password.php:29
+msgid ""
+"Please enter your username or email address. You will receive a link to "
+"create a new password via email."
+msgstr ""
+
+#: woocommerce/myaccount/form-lost-password.php:35
+msgid "Enter a new password below."
+msgstr ""
+
+#: woocommerce/myaccount/form-lost-password.php:38
+msgid "New password"
+msgstr ""
+
+#: woocommerce/myaccount/form-lost-password.php:42
+msgid "Re-enter new password"
+msgstr ""
+
+#: woocommerce/myaccount/form-lost-password.php:55
+msgid "Reset Password"
+msgstr ""
+
+#: woocommerce/myaccount/form-lost-password.php:55
+msgid "Save"
+msgstr ""
+
+#: woocommerce/myaccount/my-account.php:21
+#, php-format
+msgid "Hello %s."
+msgstr ""
+
+#: woocommerce/myaccount/my-account.php:27
+msgid "Logout"
+msgstr ""
+
+#: woocommerce/myaccount/my-account.php:31
+#, php-format
+msgid ""
+"From your account dashboard you can view your recent orders, manage your "
+"shipping and billing addresses and <a href=\"%s\">edit your password and "
+"account details</a>."
+msgstr ""
+
+#: woocommerce/myaccount/my-address.php:17
+msgid "My Addresses"
+msgstr ""
+
+#: woocommerce/myaccount/my-address.php:23
+msgid "My Address"
+msgstr ""
+
+#: woocommerce/myaccount/my-address.php:35
+msgid "The following addresses will be used on the checkout page by default."
+msgstr ""
+
+#: woocommerce/myaccount/my-address.php:64
+msgid "You have not set up this type of address yet."
+msgstr ""
+
+#: woocommerce/myaccount/my-downloads.php:20
+msgid "Available downloads"
+msgstr ""
+
+#: woocommerce/myaccount/my-downloads.php:31
+#, php-format
+msgid "%s download remaining"
+msgid_plural "%s downloads remaining"
+msgstr[0] ""
+msgstr[1] ""
+
+#: woocommerce/myaccount/my-orders.php:26
+msgid "Recent Orders"
+msgstr ""
+
+#: woocommerce/myaccount/my-orders.php:32
+msgid "Order"
+msgstr ""
+
+#: woocommerce/myaccount/my-orders.php:33
+#: woocommerce/myaccount/my-orders.php:52
+msgid "Date"
+msgstr ""
+
+#: woocommerce/myaccount/my-orders.php:34
+#: woocommerce/myaccount/my-orders.php:55
+msgid "Status"
+msgstr ""
+
+#: woocommerce/myaccount/my-orders.php:47
+msgid "Order Number"
+msgstr ""
+
+#: woocommerce/myaccount/my-orders.php:59
+#, php-format
+msgid "%s for %s item"
+msgid_plural "%s for %s items"
+msgstr[0] ""
+msgstr[1] ""
+
+#: woocommerce/myaccount/my-orders.php:75
+msgid "Cancel"
+msgstr ""
+
+#: woocommerce/myaccount/my-orders.php:81
+msgid "View"
+msgstr ""
+
+#: woocommerce/myaccount/view-order.php:21
+#, php-format
+msgid ""
+"Order #<mark class=\"order-number\">%s</mark> was placed on <mark class="
+"\"order-date\">%s</mark> and is currently <mark class=\"order-status\">%s</"
+"mark>."
+msgstr ""
+
+#: woocommerce/myaccount/view-order.php:25 woocommerce/order/tracking.php:41
+msgid "Order Updates"
+msgstr ""
+
+#: woocommerce/myaccount/view-order.php:31 woocommerce/order/tracking.php:47
+msgid "l jS \\o\\f F Y, h:ia"
+msgstr ""
+
+#: woocommerce/order/form-tracking.php:24
+msgid "Order Tracking"
+msgstr ""
+
+#: woocommerce/order/form-tracking.php:26
+msgid ""
+"To track your order please enter your Order ID in the box below and press "
+"the \"Track\" button. This was given to you on your receipt and in the "
+"confirmation email you should have received."
+msgstr ""
+
+#: woocommerce/order/form-tracking.php:31
+msgid "Order ID"
+msgstr ""
+
+#: woocommerce/order/form-tracking.php:31
+msgid "Found in your order confirmation email."
+msgstr ""
+
+#: woocommerce/order/form-tracking.php:32
+msgid "Billing Email"
+msgstr ""
+
+#: woocommerce/order/form-tracking.php:32
+msgid "Email you used during checkout."
+msgstr ""
+
+#: woocommerce/order/form-tracking.php:34
+msgid "Track"
+msgstr ""
+
+#: woocommerce/order/order-again.php:16
+msgid "Order Again"
+msgstr ""
+
+#: woocommerce/order/order-details-customer.php:15
+msgid "Customer Details"
+msgstr ""
+
+#: woocommerce/order/order-details-customer.php:18
+msgid "Note:"
+msgstr ""
+
+#: woocommerce/order/order-details-customer.php:25
+msgid "Email:"
+msgstr ""
+
+#: woocommerce/order/order-details-customer.php:32
+msgid "Telephone:"
+msgstr ""
+
+#: woocommerce/order/order-details-customer.php:55
+#: woocommerce/order/order-details-customer.php:67
+msgid "N/A"
+msgstr ""
+
+#: woocommerce/order/order-details.php:17
+msgid "Order Details"
+msgstr ""
+
+#: woocommerce/order/tracking.php:21
+#, php-format
+msgid "Order #%s"
+msgstr ""
+
+#: woocommerce/order/tracking.php:25
+#, php-format
+msgid "Order #%s which was made %s has the status &ldquo;%s&rdquo;"
+msgstr ""
+
+#: woocommerce/order/tracking.php:25
+msgid "ago"
+msgstr ""
+
+#: woocommerce/order/tracking.php:28
+msgid "and was completed"
+msgstr ""
+
+#: woocommerce/order/tracking.php:28
+msgid " ago"
+msgstr ""
+
+#: woocommerce/product-searchform.php:2
+msgid "Search for:"
+msgstr ""
+
+#: woocommerce/product-searchform.php:3
+msgctxt "placeholder"
+msgid "Search Products&hellip;"
+msgstr ""
+
+#: woocommerce/product-searchform.php:3
+msgctxt "label"
+msgid "Search for:"
+msgstr ""
+
+#: woocommerce/product-searchform.php:4
+msgctxt "submit button"
+msgid "Search"
+msgstr ""
+
+#: woocommerce/product-searchform_nm.php:19
+msgid "press <u>Enter</u> to search"
+msgstr ""
+
+#: woocommerce/quickview/content-quickview.php:46
+msgid "Details"
+msgstr ""
+
+#: woocommerce/quickview/product-image.php:28
+#: woocommerce/single-product/product-image.php:78
+msgid "Placeholder"
+msgstr ""
+
+#: woocommerce/single-product-reviews.php:40
+msgid "There are no reviews yet."
+msgstr ""
+
+#: woocommerce/single-product-reviews.php:53
+msgid "Add a review"
+msgstr ""
+
+#: woocommerce/single-product-reviews.php:53
+msgid "Be the first to review"
+msgstr ""
+
+#: woocommerce/single-product-reviews.php:54
+#, php-format
+msgid "Leave a Reply to %s"
+msgstr ""
+
+#: woocommerce/single-product-reviews.php:58
+msgid "Name"
+msgstr ""
+
+#: woocommerce/single-product-reviews.php:60
+msgid "Email"
+msgstr ""
+
+#: woocommerce/single-product-reviews.php:63
+msgid "Submit"
+msgstr ""
+
+#: woocommerce/single-product-reviews.php:69
+msgid "Your Rating"
+msgstr ""
+
+#: woocommerce/single-product-reviews.php:70
+msgid "Rate&hellip;"
+msgstr ""
+
+#: woocommerce/single-product-reviews.php:71
+msgid "Perfect"
+msgstr ""
+
+#: woocommerce/single-product-reviews.php:72
+msgid "Good"
+msgstr ""
+
+#: woocommerce/single-product-reviews.php:73
+msgid "Average"
+msgstr ""
+
+#: woocommerce/single-product-reviews.php:74
+msgid "Not that bad"
+msgstr ""
+
+#: woocommerce/single-product-reviews.php:75
+msgid "Very Poor"
+msgstr ""
+
+#: woocommerce/single-product-reviews.php:79
+msgid "Your Review"
+msgstr ""
+
+#: woocommerce/single-product-reviews.php:88
+msgid ""
+"Only logged in customers who have purchased this product may leave a review."
+msgstr ""
+
+#: woocommerce/single-product/add-to-cart/variable.php:23
+msgid "This product is currently out of stock and unavailable."
+msgstr ""
+
+#: woocommerce/single-product/meta.php:29
+msgid "SKU:"
+msgstr ""
+
+#: woocommerce/single-product/meta.php:34
+msgid "Category:"
+msgid_plural "Categories:"
+msgstr[0] ""
+msgstr[1] ""
+
+#: woocommerce/single-product/meta.php:36
+msgid "Tag:"
+msgid_plural "Tags:"
+msgstr[0] ""
+msgstr[1] ""
+
+#: woocommerce/single-product/product-attributes.php:28
+msgid "Weight"
+msgstr ""
+
+#: woocommerce/single-product/product-attributes.php:35
+msgid "Dimensions"
+msgstr ""
+
+#: woocommerce/single-product/product-image.php:114
+msgid "Watch Video"
+msgstr ""
+
+#: woocommerce/single-product/rating.php:27
+#, php-format
+msgid "Rated %s out of 5"
+msgstr ""
+
+#: woocommerce/single-product/rating.php:29
+#, php-format
+msgid "out of %s5%s"
+msgstr ""
+
+#: woocommerce/single-product/related.php:48
+msgid "Related Products"
+msgstr ""
+
+#: woocommerce/single-product/review.php:27
+msgid "Your comment is awaiting approval"
+msgstr ""
+
+#: woocommerce/single-product/review.php:36
+msgid "verified owner"
+msgstr ""
+
+#: woocommerce/single-product/review.php:47
+#, php-format
+msgid "Rated %d out of 5"
+msgstr ""
+
+#: woocommerce/single-product/review.php:48
+msgid "out of 5"
+msgstr ""
+
+#: woocommerce/single-product/up-sells.php:49
+msgid "You may also like&hellip;"
+msgstr ""
+
+#. Theme Name of the plugin/theme
+msgid "Savoy"
+msgstr ""
+
+#. Theme URI of the plugin/theme
+msgid ""
+"http://themeforest.net/item/savoy-minimalist-ajax-woocommerce-theme/12537825"
+msgstr ""
+
+#. Description of the plugin/theme
+msgid "Savoy - Modern AJAX enabled WooCommerce theme."
+msgstr ""
+
+#. Author of the plugin/theme
+msgid "NordicMade"
+msgstr ""
+
+#. Author URI of the plugin/theme
+msgid "http://www.nordicmade.com"
+msgstr ""

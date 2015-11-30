@@ -1,4 +1,7 @@
 <?php
+if ( ! defined( 'ABSPATH' ) ) {
+	die( '-1' );
+}
 
 vc_map( array(
 	'name' => __( 'Accordion', 'js_composer' ),
@@ -7,7 +10,7 @@ vc_map( array(
 	'is_container' => true,
 	'show_settings_on_create' => false,
 	'as_parent' => array(
-		'only' => 'vc_tta_section'
+		'only' => 'vc_tta_section',
 	),
 	'category' => __( 'Content', 'js_composer' ),
 	'description' => __( 'Collapsible content panels', 'js_composer' ),
@@ -180,7 +183,7 @@ vc_map( array(
 			'type' => 'css_editor',
 			'heading' => __( 'CSS box', 'js_composer' ),
 			'param_name' => 'css',
-			'group' => __( 'Design Options', 'js_composer' )
+			'group' => __( 'Design Options', 'js_composer' ),
 		),
 	),
 	'js_view' => 'VcBackendTtaAccordionView',
@@ -202,8 +205,5 @@ vc_map( array(
 	   </div>
 	</div>
 </div>',
-	'default_content' => '
-[vc_tta_section title="' . sprintf( "%s %d", __( 'Section', 'js_composer' ), 1 ) . '"][/vc_tta_section]
-[vc_tta_section title="' . sprintf( "%s %d", __( 'Section', 'js_composer' ), 2 ) . '"][/vc_tta_section]
-	'
+	'default_content' => '[vc_tta_section title="' . sprintf( '%s %d', __( 'Section', 'js_composer' ), 1 ) . '"][/vc_tta_section][vc_tta_section title="' . sprintf( '%s %d', __( 'Section', 'js_composer' ), 2 ) . '"][/vc_tta_section]',
 ) );

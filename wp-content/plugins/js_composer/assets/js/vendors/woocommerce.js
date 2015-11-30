@@ -25,7 +25,8 @@ vcWoocommerceProductAttributeFilterDependencyCallback = function () {
 				url: window.ajaxurl,
 				data: {
 					action: 'vc_woocommerce_get_attribute_terms',
-					attribute: this.value
+					attribute: this.value,
+					_vcnonce: window.vcAdminNonce
 				}
 			} ).done( function ( data ) {
 				if ( 0 < data.length ) {

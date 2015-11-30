@@ -1,4 +1,7 @@
 <?php
+if ( ! defined( 'ABSPATH' ) ) {
+	die( '-1' );
+}
 VcShortcodeAutoloader::getInstance()->includeClass( 'WPBakeryShortCode_VC_Tta_Tabs' );
 
 class WPBakeryShortCode_VC_Tta_Pageable extends WPBakeryShortCode_VC_Tta_Tabs {
@@ -40,5 +43,4 @@ class WPBakeryShortCode_VC_Tta_Pageable extends WPBakeryShortCode_VC_Tta_Tabs {
 	public function getParamTabsList( $atts, $content ) {
 		return '';
 	}
-
 }

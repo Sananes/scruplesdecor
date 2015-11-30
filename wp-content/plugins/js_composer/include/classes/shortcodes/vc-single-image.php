@@ -1,4 +1,7 @@
 <?php
+if ( ! defined( 'ABSPATH' ) ) {
+	die( '-1' );
+}
 
 class WPBakeryShortCode_VC_Single_image extends WPBakeryShortCode {
 
@@ -13,7 +16,7 @@ class WPBakeryShortCode_VC_Single_image extends WPBakeryShortCode {
 
 		wp_register_script( 'vc_image_zoom', vc_asset_url( 'lib/vc_image_zoom/vc_image_zoom.js' ), array(
 			'jquery',
-			'zoom'
+			'zoom',
 		), WPB_VC_VERSION, true );
 	}
 
@@ -29,7 +32,7 @@ class WPBakeryShortCode_VC_Single_image extends WPBakeryShortCode {
 			'button_yellow',
 			'button_blue',
 			'button_red',
-			'button_orange'
+			'button_orange',
 		);
 		$new_names = array(
 			'alert-block',
@@ -40,7 +43,7 @@ class WPBakeryShortCode_VC_Single_image extends WPBakeryShortCode {
 			'btn-info',
 			'btn-primary',
 			'btn-danger',
-			'btn-warning'
+			'btn-warning',
 		);
 		$value = str_ireplace( $old_names, $new_names, $value );
 
@@ -53,21 +56,21 @@ class WPBakeryShortCode_VC_Single_image extends WPBakeryShortCode {
 			$element_icon = $this->settings( 'icon' );
 			$img = wpb_getImageBySize( array(
 				'attach_id' => (int) preg_replace( '/[^\d]/', '', $value ),
-				'thumb_size' => 'thumbnail'
+				'thumb_size' => 'thumbnail',
 			) );
 			$this->setSettings( 'logo', ( $img ? $img['thumbnail'] : '<img width="150" height="150" src="' . vc_asset_url( 'vc/blank.gif' ) . '" class="attachment-thumbnail vc_general vc_element-icon"  data-name="' . $param_name . '" alt="" title="" style="display: none;" />' ) . '<span class="no_image_image vc_element-icon' . ( ! empty( $element_icon ) ? ' ' . $element_icon : '' ) . ( $img && ! empty( $img['p_img_large'][0] ) ? ' image-exists' : '' ) . '" /><a href="#" class="column_edit_trigger' . ( $img && ! empty( $img['p_img_large'][0] ) ? ' image-exists' : '' ) . '">' . __( 'Add image', 'js_composer' ) . '</a>' );
 			$output .= $this->outputTitleTrue( $this->settings['name'] );
 		} elseif ( ! empty( $param['holder'] ) ) {
-			if ( $param['holder'] === 'input' ) {
+			if ( 'input' === $param['holder'] ) {
 				$output .= '<' . $param['holder'] . ' readonly="true" class="wpb_vc_param_value ' . $param_name . ' ' . $type . ' ' . $class . '" name="' . $param_name . '" value="' . $value . '">';
 			} elseif ( in_array( $param['holder'], array( 'img', 'iframe' ) ) ) {
 				$output .= '<' . $param['holder'] . ' class="wpb_vc_param_value ' . $param_name . ' ' . $type . ' ' . $class . '" name="' . $param_name . '" src="' . $value . '">';
-			} elseif ( $param['holder'] !== 'hidden' ) {
+			} elseif ( 'hidden' !== $param['holder'] ) {
 				$output .= '<' . $param['holder'] . ' class="wpb_vc_param_value ' . $param_name . ' ' . $type . ' ' . $class . '" name="' . $param_name . '">' . $value . '</' . $param['holder'] . '>';
 			}
 		}
 
-		if ( ! empty( $param['admin_label'] ) && $param['admin_label'] === true ) {
+		if ( ! empty( $param['admin_label'] ) && true === $param['admin_label'] ) {
 			$output .= '<span class="vc_admin_label admin_label_' . $param['param_name'] . ( empty( $value ) ? ' hidden-label' : '' ) . '"><label>' . $param['heading'] . '</label>: ' . $value . '</span>';
 		}
 
@@ -87,8 +90,10 @@ class WPBakeryShortCode_VC_Single_image extends WPBakeryShortCode {
 				'height' => $image_downsize[2],
 			);
 		}
-		if ( isset( $exact_size['width'] ) && (int) $exact_size['width'] !== (int) $exact_size['height'] ) {
-			$img_size = (int) $exact_size['width'] > (int) $exact_size['height']
+		$exact_size_int_w = (int) $exact_size['width'];
+		$exact_size_int_h = (int) $exact_size['height'];
+		if ( isset( $exact_size['width'] ) && $exact_size_int_w !== $exact_size_int_h ) {
+			$img_size = $exact_size_int_w > $exact_size_int_h
 				? $exact_size['height'] . 'x' . $exact_size['height']
 				: $exact_size['width'] . 'x' . $exact_size['width'];
 		}

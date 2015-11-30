@@ -21,10 +21,6 @@ document.documentElement.className += 'ontouchstart' in document.documentElement
  If you want to override function behavior then copy it to your theme js file
  with the same name.
  */
-
-jQuery( window ).load( function () {
-
-} );
 function vc_js() {
 	vc_twitterBehaviour();
 	vc_toggleBehaviour();
@@ -45,9 +41,6 @@ function vc_js() {
 	jQuery( document ).trigger( 'vc_js' );
 	window.setTimeout( vc_waypoints, 500 );
 }
-jQuery( document ).ready( function ( $ ) {
-	window.vc_js();
-} );
 
 if ( 'function' !== typeof(window[ 'vc_plugin_flexslider' ]) ) {
 	window.vc_plugin_flexslider = function ( $parent ) {
@@ -601,20 +594,26 @@ if ( 'function' !== typeof(window[ 'vc_rowBehaviour' ]) ) {
 					$( this ).css( 'min-height', fullHeight + 'vh' );
 				}
 			} );
+		}
 
-			$( '.vc_row-o-full-height.vc_row-o-content-middle' ).each( function () {
-				var elHeight = $( this ).height();
-				$( '<div><!-- IE flexbox min height vertical align fixer --></div>' )
-					.addClass( 'vc_row-full-height-fixer' )
-					.height( elHeight )
-					.prependTo( $( this ) );
-			} );
+		function fixIeFlexbox() {
+			var ua = window.navigator.userAgent;
+			var msie = ua.indexOf("MSIE ");
+
+			if (msie > 0 || !!navigator.userAgent.match(/Trident.*rv\:11\./)){
+				$( '.vc_row-o-full-height' ).each( function () {
+					if ($( this ).css( 'display') === 'flex') {
+						$( this ).wrap('<div class="vc_ie-flexbox-fixer"></div>')
+					}
+				} );
+			}
 		}
 
 		$( window ).unbind( 'resize.vcRowBehaviour' ).bind( 'resize.vcRowBehaviour', localFunction );
 		$( window ).bind( 'resize.vcRowBehaviour', fullHeightRow );
 		localFunction();
 		fullHeightRow();
+		fixIeFlexbox();
 		initVideoBackgrounds(); // must be called before parallax
 		parallaxRow();
 	}
@@ -917,3 +916,6 @@ function vcExtractYoutubeId( url ) {
 
 	return false;
 }
+jQuery( document ).ready( function ( $ ) {
+	window.vc_js();
+} );
